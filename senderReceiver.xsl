@@ -68,10 +68,8 @@
 									</xsl:attribute>
 									<tr>
 										<td>
-											<b>
-												<xsl:value-of select="last_name"/>
-												<xsl:value-of select="first_name"/>
-											</b>
+											<xsl:value-of select="first_name"/>
+											<xsl:value-of select="last_name"/>
 										</td>
 									</tr>
 								</table>
@@ -79,46 +77,6 @@
 						</xsl:when>
 						<xsl:otherwise/>
 					</xsl:choose>
-				</td>
-				<td align="right" width="50%">
-					<xsl:for-each select="notification_data/organization_unit">
-						<table>
-							<xsl:attribute name="style">
-								<xsl:call-template name="listStyleCss"/>
-								<!-- style.xsl -->
-							</xsl:attribute>
-							<tr>
-								<td>
-									<xsl:value-of select="name"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<xsl:value-of select="address/line1"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<xsl:value-of select="address/line2"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<xsl:value-of select="address/city"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<xsl:value-of select="address/postal_code"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<xsl:value-of select="address/country"/>
-								</td>
-							</tr>
-						</table>
-					</xsl:for-each>
 				</td>
 			</tr>
 		</table>
