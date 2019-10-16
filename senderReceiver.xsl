@@ -13,48 +13,7 @@
 								</xsl:attribute>
 								<tr>
 									<td>
-										<b>
-											<xsl:value-of select="notification_data/user_for_printing/name"/>
-										</b>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/user_for_printing/address1"/>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/user_for_printing/address2"/>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/user_for_printing/address3"/>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/user_for_printing/address4"/>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/user_for_printing/address5"/>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/user_for_printing/city"/>
-										 
-										<xsl:value-of select="notification_data/user_for_printing/postal_code"/>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/user_for_printing/state"/>
-										 
-										<xsl:value-of select="notification_data/user_for_printing/country"/>
+										<xsl:value-of select="first_name"/> <xsl:value-of select="last_name"/>
 									</td>
 								</tr>
 							</table>
@@ -68,8 +27,7 @@
 									</xsl:attribute>
 									<tr>
 										<td>
-											<xsl:value-of select="first_name"/>
-											<xsl:value-of select="last_name"/>
+											<xsl:value-of select="first_name"/> <xsl:value-of select="last_name"/>
 										</td>
 									</tr>
 								</table>
