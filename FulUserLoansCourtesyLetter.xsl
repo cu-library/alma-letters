@@ -65,7 +65,6 @@
 											<th>@@description@@</th>
 											<th>@@author@@</th>
 											<th>@@due_date@@</th>
-											<th>@@library@@</th>
 										</tr>
 										<xsl:for-each select="notification_data/item_loans/item_loan">
 											<tr>
@@ -80,9 +79,6 @@
 												</td>
 												<td>
 													<xsl:value-of select="due_date"/>
-												</td>
-												<td>
-													<xsl:value-of select="library_name"/>
 												</td>
 											</tr>
 										</xsl:for-each>
