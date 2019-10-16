@@ -75,30 +75,6 @@
 											</b>
 										</td>
 									</tr>
-									<tr>
-										<td>
-											<xsl:value-of select="user_address_list/user_address/line1"/>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<xsl:value-of select="user_address_list/user_address/line2"/>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<xsl:value-of select="user_address_list/user_address/city"/>
-											 
-											<xsl:value-of select="user_address_list/user_address/postal_code"/>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<xsl:value-of select="user_address_list/user_address/state_province"/>
-											 
-											<xsl:value-of select="user_address_list/user_address/country"/>
-										</td>
-									</tr>
 								</table>
 							</xsl:for-each>
 						</xsl:when>
