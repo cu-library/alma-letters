@@ -70,7 +70,6 @@
 										<td>
 											<b>
 												<xsl:value-of select="last_name"/>
-												 
 												<xsl:value-of select="first_name"/>
 											</b>
 										</td>
