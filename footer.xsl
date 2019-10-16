@@ -3,33 +3,6 @@
 	<xsl:template name="salutation">
 	</xsl:template>
 	<xsl:template name="lastFooter">
-		<table>
-			<xsl:attribute name="style">
-				<xsl:call-template name="footerTableStyleCss"/>
-				<!-- style.xsl -->
-			</xsl:attribute>
-			<tr>
-				<xsl:for-each select="notification_data/organization_unit">
-					<xsl:attribute name="style">
-						<xsl:call-template name="listStyleCss"/>
-						<!-- style.xsl -->
-					</xsl:attribute>
-					<td align="center">
-						<xsl:value-of select="name"/>
-						 
-						<xsl:value-of select="line1"/>
-						 
-						<xsl:value-of select="line2"/>
-						 
-						<xsl:value-of select="city"/>
-						 
-						<xsl:value-of select="postal_code"/>
-						 
-						<xsl:value-of select="country"/>
-					</td>
-				</xsl:for-each>
-			</tr>
-		</table>
 	</xsl:template>
 	<xsl:template name="contactUs">
 		<table align="left">
