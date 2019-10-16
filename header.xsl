@@ -24,7 +24,9 @@
 			<tr>
 				<xsl:for-each select="notification_data/general_data">
 					<td>
-						<h1>@@letterName@@</h1>
+						<h1>
+							<xsl:value-of select="letter_name"/>
+						</h1>
 					</td>
 					<td align="right">
 						<xsl:value-of select="current_date"/>
