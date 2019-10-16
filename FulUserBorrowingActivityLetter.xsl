@@ -26,7 +26,7 @@
 							<xsl:if test="notification_data/item_loans/item_loan or notification_data/overdue_item_loans/item_loan">
 								<tr>
 									<td>
-										<b>@@reminder_message@@</b>
+										@@reminder_message@@
 										<br/>
 										<br/>
 									</td>
