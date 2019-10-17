@@ -41,21 +41,13 @@
 									<xsl:if test="notification_data/message='RECALL_CANCEL_NO_CHANGE'">
 										<b>@@cancel_recall_no_date_change@@</b>
 									</xsl:if>
-									<br/>
-									<br/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<b>@@loans@@</b>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<table cellpadding="5" class="listing">
 										<xsl:attribute name="style">
-											<xsl:call-template name="mainTableStyleCss"/>
-											<!-- style.xsl -->
+											<xsl:call-template name="mainTableStyleCss"/> <!-- style.xsl -->
 										</xsl:attribute>
 										<tr>
 											<th>@@title@@</th>
@@ -63,7 +55,6 @@
 											<th>@@author@@</th>
 											<th>@@old_due_date@@</th>
 											<th>@@new_due_date@@</th>
-											<th>@@library@@</th>
 										</tr>
 										<xsl:for-each select="notification_data/item_loans/item_loan">
 											<tr>
@@ -81,9 +72,6 @@
 												</td>
 												<td>
 													<xsl:value-of select="new_due_date_str"/>
-												</td>
-												<td>
-													<xsl:value-of select="library_name"/>
 												</td>
 											</tr>
 										</xsl:for-each>
