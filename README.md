@@ -20,5 +20,5 @@ The Alma letters used by Carleton University Library
 - [x] PIN Number Generation Letter (PINNumberGenerationLetter.xsl)
 - [x] Reset Password Letter (ResetPwLetter.xsl)
 - [ ] Saved Searches Letter (SavedSearchesLetter.xsl)
-- [ ] Short Loan Letter (FulShortLoanLetter.xsl)
+- [x] Short Loan Letter (FulShortLoanLetter.xsl)
 - [ ] System Job Letter (SystemJobLetter.xsl)
