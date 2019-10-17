@@ -18,7 +18,6 @@
 				<xsl:call-template name="head"/> <!-- header.xsl -->
 				<xsl:call-template name="senderReceiver"/> <!-- SenderReceiver.xsl -->
 				<br/>
-				<xsl:call-template name="toWhomIsConcerned"/>
 				<!-- mailReason.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
@@ -158,27 +157,10 @@
 								</tr>
 							</xsl:if>
 						</table>
-						<br/>
-						<table>
-							<tr>
-								<td>For more information please visit your <a href="https://ocul-crl.alma.exlibrisgroup.com">Library Account</a>.</td>
-							</tr>
-							<tr>
-								<td>If you have any questions please contact a staff member from Access Services at <a href="mailto:libcirc@carleton.ca">libcirc@carleton.ca</a> or 613-520-2600 x2734.</td>
-							</tr>
-							<tr>
-								<td>@@sincerely@@</td>
-							</tr>
-							<tr>
-								<td>@@department@@</td>
-							</tr>
-						</table>
 					</div>
 				</div>
 				<!-- footer.xsl -->
 				<xsl:call-template name="lastFooter"/>
-				<xsl:call-template name="myAccount"/>
-				<xsl:call-template name="contactUs"/>
 			</body>
 		</html>
 	</xsl:template>

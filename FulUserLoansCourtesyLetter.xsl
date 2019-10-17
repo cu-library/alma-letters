@@ -13,15 +13,11 @@
 			</head>
 			<body>
 				<xsl:attribute name="style">
-					<xsl:call-template name="bodyStyleCss"/>
-					<!-- style.xsl -->
+					<xsl:call-template name="bodyStyleCss"/> <!-- style.xsl -->
 				</xsl:attribute>
-				<xsl:call-template name="head"/>
-				<!-- header.xsl -->
-				<xsl:call-template name="senderReceiver"/>
-				<!-- SenderReceiver.xsl -->
+				<xsl:call-template name="head"/> <!-- header.xsl -->
+				<xsl:call-template name="senderReceiver"/> <!-- SenderReceiver.xsl -->
 				<br/>
-				<xsl:call-template name="toWhomIsConcerned"/>
 				<!-- mailReason.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
@@ -34,18 +30,6 @@
 							<tr>
 								<td>
 									Materials can be returned at the MacOdrum Library or at any university in Ontario.
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<xsl:if test="notification_data/short_loans='true'">
-										<b>@@short_loans_message@@</b>
-									</xsl:if>
-									<xsl:if test="notification_data/short_loans='false'">
-										<b>@@message@@</b>
-									</xsl:if>
-									<br/>
-									<br/>
 								</td>
 							</tr>
 							<tr>
@@ -87,33 +71,11 @@
 							</tr>
 						</table>
 						<br/>
-						<br/>@@additional_info_1@@
-
-
+						<br/>
+						@@additional_info_1@@
 						<br/>
 						@@additional_info_2@@
-
-
 						<br/>
-						<table>
-							<tr>
-								<td>
-									For more information please visit your
-									<a href="https://ocul-crl.alma.exlibrisgroup.com">Library Account</a>.
-								</td>
-							</tr>
-							<tr>
-								<td>If you have any questions please contact a staff member from Access Services at
-									<a href="mailto:libcirc@carleton.ca">libcirc@carleton.ca</a>
-									or 613-520-2600 x2734.</td>
-							</tr>
-							<tr>
-								<td>@@sincerely@@</td>
-							</tr>
-							<tr>
-								<td>@@department@@</td>
-							</tr>
-						</table>
 					</div>
 				</div>
 				<!-- footer.xsl -->

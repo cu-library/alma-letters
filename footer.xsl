@@ -3,6 +3,19 @@
 	<xsl:template name="salutation">
 	</xsl:template>
 	<xsl:template name="lastFooter">
+		<table>
+			<tr>
+				<td>
+					For more information please visit your
+					<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.
+				</td>
+			</tr>
+			<tr>
+				<td>If you have any questions please contact a staff member from Access Services at
+					<a href="mailto:libcirc@carleton.ca">libcirc@carleton.ca</a>
+					or 613-520-2600 x2734.</td>
+			</tr>
+		</table>
 	</xsl:template>
 	<xsl:template name="contactUs">
 		<table align="left">
