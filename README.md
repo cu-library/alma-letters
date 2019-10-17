@@ -11,7 +11,7 @@ The Alma letters used by Carleton University Library
 - [x] Fines Fees Notification Letter (FulFinesFeesNotificationLetter.xsl)
 - [x] Lost Loan Letter (FulLostLoanLetter.xsl)
 - [x] Lost Loan Notification Letter (FulLostLoanNotificationLetter.xsl)
-- [ ] Overdue And Lost Loan Letter (FulOverdueAndLostLoanLetter.xsl)
+- [x] Overdue And Lost Loan Letter (FulOverdueAndLostLoanLetter.xsl)
 - [ ] Overdue And Lost Loan Notification Letter (FulOverdueAndLostLoanNotificationLetter.xsl)
 - [ ] Loan Receipt Letter (FulLoanReceiptLetter.xsl)
 - [ ] Loan Status Notice (FulItemChangeDueDateLetter.xsl)
