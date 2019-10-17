@@ -16,6 +16,7 @@
 					<xsl:call-template name="bodyStyleCss"/> <!-- style.xsl -->
 				</xsl:attribute>
 				<xsl:call-template name="head"/> <!-- header.xsl -->
+				<br/>
 				<xsl:call-template name="senderReceiver"/> <!-- SenderReceiver.xsl -->
 				<br/>
 				<!-- mailReason.xsl -->
@@ -43,13 +44,6 @@
 													<xsl:attribute name="style">
 														<xsl:call-template name="mainTableStyleCss"/>
 													</xsl:attribute>
-													<tr align="center" bgcolor="#f5f5f5">
-														<td colspan="6">
-															<h3>
-																<xsl:value-of select="organization_unit/name"/>
-															</h3>
-														</td>
-													</tr>
 													<tr>
 														<th>@@title@@</th>
 														<th>@@description@@</th>
@@ -92,18 +86,11 @@
 													<xsl:attribute name="style">
 														<xsl:call-template name="mainTableStyleCss"/>
 													</xsl:attribute>
-													<tr align="center" bgcolor="#f5f5f5">
-														<td colspan="4">
-															<h3>
-																<xsl:value-of select="organization_unit/name"/>
-															</h3>
-														</td>
-													</tr>
 													<tr>
 														<th>@@title@@</th>
-														<th>@@due_date@@</th>
-														<th>@@fine@@</th>
 														<th>@@description@@</th>
+														<th>@@author@@</th>
+														<th>@@due_date@@</th>
 													</tr>
 													<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
 														<tr>
@@ -111,13 +98,13 @@
 																<xsl:value-of select="title"/>
 															</td>
 															<td>
-																<xsl:value-of select="due_date"/>
-															</td>
-															<td>
-																<xsl:value-of select="normalized_fine"/>
-															</td>
-															<td>
 																<xsl:value-of select="description"/>
+															</td>
+															<td>
+																<xsl:value-of select="author"/>
+															</td>
+															<td>
+																<xsl:value-of select="due_date"/>
 															</td>
 														</tr>
 													</xsl:for-each>

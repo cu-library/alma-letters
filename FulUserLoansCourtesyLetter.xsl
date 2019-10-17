@@ -16,6 +16,7 @@
 					<xsl:call-template name="bodyStyleCss"/> <!-- style.xsl -->
 				</xsl:attribute>
 				<xsl:call-template name="head"/> <!-- header.xsl -->
+				<br/>
 				<xsl:call-template name="senderReceiver"/> <!-- SenderReceiver.xsl -->
 				<br/>
 				<!-- mailReason.xsl -->
@@ -30,11 +31,6 @@
 							<tr>
 								<td>
 									Materials can be returned at the MacOdrum Library or at any university in Ontario.
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<b>@@loans@@</b>
 								</td>
 							</tr>
 							<tr>
