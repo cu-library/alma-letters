@@ -112,19 +112,9 @@
 								</tr>
 							</xsl:if>
 							<br/>
-							<br/>@@additional_info_1@@
-
+							@@additional_info_1@@
 							<br/>
 							@@additional_info_2@@
-
-							<br/>
-							<table>
-								<tr>
-									<td>@@sincerely@@</td></tr>
-								<tr>
-									<td>@@department@@</td>
-								</tr>
-							</table>
 						</table>
 						<br/>
 						<table>
