@@ -21,4 +21,4 @@ The Alma letters used by Carleton University Library
 - [x] Reset Password Letter (ResetPwLetter.xsl)
 - [ ] Saved Searches Letter (SavedSearchesLetter.xsl)
 - [x] Short Loan Letter (FulShortLoanLetter.xsl)
-- [ ] System Job Letter (SystemJobLetter.xsl)
+- [x] System Job Letter (SystemJobLetter.xsl)
