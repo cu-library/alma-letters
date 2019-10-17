@@ -1,2 +1,22 @@
 # alma-letters
- A repo for the Alma letters used by Carleton University Library
+
+The Alma letters used by Carleton University Library
+
+- [x] Patron Circulation Summary (FulUserBorrowingActivityLetter.xsl)
+- [x] Courtesy Letter (FulUserLoansCourtesyLetter.xsl)
+- [ ] Fine Fee Payment Receipt Letter (FineFeePaymentReceiptLetter.xsl)
+- [ ] Fines And Fees Report Letter (FinesAndFeesReportLetter.xsl)
+- [ ] Cancel Request Letter (FulCancelRequestLetter.xsl)
+- [ ] Fines Fees Notification Letter (FulFinesFeesNotificationLetter.xsl)
+- [ ] Lost Loan Letter (FulLostLoanLetter.xsl)
+- [ ] Lost Loan Notification Letter (FulLostLoanNotificationLetter.xsl)
+- [ ] Overdue And Lost Loan Letter (FulOverdueAndLostLoanLetter.xsl)
+- [ ] Overdue And Lost Loan Notification Letter (FulOverdueAndLostLoanNotificationLetter.xsl)
+- [ ] Loan Receipt Letter (FulLoanReceiptLetter.xsl)
+- [ ] Loan Status Notice (FulItemChangeDueDateLetter.xsl)
+- [ ] On Hold Shelf Letter (FulPlaceOnHoldShelfLetter.xsl)
+- [ ] Overdue Notice Letter (FulUserOverdueNoticeLetter.xsl)
+- [ ] PIN Number Generation Letter (PINNumberGenerationLetter.xsl)
+- [ ] Reset Password Letter (ResetPwLetter.xsl)
+- [ ] Short loan Letter (FulShortLoanLetter.xsl)
+- [ ] Shortened Due Date Letter (FulShortenedDueDateLetter.xsl)
