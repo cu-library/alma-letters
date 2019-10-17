@@ -17,6 +17,6 @@ The Alma letters used by Carleton University Library
 - [x] Loan Status Notice (FulItemChangeDueDateLetter.xsl)
 - [x] On Hold Shelf Letter (FulPlaceOnHoldShelfLetter.xsl)
 - [x] Overdue Notice Letter (FulUserOverdueNoticeLetter.xsl)
-- [ ] PIN Number Generation Letter (PINNumberGenerationLetter.xsl)
+- [x] PIN Number Generation Letter (PINNumberGenerationLetter.xsl)
 - [ ] Reset Password Letter (ResetPwLetter.xsl)
 - [ ] Short Loan Letter (FulShortLoanLetter.xsl)
