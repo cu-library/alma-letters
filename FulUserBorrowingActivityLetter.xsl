@@ -69,7 +69,6 @@
 												</table>
 											</td>
 										</tr>
-										<hr/>
 										<br/>
 									</xsl:for-each>
 								</xsl:if>
@@ -111,7 +110,6 @@
 												</table>
 											</td>
 										</tr>
-										<hr/>
 										<br/>
 									</xsl:for-each>
 								</xsl:if>

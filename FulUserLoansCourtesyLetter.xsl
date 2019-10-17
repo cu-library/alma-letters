@@ -66,12 +66,9 @@
 								</td>
 							</tr>
 						</table>
-						<br/>
-						<br/>
 						@@additional_info_1@@
 						<br/>
 						@@additional_info_2@@
-						<br/>
 					</div>
 				</div>
 				<!-- footer.xsl -->
