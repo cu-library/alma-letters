@@ -5,7 +5,7 @@ The Alma letters used by Carleton University Library
 - [x] Patron Circulation Summary (FulUserBorrowingActivityLetter.xsl)
 - [x] Courtesy Letter (FulUserLoansCourtesyLetter.xsl)
 - [x] Fine Fee Payment Receipt Letter (FineFeePaymentReceiptLetter.xsl)
-- [ ] Fines And Fees Report Letter (FinesAndFeesReportLetter.xsl)
+- [x] Fines And Fees Report Letter (FinesAndFeesReportLetter.xsl)
 - [ ] Cancel Request Letter (FulCancelRequestLetter.xsl)
 - [ ] Fines Fees Notification Letter (FulFinesFeesNotificationLetter.xsl)
 - [ ] Lost Loan Letter (FulLostLoanLetter.xsl)
