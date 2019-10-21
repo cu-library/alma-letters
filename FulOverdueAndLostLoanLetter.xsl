@@ -119,6 +119,9 @@
 						<br/>
 						<table>
 							<tr>
+								<td>Please return the item as soon as possible to the library or contact the staff regarding replacement charges.</td>
+							</tr>
+							<tr>
 								<td>For more information please visit your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
 							</tr>
 							<tr>
