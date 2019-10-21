@@ -49,7 +49,6 @@
 												<th>@@author@@</th>
 												<th>@@loan_date@@</th>
 												<th>@@due_date@@</th>
-												<th>@@library@@</th>
 												<th>@@description@@</th>
 											</tr>
 											<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
@@ -65,9 +64,6 @@
 													</td>
 													<td>
 														<xsl:value-of select="new_due_date_str"/>
-													</td>
-													<td>
-														<xsl:value-of select="library_name"/>
 													</td>
 													<td>
 														<xsl:value-of select="description"/>
