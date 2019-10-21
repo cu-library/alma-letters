@@ -21,6 +21,11 @@
 				<br/>
 				<div class="messageArea">
 					<div class="messageBody">
+						<table>
+							<tr>
+								<td>A payment has been received on your Library Account.</td>
+							</tr>
+						</table>
 						<xsl:if test="notification_data/transaction_id != ''">
 							<h4>@@transaction_id@@:
 								<xsl:value-of select="/notification_data/transaction_id"/></h4>
