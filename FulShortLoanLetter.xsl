@@ -42,6 +42,9 @@
 						<br/>
 						<table>
 							<tr>
+								<td>If the item(s) is/are not returned before the due date and time, overdue charges will be added to your Library Account.</td>
+							</tr>
+							<tr>
 								<td>For more information please visit your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
 							</tr>
 							<tr>
