@@ -66,7 +66,23 @@
 										<xsl:value-of select="fines_fee_transactions/fines_fee_transaction/transaction_amount_display"/>
 									</td>
 									<td>
-										<xsl:value-of select="fines_fee_transactions/fines_fee_transaction/transaction_method"/>
+										<xsl:choose>
+											<xsl:when test="fines_fee_transactions/fines_fee_transaction/transaction_method = 'CASH'">
+												Campus Card
+											</xsl:when>
+											<xsl:when test="fines_fee_transactions/fines_fee_transaction/transaction_method = 'CREDIT_CARD'">
+												Visa
+											</xsl:when>
+											<xsl:when test="fines_fee_transactions/fines_fee_transaction/transaction_method = 'CHECK'">
+												Mastercard
+											</xsl:when>
+											<xsl:when test="fines_fee_transactions/fines_fee_transaction/transaction_method = 'DEBIT_CARD'">
+												Debit Card
+											</xsl:when>
+											<xsl:otherwise>
+												<xsl:value-of select="fines_fee_transactions/fines_fee_transaction/transaction_method"/>
+											</xsl:otherwise>
+										</xsl:choose>
 									</td>
 									<td>
 										<xsl:value-of select="fines_fee_transactions/fines_fee_transaction/transaction_note"/>
