@@ -15,6 +15,7 @@
 				<h1>
 					<b>@@requested_for@@ :
 
+
 						<xsl:value-of select="notification_data/user_for_printing/name"/></b>
 				</h1>
 				<xsl:call-template name="head"/>
@@ -33,6 +34,7 @@
 								<tr>
 									<td>
 										<b>@@please_note@@: </b>@@manual_description_note@@ -
+
 										<xsl:value-of select="notification_data/request/manual_description"/></td>
 								</tr>
 							</xsl:if>
@@ -44,10 +46,18 @@
 							</tr>
 							<tr>
 								<td>
-									<b>@@item_barcode@@: </b>
-									<img alt="Item Barcode" src="cid:item_id_barcode.png"/>
+									<b>@@item_barcode@@ Image: </b>
+									<img alt="Item Barcode Image" src="cid:item_id_barcode.png"/>
 								</td>
 							</tr>
+							<xsl:for-each select="notification_data/phys_item_display/available_items/available_item/barcode">
+								<tr>
+									<td>
+										<b>Item Barcode: </b>
+										<xsl:value-of select="."/>
+									</td>
+								</tr>
+							</xsl:for-each>
 							<xsl:if test="notification_data/external_id != ''">
 								<tr>
 									<td>
@@ -72,24 +82,28 @@
 							<xsl:if test="notification_data/phys_item_display/isbn != ''">
 								<tr>
 									<td>@@isbn@@:
+
 										<xsl:value-of select="notification_data/phys_item_display/isbn"/></td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/phys_item_display/issn != ''">
 								<tr>
 									<td>@@issn@@:
+
 										<xsl:value-of select="notification_data/phys_item_display/issn"/></td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/phys_item_display/edition != ''">
 								<tr>
 									<td>@@edition@@:
+
 										<xsl:value-of select="notification_data/phys_item_display/edition"/></td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/phys_item_display/imprint != ''">
 								<tr>
 									<td>@@imprint@@:
+
 										<xsl:value-of select="notification_data/phys_item_display/imprint"/></td>
 								</tr>
 							</xsl:if>
@@ -127,6 +141,7 @@
 												<xsl:value-of select="."/>
 												 
 
+
 											</xsl:for-each>
 										</td>
 									</tr>
@@ -139,6 +154,7 @@
 												<xsl:value-of select="."/>
 												 
 
+
 											</xsl:for-each>
 										</td>
 									</tr>
@@ -150,6 +166,7 @@
 											<xsl:for-each select="notification_data/phys_item_display/shelving_location/string">
 												<xsl:value-of select="."/>
 												 
+
 
 											</xsl:for-each>
 										</td>
@@ -165,6 +182,7 @@
 												<xsl:value-of select="."/>
 												 
 
+
 											</xsl:for-each>
 										</td>
 									</tr>
@@ -177,6 +195,7 @@
 												<xsl:value-of select="."/>
 												 
 
+
 											</xsl:for-each>
 										</td>
 									</tr>
@@ -188,6 +207,7 @@
 											<xsl:for-each select="notification_data/phys_item_display/display_alt_call_numbers/string">
 												<xsl:value-of select="."/>
 												 
+
 
 											</xsl:for-each>
 										</td>
