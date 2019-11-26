@@ -42,14 +42,12 @@
 									<img alt="Request Barcode" src="cid:request_id_barcode.png"/>
 								</td>
 							</tr>
-							<xsl:if test="notification_data/request/selected_inventory_type='ITEM'">
-								<tr>
-									<td>
-										<b>@@item_barcode@@: </b>
-										<img alt="Item Barcode" src="cid:item_id_barcode.png"/>
-									</td>
-								</tr>
-							</xsl:if>
+							<tr>
+								<td>
+									<b>@@item_barcode@@: </b>
+									<img alt="Item Barcode" src="cid:item_id_barcode.png"/>
+								</td>
+							</tr>
 							<xsl:if test="notification_data/external_id != ''">
 								<tr>
 									<td>
