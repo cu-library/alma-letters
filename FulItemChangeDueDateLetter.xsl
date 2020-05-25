@@ -23,6 +23,11 @@
 						<table border="0" cellpadding="5" cellspacing="0">
 							<tr>
 								<td>
+									We have extended due dates for physical items to July 31st 2020 as the building is still closed to the public. If you have returned your items already, staff have not been in the building since March 15th 2020. Rest assured these items will be removed from your account, and no overdue or replacement charges will be applied. If you are no longer in the Ottawa area and would like to return your items, we will be in touch to discuss options.
+								</td>
+							</tr>
+							<tr>
+								<td>
 									<xsl:if test="notification_data/message='RECALL_DUEDATE_CHANGE'">
 										<b>@@recall_and_date_change@@</b>
 									</xsl:if>
