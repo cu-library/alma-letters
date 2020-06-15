@@ -21,6 +21,30 @@
 				<br/>
 				<div class="messageArea">
 					<div class="messageBody">
+						<table>
+							<tr>
+								<td>
+									The item(s) you have requested are now available through curbside pick-up or mail delivery depending on the 
+									option you have chosen in your submission form.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									If you have chosen curbside service, please visit <a href="https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection">
+									https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection</a> for instructions  on how to pick-up items from the library.
+								</td>
+							</tr>
+							<tr>
+								<td>	
+									If you have chosen the mail delivery option, one of our staff will be in touch shortly to verify your mailing address.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Please email <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> if you have any questions. For faster service, please include your Banner ID/student number.
+								</td>
+							</tr>
+						</table>
 						<table border="0" cellpadding="5" cellspacing="0">
 							<tr>
 								<td>@@following_item_requested_on@@
