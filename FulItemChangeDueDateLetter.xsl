@@ -23,6 +23,11 @@
 						<table border="0" cellpadding="5" cellspacing="0">
 							<tr>
 								<td>
+									We have extended due dates for physical items to August 31st 2020. While the building remains closed to the public, we are now accepting returns for items checked out. Items can be returned to one of the book slots at the library. Please note that there will be a delay of checking in materials in accordance with our new book handling procedures so you may still see items on your account for up to 5 business days after the items are returned. If you have any questions or concerns please contact <a href="mailto:LibCirc@cunet.carleton.ca">LibCirc@cunet.carleton.ca</a>.
+								</td>
+							</tr>
+							<tr>
+								<td>
 									<xsl:if test="notification_data/message='RECALL_DUEDATE_CHANGE'">
 										<b>@@recall_and_date_change@@</b>
 									</xsl:if>
