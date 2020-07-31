@@ -43,16 +43,6 @@
 									Please email <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> if you have any questions. For faster service, please include your Banner ID/student number.
 								</td>
 							</tr>
-							<tr>
-								<td>
-									The item will be held for you until 05/08/2020.
-								</td>
-							</tr>
-							<tr>
-								<td>
-									For more information on please login to your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.
-								</td>
-							</tr>
 						</table>
 						<table border="0" cellpadding="5" cellspacing="0">
 							<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
@@ -83,7 +73,7 @@
 						<br/>
 						<table>
 							<tr>
-								<td>For more information please visit your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
+								<td>For more information on please login to your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
 							</tr>
 							<tr>
 								<td>If you have any questions please contact a staff member from Access Services at <a href="mailto:LibCirc@cunet.carleton.ca">LibCirc@cunet.carleton.ca</a> or 613-520-2600 x2734.</td>
