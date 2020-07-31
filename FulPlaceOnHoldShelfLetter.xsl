@@ -29,7 +29,7 @@
 							</tr>
 							<tr>
 								<td>
-									If you have chosen curbside service, upon arrival please remain in your vehicle and call <a href="tel:1-343-996-9167">(343) 996-9167</a>. Visit  <a href="https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection">
+									If you have chosen curbside service, upon arrival please remain in your vehicle and call <a href="tel:1-343-996-9167">(343) 996-9167</a>. Visit <a href="https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection">
 									https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection</a> for instructions on how to pick-up items from the library.
 								</td>
 							</tr>
@@ -73,7 +73,7 @@
 						<br/>
 						<table>
 							<tr>
-								<td>For more information on please login to your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
+								<td>For more information please login to your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
 							</tr>
 							<tr>
 								<td>If you have any questions please contact a staff member from Access Services at <a href="mailto:LibCirc@cunet.carleton.ca">LibCirc@cunet.carleton.ca</a> or 613-520-2600 x2734.</td>
