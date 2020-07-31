@@ -24,24 +24,33 @@
 						<table>
 							<tr>
 								<td>
-									The item(s) you have requested are now available through curbside pick-up or mail delivery depending on the 
-									option you have chosen in your submission form.
+									The item(s) you have requested are now available through curbside pick-up or are being prepared for mail deliver, depending on the option you have chosen in your submission form.
 								</td>
 							</tr>
 							<tr>
 								<td>
-									If you have chosen curbside service, please visit <a href="https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection">
-									https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection</a> for instructions  on how to pick-up items from the library.
+									If you have chosen curbside service, upon arrival please remain in your vehicle and call <a href="tel:1-343-996-9167">(343) 996-9167</a>. Visit  <a href="https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection">
+									https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection</a> for instructions on how to pick-up items from the library.
 								</td>
 							</tr>
 							<tr>
-								<td>	
-									If you have chosen the mail delivery option, one of our staff will be in touch shortly to verify your mailing address.
+								<td>
+									If you have chosen the mail delivery option, one of our staff will be in touch by telephone to confirm your mailing address.
 								</td>
 							</tr>
 							<tr>
 								<td>
 									Please email <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> if you have any questions. For faster service, please include your Banner ID/student number.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									The item will be held for you until 05/08/2020.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									For more information on please login to your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.
 								</td>
 							</tr>
 						</table>
