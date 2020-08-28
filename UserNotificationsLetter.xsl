@@ -23,21 +23,26 @@
 				<div class="messageArea">
 					<div class="messageBody">
 						<table border="0" cellpadding="5" cellspacing="0">
-							<xsl:choose>
-								<xsl:when test="notification_data/notification_type = 'NOTIFY_PASSWORD_CHANGE' ">
-									<tr>
-										<td>
-											<h3>@@Line_1@@</h3>
-											<xsl:value-of select="notification_data/temp_password"/>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<h3>@@Line_2@@</h3>
-										</td>
-									</tr>
-								</xsl:when>
-							</xsl:choose>
+							<tr>
+								<td>
+									We would like to remind you that you have library materials currently checked out which are due shortly or now overdue. Late fees are currently suspended and will not be applied to your account. Please login to your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a> to review items on loan and verify due dates.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									If you are able to return items, please bring them to one of our book drop locations at the Library. Returns will not be accepted at the Library Services Desk at this time. Items will be removed from your account 4-5 business days after return due to new book handling protocols.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									If you are unable to return items currently checked out, or you have already returned them to another academic library in Ontario, please email a staff member from Access Services at <a href="mailto:libcirc@library.carleton.ca">libcirc@library.carleton.ca</a> for assistance or call 613-520-2600 x2734.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									For more information on the changes to library services this Fall see <a href="https://library.carleton.ca/covid-19">https://library.carleton.ca/covid-19</a>.
+								</td>
+							</tr>
 						</table>
 					</div>
 				</div>
