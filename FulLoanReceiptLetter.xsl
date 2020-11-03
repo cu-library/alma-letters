@@ -24,6 +24,11 @@
 						<table border="0" cellpadding="5" cellspacing="0">
 							<tr>
 								<td>
+									<strong>Note:</strong> If you requested Mail Delivery, your items have been checked out to you and are now in the process of being mailed. Unfortunately we cannot estimate delivery times.
+								</td>
+							</tr>
+							<tr>
+								<td>
 									<h>@@inform_loaned_items@@
 										<xsl:value-of select="notification_data/organization_unit/name"/>
 										, 
