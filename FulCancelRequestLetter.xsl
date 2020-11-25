@@ -36,6 +36,14 @@
 									<xsl:call-template name="recordTitle"/> <!-- recordTitle.xsl -->
 								</td>
 							</tr>
+							<xsl:if test="notification_data/request/cancel_reason != ''">
+								<tr>
+									<td style="font-size: 110%;">
+										<b>@@request_cancellation_note@@: </b>
+										<xsl:value-of select="notification_data/request/cancel_reason"/>
+									</td>
+								</tr>
+							</xsl:if>
 							<xsl:if test="notification_data/request/start_time != ''">
 								<tr>
 									<td>
@@ -66,14 +74,6 @@
 									<xsl:value-of select="notification_data/request/status_note_display"/>
 								</td>
 							</tr>
-							<xsl:if test="notification_data/request/cancel_reason != ''">
-								<tr>
-									<td>
-										<b>@@request_cancellation_note@@: </b>
-										<xsl:value-of select="notification_data/request/cancel_reason"/>
-									</td>
-								</tr>
-							</xsl:if>
 						</table>
 						<br/>
 						<table>
