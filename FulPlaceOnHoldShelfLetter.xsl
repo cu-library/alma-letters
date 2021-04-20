@@ -29,7 +29,7 @@
 							</tr>
 							<tr>
 								<td>
-									If you have chosen curbside pick-up: Upon arrival please remain in your vehicle, have your Banner ID/Student Number readily available, and call <a href="tel:1-343-996-9167">(343) 996-9167</a>. Visit <a href="https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection">
+									If you have chosen curbside pick-up: Upon arrival please remain in your vehicle, have your Banner ID/Student Number readily available, and call <a href="tel:1-343-996-9167">(343) 996-9167</a>. Due to construction in the Dunton Tower parking lot, our curbside pickup location has been slightly relocated up library road to the book return slot/door on the exterior of the library building. Parking is still available along library road for short pickups. Visit <a href="https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection">
 									https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection</a> for full instructions on how to pick-up items from the library. <strong>Curbside pickup is open Monday to Friday, 9:00 am - 12:00pm and 1:00pm-4:00pm.</strong>
 								</td>
 							</tr>
