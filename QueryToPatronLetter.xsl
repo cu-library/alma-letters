@@ -31,7 +31,7 @@
 						<td>
 							Dear
 							<xsl:for-each select="notification_data/receivers/receiver/user">
-								<xsl:value-of select="first_name"/> <xsl:value-of select="last_name"/>,
+								<xsl:value-of select="first_name"/>&#160;<xsl:value-of select="last_name"/>,
 							</xsl:for-each>
 						</td>
 					</tr>
