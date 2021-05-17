@@ -30,12 +30,12 @@
 							</tr>
 							<tr>
 								<td>
-									 If you are able to return items, please bring them to one of our book drop locations at the Library. Returns will not be accepted at the Library Services Desk as the Library building is currently closed. If you are not able to come to the Library please reach out to a staff member from Access Services at <a href="mailto:libcirc@library.carleton.ca">libcirc@library.carleton.ca</a> or call 613-520-2600 x2734 as they will be able to assist you with options for returning materials. If the materials are still needed, our staff will be happy to assist you with renewing the items as well.
+									If you are able to return items, please bring them to one of our book drop locations at the Library. Returns will not be accepted at the Library Services Desk as the Library building is currently closed. If you are not able to come to the Library please reach out to a staff member from Access Services at <a href="mailto:libcirc@library.carleton.ca">libcirc@library.carleton.ca</a> or call 613-520-2600 x2734 as they will be able to assist you with options for returning materials. If the materials are still needed, our staff will be happy to assist you with renewing the items as well.
 								</td>
 							</tr>
 							<tr>
 								<td>
-									 Please login to your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a> to review items on loan and verify due dates.
+									Please login to your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a> to review items on loan and verify due dates.
 								</td>
 							</tr>
 							<tr>
