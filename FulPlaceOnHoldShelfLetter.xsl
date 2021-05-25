@@ -36,13 +36,13 @@
 								<td>
 									<br>
 									Visit <a href="https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection">
-									https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection</a> for additional information on how to pick-up items from the library.  <strong>Curbside pickup is open Monday to Friday, 9:00 am - 12:00pm and 1:00pm-4:00pm.</strong>
+									https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection</a> for additional information on how to pick-up items from the library.  <strong>Curbside pickup is open Monday to Friday, 9:00 am - 12:00pm and 1:00pm-4:00pm.</strong></br>
 								</td>
 							</tr>
 							<tr>
 								<td>
 								    <br>
-									If you have chosen the mail delivery option: Please email your mailing address to <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> and a staff member will reach out to confirm details. 
+									If you have chosen the mail delivery option: Please email your mailing address to <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> and a staff member will reach out to confirm details. </br>
 								</td>
 							</tr>
 						</table>
