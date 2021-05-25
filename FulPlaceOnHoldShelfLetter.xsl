@@ -24,23 +24,25 @@
 						<table>
 							<tr>
 								<td>
-									The item(s) you have requested are now available through curbside pick-up or are being prepared for mail delivery, depending on the option you have chosen in your submission form.
+									The item(s) you have requested are ready for curbside pick-up or are being prepared for mail delivery.
 								</td>
 							</tr>
 							<tr>
 								<td>
-									If you have chosen curbside pick-up: Upon arrival please remain in your vehicle, have your Banner ID/Student Number readily available, and call <a href="tel:1-343-996-9167">(343) 996-9167</a>. Due to construction in the Dunton Tower parking lot, our curbside pickup location has been slightly relocated up library road to the book return slot/door on the exterior of the library building. Parking is still available along library road for short pickups. Visit <a href="https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection">
-									https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection</a> for full instructions on how to pick-up items from the library. <strong>Curbside pickup is open Monday to Friday, 9:00 am - 12:00pm and 1:00pm-4:00pm.</strong>
+									If you have chosen curbside pick-up: Upon arrival please remain in your vehicle, have your Banner ID/Student Number readily available, and call <a href="tel:1-343-996-9167">(343) 996-9167</a>. Due to construction in the Dunton Tower parking lot, our curbside pickup location has been slightly relocated up library road to the book return slot/door on the exterior of the library building. Parking is still available along library road for short pickups. 
 								</td>
 							</tr>
 							<tr>
 								<td>
-									If you have chosen the mail delivery option: One of our staff will be in touch by telephone to confirm your mailing address.
+									<br>
+									Visit <a href="https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection">
+									https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection</a> for additional information on how to pick-up items from the library.  <strong>Curbside pickup is open Monday to Friday, 9:00 am - 12:00pm and 1:00pm-4:00pm.</strong>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									Please email <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> if you have any questions.
+								    <br>
+									If you have chosen the mail delivery option: Please email your mailing address to <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> and a staff member will reach out to confirm details. 
 								</td>
 							</tr>
 						</table>
@@ -76,7 +78,7 @@
 								<td>For more information please login to your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
 							</tr>
 							<tr>
-								<td>If you have any questions please contact a staff member from Access Services at <a href="mailto:LibCirc@cunet.carleton.ca">LibCirc@cunet.carleton.ca</a> or 613-520-2600 x2734.</td>
+								<td>If you have any questions please contact a staff member from Access Services at <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> or 613-520-2600 x2734.</td>
 							</tr>
 						</table>
 					</div>
