@@ -21,133 +21,445 @@
 				<br/>
 				<div class="messageArea">
 					<div class="messageBody">
-						<table border="0" cellpadding="5" cellspacing="0">
-							<xsl:if test="notification_data/item_loans/item_loan or notification_data/overdue_item_loans/item_loan">
-								<tr>
-									<td>
-										@@reminder_message@@
-										<br/>
-									</td>
-								</tr>
-								<xsl:if test="notification_data/overdue_loans_by_library/library_loans_for_display">
-									<tr>
-										<td>
-											<b>@@overdue_loans@@</b>
-										</td>
-									</tr>
-									<xsl:for-each select="notification_data/overdue_loans_by_library/library_loans_for_display">
-										<tr>
-											<td>
-												<table cellpadding="5" class="listing">
-													<xsl:attribute name="style">
-														<xsl:call-template name="mainTableStyleCss"/>
-													</xsl:attribute>
+						<!-- AFN CODE -->
+						<xsl:choose>
+							<!-- AFN test (is_afn_patron) defined in footer.xsl -->
+							<xsl:when test="(string-length($is_afn_patron) > 0)">
+								<!-- handle AFN supported languages (is_preferred_lang_fr) defined in footer.xsl-->
+								<xsl:choose>
+									<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
+										<!-- handle AFN default language fr -->
+										<table cellspacing="0" cellpadding="5" border="0">
+											<xsl:if test="notification_data/item_loans/item_loan or notification_data/overdue_item_loans/item_loan">
+												<tr>
+													<td>
+														<!-- AFN VERSION 1.1 -->
+														<b>Veuillez voir ci-dessous pour le(s) document(s) en prêt dans votre compte à <xsl:value-of select="notification_data/organization_unit/name"/>
+														</b>
+														<br/>
+													</td>
+												</tr>
+												<xsl:if test="notification_data/overdue_loans_by_library/library_loans_for_display">
 													<tr>
-														<th>@@title@@</th>
-														<th>@@description@@</th>
-														<th>@@author@@</th>
-														<th>@@due_date@@</th>
+														<td>
+															<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
+															<b>Prêts en souffrance</b>
+														</td>
 													</tr>
-													<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
+													<xsl:for-each select="notification_data/overdue_loans_by_library/library_loans_for_display">
 														<tr>
 															<td>
-																<xsl:value-of select="title"/>
+																<table cellpadding="5" class="listing">
+																	<xsl:attribute name="style">
+																		<xsl:call-template name="mainTableStyleCss" />
+																	</xsl:attribute>
+																	<tr align="center" bgcolor="#f5f5f5">
+																		<td colspan="5">
+																			<h3>
+																				<xsl:value-of select="organization_unit/name" />
+																			</h3>
+																		</td>
+																	</tr>
+																	<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE
+																		<th>Title</th>
+																		<th>Author</th>
+																		<th>Due Date</th>
+																		<th>Fine</th>
+																		<th>Library</th>
+																	-->
+																	<tr>
+																		<th>Titre</th>
+																		<th>Auteur</th>
+																		<th>Date d'échéance</th>
+																		<th>Amende</th>
+																		<th>Bibliothèque</th>
+																	</tr>
+																	<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
+																		<tr>
+																			<td>
+																				<xsl:value-of select="title"/>
+																			</td>
+																			<td>
+																				<xsl:value-of select="author"/>
+																			</td>
+																			<td>
+																				<xsl:value-of select="due_date"/>
+																			</td>
+																			<td>
+																				<xsl:value-of select="normalized_fine"/>
+																			</td>
+																			<td>
+																				<xsl:value-of select="library_name"/>
+																			</td>
+																		</tr>
+																	</xsl:for-each>
+																</table>
 															</td>
+															<hr/>
+															<br/>
+														</tr>
+													</xsl:for-each>
+												</xsl:if>
+												<xsl:if test="notification_data/loans_by_library/library_loans_for_display">
+													<tr>
+														<td>
+															<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
+															<b>Prêts</b>
+														</td>
+													</tr>
+													<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
+														<tr>
 															<td>
-																<xsl:value-of select="description"/>
-															</td>
-															<td>
-																<xsl:value-of select="author"/>
-															</td>
-															<td>
-																<xsl:value-of select="due_date"/>
+																<table cellpadding="5" class="listing">
+																	<xsl:attribute name="style">
+																		<xsl:call-template name="mainTableStyleCss" />
+																	</xsl:attribute>
+																	<tr align="center" bgcolor="#f5f5f5">
+																		<td colspan="3">
+																			<h3>
+																				<xsl:value-of select="organization_unit/name" />
+																			</h3>
+																		</td>
+																	</tr>
+																	<tr>
+																		<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE
+																			<th>Title</th>
+																			<th>Due Date</th>
+																			<th>Fine</th>
+																		-->
+																		<th>Titre</th>
+																		<th>Date d'échéance</th>
+																		<th>Amende</th>
+																	</tr>
+																	<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
+																		<tr>
+																			<td>
+																				<xsl:value-of select="title"/>
+																			</td>
+																			<td>
+																				<xsl:value-of select="due_date"/>
+																			</td>
+																			<td>
+																				<xsl:value-of select="normalized_fine"/>
+																			</td>
+																		</tr>
+																	</xsl:for-each>
+																</table>
+																<hr/>
+																<br/>
 															</td>
 														</tr>
 													</xsl:for-each>
-												</table>
-											</td>
-										</tr>
-									</xsl:for-each>
-								</xsl:if>
-								<xsl:if test="notification_data/loans_by_library/library_loans_for_display">
-									<tr>
-										<td>
-											<b>@@loans@@</b>
-										</td>
-									</tr>
-									<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
-										<tr>
-											<td>
-												<table cellpadding="5" class="listing">
-													<xsl:attribute name="style">
-														<xsl:call-template name="mainTableStyleCss"/>
-													</xsl:attribute>
+												</xsl:if>
+											</xsl:if>
+											<xsl:if test="notification_data/organization_fee_list/string">
+												<tr>
+													<td>
+														<!-- AFN VERSION 1.1 -->
+														<b>Les amendes à votre compte:</b>
+													</td>
+												</tr>
+												<xsl:for-each select="notification_data/organization_fee_list/string">
 													<tr>
-														<th>@@title@@</th>
-														<th>@@description@@</th>
-														<th>@@author@@</th>
-														<th>@@due_date@@</th>
+														<td>
+															<xsl:value-of select="."/>
+														</td>
 													</tr>
-													<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
+												</xsl:for-each>
+												<tr>
+													<td>
+														<b>
+															<!-- AFN VERSION 1.1 -->
+															Total:<xsl:value-of select="notification_data/total_fee"/>
+														</b>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
+														<b>Veuillez régler votre compte dans les plus brefs délais.</b>
+														<br/>
+													</td>
+												</tr>
+											</xsl:if>
+										</table>
+									</xsl:when>
+									<xsl:otherwise>
+										<!-- handle AFN default language en -->
+										<table cellspacing="0" cellpadding="5" border="0">
+											<xsl:if test="notification_data/item_loans/item_loan or notification_data/overdue_item_loans/item_loan">
+												<tr>
+													<td>
+														<b>Please see below for item(s) checked out on your account at <xsl:value-of select="notification_data/organization_unit/name"/>
+														</b>
+														<br/>
+													</td>
+												</tr>
+												<xsl:if test="notification_data/overdue_loans_by_library/library_loans_for_display">
+													<tr>
+														<td>
+															<b>Overdue Loans</b>
+														</td>
+													</tr>
+													<xsl:for-each select="notification_data/overdue_loans_by_library/library_loans_for_display">
 														<tr>
 															<td>
-																<xsl:value-of select="title"/>
-															</td>
-															<td>
-																<xsl:value-of select="description"/>
-															</td>
-															<td>
-																<xsl:value-of select="author"/>
-															</td>
-															<td>
-																<xsl:value-of select="due_date"/>
+																<table cellpadding="5" class="listing">
+																	<xsl:attribute name="style">
+																		<xsl:call-template name="mainTableStyleCss" />
+																	</xsl:attribute>
+																	<tr align="center" bgcolor="#f5f5f5">
+																		<td colspan="5">
+																			<h3>
+																				<xsl:value-of select="organization_unit/name" />
+																			</h3>
+																		</td>
+																	</tr>
+																	<tr>
+																		<th>Title</th>
+																		<th>Author</th>
+																		<th>Due Date</th>
+																		<th>Fine</th>
+																		<th>Library</th>
+																	</tr>
+																	<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
+																		<tr>
+																			<td>
+																				<xsl:value-of select="title"/>
+																			</td>
+																			<td>
+																				<xsl:value-of select="author"/>
+																			</td>
+																			<td>
+																				<xsl:value-of select="due_date"/>
+																			</td>
+																			<td>
+																				<xsl:value-of select="normalized_fine"/>
+																			</td>
+																			<td>
+																				<xsl:value-of select="library_name"/>
+																			</td>
+																		</tr>
+																	</xsl:for-each>
+																</table>
+																<hr/>
+																<br/>
 															</td>
 														</tr>
 													</xsl:for-each>
-												</table>
+												</xsl:if>
+												<xsl:if test="notification_data/loans_by_library/library_loans_for_display">
+													<tr>
+														<td>
+															<b>Loans</b>
+														</td>
+													</tr>
+													<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
+														<tr>
+															<td>
+																<table cellpadding="5" class="listing">
+																	<xsl:attribute name="style">
+																		<xsl:call-template name="mainTableStyleCss" />
+																	</xsl:attribute>
+																	<tr align="center" bgcolor="#f5f5f5">
+																		<td colspan="3">
+																			<h3>
+																				<xsl:value-of select="organization_unit/name" />
+																			</h3>
+																		</td>
+																	</tr>
+																	<tr>
+																		<th>Title</th>
+																		<th>Due Date</th>
+																		<th>Fine</th>
+																	</tr>
+																	<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
+																		<tr>
+																			<td>
+																				<xsl:value-of select="title"/>
+																			</td>
+																			<td>
+																				<xsl:value-of select="due_date"/>
+																			</td>
+																			<td>
+																				<xsl:value-of select="normalized_fine"/>
+																			</td>
+																		</tr>
+																	</xsl:for-each>
+																</table>
+																<hr/>
+																<br/>
+															</td>
+														</tr>
+													</xsl:for-each>
+												</xsl:if>
+											</xsl:if>
+											<xsl:if test="notification_data/organization_fee_list/string">
+												<tr>
+													<td>
+														<b>Fines on your account:</b>
+													</td>
+												</tr>
+												<xsl:for-each select="notification_data/organization_fee_list/string">
+													<tr>
+														<td>
+															<xsl:value-of select="."/>
+														</td>
+													</tr>
+												</xsl:for-each>
+												<tr>
+													<td>
+														<b>
+															Total: <xsl:value-of select="notification_data/total_fee"/>
+														</b>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Please settle your account at the earliest opportunity.</b>
+														<br/>
+													</td>
+												</tr>
+											</xsl:if>
+										</table>
+									</xsl:otherwise>
+								</xsl:choose>
+							</xsl:when>
+							<xsl:otherwise>
+								<!-- Carleton letter -->
+								<table border="0" cellpadding="5" cellspacing="0">
+									<xsl:if test="notification_data/item_loans/item_loan or notification_data/overdue_item_loans/item_loan">
+										<tr>
+											<td>
+												@@reminder_message@@
+												<br/>
 											</td>
 										</tr>
-									</xsl:for-each>
-								</xsl:if>
-							</xsl:if>
-							<xsl:if test="notification_data/organization_fee_list/string">
-								<tr>
-									<td>
-										<b>@@debt_message@@</b>
-									</td>
-								</tr>
-								<xsl:for-each select="notification_data/organization_fee_list/string">
+										<xsl:if test="notification_data/overdue_loans_by_library/library_loans_for_display">
+											<tr>
+												<td>
+													<b>@@overdue_loans@@</b>
+												</td>
+											</tr>
+											<xsl:for-each select="notification_data/overdue_loans_by_library/library_loans_for_display">
+												<tr>
+													<td>
+														<table cellpadding="5" class="listing">
+															<xsl:attribute name="style">
+																<xsl:call-template name="mainTableStyleCss"/>
+															</xsl:attribute>
+															<tr>
+																<th>@@title@@</th>
+																<th>@@description@@</th>
+																<th>@@author@@</th>
+																<th>@@due_date@@</th>
+															</tr>
+															<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
+																<tr>
+																	<td>
+																		<xsl:value-of select="title"/>
+																	</td>
+																	<td>
+																		<xsl:value-of select="description"/>
+																	</td>
+																	<td>
+																		<xsl:value-of select="author"/>
+																	</td>
+																	<td>
+																		<xsl:value-of select="due_date"/>
+																	</td>
+																</tr>
+															</xsl:for-each>
+														</table>
+													</td>
+												</tr>
+											</xsl:for-each>
+										</xsl:if>
+										<xsl:if test="notification_data/loans_by_library/library_loans_for_display">
+											<tr>
+												<td>
+													<b>@@loans@@</b>
+												</td>
+											</tr>
+											<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
+												<tr>
+													<td>
+														<table cellpadding="5" class="listing">
+															<xsl:attribute name="style">
+																<xsl:call-template name="mainTableStyleCss"/>
+															</xsl:attribute>
+															<tr>
+																<th>@@title@@</th>
+																<th>@@description@@</th>
+																<th>@@author@@</th>
+																<th>@@due_date@@</th>
+															</tr>
+															<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
+																<tr>
+																	<td>
+																		<xsl:value-of select="title"/>
+																	</td>
+																	<td>
+																		<xsl:value-of select="description"/>
+																	</td>
+																	<td>
+																		<xsl:value-of select="author"/>
+																	</td>
+																	<td>
+																		<xsl:value-of select="due_date"/>
+																	</td>
+																</tr>
+															</xsl:for-each>
+														</table>
+													</td>
+												</tr>
+											</xsl:for-each>
+										</xsl:if>
+									</xsl:if>
+									<xsl:if test="notification_data/organization_fee_list/string">
+										<tr>
+											<td>
+												<b>@@debt_message@@</b>
+											</td>
+										</tr>
+										<xsl:for-each select="notification_data/organization_fee_list/string">
+											<tr>
+												<td>
+													<xsl:value-of select="."/>
+												</td>
+											</tr>
+										</xsl:for-each>
+										<tr>
+											<td>
+												<b>@@total@@
+													<xsl:value-of select="notification_data/total_fee"/></b>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<b>@@please_pay_message@@</b>
+											</td>
+										</tr>
+									</xsl:if>
+								</table>
+								<br />
+								<table>
 									<tr>
-										<td>
-											<xsl:value-of select="."/>
-										</td>
+										<td>For more information please visit your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
 									</tr>
-								</xsl:for-each>
-								<tr>
-									<td>
-										<b>@@total@@
-											<xsl:value-of select="notification_data/total_fee"/></b>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<b>@@please_pay_message@@</b>
-									</td>
-								</tr>
-							</xsl:if>
-						</table>
-						<br />
-						<table>
-							<tr>
-								<td>For more information please visit your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
-							</tr>
-							<tr>
-								<td>If you have any questions please contact a staff member from Access Services at <a href="mailto:LibCirc@cunet.carleton.ca">LibCirc@cunet.carleton.ca</a> or 613-520-2600 x2734.</td>
-							</tr>
-						</table>
+									<tr>
+										<td>If you have any questions please contact a staff member from Access Services at <a href="mailto:LibCirc@cunet.carleton.ca">LibCirc@cunet.carleton.ca</a> or 613-520-2600 x2734.</td>
+									</tr>
+								</table>
+								<!-- END OF AFN TODO -->
+							</xsl:otherwise>
+						</xsl:choose>
+						<!-- END OF AFN CODE -->
 					</div>
 				</div>
-				<xsl:call-template name="lastFooter"/> <!-- footer.xsl -->
+				<!-- AFN footer template options from footer.xsl -->
+				<xsl:call-template name="AFNLastFooter" />
+				<xsl:call-template name="AFNAccount" />
 			</body>
 		</html>
 	</xsl:template>

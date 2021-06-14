@@ -15,7 +15,18 @@
 				<td colspan="2">
 					<div id="mailHeader">
 						<div class="alignLeft" id="logoContainer">
-							<img alt="logo" src="cid:logo.jpg"/>
+							<!-- AFN CODE -->
+							<xsl:choose>
+								<xsl:when test="(notification_data/user_for_printing/user_group = 'AFNUSER') or (notification_data/user/user_group = 'AFNUSER') or (notification_data/request/user_group = 		'AFNUSER') or (notification_data/user_for_printing/user_group = 'TUGUSER') or (notification_data/user/user_group = 'TUGUSER') or (notification_data/request/user_group = 'TUGUSER')">
+									<img src="https://ocul.on.ca/omni/images/omni_logo_for_letters.jpg" alt="logo"/>
+								</xsl:when>
+								<xsl:otherwise>
+									<!-- AFN TODO -->
+									<img alt="logo" src="cid:logo.jpg"/>
+									<!-- END OF AFN TODO -->
+								</xsl:otherwise>
+							</xsl:choose>
+							<!-- END OF AFN CODE -->
 						</div>
 					</div>
 				</td>

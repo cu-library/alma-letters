@@ -14,12 +14,9 @@
 			<body>
 				<h1>
 					<b>@@requested_for@@ :
-
-
 						<xsl:value-of select="notification_data/user_for_printing/name"/></b>
 				</h1>
-				<xsl:call-template name="head"/>
-				<!-- header.xsl -->
+				<xsl:call-template name="head"/> <!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
 						<table border="0" cellpadding="5" cellspacing="0">
