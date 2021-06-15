@@ -49,7 +49,7 @@
 												<td>
 													<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
 													<!-- Regarding your recent library request made on -->
-						                            Concernant votre récente demande de bibliothèque effectuée le							<xsl:value-of select="notification_data/request/create_date" />
+													Concernant votre récente demande de bibliothèque effectuée le <xsl:value-of select="notification_data/request/create_date" />
 												</td>
 											</tr>
 										</table>
@@ -584,7 +584,7 @@
 									</tr>
 									<tr>
 										<td>
-											Interlibrary Loans
+											Access Services
 										</td>
 									</tr>
 								</table>
