@@ -258,8 +258,7 @@
 								<!-- Carleton letter -->
 								<table border="0" cellpadding="5" cellspacing="0" role="presentation">
 									<tr>
-										<td>@@requested
-										</td>
+										<td>@@requested@@:</td>
 									</tr>
 								</table>
 								<br/>
