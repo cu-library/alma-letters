@@ -584,7 +584,7 @@
 									</tr>
 									<tr>
 										<td>
-											Interlibrary Loans
+											Access Services
 										</td>
 									</tr>
 								</table>
