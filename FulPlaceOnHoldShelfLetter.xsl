@@ -138,20 +138,18 @@
 									</tr>
 									<tr>
 										<td>
-											If you have chosen curbside pick-up: Upon arrival please remain in your vehicle, have your Banner ID/Student Number readily available, and call <a href="tel:1-343-996-9167">(343) 996-9167</a>. Due to construction in the Dunton Tower parking lot, our curbside pickup location has been slightly relocated up library road to the book return slot/door on the exterior of the library building. Parking is still available along library road for short pickups.
+											If you have chosen curbside pick-up: Upon arrival please remain in your vehicle, have your Banner ID/Student Number readily available, and call <a href="tel:1-343-996-9167">(343) 996-9167</a>. Pick-up your items at MacOdrum Library Curbside Pickup. Our curbside pick-up location is on the exterior of the library building along Library Road (canal side). A book return is also located here.
 										</td>
 									</tr>
 									<tr>
 										<td>
-											<br>
 											Visit <a href="https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection">
-											https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection</a> for additional information on how to pick-up items from the library. <strong>Curbside pickup is open Monday to Friday, 9:00 am - 12:00pm and 1:00pm-4:00pm.</strong></br>
+											https://library.carleton.ca/services/curbside-pick-and-mail-delivery-library-print-collection</a> for additional information on how to pick-up items from the library. <strong>Curbside pickup is open Monday to Friday, 9:00 am - 12:00pm and 1:00pm-4:00pm.</strong>
 										</td>
 									</tr>
 									<tr>
 										<td>
-										    <br>
-											If you have chosen the mail delivery option: Please email your mailing address to <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> and a staff member will reach out to confirm details. </br>
+											If you have chosen the mail delivery option a staff member will be in touch to confirm your mailing details. If you did not include your mailing address at the time of submission, please email your mailing address to <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> as soon as possible to proceed with delivery.
 										</td>
 									</tr>
 								</table>
