@@ -45,7 +45,7 @@
 	</xsl:template>
 
 	<xsl:variable name="is_afn_patron">
-		<xsl:if test="(notification_data/user_for_printing/user_group = 'AFNUSER') or (notification_data/user/user_group = 'AFNUSER') or (notification_data/request/user_group = 'AFNUSER') or (	notification_data/user_for_printing/user_group = 'TUGUSER') or (notification_data/user/user_group = 'TUGUSER') or (notification_data/request/user_group = 'TUGUSER')">
+		<xsl:if test="(notification_data/user_for_printing/user_group = 'AFNUSER') or (notification_data/user/user_group = 'AFNUSER') or (notification_data/request/user_group = 'AFNUSER') or (notification_data/user_for_printing/user_group = 'TUGUSER') or (notification_data/user/user_group = 'TUGUSER') or (notification_data/request/user_group = 'TUGUSER')">
 			TRUE
 		</xsl:if>
 	</xsl:variable>
@@ -107,13 +107,15 @@
 										</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LU' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> omni@laurentian.ca / 705-675-4800 / @LaurentianLib </p>
+										<!-- AFN-VERSION 1.3 removed @LaurentianLib -->
+										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> omni@laurentian.ca / 705-675-4800  </p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_NIP' ">
 										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:circdesk@eclibrary.ca"> circdesk@eclibrary.ca</a> | 705-474-3450, ext. 4222 </p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_IT' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="https://guides.library.uoit.ca/contact"> Coordonnées des techniciens de l'Ontario</a> | <a href="	https://guides.library.durhamcollege.ca/contact"> Coordonnées du Collège Durham</a> </p>
+										<!-- AFN-VERSION 1.2 removed | durham campus info -->
+										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="https://guides.library.uoit.ca/contact"> Coordonnées des techniciens de l'Ontario</a></p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_QU' ">
 										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="https://library.queensu.ca/help-servers/ask-us"> Ask Us </a> </p>
@@ -122,7 +124,7 @@
 										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:library@uoguelph.ca"> library@uoguelph.ca</a> | 519-824-4120 x 53618</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_TU' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:library@trentu.ca"> library@trentu.ca</a> | Bata: 705-748-1011 x7423 | Durham: 905-435-5102 x5061 </p	>
+										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:library@trentu.ca"> library@trentu.ca</a> | Bata: 705-748-1011 x7423 | Durham: 905-435-5102 x5061 </p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_UO' ">
 										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:bibliolibrary@uottawa.ca"> bibliolibrary@uottawa.ca</a> | 613-562-5213 </p>
@@ -168,19 +170,21 @@
 										</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LU' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> / 705-675-4800 / @LaurentianLib </p>
+										<!-- AFN-VERSION 1.3 removed @LaurentianLib -->
+										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> / 705-675-4800  </p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_NIP' ">
 										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:circdesk@eclibrary.ca"> circdesk@eclibrary.ca</a> | 705-474-3450, ext. 4222 </p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_IT' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="https://guides.library.uoit.ca/contact"> Ontario Tech Contact Information</a> | <a href="	https://guides.library.durhamcollege.ca/contact"> Durham College Contact Information</a> </p>
+										<!-- AFN-VERSION 1.2 removed | durham campus info -->
+										<p><xsl:call-template name="afn_en_contact_us" />  <a href="https://guides.library.uoit.ca/contact"> Ontario Tech Contact Information</a></p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_QU' ">
 										<p><xsl:call-template name="afn_en_contact_us" />  <a href="https://library.queensu.ca/help-servers/ask-us"> Ask Us </a> </p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_TU' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:library@trentu.ca"> library@trentu.ca</a> | Bata: 705-748-1011 x7423 | Durham: 905-435-5102 x5061 </p	>
+										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:library@trentu.ca"> library@trentu.ca</a> | Bata: 705-748-1011 x7423 | Durham: 905-435-5102 x5061 </p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_GUE' ">
 										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:library@uoguelph.ca"> library@uoguelph.ca</a> | 519-824-4120 x 53618</p>
@@ -384,10 +388,10 @@
 											<a href="https://ocul-bu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_BU:BU_DEFAULT&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_CRL' ">
-											<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_CRL:CRL_DEFAULT&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a	>
+											<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_CRL:CRL_DEFAULT&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_LHD' ">
-											<a href="https://ocul-lhd.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_LHD:LHD_DEFAULT&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a	>
+											<a href="https://ocul-lhd.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_LHD:LHD_DEFAULT&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_LU' ">
 											<a href="https://omni.laurentian.ca/discovery/account?vid=01OCUL_LU:OMNI&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a>
@@ -411,19 +415,19 @@
 											<a href="https://ocul-uo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UO:UO_DEFAULT&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_WTL' ">
-											<a href="https://ocul-wtl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WTL:WTL_DEFAULT&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a	>
+											<a href="https://ocul-wtl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WTL:WTL_DEFAULT&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01UTON_UW' ">
 											<a href="https://uwindsor.primo.exlibrisgroup.com/discovery/account?vid=01UTON_UW:UWINDSOR&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_UWO' ">
-											<a href="https://ocul-uwo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UWO:UWO_DEFAULT&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a	>
+											<a href="https://ocul-uwo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UWO:UWO_DEFAULT&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_WLU' ">
 											<a href="https://ocul-wlu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WLU:WLU_DEF&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_YOR' ">
-											<a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a	>
+											<a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;lang=fr"><xsl:call-template name="afn_fr_account_link_text" /></a>
 										</xsl:when>
 									</xsl:choose>
 								</xsl:when>
@@ -437,10 +441,10 @@
 											<a href="https://ocul-bu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_BU:BU_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_CRL' ">
-											<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_CRL:CRL_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a	>
+											<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_CRL:CRL_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_LHD' ">
-											<a href="https://ocul-lhd.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_LHD:LHD_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a	>
+											<a href="https://ocul-lhd.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_LHD:LHD_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_LU' ">
 											<a href="https://omni.laurentian.ca/discovery/account?vid=01OCUL_LU:OMNI&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
@@ -464,19 +468,19 @@
 											<a href="https://ocul-uo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UO:UO_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_WTL' ">
-											<a href="https://ocul-wtl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WTL:WTL_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a	>
+											<a href="https://ocul-wtl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WTL:WTL_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01UTON_UW' ">
 											<a href="https://uwindsor.primo.exlibrisgroup.com/discovery/account?vid=01UTON_UW:UWINDSOR&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_UWO' ">
-											<a href="https://ocul-uwo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UWO:UWO_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a	>
+											<a href="https://ocul-uwo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UWO:UWO_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_WLU' ">
 											<a href="https://ocul-wlu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WLU:WLU_DEF&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_YOR' ">
-											<a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a	>
+											<a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
 										</xsl:when>
 									</xsl:choose>
 								</xsl:otherwise>

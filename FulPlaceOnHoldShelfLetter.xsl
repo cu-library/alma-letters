@@ -32,7 +32,7 @@
 										<table cellspacing="0" cellpadding="5" border="0">
 											<tr>
 												<td>
-													L'élément suivant de <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, que vous avez demandé sur <xsl:value-of select="notification_data/request						/create_date"/> peut être récupéré à <b><xsl:value-of select="notification_data/request/delivery_address"/></b>
+													L'élément suivant de <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, que vous avez demandé sur <xsl:value-of select="notification_data/request/create_date"/> peut être récupéré à <b><xsl:value-of select="notification_data/request/delivery_address"/></b>
 												</td>
 											</tr>
 
@@ -59,21 +59,19 @@
 														<b>NOTES qui peuvent affecter le prêt:</b>
 													</td>
 												</tr>
-
 												<tr>
 													<td><xsl:value-of select="notification_data/request/system_notes"/></td>
 												</tr>
-
-												<tr>
-													<td>
-														<br/>
-														<!-- AFN-VERSION 1.1 -->
-														Pour connaitre les heures de service et les informations sur le ramassage, veuillez consulter la page web de la bibliothèque sur le ramassage, donnée ci-dessus.
-														<br/>
-													</td>
-												</tr>
-
 											</xsl:if>
+
+											<tr>
+												<td>
+													<br/>
+													<!-- AFN-VERSION 1.1 -->
+													Pour connaitre les heures de service et les informations sur le ramassage, veuillez consulter la page web de la bibliothèque sur le ramassage, donnée ci-dessus.
+													<br/>
+												</td>
+											</tr>
 										</table>
 									</xsl:when>
 									<xsl:otherwise>
