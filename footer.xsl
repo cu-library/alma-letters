@@ -495,5 +495,77 @@
 			</tr>
 		</table>
 	</xsl:template>
+
+	<!-- AFN-VERSION 1.4 ADD  AFNOrgName template and test_org_code var -->
+
+	<!-- create an OCUL AFN template for determining org name based on ex libris alma code -->
+	<!--
+		test orginization code <path>01OCUL.01OCUL_GUE.mclaughlin</path> eg. 01OCUL_GUE is Guelph
+		with the code, we can create a human readable institution name that doesn't always appear in the
+		data xml for a letter
+	-->
+	<xsl:variable name="test_org_code">
+		<xsl:value-of select="notification_data/organization_unit/path"/>
+	</xsl:variable>
+
+	<xsl:template name="AFNOrgName">
+		<xsl:choose>
+			<xsl:when test="contains($test_org_code, '01OCUL_AU')">
+				Algoma University
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_BU')">
+				Brock University
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_CRL')">
+				Carleton University
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_LHD')">
+				Lakehead University
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_LU')">
+				Laurentian University
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_NIP')">
+				Nipissing University
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_IT')">
+				Ontario Tech
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_QU')">
+				Queen's University
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_GUE')">
+				University of Guelph
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_TU')">
+				Trent University
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_UO')">
+				University of Ottawa
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_WTL')">
+				University of Waterloo
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01UTON_UW')">
+				University of Windsor
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_UWO')">
+				Western University
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_WLU')">
+				Wilfrid Laurier University
+			</xsl:when>
+			<xsl:when test="contains($test_org_code, '01OCUL_YOR')">
+				York University
+			</xsl:when>
+			<xsl:otherwise>
+				<!-- Fallback - use Carleton default -->
+				Carleton University
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!-- END of Org name template -->
+
 	<!-- END OF AFN CODE -->
+
 </xsl:stylesheet>

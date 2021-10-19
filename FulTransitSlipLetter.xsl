@@ -7,6 +7,19 @@
 	<xsl:include href="footer.xsl" />
 	<xsl:include href="style.xsl" />
 	<xsl:include href="recordTitle.xsl" />
+
+	<!-- AFN-VERSION 1.4 some values to test on around org names -->
+	<xsl:variable name="destination_inst_code">
+		<!-- ADD IF EMPTY, SET VALUE TO TEXT THAT WILL FAIL THE CONTAINS CODE, LIKE A NULL CHECK  -->
+		<xsl:value-of select="notification_data/request/work_flow_entity/destination_institution_code"/>
+	</xsl:variable>
+
+	<xsl:variable name="not_local_institution_name">
+		<!-- populated when item is not local, ie at AFN destination  use if not empty-->
+		<xsl:value-of select="notification_data/request/out_of_institution_owner_institution_name"/>
+	</xsl:variable>
+	<!-- END OF AFN-VERSION 1.4 -->
+
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -46,10 +59,24 @@
 								<td>@@we_are_transferring_item_below@@</td>
 							</tr>
 							<tr>
+								<!-- AFN-VERSION 1.4 adjust from statement (replace td tag) to use org name template -->
+								<!--
+									replace the institution code in assigned_unit_name with the org name of the owning institution (ie the from) based on the code
+									IF an institution code exists in the assigned_unit_name value
+									<destination_institution_code>01OCUL_YOR</destination_institution_code>
+								-->
 								<td>
 									<b>@@from@@: </b>
-									<xsl:value-of select="notification_data/request/assigned_unit_name" />
+									<xsl:choose>
+										<xsl:when test="(string-length($destination_inst_code) > 0) and (contains(notification_data/request/assigned_unit_name, $destination_inst_code))">
+											<xsl:call-template name="AFNOrgName" /><xsl:value-of select="substring-after(notification_data/request/assigned_unit_name, $destination_inst_code)"/>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:value-of select="notification_data/request/assigned_unit_name" />
+										</xsl:otherwise>
+									</xsl:choose>
 								</td>
+								<!-- END OF AFN-VERSION 1.4 -->
 							</tr>
 							<tr>
 								<td>
@@ -162,10 +189,22 @@
 							</tr>
 							<xsl:if test="notification_data/phys_item_display/owning_library_name">
 								<tr>
+								<!-- AFN-VERSION 1.4 adjust owning library to use org name template -->
 									<td>
-										<b>@@owning_library@@: </b>
-										<xsl:value-of select="notification_data/phys_item_display/owning_library_name" />
+									<b>@@owning_library@@: </b>
+									<xsl:choose>
+										<xsl:when test="(string-length($destination_inst_code) > 0) and (contains(notification_data/request/assigned_unit_name, $destination_inst_code))">
+											<xsl:call-template name="AFNOrgName" /> - <xsl:value-of select="notification_data/phys_item_display/owning_library_name" />
+										</xsl:when>
+										<xsl:when test="(string-length($not_local_institution_name) > 0)">
+											<xsl:value-of select="notification_data/request/out_of_institution_owner_institution_name"/> - <xsl:value-of select="notification_data/phys_item_display/owning_library_name" />
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:value-of select="notification_data/phys_item_display/owning_library_name" />
+										</xsl:otherwise>
+									</xsl:choose>
 									</td>
+								<!-- END OF AFN-VERSION 1.4 -->
 								</tr>
 							</xsl:if>
 						</table>
