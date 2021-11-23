@@ -25,7 +25,7 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
-						<table role="presentation" cellspacing="0" cellpadding="1" border="0">
+						<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 							<tr>
 								<td>
 									Hi,
