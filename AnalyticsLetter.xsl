@@ -23,7 +23,7 @@
 						<table cellspacing="0" cellpadding="5" border="0">
 							<tr>
 								<td>
-									<span>Hi,</span>
+									Hi,
 								</td>
 							</tr>
 							<tr>
