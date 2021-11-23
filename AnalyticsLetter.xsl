@@ -18,13 +18,14 @@
 				</xsl:attribute>
 				<xsl:call-template name="head" />
 				<!-- header.xsl -->
-				<xsl:call-template name="salutation" />
-				<!-- footer.xsl -->
-				<xsl:call-template name="toWhomIsConcerned" />
-				<!-- mailReason.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
 						<table cellspacing="0" cellpadding="5" border="0">
+							<tr>
+								<td>
+									<span>Hi,</span>
+								</td>
+							</tr>
 							<tr>
 								<td>
 									@@letterText@@
