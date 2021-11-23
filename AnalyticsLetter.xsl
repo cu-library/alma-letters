@@ -5,6 +5,9 @@
 	<xsl:template match="/">
 		<html>
 			<head>
+				<title>
+					Analytics Report
+				</title>
 				<xsl:call-template name="generalStyle" />
 				<!-- style.xsl -->
 			</head>
