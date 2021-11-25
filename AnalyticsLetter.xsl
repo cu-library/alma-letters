@@ -5,9 +5,7 @@
 	<xsl:template match="/">
 		<html>
 			<head>
-				<title>
-					Analytics Report
-				</title>
+				<title>@@letterName@@</title>
 				<xsl:call-template name="generalStyle" />
 				<!-- style.xsl -->
 			</head>
@@ -23,13 +21,7 @@
 						<table cellspacing="0" cellpadding="5" border="0">
 							<tr>
 								<td>
-									Hi,
-								</td>
-							</tr>
-							<tr>
-								<td>
-									@@letterText@@
-									&#160;
+									@@letterText@@&#160;
 									<b>
 										<xsl:value-of select="/notification_data/report_name" />
 									</b>
