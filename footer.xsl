@@ -78,147 +78,142 @@
 	<!-- create an OCUL AFN specific footer -->
 	<xsl:template name="AFNLastFooter">
 		<table>
-			<xsl:attribute name="style">
-			<xsl:call-template name="footerTableStyleCss" />
-			</xsl:attribute>
-			<xsl:choose>
-				<xsl:when test="(string-length($is_afn_patron) > 0)">
+			<tr>
+				<td>
 					<xsl:choose>
-						<!-- handle AFN supported languages -->
-						<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
-							<tr>
-								<xsl:choose>
-									<xsl:when test="$external_id = '01OCUL_AU' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:circulation@algomau.ca"> circulation@algomau.ca</a> | 705-949-2101</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_BU' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:libhelp@brocku.ca"> libhelp@brocku.ca</a> | 905-688-5550 ×4583</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_CRL' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:library.services@carleton.ca"> library.services@carleton.ca</a> | 613-520-2600 x2734</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_LHD' ">
-										<p>
-											<xsl:call-template name="afn_fr_contact_us" /> <br/>
-											Paterson | <a href="mailto:circdesk@lakeheadu.ca"> circdesk@lakeheadu.ca</a> | (807) 343-8225 <br/>
-											Éducation | <a href="mailto:edlib@lakeheadu.ca"> edlib@lakeheadu.ca</a>  | (807) 343-8718 <br/>
-											Droit | <a href="mailto:law.library@lakeheadu.ca"> law.library@lakeheadu.ca</a> | (807) 346-7830 <br/>
-											Orillia | <a href="mailto:orlibrary@lakeheadu.ca"> orlibrary@lakeheadu.ca</a> | (705) 330-4010 ext. 2250 <br/>
-										</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_LU' ">
-										<!-- AFN-VERSION 1.3 removed @LaurentianLib -->
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> omni@laurentian.ca / 705-675-4800  </p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_NIP' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:circdesk@eclibrary.ca"> circdesk@eclibrary.ca</a> | 705-474-3450, ext. 4222 </p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_IT' ">
-										<!-- AFN-VERSION 1.2 removed | durham campus info -->
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="https://guides.library.uoit.ca/contact"> Coordonnées des techniciens de l'Ontario</a></p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_QU' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="https://library.queensu.ca/help-servers/ask-us"> Ask Us </a> </p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_GUE' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:library@uoguelph.ca"> library@uoguelph.ca</a> | 519-824-4120 x 53618</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_TU' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:library@trentu.ca"> library@trentu.ca</a> | Bata: 705-748-1011 x7423 | Durham: 905-435-5102 x5061 </p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_UO' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:bibliolibrary@uottawa.ca"> bibliolibrary@uottawa.ca</a> | 613-562-5213 </p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_WTL' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:libaskus@uwaterloo.ca"> libaskus@uwaterloo.ca</a> | 519-888-4567 ext. 84883</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01UTON_UW' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:LeddyLibrary@uwindsor.ca"> LeddyLibrary@uwindsor.ca</a> | 519-253-3000 ext. 3402</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_UWO' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:library@uwo.ca"> library@uwo.ca</a></p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_WLU' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:wlucirc@wlu.ca"> wlucirc@wlu.ca</a> | (519) 884-0710 x3222</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_YOR' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:askusyul@yorku.ca"> askusyul@yorku.ca</a> | 416-736-5181</p>
-									</xsl:when>
-								</xsl:choose>
-							</tr>
+						<xsl:when test="(string-length($is_afn_patron) > 0)">
+							<xsl:choose>
+								<!-- handle AFN supported languages -->
+								<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
+									<xsl:choose>
+										<xsl:when test="$external_id = '01OCUL_AU' ">
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:circulation@algomau.ca"> circulation@algomau.ca</a> | 705-949-2101</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_BU' ">
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:libhelp@brocku.ca"> libhelp@brocku.ca</a> | 905-688-5550 ×4583</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_CRL' ">
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:library.services@carleton.ca"> library.services@carleton.ca</a> | 613-520-2600 x2734</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_LHD' ">
+											<p>
+												<xsl:call-template name="afn_fr_contact_us" /> <br/>
+												Paterson | <a href="mailto:circdesk@lakeheadu.ca"> circdesk@lakeheadu.ca</a> | (807) 343-8225 <br/>
+												Éducation | <a href="mailto:edlib@lakeheadu.ca"> edlib@lakeheadu.ca</a>  | (807) 343-8718 <br/>
+												Droit | <a href="mailto:law.library@lakeheadu.ca"> law.library@lakeheadu.ca</a> | (807) 346-7830 <br/>
+												Orillia | <a href="mailto:orlibrary@lakeheadu.ca"> orlibrary@lakeheadu.ca</a> | (705) 330-4010 ext. 2250 <br/>
+											</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_LU' ">
+											<!-- AFN-VERSION 1.3 removed @LaurentianLib -->
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> omni@laurentian.ca / 705-675-4800  </p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_NIP' ">
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:circdesk@eclibrary.ca"> circdesk@eclibrary.ca</a> | 705-474-3450, ext. 4222 </p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_IT' ">
+											<!-- AFN-VERSION 1.2 removed | durham campus info -->
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="https://guides.library.uoit.ca/contact"> Coordonnées des techniciens de l'Ontario</a></p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_QU' ">
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="https://library.queensu.ca/help-servers/ask-us"> Ask Us </a> </p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_GUE' ">
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:library@uoguelph.ca"> library@uoguelph.ca</a> | 519-824-4120 x 53618</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_TU' ">
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:library@trentu.ca"> library@trentu.ca</a> | Bata: 705-748-1011 x7423 | Durham: 905-435-5102 x5061 </p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_UO' ">
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:bibliolibrary@uottawa.ca"> bibliolibrary@uottawa.ca</a> | 613-562-5213 </p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_WTL' ">
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:libaskus@uwaterloo.ca"> libaskus@uwaterloo.ca</a> | 519-888-4567 ext. 84883</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01UTON_UW' ">
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:LeddyLibrary@uwindsor.ca"> LeddyLibrary@uwindsor.ca</a> | 519-253-3000 ext. 3402</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_UWO' ">
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:library@uwo.ca"> library@uwo.ca</a></p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_WLU' ">
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:wlucirc@wlu.ca"> wlucirc@wlu.ca</a> | (519) 884-0710 x3222</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_YOR' ">
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:askusyul@yorku.ca"> askusyul@yorku.ca</a> | 416-736-5181</p>
+										</xsl:when>
+									</xsl:choose>
+								</xsl:when>
+								<!-- default AFN language is english -->
+								<xsl:otherwise>
+									<xsl:choose>
+										<xsl:when test="$external_id = '01OCUL_AU' ">
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:circulation@algomau.ca"> circulation@algomau.ca</a> | 705-949-2101</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_BU' ">
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:libhelp@brocku.ca"> libhelp@brocku.ca</a> | 905-688-5550 ×4583</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_CRL' ">
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:library.services@carleton.ca"> library.services@carleton.ca</a> | 613-520-2600 x2734</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_LHD' ">
+											<p>
+												<xsl:call-template name="afn_en_contact_us" /> <br/>
+												Paterson | <a href="mailto:circdesk@lakeheadu.ca"> circdesk@lakeheadu.ca</a> | (807) 343-8225 <br/>
+												Education | <a href="mailto:edlib@lakeheadu.ca"> edlib@lakeheadu.ca</a>  | (807) 343-8718 <br/>
+												Law | <a href="mailto:law.library@lakeheadu.ca"> law.library@lakeheadu.ca</a> | (807) 346-7830 <br/>
+												Orillia | <a href="mailto:orlibrary@lakeheadu.ca"> orlibrary@lakeheadu.ca</a> | (705) 330-4010 ext. 2250 <br/>
+											</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_LU' ">
+											<!-- AFN-VERSION 1.3 removed @LaurentianLib -->
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> / 705-675-4800  </p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_NIP' ">
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:circdesk@eclibrary.ca"> circdesk@eclibrary.ca</a> | 705-474-3450, ext. 4222 </p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_IT' ">
+											<!-- AFN-VERSION 1.2 removed | durham campus info -->
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="https://guides.library.uoit.ca/contact"> Ontario Tech Contact Information</a></p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_QU' ">
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="https://library.queensu.ca/help-servers/ask-us"> Ask Us </a> </p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_TU' ">
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:library@trentu.ca"> library@trentu.ca</a> | Bata: 705-748-1011 x7423 | Durham: 905-435-5102 x5061 </p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_GUE' ">
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:library@uoguelph.ca"> library@uoguelph.ca</a> | 519-824-4120 x 53618</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_UO' ">
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:bibliolibrary@uottawa.ca"> bibliolibrary@uottawa.ca</a> | 613-562-5213 </p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_WTL' ">
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:libaskus@uwaterloo.ca"> libaskus@uwaterloo.ca</a> | 519-888-4567 ext. 84883 </p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01UTON_UW' ">
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:LeddyLibrary@uwindsor.ca"> LeddyLibrary@uwindsor.ca</a> | 519-253-3000 ext. 3402</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_UWO' ">
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:library@uwo.ca"> library@uwo.ca</a></p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_WLU' ">
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:wlucirc@wlu.ca"> wlucirc@wlu.ca</a> | (519) 884-0710 x3222</p>
+										</xsl:when>
+										<xsl:when test="$external_id = '01OCUL_YOR' ">
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:askusyul@yorku.ca"> askusyul@yorku.ca</a> | 416-736-5181</p>
+										</xsl:when>
+									</xsl:choose>
+								</xsl:otherwise>
+							</xsl:choose>
 						</xsl:when>
-						<!-- default AFN language is english -->
 						<xsl:otherwise>
-							<tr>
-								<xsl:choose>
-									<xsl:when test="$external_id = '01OCUL_AU' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:circulation@algomau.ca"> circulation@algomau.ca</a> | 705-949-2101</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_BU' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:libhelp@brocku.ca"> libhelp@brocku.ca</a> | 905-688-5550 ×4583</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_CRL' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:library.services@carleton.ca"> library.services@carleton.ca</a> | 613-520-2600 x2734</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_LHD' ">
-										<p>
-											<xsl:call-template name="afn_en_contact_us" /> <br/>
-											Paterson | <a href="mailto:circdesk@lakeheadu.ca"> circdesk@lakeheadu.ca</a> | (807) 343-8225 <br/>
-											Education | <a href="mailto:edlib@lakeheadu.ca"> edlib@lakeheadu.ca</a>  | (807) 343-8718 <br/>
-											Law | <a href="mailto:law.library@lakeheadu.ca"> law.library@lakeheadu.ca</a> | (807) 346-7830 <br/>
-											Orillia | <a href="mailto:orlibrary@lakeheadu.ca"> orlibrary@lakeheadu.ca</a> | (705) 330-4010 ext. 2250 <br/>
-										</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_LU' ">
-										<!-- AFN-VERSION 1.3 removed @LaurentianLib -->
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> / 705-675-4800  </p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_NIP' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:circdesk@eclibrary.ca"> circdesk@eclibrary.ca</a> | 705-474-3450, ext. 4222 </p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_IT' ">
-										<!-- AFN-VERSION 1.2 removed | durham campus info -->
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="https://guides.library.uoit.ca/contact"> Ontario Tech Contact Information</a></p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_QU' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="https://library.queensu.ca/help-servers/ask-us"> Ask Us </a> </p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_TU' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:library@trentu.ca"> library@trentu.ca</a> | Bata: 705-748-1011 x7423 | Durham: 905-435-5102 x5061 </p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_GUE' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:library@uoguelph.ca"> library@uoguelph.ca</a> | 519-824-4120 x 53618</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_UO' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:bibliolibrary@uottawa.ca"> bibliolibrary@uottawa.ca</a> | 613-562-5213 </p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_WTL' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:libaskus@uwaterloo.ca"> libaskus@uwaterloo.ca</a> | 519-888-4567 ext. 84883 </p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01UTON_UW' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:LeddyLibrary@uwindsor.ca"> LeddyLibrary@uwindsor.ca</a> | 519-253-3000 ext. 3402</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_UWO' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:library@uwo.ca"> library@uwo.ca</a></p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_WLU' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:wlucirc@wlu.ca"> wlucirc@wlu.ca</a> | (519) 884-0710 x3222</p>
-									</xsl:when>
-									<xsl:when test="$external_id = '01OCUL_YOR' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:askusyul@yorku.ca"> askusyul@yorku.ca</a> | 416-736-5181</p>
-									</xsl:when>
-								</xsl:choose>
-							</tr>
+							<!-- Fallback - use Carleton default -->
+							<p>Questions? Email <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> or call 613-520-2600 x2734</p>
 						</xsl:otherwise>
 					</xsl:choose>
-				</xsl:when>
-				<xsl:otherwise>
-					<tr>
-						<!-- Fallback - use Carleton default -->
-						<p>Questions? Email <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> or call 613-520-2600 x2734</p>
-					</tr>
-				</xsl:otherwise>
-			</xsl:choose>
+				</td>
+			</tr>
 		</table>
 	</xsl:template>
 
