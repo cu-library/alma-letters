@@ -2,16 +2,17 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:include href="header.xsl" />
 	<xsl:include href="style.xsl" />
+	<xsl:include href="footer.xsl" />
 	<xsl:template match="/">
 		<html>
 			<xsl:if test="notification_data/languages/string">
 				<xsl:attribute name="lang">
-					<xsl:value-of select="notification_data/languages/string"/>
+					<xsl:value-of select="notification_data/languages/string" />
 				</xsl:attribute>
 			</xsl:if>
 			<head>
 				<title>
-					<xsl:value-of select="notification_data/general_data/subject"/>
+					<xsl:value-of select="notification_data/general_data/subject" />
 				</title>
 				<xsl:call-template name="generalStyle" />
 				<!-- style.xsl -->
@@ -38,32 +39,33 @@
 							</tr>
 							<tr>
 								<td>
-									Looking for additional materials that were not in our library? Try requesting them through our Resource Sharing!
+									Looking for additional materials that were not in our library?<br />
+									Try requesting them through our Resource Sharing!
 								</td>
 							</tr>
 							<tr>
 								<td>
-									Sincerely,
+									@@sincerely@@
 								</td>
 							</tr>
 							<tr>
 								<td>
-									Access Services Department
-								</td>
-							</tr>
-							<tr>
-								<td>
+									@@department@@<br />
 									Carleton University Library
 								</td>
 							</tr>
 							<tr>
 								<td>
-									Need research help or assistance with your account? We’re here to help! <a href="https://library.carleton.ca/help">Ask a Librarian</a>.
+									Need research help or assistance with your account? We’re here to help!&#160;
+									<a href="https://library.carleton.ca/help">Ask a Librarian</a>.
 								</td>
 							</tr>
 						</table>
 					</div>
 				</div>
+				<!-- AFN footer template options from footer.xsl -->
+				<xsl:call-template name="AFNLastFooter" />
+				<xsl:call-template name="AFNAccount" />
 			</body>
 		</html>
 	</xsl:template>
