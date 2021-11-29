@@ -95,7 +95,7 @@
 										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:libhelp@brocku.ca"> libhelp@brocku.ca</a> | 905-688-5550 ×4583</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_CRL' ">
-										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:libcirc@carleton.ca"> libcirc@carleton.ca</a> | 613-520-2600 x2734</p>
+										<p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:library.services@carleton.ca"> library.services@carleton.ca</a> | 613-520-2600 x2734</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LHD' ">
 										<p>
@@ -158,7 +158,7 @@
 										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:libhelp@brocku.ca"> libhelp@brocku.ca</a> | 905-688-5550 ×4583</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_CRL' ">
-										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:libcirc@carleton.ca"> libcirc@carleton.ca</a> | 613-520-2600 x2734</p>
+										<p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:library.services@carleton.ca"> library.services@carleton.ca</a> | 613-520-2600 x2734</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LHD' ">
 										<p>
@@ -215,7 +215,7 @@
 				<xsl:otherwise>
 					<tr>
 						<!-- Fallback - use Carleton default -->
-						<p>If you have questions or need assistance, please contact us:<a href="mailto:libcirc@carleton.ca"> libcirc@carleton.ca</a> | 613-520-2600 x2734</p>
+						<p>Questions? Email <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> or call 613-520-2600 x2734</p>
 					</tr>
 				</xsl:otherwise>
 			</xsl:choose>
