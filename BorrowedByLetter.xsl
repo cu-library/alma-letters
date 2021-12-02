@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:include href="header.xsl" />
 	<xsl:include href="style.xsl" />
+	<xsl:include href="header.xsl" />
 	<xsl:include href="footer.xsl" />
 	<xsl:template match="/">
 		<html>
@@ -12,7 +12,7 @@
 			</xsl:if>
 			<head>
 				<title>
-					<xsl:value-of select="notification_data/general_data/subject" />
+					<xsl:value-of select="notification_data/general_data/letter_name" />
 				</title>
 				<xsl:call-template name="generalStyle" />
 				<!-- style.xsl -->
