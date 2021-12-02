@@ -38,18 +38,17 @@
 							<tr>
 								<td>
 									For more information please visit your
-									<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>
-									.
+									<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.
 								</td>
 							</tr>
 							<tr>
 								<td>
-									@@sincerely@@
+									Sincerely,
 								</td>
 							</tr>
 							<tr>
 								<td>
-									@@department@@
+									Access Services Department
 									<br />
 									Carleton University Library
 								</td>
