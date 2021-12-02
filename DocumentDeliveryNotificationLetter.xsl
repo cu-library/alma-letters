@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:include href="style.xsl" />
 	<xsl:include href="header.xsl" />
 	<xsl:include href="footer.xsl" />
-	<xsl:include href="style.xsl" />
-
 	<xsl:variable name="conta1">0</xsl:variable>
 	<xsl:variable name="stepType" select="/notification_data/request/work_flow_entity/step_type" />
 	<xsl:variable name="externalRequestId" select="/notification_data/external_request_id" />
@@ -11,7 +10,6 @@
 	<xsl:variable name="isDeposit" select="/notification_data/request/deposit_indicator" />
 	<xsl:variable name="isDigitalDocDelivery" select="/notification_data/digital_document_delivery" />
 	<xsl:variable name="fileUploaded" select="/notification_data/file_uploaded" />
-
 	<xsl:template match="/">
 		<html>
 			<xsl:if test="notification_data/languages/string">
@@ -21,7 +19,7 @@
 			</xsl:if>
 			<head>
 				<title>
-					<xsl:value-of select="notification_data/general_data/subject" />
+					<xsl:value-of select="notification_data/general_data/letter_name" />
 				</title>
 				<xsl:call-template name="generalStyle" />
 				<!-- style.xsl -->
@@ -35,7 +33,7 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
-						<table border="0" cellpadding="5" cellspacing="0" role="presentation">
+						<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 							<tr>
 								<td>
 									Hi,
