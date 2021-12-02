@@ -28,6 +28,9 @@
 					<div class="messageBody">
 						<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 							<tr>
+								<td>Hi,</td>
+							</tr>
+							<tr>
 								<td>The following charges and/or payments have been posted to your Library Account in the last 7 days.</td>
 							</tr>
 							<tr>
