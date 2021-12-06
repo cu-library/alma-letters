@@ -227,10 +227,16 @@
 										</td>
 									</tr>
 								</table>
-								@@additional_info_1@@
-								<br />
-								@@additional_info_2@@
-								<br />
+								<xsl:variable name="additional_info_1">@@additional_info_1@@</xsl:variable>
+								<xsl:if test="$additional_info_1 != ''">
+									@@additional_info_1@@
+									<br />
+								</xsl:if>
+								<xsl:variable name="additional_info_2">@@additional_info_2@@</xsl:variable>
+								<xsl:if test="$additional_info_2 != ''">
+									@@additional_info_2@@
+									<br />
+								</xsl:if>
 							</xsl:otherwise>
 						</xsl:choose>
 						<!-- END OF AFN CODE -->
