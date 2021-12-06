@@ -127,6 +127,12 @@
 									Carleton University Library
 								</td>
 							</tr>
+							<tr>
+								<td>
+									Need research help or assistance with your account? We're here to help!
+									<a href="https://library.carleton.ca/help">Ask a Librarian</a>
+								</td>
+							</tr>
 						</table>
 					</div>
 				</div>
