@@ -39,6 +39,21 @@
 							<tr>
 								<td>@@your_request@@</td>
 							</tr>
+							<tr>
+								<td>
+									As a reminder please see our copyright statement:
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<em>
+										I acknowledge and agree that this item is being supplied solely for my own personal use,
+										and may only be used for the purpose of research, education, private study, review, or criticism.
+										I agree that I will not share, distribute, publish, or make copies of this item, or otherwise provide
+										it to any other person.
+									</em>
+								</td>
+							</tr>
 							<xsl:if test="$isDeposit='true'">
 								<tr>
 									<td>@@material@@:</td>
