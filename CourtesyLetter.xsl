@@ -220,6 +220,12 @@
 											Carleton University Library
 										</td>
 									</tr>
+									<tr>
+										<td>
+											Need research help or assistance with your account? We’re here to help!&#160;
+											<a href="https://library.carleton.ca/help">Ask a Librarian</a>.
+										</td>
+									</tr>
 								</table>
 								@@additional_info_1@@
 								<br />
