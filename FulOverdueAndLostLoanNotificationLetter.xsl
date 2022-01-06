@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:include href="header.xsl"/>
-	<xsl:include href="senderReceiver.xsl"/>
-	<xsl:include href="footer.xsl"/>
-	<xsl:include href="style.xsl"/>
+	<xsl:include href="style.xsl" />
+	<xsl:include href="header.xsl" />
+	<xsl:include href="recordTitle.xsl" />
+	<xsl:include href="footer.xsl" />
 	<xsl:template match="/">
 		<html>
+			<xsl:if test="notification_data/languages/string">
+				<xsl:attribute name="lang">
+					<xsl:value-of select="notification_data/languages/string" />
+				</xsl:attribute>
+			</xsl:if>
 			<head>
-				<xsl:call-template name="generalStyle"/>
+				<title>
+					<xsl:value-of select="notification_data/general_data/letter_name" />
+				</title>
+				<xsl:call-template name="generalStyle" />
+				<!-- style.xsl -->
 			</head>
 			<body>
 				<xsl:attribute name="style">
-					<xsl:call-template name="bodyStyleCss"/> <!-- style.xsl -->
+					<xsl:call-template name="bodyStyleCss" />
+					<!-- style.xsl -->
 				</xsl:attribute>
-				<xsl:call-template name="head"/> <!-- header.xsl -->
-				<br/>
-				<xsl:call-template name="senderReceiver"/> <!-- SenderReceiver.xsl -->
-				<br/>
+				<xsl:call-template name="head" />
+				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
 						<!-- AFN CODE -->
@@ -73,27 +81,30 @@
 															<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display">
 																<tr>
 																	<td>
-																		<xsl:value-of select="item_loan/title"/>
+																		<xsl:value-of select="item_loan/title" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="physical_item_display_for_printing/library_name"/>
+																		<xsl:value-of select="physical_item_display_for_printing/library_name" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="item_loan/loan_date"/>
+																		<xsl:value-of select="item_loan/loan_date" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="item_loan/due_date"/>
+																		<xsl:value-of select="item_loan/due_date" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="physical_item_display_for_printing/call_number"/>
+																		<xsl:value-of select="physical_item_display_for_printing/call_number" />
 																	</td>
 																	<td>
 																		<xsl:for-each select="fines_fees_list/user_fines_fees">
 																			<b>
-																				<xsl:value-of select="fine_fee_type_display"/>:
+																				<xsl:value-of select="fine_fee_type_display" />
+																				:
 																			</b>
-																			<xsl:value-of select="fine_fee_ammount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
-																			<br/>
+																			<xsl:value-of select="fine_fee_ammount/normalized_sum" />
+																			&#160;
+																			<xsl:value-of select="ff" />
+																			<br />
 																		</xsl:for-each>
 																	</td>
 																</tr>
@@ -101,8 +112,8 @@
 														</table>
 													</td>
 												</tr>
-												<hr/>
-												<br/>
+												<hr />
+												<br />
 											</xsl:for-each>
 											<xsl:if test="notification_data/overdue_notification_fee_amount/sum !=''">
 												<tr>
@@ -110,7 +121,9 @@
 														<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
 														<!-- Overdue Notification Fee: -->
 														<b>Frais d'avis de retard:</b>
-														<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
+														<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum" />
+														&#160;
+														<xsl:value-of select="ff" />
 													</td>
 												</tr>
 											</xsl:if>
@@ -129,7 +142,7 @@
 										</table>
 										<table cellpadding="5" class="listing">
 											<xsl:attribute name="style">
-												<xsl:call-template name="mainTableStyleCss" /><!-- style.xsl -->
+												<xsl:call-template name="mainTableStyleCss" /> <!-- style.xsl -->
 											</xsl:attribute>
 											<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
 												<tr>
@@ -156,26 +169,29 @@
 															<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display">
 																<tr>
 																	<td>
-																		<xsl:value-of select="item_loan/title"/>
+																		<xsl:value-of select="item_loan/title" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="physical_item_display_for_printing/library_name"/>
+																		<xsl:value-of select="physical_item_display_for_printing/library_name" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="item_loan/loan_date"/>
+																		<xsl:value-of select="item_loan/loan_date" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="item_loan/due_date"/>
+																		<xsl:value-of select="item_loan/due_date" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="physical_item_display_for_printing/call_number"/>
+																		<xsl:value-of select="physical_item_display_for_printing/call_number" />
 																	</td>
 																	<td>
 																		<xsl:for-each select="fines_fees_list/user_fines_fees">
 																			<b>
-																				<xsl:value-of select="fine_fee_type_display"/>:
+																				<xsl:value-of select="fine_fee_type_display" />
+																				:
 																			</b>
-																			<xsl:value-of select="fine_fee_ammount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
+																			<xsl:value-of select="fine_fee_ammount/normalized_sum" />
+																			&#160;
+																			<xsl:value-of select="ff" />
 																			<br />
 																		</xsl:for-each>
 																	</td>
@@ -184,14 +200,16 @@
 														</table>
 													</td>
 												</tr>
-												<hr/>
-												<br/>
+												<hr />
+												<br />
 											</xsl:for-each>
 											<xsl:if test="notification_data/overdue_notification_fee_amount/sum !=''">
 												<tr>
 													<td>
 														<b>Overdue Notification Fee:</b>
-														<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
+														<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum" />
+														&#160;
+														<xsl:value-of select="ff" />
 													</td>
 												</tr>
 											</xsl:if>
@@ -201,30 +219,46 @@
 								</xsl:choose>
 							</xsl:when>
 							<xsl:otherwise>
-							<!-- Carleton letter -->
-								<table border="0" cellpadding="5" cellspacing="0">
+								<!-- Carleton letter -->
+								<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 									<tr>
 										<td>
-											<h>@@inform_you_item_below@@ </h>
-											<h>@@borrowed_by_you@@ @@decalred_as_lost@@</h>
+											Hi,
+</td>
+									</tr>
+									<tr>
+										<td>
+											It looks like you have materials still checked out and they are now overdue.
+</td>
+									</tr>
+									<tr>
+										<td>
+											If you still need them, please login to your
+											<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>
+											to renew them or reach out to us and we'll see what we can do.  If the item has been requested by another library user, the item will not be able to be renewed.
 										</td>
+									</tr>
+									<tr>
+										<td>
+											Otherwise, items can be returned at the MacOdrum Library or at any university in Ontario.
+</td>
 									</tr>
 								</table>
 								<table cellpadding="5" class="listing">
 									<xsl:attribute name="style">
-										<xsl:call-template name="mainTableStyleCss"/> <!-- style.xsl -->
+										<xsl:call-template name="mainTableStyleCss" /> <!-- style.xsl -->
 									</xsl:attribute>
 									<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
 										<tr>
 											<td>
 												<table cellpadding="5" class="listing">
 													<xsl:attribute name="style">
-														<xsl:call-template name="mainTableStyleCss"/>
+														<xsl:call-template name="mainTableStyleCss" />
 													</xsl:attribute>
 													<tr align="center" bgcolor="#f5f5f5">
 														<td colspan="8">
 															<h3>
-																<xsl:value-of select="organization_unit/name"/>
+																<xsl:value-of select="organization_unit/name" />
 															</h3>
 														</td>
 													</tr>
@@ -241,36 +275,36 @@
 													<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display">
 														<tr>
 															<td>
-																<xsl:value-of select="item_loan/title"/>
+																<xsl:value-of select="item_loan/title" />
 															</td>
 															<td>
-																<xsl:value-of select="item_loan/description"/>
+																<xsl:value-of select="item_loan/description" />
 															</td>
 															<td>
-																<xsl:value-of select="physical_item_display_for_printing/library_name"/>
+																<xsl:value-of select="physical_item_display_for_printing/library_name" />
 															</td>
 															<td>
-																<xsl:value-of select="item_loan/loan_date"/>
+																<xsl:value-of select="item_loan/loan_date" />
 															</td>
 															<td>
-																<xsl:value-of select="item_loan/due_date"/>
+																<xsl:value-of select="item_loan/due_date" />
 															</td>
 															<td>
-																<xsl:value-of select="item_loan/barcode"/>
+																<xsl:value-of select="item_loan/barcode" />
 															</td>
 															<td>
-																<xsl:value-of select="physical_item_display_for_printing/call_number"/>
+																<xsl:value-of select="physical_item_display_for_printing/call_number" />
 															</td>
 															<td>
 																<xsl:for-each select="fines_fees_list/user_fines_fees">
 																	<b>
-																		<xsl:value-of select="fine_fee_type_display"/>: </b>
-																	<xsl:value-of select="fine_fee_ammount/normalized_sum"/>
-																	 
-																	<xsl:value-of select="fine_fee_ammount/currency"/>
-																	 
-																	<xsl:value-of select="ff"/>
-																	<br/>
+																		<xsl:value-of select="fine_fee_type_display" />
+																		:
+																	</b>
+																	<xsl:value-of select="fine_fee_ammount/normalized_sum" />
+																	<xsl:value-of select="fine_fee_ammount/currency" />
+																	<xsl:value-of select="ff" />
+																	<br />
 																</xsl:for-each>
 															</td>
 														</tr>
@@ -278,33 +312,33 @@
 												</table>
 											</td>
 										</tr>
-										<hr/>
-										<br/>
+										<hr />
+										<br />
 									</xsl:for-each>
 									<xsl:if test="notification_data/overdue_notification_fee_amount/sum !=''">
 										<tr>
 											<td>
-												<b>@@overdue_notification_fee@@ </b>
-												<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum"/>
-												 
-												<xsl:value-of select="notification_data/overdue_notification_fee_amount/currency"/>
-												 
-												<xsl:value-of select="ff"/>
+												<b>@@overdue_notification_fee@@</b>
+												<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum" />
+												<xsl:value-of select="notification_data/overdue_notification_fee_amount/currency" />
+												<xsl:value-of select="ff" />
 											</td>
 										</tr>
 									</xsl:if>
-									<br/>
-									@@additional_info_1@@
-									<br/>
-									@@additional_info_2@@
 								</table>
-								<br/>
+								<br />
 								<table>
 									<tr>
-										<td>For more information please visit your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
+										<td>
+											@@sincerely@@
+										</td>
 									</tr>
 									<tr>
-										<td>If you have any questions please contact a staff member from Access Services at <a href="mailto:LibCirc@cunet.carleton.ca">LibCirc@cunet.carleton.ca</a> or 613-520-2600 x2734.</td>
+										<td>
+											@@department@@
+											<br />
+											Carleton University Library
+										</td>
 									</tr>
 								</table>
 							</xsl:otherwise>
