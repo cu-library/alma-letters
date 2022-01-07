@@ -177,12 +177,12 @@
 										<td>
 											If you chose <b>Curbside Pick-up</b>, items can be picked up either at the Library Services Desk or by calling <a href="tel:1-343-996-9167">(343) 996-9167</a>
 											once you have arrived at the Curbside Location (exterior of the library building along Library Road (<em>canal side</em>)
-											near the book exterior book return) at the Library.
+											near the exterior book return) at the Library.
 										</td>
 									</tr>
 									<tr>
 										<td>
-											<b>Hours for Curbside</b> are daily, including weekends, from 9 am-4 pm.
+											<b>Hours for Curbside Pick-up</b> are daily, including weekends, from 9 am-4 pm.
 										</td>
 									</tr>
 									<tr>
