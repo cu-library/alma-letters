@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:include href="header.xsl"/>
-	<xsl:include href="senderReceiver.xsl"/>
-	<xsl:include href="mailReason.xsl"/>
-	<xsl:include href="footer.xsl"/>
-	<xsl:include href="style.xsl"/>
+	<xsl:include href="style.xsl" />
+	<xsl:include href="header.xsl" />
+	<xsl:include href="recordTitle.xsl" />
+	<xsl:include href="footer.xsl" />
 	<xsl:template match="/">
 		<html>
+			<xsl:if test="notification_data/languages/string">
+				<xsl:attribute name="lang">
+					<xsl:value-of select="notification_data/languages/string" />
+				</xsl:attribute>
+			</xsl:if>
 			<head>
-				<xsl:call-template name="generalStyle"/>
+				<title>
+					<xsl:value-of select="notification_data/general_data/letter_name" />
+				</title>
+				<xsl:call-template name="generalStyle" />
+				<!-- style.xsl -->
 			</head>
 			<body>
 				<xsl:attribute name="style">
-					<xsl:call-template name="bodyStyleCss"/> <!-- style.xsl -->
+					<xsl:call-template name="bodyStyleCss" />
+					<!-- style.xsl -->
 				</xsl:attribute>
-				<xsl:call-template name="head"/> <!-- header.xsl -->
-				<br/>
-				<xsl:call-template name="senderReceiver"/> <!-- SenderReceiver.xsl -->
-				<br/>
+				<xsl:call-template name="head" />
+				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
 						<!-- AFN CODE -->
@@ -60,8 +67,8 @@
 														<!-- AFN-VERSION 1.1 -->
 														<b>Le rappel qui a été fait sur votre (vos) document(s) emprunté(s) a été annulé. Il n'y a pas de changement dans la (les) date(s) d'échéance</b>
 													</xsl:if>
-													<br/>
-													<br/>
+													<br />
+													<br />
 												</td>
 											</tr>
 											<tr>
@@ -89,19 +96,19 @@
 														<xsl:for-each select="notification_data/item_loans/item_loan">
 															<tr>
 																<td>
-																	<xsl:value-of select="title"/>
+																	<xsl:value-of select="title" />
 																</td>
 																<td>
-																	<xsl:value-of select="author"/>
+																	<xsl:value-of select="author" />
 																</td>
 																<td>
-																	<xsl:value-of select="old_due_date_str"/>
+																	<xsl:value-of select="old_due_date_str" />
 																</td>
 																<td>
-																	<xsl:value-of select="new_due_date_str"/>
+																	<xsl:value-of select="new_due_date_str" />
 																</td>
 																<td>
-																	<xsl:value-of select="library_name"/>
+																	<xsl:value-of select="library_name" />
 																</td>
 															</tr>
 														</xsl:for-each>
@@ -122,9 +129,12 @@
 														<b>The item(s) listed below have been recalled. The due date(s) have not changed.</b>
 													</xsl:if>
 													<xsl:if test="notification_data/message='DUE_DATE_CHANGE_ONLY'">
-														<b>The due date for the following item(s) has changed.<br />
-														<br />
-														Please return the item(s) prior to the new due date to avoid fines/fees</b>
+														<b>
+															The due date for the following item(s) has changed.
+															<br />
+															<br />
+															Please return the item(s) prior to the new due date to avoid fines/fees
+														</b>
 													</xsl:if>
 													<xsl:if test="notification_data/message='RECALL_CANCEL_RESTORE_ORIGINAL_DUEDATE'">
 														<b>The recall placed on your borrowed item(s) has been cancelled, and the original due date has been restored. See below for the updated due date(s).</b>
@@ -135,8 +145,8 @@
 													<xsl:if test="notification_data/message='RECALL_CANCEL_NO_CHANGE'">
 														<b>The recall placed on your borrowed item(s) has been cancelled. There is no change in the due date.</b>
 													</xsl:if>
-													<br/>
-													<br/>
+													<br />
+													<br />
 												</td>
 											</tr>
 											<tr>
@@ -156,19 +166,19 @@
 														<xsl:for-each select="notification_data/item_loans/item_loan">
 															<tr>
 																<td>
-																	<xsl:value-of select="title"/>
+																	<xsl:value-of select="title" />
 																</td>
 																<td>
-																	<xsl:value-of select="author"/>
+																	<xsl:value-of select="author" />
 																</td>
 																<td>
-																	<xsl:value-of select="old_due_date_str"/>
+																	<xsl:value-of select="old_due_date_str" />
 																</td>
 																<td>
-																	<xsl:value-of select="new_due_date_str"/>
+																	<xsl:value-of select="new_due_date_str" />
 																</td>
 																<td>
-																	<xsl:value-of select="library_name"/>
+																	<xsl:value-of select="library_name" />
 																</td>
 															</tr>
 														</xsl:for-each>
@@ -180,27 +190,37 @@
 								</xsl:choose>
 							</xsl:when>
 							<xsl:otherwise>
-							<!-- Carleton letter -->
-								<table border="0" cellpadding="5" cellspacing="0">
+								<!-- Carleton letter -->
+								<table role="presentation" cellspacing="0" cellpadding="5" border="0">
+									<tr>
+										<td>
+											Hi,
+										</td>
+									</tr>
+									<tr>
+										<td>
+											The due date(s) for your item(s) have been updated.
+										</td>
+									</tr>
 									<tr>
 										<td>
 											<xsl:if test="notification_data/message='RECALL_DUEDATE_CHANGE'">
-												<b>@@recall_and_date_change@@</b>
+												@@recall_and_date_change@@
 											</xsl:if>
 											<xsl:if test="notification_data/message='RECALL_ONLY'">
-												<b>@@recall_and_no_date_change@@</b>
+												@@recall_and_no_date_change@@
 											</xsl:if>
 											<xsl:if test="notification_data/message='DUE_DATE_CHANGE_ONLY'">
-												<b>@@message@@</b>
+												@@message@@
 											</xsl:if>
 											<xsl:if test="notification_data/message='RECALL_CANCEL_RESTORE_ORIGINAL_DUEDATE'">
-												<b>@@cancel_recall_date_change@@</b>
+												@@cancel_recall_date_change@@
 											</xsl:if>
 											<xsl:if test="notification_data/message='RECALL_CANCEL_ITEM_RENEWED'">
-												<b>@@cancel_recall_renew@@</b>
+												@@cancel_recall_renew@@
 											</xsl:if>
 											<xsl:if test="notification_data/message='RECALL_CANCEL_NO_CHANGE'">
-												<b>@@cancel_recall_no_date_change@@</b>
+												@@cancel_recall_no_date_change@@
 											</xsl:if>
 										</td>
 									</tr>
@@ -208,7 +228,8 @@
 										<td>
 											<table cellpadding="5" class="listing">
 												<xsl:attribute name="style">
-													<xsl:call-template name="mainTableStyleCss"/> <!-- style.xsl -->
+													<xsl:call-template name="mainTableStyleCss" />
+													<!-- style.xsl -->
 												</xsl:attribute>
 												<tr>
 													<th>@@title@@</th>
@@ -220,33 +241,42 @@
 												<xsl:for-each select="notification_data/item_loans/item_loan">
 													<tr>
 														<td>
-															<xsl:value-of select="title"/>
+															<xsl:value-of select="title" />
 														</td>
 														<td>
-															<xsl:value-of select="item_description"/>
+															<xsl:value-of select="item_description" />
 														</td>
 														<td>
-															<xsl:value-of select="author"/>
+															<xsl:value-of select="author" />
 														</td>
 														<td>
-															<xsl:value-of select="old_due_date_str"/>
+															<xsl:value-of select="old_due_date_str" />
 														</td>
 														<td>
-															<xsl:value-of select="new_due_date_str"/>
+															<xsl:value-of select="new_due_date_str" />
 														</td>
 													</tr>
 												</xsl:for-each>
 											</table>
 										</td>
 									</tr>
-								</table>
-								<br/>
-								<table>
 									<tr>
-										<td>For more information please visit your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
+										<td>
+											For more information please visit your
+											<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.
+										</td>
 									</tr>
 									<tr>
-										<td>If you have any questions please contact a staff member from Access Services at <a href="mailto:LibCirc@cunet.carleton.ca">LibCirc@cunet.carleton.ca</a> or 613-520-2600 x2734.</td>
+										<td>
+											@@sincerely@@
+										</td>
+									</tr>
+									<tr>
+										<td>
+											@@department@@
+											<br />
+											Carleton University Library
+										</td>
 									</tr>
 								</table>
 							</xsl:otherwise>
@@ -261,4 +291,3 @@
 		</html>
 	</xsl:template>
 </xsl:stylesheet>
-
