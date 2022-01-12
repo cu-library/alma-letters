@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:include href="header.xsl" />
-	<xsl:include href="senderReceiver.xsl" />
-	<xsl:include href="mailReason.xsl" />
-	<xsl:include href="footer.xsl" />
 	<xsl:include href="style.xsl" />
-	<xsl:include href="recordTitle.xsl" />
+	<xsl:include href="header.xsl" />
+	<xsl:include href="footer.xsl" />
 	<xsl:template match="/">
 		<html>
+			<xsl:if test="notification_data/languages/string">
+				<xsl:attribute name="lang">
+					<xsl:value-of select="notification_data/languages/string" />
+				</xsl:attribute>
+			</xsl:if>
 			<head>
+				<title>
+					<xsl:value-of select="notification_data/general_data/letter_name" />
+				</title>
 				<xsl:call-template name="generalStyle" />
+				<!-- style.xsl -->
 			</head>
 			<body>
 				<xsl:attribute name="style">
-					<xsl:call-template name="bodyStyleCss" /> <!-- style.xsl -->
+					<xsl:call-template name="bodyStyleCss" />
+					<!-- style.xsl -->
 				</xsl:attribute>
-				<xsl:call-template name="head" /> <!-- header.xsl -->
-				<xsl:call-template name="senderReceiver" /> <!-- SenderReceiver.xsl -->
-				<br/>
-				<xsl:call-template name="toWhomIsConcerned" /> <!-- mailReason.xsl -->
+				<xsl:call-template name="head" />
+				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
 						<!-- AFN CODE -->
@@ -29,12 +34,14 @@
 								<xsl:choose>
 									<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
 										<!-- handle AFN language fr -->
-										<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+										<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 											<tr>
 												<td>
-													Veuillez noter que les éléments suivants que vous avez demandés <b>
-													<xsl:value-of select="notification_data/organization_unit/name"/>
-													</b> attendent d'être récupérés au lieu de prise en charge indiqué:
+													Veuillez noter que les éléments suivants que vous avez demandés
+													<b>
+														<xsl:value-of select="notification_data/organization_unit/name" />
+													</b>
+													attendent d'être récupérés au lieu de prise en charge indiqué:
 												</td>
 											</tr>
 											<xsl:for-each select="notification_data/requests_by_library/library_requests_for_display">
@@ -60,23 +67,23 @@
 															<xsl:for-each select="requests/request_for_display">
 																<tr>
 																	<td>
-																		<xsl:value-of select="phys_item_display/title"/>
+																		<xsl:value-of select="phys_item_display/title" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="phys_item_display/author"/>
+																		<xsl:value-of select="phys_item_display/author" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="request/assigned_unit_name"/>
+																		<xsl:value-of select="request/assigned_unit_name" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="request/work_flow_entity/expiration_date"/>
+																		<xsl:value-of select="request/work_flow_entity/expiration_date" />
 																	</td>
 																</tr>
 															</xsl:for-each>
 														</table>
 													</td>
 												</tr>
-											<br/>
+												<br />
 											</xsl:for-each>
 											<xsl:if test="notification_data/out_of_institution_requests/request_for_display">
 												<tr>
@@ -106,23 +113,23 @@
 															<xsl:for-each select="notification_data/out_of_institution_requests/request_for_display">
 																<tr>
 																	<td>
-																		<xsl:value-of select="phys_item_display/title"/>
+																		<xsl:value-of select="phys_item_display/title" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="phys_item_display/author"/>
+																		<xsl:value-of select="phys_item_display/author" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="request/assigned_unit_name"/>
+																		<xsl:value-of select="request/assigned_unit_name" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="request/work_flow_entity/expiration_date"/>
+																		<xsl:value-of select="request/work_flow_entity/expiration_date" />
 																	</td>
 																</tr>
 															</xsl:for-each>
 														</table>
 													</td>
 												</tr>
-												<br/>
+												<br />
 											</xsl:if>
 											<xsl:if test="notification_data/user_for_printing/blocks != ''">
 												<tr>
@@ -132,28 +139,30 @@
 												</tr>
 												<tr>
 													<td>
-														<xsl:value-of select="notification_data/user_for_printing/blocks"/>
+														<xsl:value-of select="notification_data/user_for_printing/blocks" />
 													</td>
 												</tr>
 											</xsl:if>
 											<tr>
 												<td>
-													<br/>
+													<br />
 													<!-- AFN-VERSION 1.1 -->
 													Pour connaitre les heures de service et les informations sur le ramassage, veuillez consulter la page web de la bibliothèque sur le ramassage, donnée ci-dessus.
-													<br/>
+													<br />
 												</td>
 											</tr>
 										</table>
 									</xsl:when>
 									<xsl:otherwise>
 										<!-- handle AFN language default english 'en' -->
-										<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+										<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 											<tr>
 												<td>
-													Please note that the following item(s) you requested from <b>
-													<xsl:value-of select="notification_data/organization_unit/name"/>
-													</b> are waiting to be picked up at the indicated pickup location:
+													Please note that the following item(s) you requested from
+													<b>
+														<xsl:value-of select="notification_data/organization_unit/name" />
+													</b>
+													are waiting to be picked up at the indicated pickup location:
 												</td>
 											</tr>
 											<!-- Unsure if these requests_by_library could ever be populated for an AFN request-->
@@ -181,23 +190,23 @@
 															<xsl:for-each select="requests/request_for_display">
 																<tr>
 																	<td>
-																		<xsl:value-of select="phys_item_display/title"/>
+																		<xsl:value-of select="phys_item_display/title" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="phys_item_display/author"/>
+																		<xsl:value-of select="phys_item_display/author" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="request/assigned_unit_name"/>
+																		<xsl:value-of select="request/assigned_unit_name" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="request/work_flow_entity/expiration_date"/>
+																		<xsl:value-of select="request/work_flow_entity/expiration_date" />
 																	</td>
 																</tr>
 															</xsl:for-each>
 														</table>
 													</td>
 												</tr>
-												<br/>
+												<br />
 											</xsl:for-each>
 											<!-- Most AFN requests in out_of_institution_requests, hold shelf NOT IN OWNING institution -->
 											<xsl:if test="notification_data/out_of_institution_requests/request_for_display">
@@ -221,23 +230,23 @@
 															<xsl:for-each select="notification_data/out_of_institution_requests/request_for_display">
 																<tr>
 																	<td>
-																		<xsl:value-of select="phys_item_display/title"/>
+																		<xsl:value-of select="phys_item_display/title" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="phys_item_display/author"/>
+																		<xsl:value-of select="phys_item_display/author" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="request/assigned_unit_name"/>
+																		<xsl:value-of select="request/assigned_unit_name" />
 																	</td>
 																	<td>
-																		<xsl:value-of select="request/work_flow_entity/expiration_date"/>
+																		<xsl:value-of select="request/work_flow_entity/expiration_date" />
 																	</td>
 																</tr>
 															</xsl:for-each>
 														</table>
 													</td>
 												</tr>
-												<br/>
+												<br />
 											</xsl:if>
 											<xsl:if test="notification_data/user_for_printing/blocks != ''">
 												<tr>
@@ -247,15 +256,15 @@
 												</tr>
 												<tr>
 													<td>
-														<xsl:value-of select="notification_data/user_for_printing/blocks"/>
+														<xsl:value-of select="notification_data/user_for_printing/blocks" />
 													</td>
 												</tr>
 											</xsl:if>
 											<tr>
 												<td>
-													<br/>
+													<br />
 													Please check the website at the pickup library indicated above for service hours and pickup information.
-													<br/>
+													<br />
 												</td>
 											</tr>
 										</table>
@@ -264,15 +273,20 @@
 							</xsl:when>
 							<xsl:otherwise>
 								<!-- Carleton letter -->
-								<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+								<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 									<tr>
 										<td>
-											<h>@@message@@</h>
+											Hi,
 										</td>
 									</tr>
 									<tr>
 										<td>
-											<h>@@following_items_awaiting_pickup@@</h>
+											The items on the hold shelf are still waiting for you.
+										</td>
+									</tr>
+									<tr>
+										<td>
+											If you need a couple of extra days to pick up or would like to change your delivery preference, please reach out and we can see what we can do.
 										</td>
 									</tr>
 									<xsl:for-each select="notification_data/requests_by_library/library_requests_for_display">
@@ -282,13 +296,6 @@
 													<xsl:attribute name="style">
 														<xsl:call-template name="mainTableStyleCss" />
 													</xsl:attribute>
-													<tr align="center" bgcolor="#f5f5f5">
-														<td colspan="4">
-															<h3>
-																<xsl:value-of select="organization_unit/name" />
-															</h3>
-														</td>
-													</tr>
 													<tr>
 														<th>@@title@@</th>
 														<th>@@author@@</th>
@@ -298,23 +305,23 @@
 													<xsl:for-each select="requests/request_for_display">
 														<tr>
 															<td>
-																<xsl:value-of select="phys_item_display/title"/>
+																<xsl:value-of select="phys_item_display/title" />
 															</td>
 															<td>
-																<xsl:value-of select="phys_item_display/author"/>
+																<xsl:value-of select="phys_item_display/author" />
 															</td>
 															<td>
-																<xsl:value-of select="request/assigned_unit_name"/>
+																<xsl:value-of select="request/assigned_unit_name" />
 															</td>
 															<td>
-																<xsl:value-of select="request/work_flow_entity/expiration_date"/>
+																<xsl:value-of select="request/work_flow_entity/expiration_date" />
 															</td>
 														</tr>
 													</xsl:for-each>
 												</table>
 											</td>
 										</tr>
-										<br/>
+										<br />
 									</xsl:for-each>
 									<xsl:if test="notification_data/out_of_institution_requests/request_for_display">
 										<tr>
@@ -337,23 +344,23 @@
 													<xsl:for-each select="notification_data/out_of_institution_requests/request_for_display">
 														<tr>
 															<td>
-																<xsl:value-of select="phys_item_display/title"/>
+																<xsl:value-of select="phys_item_display/title" />
 															</td>
 															<td>
-																<xsl:value-of select="phys_item_display/author"/>
+																<xsl:value-of select="phys_item_display/author" />
 															</td>
 															<td>
-																<xsl:value-of select="request/assigned_unit_name"/>
+																<xsl:value-of select="request/assigned_unit_name" />
 															</td>
 															<td>
-																<xsl:value-of select="request/work_flow_entity/expiration_date"/>
+																<xsl:value-of select="request/work_flow_entity/expiration_date" />
 															</td>
 														</tr>
 													</xsl:for-each>
 												</table>
 											</td>
 										</tr>
-										<br/>
+										<br />
 									</xsl:if>
 									<xsl:if test="notification_data/user_for_printing/blocks != ''">
 										<tr>
@@ -363,23 +370,26 @@
 										</tr>
 										<tr>
 											<td>
-												<xsl:value-of select="notification_data/user_for_printing/blocks"/>
+												<xsl:value-of select="notification_data/user_for_printing/blocks" />
 											</td>
 										</tr>
 									</xsl:if>
-								</table>
-								<br />
-								<table role='presentation' >
 									<tr>
-										<td>@@sincerely@@</td>
+										<td>
+											@@sincerely@@
+										</td>
 									</tr>
 									<tr>
-										<td>@@department@@</td>
+										<td>
+											@@department@@
+											<br />
+											Carleton University Library
+										</td>
 									</tr>
 								</table>
-								<!-- END OF AFN TODO -->
 							</xsl:otherwise>
 						</xsl:choose>
+						<!-- END OF AFN CODE -->
 					</div>
 				</div>
 				<!-- AFN footer template options from footer.xsl -->
