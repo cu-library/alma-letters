@@ -190,14 +190,11 @@
 											If you chose <b>Mail Delivery</b>, the items are being processed and will be on route to you shortly.
 										</td>
 									</tr>
-								</table>
-								<table border="0" cellpadding="5" cellspacing="0">
 									<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
 										<tr>
 											<td>
 												@@note_item_held_until@@
-												<xsl:value-of select="notification_data/request/work_flow_entity/expiration_date" />
-												.
+												<xsl:value-of select="notification_data/request/work_flow_entity/expiration_date" />.
 											</td>
 										</tr>
 									</xsl:if>
@@ -219,8 +216,6 @@
 											</td>
 										</tr>
 									</xsl:if>
-								</table>
-								<table>
 									<tr>
 										<td>
 											@@sincerely@@
