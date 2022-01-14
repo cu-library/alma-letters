@@ -2,7 +2,6 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:include href="style.xsl" />
 	<xsl:include href="header.xsl" />
-	<xsl:include href="recordTitle.xsl" />
 	<xsl:include href="footer.xsl" />
 	<xsl:template match="/">
 		<html>
@@ -79,8 +78,6 @@
 										</table>
 									</td>
 								</tr>
-								<hr />
-								<br />
 							</xsl:for-each>
 							<tr>
 								<td>
