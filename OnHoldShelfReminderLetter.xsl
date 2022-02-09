@@ -37,11 +37,11 @@
 										<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 											<tr>
 												<td>
-													Veuillez noter que les éléments suivants que vous avez demandés
+													Veuillez noter que le(s) document(s) suivant(s) que vous avez demandé(s) de
 													<b>
 														<xsl:value-of select="notification_data/organization_unit/name" />
 													</b>
-													attendent d'être récupérés au lieu de prise en charge indiqué:
+													est (sont) en attente d'être récupéré(s) au lieu de ramassage indiqué:
 												</td>
 											</tr>
 											<xsl:for-each select="notification_data/requests_by_library/library_requests_for_display">
@@ -147,7 +147,7 @@
 												<td>
 													<br />
 													<!-- AFN-VERSION 1.1 -->
-													Pour connaitre les heures de service et les informations sur le ramassage, veuillez consulter la page web de la bibliothèque sur le ramassage, donnée ci-dessus.
+													Pour connaitre les heures de service et des informations liées à la récupération de documents veuillez consulter ci-dessus la page web de la bibliothèque.
 													<br />
 												</td>
 											</tr>
