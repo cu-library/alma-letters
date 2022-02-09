@@ -89,8 +89,8 @@
 															-->
 															<th>Titre</th>
 															<th>Auteur</th>
-															<th>Date d'échéance initiale</th>
-															<th>Date d'échéance révisée</th>
+															<th>Ancienne date de retour</th>
+															<th>Nouvelle date de retour</th>
 															<th>Bibliothèque</th>
 														</tr>
 														<xsl:for-each select="notification_data/item_loans/item_loan">
