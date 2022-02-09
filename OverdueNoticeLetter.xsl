@@ -39,7 +39,7 @@
 													<b>
 														Le(s) document(s) suivant(s) de
 														<xsl:value-of select="notification_data/organization_unit/name" />
-														est (sont) à rendre aujourd'hui. Veuillez retourner le(s) document(s) à votre bibliothèque, ou, pour les renouveler:
+														est (sont) à rendre aujourd'hui. Veuillez retourner le(s) document(s) à votre bibliothèque, ou, pour les renouveler to ou pour un renouvellement:
 													</b>
 													<br />
 												</td>
@@ -52,9 +52,8 @@
 											</tr>
 											<tr>
 												<td>
-													2. Cliquez sur l'
-													<xsl:value-of select="notification_data/item_loans/item_loan/library_name" />
-													option à la gauche et renouvelez le(s) document(s)
+													2. Cliquez sur <xsl:value-of select="notification_data/item_loans/item_loan/library_name" />
+													à la gauche et renouvelez le(s) document(s).
 												</td>
 											</tr>
 											<tr>
@@ -73,7 +72,7 @@
 															-->
 															<th>Titre</th>
 															<th>Auteur</th>
-															<th>Date d'échéance</th>
+															<th>Date de retour</th>
 															<th>Bibliothèque</th>
 														</tr>
 														<xsl:for-each select="notification_data/item_loans/item_loan">
