@@ -38,7 +38,7 @@
 											<tr>
 												<td>
 													Le(s) document(s) suivant(s) de <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/>
-						 arrive(nt) à échéance. Veuillez retourner le(s) document(s) à votre bibliothèque, ou, pour les renouveler to ou pour un renouvellement.
+						 arrive(nt) à échéance. Veuillez retourner le(s) document(s) à votre bibliothèque, ou pour un renouvellement:
 												</td>
 											</tr>
 											<tr>
