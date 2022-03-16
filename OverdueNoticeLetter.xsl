@@ -39,7 +39,7 @@
 													<b>
 														Le(s) document(s) suivant(s) de
 														<xsl:value-of select="notification_data/organization_unit/name" />
-														est (sont) à rendre aujourd'hui. Veuillez retourner le(s) document(s) à votre bibliothèque, ou, pour les renouveler to ou pour un renouvellement:
+														est (sont) à rendre aujourd'hui. Veuillez retourner le(s) document(s) à votre bibliothèque, ou pour un renouvellement:
 													</b>
 													<br />
 												</td>
