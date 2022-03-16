@@ -41,7 +41,7 @@
 	</xsl:template>
 
 	<xsl:template name="afn_fr_contact_us">
-		Si vous avez des questions, ou si vous avez besoin d'aide, veuillez nous contact:
+		Si vous avez des questions, ou si vous avez besoin d'aide, veuillez nous contacter:
 	</xsl:template>
 
 	<xsl:variable name="is_afn_patron">
