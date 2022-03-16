@@ -62,7 +62,7 @@
 																<th>Titre</th>
 																<th>Auteur</th>
 																<th>Peut être retiré auprès de :</th>
-																<th>L''exemplaire sera réservé à votre nom jusqu''au</th>
+																<th>L'exemplaire sera réservé à votre nom jusqu'au</th>
 															</tr>
 															<xsl:for-each select="requests/request_for_display">
 																<tr>
@@ -95,7 +95,7 @@
 															<tr align="center" bgcolor="#f5f5f5">
 																<td colspan="4">
 																	<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
-																	<h3>Exemplaires à retirer auprès d''autres institutions</h3>
+																	<h3>Exemplaires à retirer auprès d'autres institutions</h3>
 																</td>
 															</tr>
 															<tr>
@@ -108,7 +108,7 @@
 																<th>Titre</th>
 																<th>Auteur</th>
 																<th>Peut être retiré auprès de :</th>
-																<th>L''exemplaire sera réservé à votre nom jusqu''au</th>
+																<th>L'exemplaire sera réservé à votre nom jusqu'au</th>
 															</tr>
 															<xsl:for-each select="notification_data/out_of_institution_requests/request_for_display">
 																<tr>
