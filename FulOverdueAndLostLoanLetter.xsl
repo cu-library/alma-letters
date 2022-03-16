@@ -75,8 +75,8 @@
 																<th>Bibliothèque</th>
 																<th>Date de prêt</th>
 																<th>Date de retour</th>
-																<th>Appel Nombre</th>
-																<th>Des charges</th>
+																<th>Cote</th>
+																<th>Frais</th>
 															</tr>
 															<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display">
 																<tr>
