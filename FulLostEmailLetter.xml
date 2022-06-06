@@ -74,6 +74,12 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 									</td>
 								</tr>
 							</xsl:if>
+							<tr>
+								<td>
+									<b>Request Date: </b>
+									<xsl:value-of select="notification_data/request/create_date_str"/>
+								</td>
+							</tr>
 						</table>
 						<br />
 						<table>
