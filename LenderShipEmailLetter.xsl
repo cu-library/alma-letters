@@ -34,7 +34,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					<tr>
 						<td>
 
-							<h3>@@header@@</h3>
+							@@header@@
 
 						</td>
 					</tr>
@@ -46,7 +46,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 							<tr>
 								<td>
-									<strong>@@request@@</strong>
+									@@request@@
 								</td>
 							</tr>
 
@@ -58,6 +58,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 								<xsl:call-template name="listStyleCss"/>
 								<!-- style.xsl -->
 							</xsl:attribute>
+							<tr>
+								<td>
+									<strong>Request Information:</strong>
+								</td>
+							</tr>
 							<tr>
 								<td>
 									<strong> @@requestId@@: </strong>
@@ -72,39 +77,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 							</tr>
 							<tr>
 								<td>
-									<strong> @@author@@: </strong>
-									<xsl:value-of select="notification_data/request/display/author"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
 									<strong> @@requestDate@@: </strong>
 									<xsl:value-of select="notification_data/request/create_date_str"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong> @@shippingDate@@: </strong>
-									<xsl:value-of select="notification_data/shipping_date"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<strong> @@format@@: </strong>
-									<xsl:value-of select="notification_data/format"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<strong> @@address@@: </strong>
-									<xsl:value-of select="notification_data/address"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<br/>
-									<strong> @@note@@: </strong>
-									<xsl:value-of select="notification_data/note_to_partner"/>
+									<strong>Arrival Date: </strong>
+									<xsl:value-of select="notification_data/arrival_date/calendar"/>
 								</td>
 							</tr>
 						</table>
@@ -114,6 +94,12 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 						<table role='presentation' >
 							<tr>
 								<td>@@signature@@</td>
+							</tr>							
+							<tr>
+								<td>
+								Access Services Department<br/>								
+								Carleton University Library
+								</td>
 							</tr>
 							<tr>
 								<td>
