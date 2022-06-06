@@ -139,6 +139,12 @@
 							</xsl:if>
 							<tr>
 								<td>
+									<b>Request Date: </b>
+									<xsl:value-of select="notification_data/request/create_date_str"/>
+								</td>
+							</tr>
+							<tr>
+								<td>
 									<strong> @@arrival_date@@: </strong>
 									<xsl:value-of select="notification_data/request/item_arrival_date"/>
 								</td>

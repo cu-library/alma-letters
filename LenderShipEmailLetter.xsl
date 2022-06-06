@@ -84,7 +84,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 							<tr>
 								<td>
 									<strong>Arrival Date: </strong>
-									<xsl:value-of select="notification_data/arrival_date/calendar"/>
+									<xsl:value-of select="notification_data/request/item_arrival_date"/>
 								</td>
 							</tr>
 						</table>
