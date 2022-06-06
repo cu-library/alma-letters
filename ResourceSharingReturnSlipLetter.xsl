@@ -37,12 +37,21 @@
 							</xsl:attribute>
 							<tr>
 								<td>
-									<strong>@@returned@@</strong>
+									Hi,
 								</td>
 							</tr>
 							<tr>
 								<td>
-								<br/>
+									@@returned@@
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br/><strong>Request Information:</strong>
+								</td>
+							</tr>
+							<tr>
+								<td>
 									<strong> @@returned_to@@: </strong>
 									<xsl:value-of select="notification_data/partner_name"/>
 								</td>
@@ -109,18 +118,6 @@
 								</tr>
 							</xsl:if>
 							<tr>
-								<td>
-									<strong> @@email@@: </strong>
-									<xsl:value-of select="notification_data/partner_email/email"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<strong> @@phone@@: </strong>
-									<xsl:value-of select="notification_data/partner_phone/phone"/>
-								</td>
-							</tr>
-							<tr>
 								<td><strong> @@request_id@@: </strong><img src="externalId.png" alt="externalId"/></td>
 							</tr>
 							<tr><td><br/></td></tr>
@@ -142,38 +139,12 @@
 							</xsl:if>
 							<tr>
 								<td>
-									<strong> @@author@@: </strong>
-									<xsl:value-of select="notification_data/request/display/author"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<strong> @@volume@@: </strong>
-									<xsl:value-of select="notification_data/request/display/volume"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<strong> @@issue@@: </strong>
-									<xsl:value-of select="notification_data/request/display/issue"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<br/>
 									<strong> @@arrival_date@@: </strong>
 									<xsl:value-of select="notification_data/request/item_arrival_date"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong> @@required_return_date@@: </strong>
-									<xsl:value-of select="notification_data/request/due_date"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<br/>
 									<strong> @@note_to_partner@@: </strong>
 									<xsl:value-of select="notification_data/note_to_partner"/>
 								</td>
@@ -185,6 +156,12 @@
 						<table role='presentation' >
 							<tr>
 								<td>@@signature@@</td>
+							</tr>
+							<tr>
+								<td>
+								Access Services Department<br/>								
+								Carleton University Library
+								</td>
 							</tr>
 							<tr>
 								<td>
