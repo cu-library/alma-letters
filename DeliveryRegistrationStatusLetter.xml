@@ -72,7 +72,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 			<table role='presentation' >
 				<tr><td>@@sincerely@@</td></tr>
 				<tr><td>@@department@@</td></tr>
-				<tr><td>Contact: <a href="mailto:library_reserves@cunet.carleton.ca">library_reserves@cunet.carleton.ca</a></td></tr>
+				<tr><td>Contact: <a href="mailto:course.reserves@carleton.ca">course.reserves@carleton.ca</a></td></tr>
 			</table>
 
           </div>
