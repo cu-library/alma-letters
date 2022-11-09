@@ -52,6 +52,7 @@
 							</tr>
 							<tr>
 								<td>
+								<br/>
 									<strong> @@returned_to@@: </strong>
 									<xsl:value-of select="notification_data/partner_name"/>
 								</td>
@@ -110,6 +111,20 @@
 									</td>
 								</tr>
 							</xsl:if>
+                            <xsl:if test="notification_data/partner_address/state_province !=''">
+								<tr>
+									<td>
+										<xsl:value-of select="notification_data/partner_address/state_province"/>
+									</td>
+								</tr>
+							</xsl:if>
+                            <xsl:if test="notification_data/partner_address/postal_code !=''">
+								<tr>
+									<td>
+										<xsl:value-of select="notification_data/partner_address/postal_code"/>
+									</td>
+								</tr>
+							</xsl:if>
 							<xsl:if test="notification_data/partner_address/country !=''">
 								<tr>
 									<td>
@@ -117,6 +132,18 @@
 									</td>
 								</tr>
 							</xsl:if>
+							<tr>
+								<td>
+									<strong> @@email@@: </strong>
+									<xsl:value-of select="notification_data/partner_email/email"/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<strong> @@phone@@: </strong>
+									<xsl:value-of select="notification_data/partner_phone/phone"/>
+								</td>
+							</tr>
 							<tr>
 								<td><strong> @@request_id@@: </strong><img src="externalId.png" alt="externalId"/></td>
 							</tr>
@@ -145,12 +172,38 @@
 							</tr>
 							<tr>
 								<td>
+									<strong> @@author@@: </strong>
+									<xsl:value-of select="notification_data/request/display/author"/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<strong> @@volume@@: </strong>
+									<xsl:value-of select="notification_data/request/display/volume"/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<strong> @@issue@@: </strong>
+									<xsl:value-of select="notification_data/request/display/issue"/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br/>
 									<strong> @@arrival_date@@: </strong>
 									<xsl:value-of select="notification_data/request/item_arrival_date"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
+									<strong> @@required_return_date@@: </strong>
+									<xsl:value-of select="notification_data/request/due_date"/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br/>
 									<strong> @@note_to_partner@@: </strong>
 									<xsl:value-of select="notification_data/note_to_partner"/>
 								</td>
@@ -166,9 +219,9 @@
 							<tr>
 								<td>
 								Access Services Department<br/>								
-								Carleton University Library
+								Carleton University Library<br/><br/>		
 								</td>
-							</tr>
+							</tr>							
 							<tr>
 								<td>
 									<xsl:value-of select="notification_data/library/name"/>
@@ -216,6 +269,20 @@
 									</td>
 								</tr>
 							</xsl:if>
+                            <xsl:if test="notification_data/library/address/state_province !=''">
+								<tr>
+									<td>
+										<xsl:value-of select="notification_data/library/address/state_province"/>
+									</td>
+								</tr>
+							</xsl:if>
+                            <xsl:if test="notification_data/library/address/postal_code !=''">
+								<tr>
+									<td>
+										<xsl:value-of select="notification_data/library/address/postal_code"/>
+									</td>
+								</tr>
+							</xsl:if>
 							<xsl:if test="notification_data/library/address/country !=''">
 								<tr>
 									<td>
@@ -230,6 +297,6 @@
 				<xsl:call-template name="lastFooter"/>
 				<!-- footer.xsl -->
 			</body>
-		</html>
-	</xsl:template>
+</html>
+</xsl:template>
 </xsl:stylesheet>
