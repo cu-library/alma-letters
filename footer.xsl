@@ -113,7 +113,7 @@
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_IT' ">
 											<!-- AFN-VERSION 1.2 removed | durham campus info -->
-											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="https://guides.library.uoit.ca/contact"> Coordonnées des techniciens de l'Ontario</a></p>
+											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="https://ontariotechu.ca/sites/library/about/contact-us.php"> Coordonnées des techniciens de l'Ontario</a></p>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_QU' ">
 											<p><xsl:call-template name="afn_fr_contact_us" />  <a href="https://library.queensu.ca/help-servers/ask-us"> Ask Us </a> </p>
@@ -174,7 +174,7 @@
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_IT' ">
 											<!-- AFN-VERSION 1.2 removed | durham campus info -->
-											<p><xsl:call-template name="afn_en_contact_us" />  <a href="https://guides.library.uoit.ca/contact"> Ontario Tech Contact Information</a></p>
+											<p><xsl:call-template name="afn_en_contact_us" />  <a href="https://ontariotechu.ca/sites/library/about/contact-us.php"> Ontario Tech Contact Information</a></p>
 										</xsl:when>
 										<xsl:when test="$external_id = '01OCUL_QU' ">
 											<p><xsl:call-template name="afn_en_contact_us" />  <a href="https://library.queensu.ca/help-servers/ask-us"> Ask Us </a> </p>
