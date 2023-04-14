@@ -80,6 +80,14 @@
 									<xsl:value-of select="notification_data/request/status_note_display" />
 								</td>
 							</tr>
+                                                        <xsl:if test="notification_data/request/external_request_id !=''">
+										<tr>
+											<td>
+												<strong>Request ID: </strong>
+												<xsl:value-of select="notification_data/request/external_request_id"/>
+											</td>
+										</tr>
+							</xsl:if>
 							<tr>
 								<td>
 									@@sincerely@@
