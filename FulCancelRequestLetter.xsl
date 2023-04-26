@@ -74,13 +74,22 @@
 									</td>
 								</tr>
 							</xsl:if>
+							
+							<!-- START stop emails for converted to resource sharing -->
+								<xsl:if test="notification_data/request/status_note">                        
+									<xsl:if test="contains(notification_data/request/status_note, 'ConvertedToResourceSharingRequest')">
+										<xsl:message terminate="yes">A converted to resource sharing cancellation, don't send email</xsl:message>
+									</xsl:if>
+								</xsl:if>
+							<!-- END stop emails for converted to resource sharing -->
+
 							<tr>
 								<td>
 									<b>@@reason_deleting_request@@:</b>&#160;
 									<xsl:value-of select="notification_data/request/status_note_display" />
 								</td>
 							</tr>
-                                                        <xsl:if test="notification_data/request/external_request_id !=''">
+                            <xsl:if test="notification_data/request/external_request_id !=''">
 										<tr>
 											<td>
 												<strong>Request ID: </strong>

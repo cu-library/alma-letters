@@ -123,10 +123,10 @@
 											<tr>
 												<td>
 													<xsl:if test="notification_data/message='RECALL_DUEDATE_CHANGE'">
-														<b>The item(s) listed below have been recalled. See below for the updated due date(s).</b>
+														<b>The item(s) listed below have been recalled. See below for the updated due date(s).  If the item is not returned by the due date, there may be recall fines added to your account. See <a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>.</b>
 													</xsl:if>
 													<xsl:if test="notification_data/message='RECALL_ONLY'">
-														<b>The item(s) listed below have been recalled. The due date(s) have not changed.</b>
+														<b>The item(s) listed below have been recalled. The due date(s) have not changed.  If the item is not returned by the due date, there may be recall fines added to your account. See <a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>.</b>
 													</xsl:if>
 													<xsl:if test="notification_data/message='DUE_DATE_CHANGE_ONLY'">
 														<b>
@@ -140,7 +140,7 @@
 														<b>The recall placed on your borrowed item(s) has been cancelled, and the original due date has been restored. See below for the updated due date(s).</b>
 													</xsl:if>
 													<xsl:if test="notification_data/message='RECALL_CANCEL_ITEM_RENEWED'">
-														<b>The recall placed on your borrowed item(s) has been cancelled. The loan has been renewed. See below for the updated due date(s).</b>
+														<b>The recall placed on your borrowed item(s) has been cancelled. The loan has been renewed. See below for the updated due date(s). </b>
 													</xsl:if>
 													<xsl:if test="notification_data/message='RECALL_CANCEL_NO_CHANGE'">
 														<b>The recall placed on your borrowed item(s) has been cancelled. There is no change in the due date.</b>
@@ -205,10 +205,11 @@
 									<tr>
 										<td>
 											<xsl:if test="notification_data/message='RECALL_DUEDATE_CHANGE'">
-												@@recall_and_date_change@@
+												@@recall_and_date_change@@ If the item is not returned by the due date, there may be recall fines added to your account. See <a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>.
+
 											</xsl:if>
 											<xsl:if test="notification_data/message='RECALL_ONLY'">
-												@@recall_and_no_date_change@@
+												@@recall_and_no_date_change@@ If the item is not returned by the due date, there may be recall fines added to your account. See <a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>.
 											</xsl:if>
 											<xsl:if test="notification_data/message='DUE_DATE_CHANGE_ONLY'">
 												@@message@@
