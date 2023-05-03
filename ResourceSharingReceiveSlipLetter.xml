@@ -96,18 +96,6 @@
 									<xsl:value-of select="notification_data/request/pickup_location_str"/>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									<strong> @@circulation_note@@: </strong>
-									<xsl:value-of select="notification_data/circulation_note"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<strong> @@shipping_cost@@: </strong>
-									<xsl:value-of select="notification_data/request/shipping_cost/normalized_sum"/>&#160;<xsl:value-of select="notification_data/request/shipping_cost/currency"/>
-								</td>
-							</tr>
 							<xsl:if test="notification_data/citation_id !=''">
 
 							<tr>
