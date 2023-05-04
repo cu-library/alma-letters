@@ -35,6 +35,14 @@
 								<xsl:call-template name="listStyleCss"/>
 								<!-- style.xsl -->
 							</xsl:attribute>
+							
+							<tr>
+								<td>
+									<br/>
+									<h2><strong> @@patron_name@@: </strong>
+									<xsl:value-of select="notification_data/patron_name"/></h2>
+								</td>
+							</tr>
 
 							<xsl:if test="notification_data/barcode !=''">
 								<tr>
@@ -67,15 +75,6 @@
 									<xsl:value-of select="notification_data/request/display/author"/>
 								</td>
 							</tr>
-
-							<tr>
-								<td>
-									<br/>
-									<strong> @@patron_name@@: </strong>
-									<xsl:value-of select="notification_data/patron_name"/>
-								</td>
-							</tr>
-
 							<tr>
 								<td>
 									<br/>
