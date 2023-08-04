@@ -215,7 +215,11 @@
 							<tr>
 								<td>
 									<b>@@move_to_library@@: </b>
-									<xsl:value-of select="notification_data/destination"/>
+									<xsl:value-of select="notification_data/destination"/><br/>
+									<!-- ADDS IN DELIVERY ADDRESS IF THE ADDRESS IS DIFFERENT FROM DESTINATION VALUE -->
+									<xsl:if test="not(notification_data/destination=notification_data/request/delivery_address)">
+										<b>Address</b>: <xsl:value-of select="notification_data/request/delivery_address" />
+									</xsl:if>
 								</td>
 							</tr>
 							<tr>
