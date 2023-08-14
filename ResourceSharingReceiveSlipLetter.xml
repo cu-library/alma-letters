@@ -91,8 +91,16 @@
 							<tr>
 								<td>
 									<br/>
-									<strong> @@pickup_location@@: </strong>
-									<xsl:value-of select="notification_data/request/pickup_location_str"/>
+									<xsl:choose>
+									    <xsl:when test="contains(/notification_data/delivery_address, 'Office Delivery')">
+											<!-- Tells user what department item will be delivered to, strips out unnecessary address bits -->
+											<b>@@pickup_location@@:</b> Office Delivery <br/>
+											<b>Department:</b> <xsl:value-of select="substring-after(substring-before(/notification_data/delivery_address,'Carleton University'), 'Office Delivery:')" />
+								    	</xsl:when>
+								        <xsl:otherwise>
+								            <strong> @@pickup_location@@: </strong> <xsl:value-of select="notification_data/request/pickup_location_str"/>
+									    </xsl:otherwise>
+									</xsl:choose>
 								</td>
 							</tr>
 							<xsl:if test="notification_data/citation_id !=''">

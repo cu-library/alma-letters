@@ -29,7 +29,7 @@
 						<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 							<tr>
 								<td>
-									Hi,
+									Hi,							
 								</td>
 							</tr>
 							<tr>
@@ -37,11 +37,24 @@
 									You have borrowed the following items from MacOdrum Library at Carleton University.
 								</td>
 							</tr>
+														<!-- OFFICE DELIVERY VARIATION: Checks for "Office Delivery" in address string, and implements different text if so. -->
+							<xsl:choose>
+								<xsl:when test="contains(/notification_data/items/item_loan/delivery_address, 'Office Delivery')">
+									<tr>
+										<td>
+										<!-- Tells user what department item will be delivered to, strips out unnecessary address bits -->
+										They will be delivered to your campus office at the <b><xsl:value-of select="substring-after(substring-before(/notification_data/items/item_loan/delivery_address,'Carleton University'), 'Office Delivery:')" /></b> department.
+										</td>
+									</tr>
+							</xsl:when>
+							<xsl:otherwise>
 							<tr>
 								<td>
 									If you have selected "Mail Delivery" for items, they have been processed and are on route to you!
 								</td>
 							</tr>
+							</xsl:otherwise>
+							</xsl:choose>
 							<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
 								<tr>
 									<td>
