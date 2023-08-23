@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:include href="style.xsl" />
-	<xsl:include href="header.xsl" />
-	<xsl:include href="recordTitle.xsl" />
-	<xsl:include href="footer.xsl" />
+	<xsl:include href="style.xsl"/>
+	<xsl:include href="header.xsl"/>
+	<xsl:include href="recordTitle.xsl"/>
+	<xsl:include href="footer.xsl"/>
 	<xsl:template match="/">
 		<html>
 			<xsl:if test="notification_data/languages/string">
 				<xsl:attribute name="lang">
-					<xsl:value-of select="notification_data/languages/string" />
+					<xsl:value-of select="notification_data/languages/string"/>
 				</xsl:attribute>
 			</xsl:if>
 			<head>
 				<title>
-					<xsl:value-of select="notification_data/general_data/letter_name" />
+					<xsl:value-of select="notification_data/general_data/letter_name"/>
 				</title>
-				<xsl:call-template name="generalStyle" />
+				<xsl:call-template name="generalStyle"/>
 				<!-- style.xsl -->
 			</head>
 			<body>
 				<xsl:attribute name="style">
-					<xsl:call-template name="bodyStyleCss" />
+					<xsl:call-template name="bodyStyleCss"/>
 					<!-- style.xsl -->
 				</xsl:attribute>
-				<xsl:call-template name="head" />
+				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
@@ -35,7 +35,7 @@
 								<xsl:choose>
 									<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
 										<!-- handle AFN French fr -->
-										<br />
+										<br/>
 										<table cellspacing="0" cellpadding="5" border="0">
 											<tr>
 												<td>
@@ -45,19 +45,20 @@
 										</table>
 										<table cellpadding="5" class="listing">
 											<xsl:attribute name="style">
-												<xsl:call-template name="mainTableStyleCss" /> <!-- style.xsl -->
+												<xsl:call-template name="mainTableStyleCss"/>
+												<!-- style.xsl -->
 											</xsl:attribute>
 											<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
 												<tr>
 													<td>
 														<table cellpadding="5" class="listing">
 															<xsl:attribute name="style">
-																<xsl:call-template name="mainTableStyleCss" />
+																<xsl:call-template name="mainTableStyleCss"/>
 															</xsl:attribute>
 															<tr align="center" bgcolor="#f5f5f5">
 																<td colspan="6">
 																	<h3>
-																		<xsl:value-of select="organization_unit/name" />
+																		<xsl:value-of select="organization_unit/name"/>
 																	</h3>
 																</td>
 															</tr>
@@ -81,30 +82,30 @@
 															<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display">
 																<tr>
 																	<td>
-																		<xsl:value-of select="item_loan/title" />
+																		<xsl:value-of select="item_loan/title"/>
 																	</td>
 																	<td>
-																		<xsl:value-of select="physical_item_display_for_printing/library_name" />
+																		<xsl:value-of select="physical_item_display_for_printing/library_name"/>
 																	</td>
 																	<td>
-																		<xsl:value-of select="item_loan/loan_date" />
+																		<xsl:value-of select="item_loan/loan_date"/>
 																	</td>
 																	<td>
-																		<xsl:value-of select="item_loan/due_date" />
+																		<xsl:value-of select="item_loan/due_date"/>
 																	</td>
 																	<td>
-																		<xsl:value-of select="physical_item_display_for_printing/call_number" />
+																		<xsl:value-of select="physical_item_display_for_printing/call_number"/>
 																	</td>
 																	<td>
 																		<xsl:for-each select="fines_fees_list/user_fines_fees">
 																			<b>
-																				<xsl:value-of select="fine_fee_type_display" />
+																				<xsl:value-of select="fine_fee_type_display"/>
 																				:
 																			</b>
-																			<xsl:value-of select="fine_fee_ammount/normalized_sum" />
+																			<xsl:value-of select="fine_fee_ammount/normalized_sum"/>
 																			&#160;
-																			<xsl:value-of select="ff" />
-																			<br />
+																			<xsl:value-of select="ff"/>
+																			<br/>
 																		</xsl:for-each>
 																	</td>
 																</tr>
@@ -112,8 +113,8 @@
 														</table>
 													</td>
 												</tr>
-												<hr />
-												<br />
+												<hr/>
+												<br/>
 											</xsl:for-each>
 											<xsl:if test="notification_data/overdue_notification_fee_amount/sum !=''">
 												<tr>
@@ -121,18 +122,18 @@
 														<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
 														<!-- Overdue Notification Fee: -->
 														<b>Frais d'avis de retard:</b>
-														<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum" />
+														<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum"/>
 														&#160;
-														<xsl:value-of select="ff" />
+														<xsl:value-of select="ff"/>
 													</td>
 												</tr>
 											</xsl:if>
 										</table>
-										<br />
+										<br/>
 									</xsl:when>
 									<xsl:otherwise>
 										<!-- handle AFN default language en -->
-										<br />
+										<br/>
 										<table cellspacing="0" cellpadding="5" border="0">
 											<tr>
 												<td>
@@ -142,19 +143,20 @@
 										</table>
 										<table cellpadding="5" class="listing">
 											<xsl:attribute name="style">
-												<xsl:call-template name="mainTableStyleCss" /> <!-- style.xsl -->
+												<xsl:call-template name="mainTableStyleCss"/>
+												<!-- style.xsl -->
 											</xsl:attribute>
 											<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
 												<tr>
 													<td>
 														<table cellpadding="5" class="listing">
 															<xsl:attribute name="style">
-																<xsl:call-template name="mainTableStyleCss" />
+																<xsl:call-template name="mainTableStyleCss"/>
 															</xsl:attribute>
 															<tr align="center" bgcolor="#f5f5f5">
 																<td colspan="6">
 																	<h3>
-																		<xsl:value-of select="organization_unit/name" />
+																		<xsl:value-of select="organization_unit/name"/>
 																	</h3>
 																</td>
 															</tr>
@@ -169,30 +171,30 @@
 															<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display">
 																<tr>
 																	<td>
-																		<xsl:value-of select="item_loan/title" />
+																		<xsl:value-of select="item_loan/title"/>
 																	</td>
 																	<td>
-																		<xsl:value-of select="physical_item_display_for_printing/library_name" />
+																		<xsl:value-of select="physical_item_display_for_printing/library_name"/>
 																	</td>
 																	<td>
-																		<xsl:value-of select="item_loan/loan_date" />
+																		<xsl:value-of select="item_loan/loan_date"/>
 																	</td>
 																	<td>
-																		<xsl:value-of select="item_loan/due_date" />
+																		<xsl:value-of select="item_loan/due_date"/>
 																	</td>
 																	<td>
-																		<xsl:value-of select="physical_item_display_for_printing/call_number" />
+																		<xsl:value-of select="physical_item_display_for_printing/call_number"/>
 																	</td>
 																	<td>
 																		<xsl:for-each select="fines_fees_list/user_fines_fees">
 																			<b>
-																				<xsl:value-of select="fine_fee_type_display" />
+																				<xsl:value-of select="fine_fee_type_display"/>
 																				:
 																			</b>
-																			<xsl:value-of select="fine_fee_ammount/normalized_sum" />
+																			<xsl:value-of select="fine_fee_ammount/normalized_sum"/>
 																			&#160;
-																			<xsl:value-of select="ff" />
-																			<br />
+																			<xsl:value-of select="ff"/>
+																			<br/>
 																		</xsl:for-each>
 																	</td>
 																</tr>
@@ -200,21 +202,21 @@
 														</table>
 													</td>
 												</tr>
-												<hr />
-												<br />
+												<hr/>
+												<br/>
 											</xsl:for-each>
 											<xsl:if test="notification_data/overdue_notification_fee_amount/sum !=''">
 												<tr>
 													<td>
 														<b>Overdue Notification Fee:</b>
-														<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum" />
+														<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum"/>
 														&#160;
-														<xsl:value-of select="ff" />
+														<xsl:value-of select="ff"/>
 													</td>
 												</tr>
 											</xsl:if>
 										</table>
-										<br />
+										<br/>
 									</xsl:otherwise>
 								</xsl:choose>
 							</xsl:when>
@@ -246,19 +248,20 @@
 								</table>
 								<table cellpadding="5" class="listing">
 									<xsl:attribute name="style">
-										<xsl:call-template name="mainTableStyleCss" /> <!-- style.xsl -->
+										<xsl:call-template name="mainTableStyleCss"/>
+										<!-- style.xsl -->
 									</xsl:attribute>
 									<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
 										<tr>
 											<td>
 												<table cellpadding="5" class="listing">
 													<xsl:attribute name="style">
-														<xsl:call-template name="mainTableStyleCss" />
+														<xsl:call-template name="mainTableStyleCss"/>
 													</xsl:attribute>
 													<tr align="center" bgcolor="#f5f5f5">
 														<td colspan="8">
 															<h3>
-																<xsl:value-of select="organization_unit/name" />
+																<xsl:value-of select="organization_unit/name"/>
 															</h3>
 														</td>
 													</tr>
@@ -274,46 +277,46 @@
 													<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display">
 														<tr>
 															<td>
-																<xsl:value-of select="item_loan/title" />
+																<xsl:value-of select="item_loan/title"/>
 															</td>
 															<td>
-																<xsl:value-of select="item_loan/description" />
+																<xsl:value-of select="item_loan/description"/>
 															</td>
 															<td>
-																<xsl:value-of select="physical_item_display_for_printing/library_name" />
+																<xsl:value-of select="physical_item_display_for_printing/library_name"/>
 															</td>
 															<td>
-																<xsl:value-of select="item_loan/loan_date" />
+																<xsl:value-of select="item_loan/loan_date"/>
 															</td>
 															<td>
-																<xsl:value-of select="item_loan/due_date" />
+																<xsl:value-of select="item_loan/due_date"/>
 															</td>
 															<td>
-																<xsl:value-of select="item_loan/barcode" />
+																<xsl:value-of select="item_loan/barcode"/>
 															</td>
 															<td>
-																<xsl:value-of select="physical_item_display_for_printing/call_number" />
+																<xsl:value-of select="physical_item_display_for_printing/call_number"/>
 															</td>
 														</tr>
 													</xsl:for-each>
 												</table>
 											</td>
 										</tr>
-										<hr />
-										<br />
+										<hr/>
+										<br/>
 									</xsl:for-each>
 									<xsl:if test="notification_data/overdue_notification_fee_amount/sum !=''">
 										<tr>
 											<td>
 												<b>@@overdue_notification_fee@@</b>
-												<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum" />
-												<xsl:value-of select="notification_data/overdue_notification_fee_amount/currency" />
-												<xsl:value-of select="ff" />
+												<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum"/>
+												<xsl:value-of select="notification_data/overdue_notification_fee_amount/currency"/>
+												<xsl:value-of select="ff"/>
 											</td>
 										</tr>
 									</xsl:if>
 								</table>
-								<br />
+								<br/>
 								<table>
 									<tr>
 										<td>
@@ -323,7 +326,7 @@
 									<tr>
 										<td>
 											@@department@@
-											<br />
+											<br/>
 											Carleton University Library
 										</td>
 									</tr>
@@ -334,8 +337,8 @@
 					</div>
 				</div>
 				<!-- AFN footer template options from footer.xsl -->
-				<xsl:call-template name="AFNLastFooter" />
-				<xsl:call-template name="AFNAccount" />
+				<xsl:call-template name="AFNLastFooter"/>
+				<xsl:call-template name="AFNAccount"/>
 			</body>
 		</html>
 	</xsl:template>

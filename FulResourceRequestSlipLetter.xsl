@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:include href="header.xsl"/>
 	<xsl:include href="senderReceiver.xsl"/>
 	<xsl:include href="mailReason.xsl"/>
@@ -14,12 +15,16 @@
 			<body>
 				<h1>
 					<b>@@requested_for@@ :
-						<xsl:value-of select="notification_data/user_for_printing/name"/></b>
+						<xsl:value-of select="notification_data/user_for_printing/name"/>
+					</b>
 				</h1>
-				<xsl:call-template name="head"/> <!-- header.xsl -->
+				<xsl:call-template name="head"/>
+				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
-						<table border="0" cellpadding="5" cellspacing="0">
+						<table border="0"
+						       cellpadding="5"
+						       cellspacing="0">
 							<xsl:if test="notification_data/request/selected_inventory_type='ITEM'">
 								<tr>
 									<td>
@@ -32,19 +37,22 @@
 									<td>
 										<b>@@please_note@@: </b>@@manual_description_note@@ -
 
-										<xsl:value-of select="notification_data/request/manual_description"/></td>
+										<xsl:value-of select="notification_data/request/manual_description"/>
+									</td>
 								</tr>
 							</xsl:if>
 							<tr>
 								<td>
 									<b>@@request_id@@: </b>
-									<img alt="Request Barcode" src="cid:request_id_barcode.png"/>
+									<img alt="Request Barcode"
+									     src="cid:request_id_barcode.png"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<b>@@item_barcode@@ Image: </b>
-									<img alt="Item Barcode Image" src="cid:item_id_barcode.png"/>
+									<img alt="Item Barcode Image"
+									     src="cid:item_id_barcode.png"/>
 								</td>
 							</tr>
 							<xsl:for-each select="notification_data/phys_item_display/available_items/available_item/barcode">
@@ -80,28 +88,32 @@
 								<tr>
 									<td>@@isbn@@:
 
-										<xsl:value-of select="notification_data/phys_item_display/isbn"/></td>
+										<xsl:value-of select="notification_data/phys_item_display/isbn"/>
+									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/phys_item_display/issn != ''">
 								<tr>
 									<td>@@issn@@:
 
-										<xsl:value-of select="notification_data/phys_item_display/issn"/></td>
+										<xsl:value-of select="notification_data/phys_item_display/issn"/>
+									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/phys_item_display/edition != ''">
 								<tr>
 									<td>@@edition@@:
 
-										<xsl:value-of select="notification_data/phys_item_display/edition"/></td>
+										<xsl:value-of select="notification_data/phys_item_display/edition"/>
+									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/phys_item_display/imprint != ''">
 								<tr>
 									<td>@@imprint@@:
 
-										<xsl:value-of select="notification_data/phys_item_display/imprint"/></td>
+										<xsl:value-of select="notification_data/phys_item_display/imprint"/>
+									</td>
 								</tr>
 							</xsl:if>
 							<b/>
@@ -215,10 +227,11 @@
 							<tr>
 								<td>
 									<b>@@move_to_library@@: </b>
-									<xsl:value-of select="notification_data/destination"/><br/>
+									<xsl:value-of select="notification_data/destination"/>
+									<br/>
 									<!-- ADDS IN DELIVERY ADDRESS IF THE ADDRESS IS DIFFERENT FROM DESTINATION VALUE -->
 									<xsl:if test="not(notification_data/destination=notification_data/request/delivery_address)">
-										<b>Address</b>: <xsl:value-of select="notification_data/request/delivery_address" />
+										<b>Address</b>: <xsl:value-of select="notification_data/request/delivery_address"/>
 									</xsl:if>
 								</td>
 							</tr>
