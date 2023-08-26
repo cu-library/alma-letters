@@ -18,7 +18,6 @@
 				</xsl:attribute>
 				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
-				<br/>
 				<xsl:call-template name="senderReceiver"/>
 				<!-- SenderReceiver.xsl -->
 				<br/>
@@ -64,16 +63,17 @@
 																		</td>
 																	</tr>
 																	<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE
-																		<th>Title</th>
-																		<th>Author</th>
-																		<th>Due Date</th>
-																		<th>Fine</th>
-																		<th>Library</th>
-																	-->
+																	<th>Title</th>
+																	<th>Author</th>
+																	<th>Due Date</th>
+																	<th>Fine</th>
+																	<th>Library</th>
+																	 -->
 																	<tr>
 																		<th>Titre</th>
 																		<th>Auteur</th>
-																		<th>Date d'échéance</th>
+																		<!-- AFN VERSION 1.6 changed some french text -->
+																		<th>Date de retour</th>
 																		<th>Amende</th>
 																		<th>Bibliothèque</th>
 																	</tr>
@@ -126,12 +126,13 @@
 																	</tr>
 																	<tr>
 																		<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE
-																			<th>Title</th>
-																			<th>Due Date</th>
-																			<th>Fine</th>
+																		<th>Title</th>
+																		<th>Due Date</th>
+																		<th>Fine</th>
 																		-->
 																		<th>Titre</th>
-																		<th>Date d'échéance</th>
+																		<!-- AFN VERSION 1.6 changed some french text -->
+																		<th>Date de retour</th>
 																		<th>Amende</th>
 																	</tr>
 																	<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
@@ -173,7 +174,7 @@
 													<td>
 														<b>
 															<!-- AFN VERSION 1.1 -->
-															Total:<xsl:value-of select="notification_data/total_fee"/>
+                                                Total: <xsl:value-of select="notification_data/total_fee"/>
 														</b>
 													</td>
 												</tr>
@@ -313,7 +314,7 @@
 												<tr>
 													<td>
 														<b>
-															Total: <xsl:value-of select="notification_data/total_fee"/>
+                                            Total: <xsl:value-of select="notification_data/total_fee"/>
 														</b>
 													</td>
 												</tr>
@@ -455,7 +456,7 @@
 										<td>If you have any questions please contact a staff member from Access Services at <a href="mailto:LibCirc@cunet.carleton.ca">LibCirc@cunet.carleton.ca</a> or 613-520-2600 x2734.</td>
 									</tr>
 								</table>
-								<!-- END OF AFN TODO -->
+								<!-- END OF Carleton letter -->
 							</xsl:otherwise>
 						</xsl:choose>
 						<!-- END OF AFN CODE -->
