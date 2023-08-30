@@ -345,7 +345,7 @@
 													<b>@@overdue_loans@@</b>
 												</td>
 											</tr>
-											<xsl:for-each select="notification_data/overdue_loans_by_library/library_loans_for_display">
+											<xsl:for-each select="notification_data/overdue_loans_by_library">
 												<tr>
 													<td>
 														<table cellpadding="5" class="listing">
@@ -358,7 +358,8 @@
 																<th>@@author@@</th>
 																<th>@@due_date@@</th>
 															</tr>
-															<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
+															<xsl:for-each select="library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/item_loan">
+																<xsl:sort select="due_date" order="ascending"/>
 																<tr>
 																	<td>
 																		<xsl:value-of select="title"/>
@@ -399,20 +400,24 @@
 																<th>@@due_date@@</th>
 															</tr>
 															<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
-																<tr>
-																	<td>
-																		<xsl:value-of select="title"/>
-																	</td>
-																	<td>
-																		<xsl:value-of select="description"/>
-																	</td>
-																	<td>
-																		<xsl:value-of select="author"/>
-																	</td>
-																	<td>
-																		<xsl:value-of select="due_date"/>
-																	</td>
-																</tr>
+																<xsl:sort select="due_date" order="ascending"/>
+																<!-- tests as to whehter the item is overdue, to avoid duplication from Overdue Items table above -->
+																<xsl:if test="notified_by_profiles = ''"> 
+																	<tr>
+																		<td>
+																			<xsl:value-of select="title"/>
+																		</td>
+																		<td>
+																			<xsl:value-of select="description"/>
+																		</td>
+																		<td>
+																			<xsl:value-of select="author"/>
+																		</td>
+																		<td>
+																			<xsl:value-of select="due_date"/>
+																		</td>
+																	</tr>
+																</xsl:if>
 															</xsl:for-each>
 														</table>
 													</td>

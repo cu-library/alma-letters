@@ -17,7 +17,7 @@
 						<div class="alignLeft" id="logoContainer">
 							<!-- AFN CODE -->
 							<xsl:choose>
-								<xsl:when test="(notification_data/user_for_printing/user_group = 'AFNUSER') or (notification_data/user/user_group = 'AFNUSER') or (notification_data/request/user_group = 		'AFNUSER') or (notification_data/user_for_printing/user_group = 'TUGUSER') or (notification_data/user/user_group = 'TUGUSER') or (notification_data/request/user_group = 'TUGUSER')">
+								<xsl:when test="(notification_data/user_for_printing/user_group = 'AFNUSER') or (notification_data/user/user_group = 'AFNUSER') or (notification_data/request/user_group = 'AFNUSER') or (notification_data/user_for_printing/user_group = 'TUGUSER') or (notification_data/user/user_group = 'TUGUSER') or (notification_data/request/user_group = 'TUGUSER')">
 									<img src="https://ocul.on.ca/omni/images/omni_logo_for_letters.jpg" alt="logo"/>
 								</xsl:when>
 								<xsl:otherwise>
