@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:include href="style.xsl" />
-	<xsl:include href="header.xsl" />
-	<xsl:include href="recordTitle.xsl" />
-	<xsl:include href="footer.xsl" />
+
+	<xsl:include href="style.xsl"/>
+	<xsl:include href="header.xsl"/>
+	<xsl:include href="recordTitle.xsl"/>
+	<xsl:include href="footer.xsl"/>
 	<xsl:template match="/">
 		<html>
 			<xsl:if test="notification_data/languages/string">
 				<xsl:attribute name="lang">
-					<xsl:value-of select="notification_data/languages/string" />
+					<xsl:value-of select="notification_data/languages/string"/>
 				</xsl:attribute>
 			</xsl:if>
 			<head>
 				<title>
-					<xsl:value-of select="notification_data/general_data/letter_name" />
+					<xsl:value-of select="notification_data/general_data/letter_name"/>
 				</title>
-				<xsl:call-template name="generalStyle" />
+				<xsl:call-template name="generalStyle"/>
 				<!-- style.xsl -->
 			</head>
 			<body>
 				<xsl:attribute name="style">
-					<xsl:call-template name="bodyStyleCss" />
+					<xsl:call-template name="bodyStyleCss"/>
 					<!-- style.xsl -->
 				</xsl:attribute>
-				<xsl:call-template name="head" />
+				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
@@ -48,12 +50,9 @@
 													</xsl:if>
 													<xsl:if test="notification_data/message='DUE_DATE_CHANGE_ONLY'">
 														<!-- AFN-VERSION 1.1 -->
-														<b>
-															La date d'échéance pour le(s) document(s) suivant(s) a(ont) changé.
-															<br />
-															<br />
-															Veuillez retourner le(s) document(s) avant la nouvelle date d'échéance pour éviter les amendes/frais.
-														</b>
+														<b>La date d'échéance pour le(s) document(s) suivant(s) a(ont) changé.<br/>
+															<br/>
+                                                        Veuillez retourner le(s) document(s) avant la nouvelle date d'échéance pour éviter les amendes/frais.														</b>
 													</xsl:if>
 													<xsl:if test="notification_data/message='RECALL_CANCEL_RESTORE_ORIGINAL_DUEDATE'">
 														<!-- AFN-VERSION 1.1 -->
@@ -65,28 +64,29 @@
 													</xsl:if>
 													<xsl:if test="notification_data/message='RECALL_CANCEL_NO_CHANGE'">
 														<!-- AFN-VERSION 1.1 -->
-														<b>Le rappel qui a été fait sur votre (vos) document(s) emprunté(s) a été annulé. Il n'y a pas de changement dans la (les) date(s) d'échéance</b>
+														<!-- AFN-VERSION 1.6 -->
+														<b>Le rappel qui a été fait sur votre (vos) document(s) emprunté(s) a été annulé. Il n'y a pas de changement dans la (les) date(s) d'échéance.</b>
 													</xsl:if>
-													<br />
-													<br />
+													<br/>
+													<br/>
 												</td>
 											</tr>
 											<tr>
 												<td>
 													<table cellpadding="5" class="listing">
 														<xsl:attribute name="style">
-															<xsl:call-template name="mainTableStyleCss" />
+															<xsl:call-template name="mainTableStyleCss"/>
 															<!-- style.xsl -->
 														</xsl:attribute>
 														<tr>
 															<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
-															<!--
-																<th>Title</th>
-																<th>Author</th>
-																<th>Original due date</th>
-																<th>Revised due date</th>
-																<th>Library</th>
-															-->
+															<!-- 
+                                                                <th>Title</th>
+                                                                <th>Author</th>
+                                                                <th>Original due date</th>
+                                                                <th>Revised due date</th>
+                                                                <th>Library</th>
+                                                             -->
 															<th>Titre</th>
 															<th>Auteur</th>
 															<th>Ancienne date de retour</th>
@@ -95,21 +95,11 @@
 														</tr>
 														<xsl:for-each select="notification_data/item_loans/item_loan">
 															<tr>
-																<td>
-																	<xsl:value-of select="title" />
-																</td>
-																<td>
-																	<xsl:value-of select="author" />
-																</td>
-																<td>
-																	<xsl:value-of select="old_due_date_str" />
-																</td>
-																<td>
-																	<xsl:value-of select="new_due_date_str" />
-																</td>
-																<td>
-																	<xsl:value-of select="library_name" />
-																</td>
+																<td><xsl:value-of select="title"/></td>
+																<td><xsl:value-of select="author"/></td>
+																<td><xsl:value-of select="old_due_date_str"/></td>
+																<td><xsl:value-of select="new_due_date_str"/></td>
+																<td><xsl:value-of select="library_name"/></td>
 															</tr>
 														</xsl:for-each>
 													</table>
@@ -123,16 +113,16 @@
 											<tr>
 												<td>
 													<xsl:if test="notification_data/message='RECALL_DUEDATE_CHANGE'">
-														<b>The item(s) listed below have been recalled. See below for the updated due date(s).  If the item is not returned by the due date, there will be recall fines added to your account. See <a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>.</b>
+														<b>The item(s) listed below have been recalled. See below for the updated due date(s).</b>
 													</xsl:if>
 													<xsl:if test="notification_data/message='RECALL_ONLY'">
-														<b>The item(s) listed below have been recalled. The due date(s) have not changed.  If the item is not returned by the due date, there will be recall fines added to your account. See <a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>.</b>
+														<b>The item(s) listed below have been recalled. The due date(s) have not changed.</b>
 													</xsl:if>
 													<xsl:if test="notification_data/message='DUE_DATE_CHANGE_ONLY'">
 														<b>
 															The due date for the following item(s) has changed.
-															<br />
-															<br />
+															<br/>
+															<br/>
 															Please return the item(s) prior to the new due date to avoid fines/fees
 														</b>
 													</xsl:if>
@@ -145,15 +135,15 @@
 													<xsl:if test="notification_data/message='RECALL_CANCEL_NO_CHANGE'">
 														<b>The recall placed on your borrowed item(s) has been cancelled. There is no change in the due date.</b>
 													</xsl:if>
-													<br />
-													<br />
+													<br/>
+													<br/>
 												</td>
 											</tr>
 											<tr>
 												<td>
 													<table cellpadding="5" class="listing">
 														<xsl:attribute name="style">
-															<xsl:call-template name="mainTableStyleCss" />
+															<xsl:call-template name="mainTableStyleCss"/>
 															<!-- style.xsl -->
 														</xsl:attribute>
 														<tr>
@@ -166,19 +156,19 @@
 														<xsl:for-each select="notification_data/item_loans/item_loan">
 															<tr>
 																<td>
-																	<xsl:value-of select="title" />
+																	<xsl:value-of select="title"/>
 																</td>
 																<td>
-																	<xsl:value-of select="author" />
+																	<xsl:value-of select="author"/>
 																</td>
 																<td>
-																	<xsl:value-of select="old_due_date_str" />
+																	<xsl:value-of select="old_due_date_str"/>
 																</td>
 																<td>
-																	<xsl:value-of select="new_due_date_str" />
+																	<xsl:value-of select="new_due_date_str"/>
 																</td>
 																<td>
-																	<xsl:value-of select="library_name" />
+																	<xsl:value-of select="library_name"/>
 																</td>
 															</tr>
 														</xsl:for-each>
@@ -205,11 +195,11 @@
 									<tr>
 										<td>
 											<xsl:if test="notification_data/message='RECALL_DUEDATE_CHANGE'">
-												@@recall_and_date_change@@ If the item is not returned by the due date, there will be recall fines added to your account. See <a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>.
+												@@recall_and_date_change@@ If the item is not returned by the due date, recall fines will be added to your account. See <a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>.
 
 											</xsl:if>
 											<xsl:if test="notification_data/message='RECALL_ONLY'">
-												@@recall_and_no_date_change@@ If the item is not returned by the due date, there will be recall fines added to your account. See <a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>.
+												@@recall_and_no_date_change@@ If the item is not returned by the due date, recall fines will be added to your account. See <a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>.
 											</xsl:if>
 											<xsl:if test="notification_data/message='DUE_DATE_CHANGE_ONLY'">
 												@@message@@
@@ -229,7 +219,7 @@
 										<td>
 											<table cellpadding="5" class="listing">
 												<xsl:attribute name="style">
-													<xsl:call-template name="mainTableStyleCss" />
+													<xsl:call-template name="mainTableStyleCss"/>
 													<!-- style.xsl -->
 												</xsl:attribute>
 												<tr>
@@ -242,29 +232,23 @@
 												<xsl:for-each select="notification_data/item_loans/item_loan">
 													<tr>
 														<td>
-															<xsl:value-of select="title" />
+															<xsl:value-of select="title"/>
 														</td>
 														<td>
-															<xsl:value-of select="item_description" />
+															<xsl:value-of select="item_description"/>
 														</td>
 														<td>
-															<xsl:value-of select="author" />
+															<xsl:value-of select="author"/>
 														</td>
 														<td>
-															<xsl:value-of select="old_due_date_str" />
+															<xsl:value-of select="old_due_date_str"/>
 														</td>
 														<td>
-															<xsl:value-of select="new_due_date_str" />
+															<xsl:value-of select="new_due_date_str"/>
 														</td>
 													</tr>
 												</xsl:for-each>
 											</table>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											For more information please visit your
-											<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.
 										</td>
 									</tr>
 									<tr>
@@ -275,19 +259,20 @@
 									<tr>
 										<td>
 											@@department@@
-											<br />
+											<br/>
 											Carleton University Library
 										</td>
 									</tr>
 								</table>
+								<!-- END OF Carleton letter -->
 							</xsl:otherwise>
 						</xsl:choose>
 						<!-- END OF AFN CODE -->
 					</div>
 				</div>
 				<!-- AFN footer template options from footer.xsl -->
-				<xsl:call-template name="AFNLastFooter" />
-				<xsl:call-template name="AFNAccount" />
+				<xsl:call-template name="AFNLastFooter"/>
+				<xsl:call-template name="AFNAccount"/>
 			</body>
 		</html>
 	</xsl:template>

@@ -22,8 +22,8 @@
 		<table align="right">
 			<tr>
 				<td align="right">
-							<a>
-								<xsl:attribute name="href">
+					<a>
+						<xsl:attribute name="href">
 					@@email_my_account@@
 				</xsl:attribute>
 				@@my_account@@
@@ -94,7 +94,7 @@
 									<xsl:when test="$external_id = '01OCUL_CRL' ">
 										<p>
 											<xsl:call-template name="afn_fr_contact_us"/>
-											<a href="mailto:library.services@carleton.ca"> library.services@carleton.ca</a> | 613-520-2600 x2734</p>
+											<a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a> | 613-520-2600 x2734</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LHD' ">
 										<p>
@@ -165,7 +165,7 @@
 									<xsl:when test="$external_id = '01OCUL_WLU' ">
 										<p>
 											<xsl:call-template name="afn_fr_contact_us"/>
-											<a href="mailto:wlucirc@wlu.ca"> wlucirc@wlu.ca</a> | (519) 884-0710 x3222</p>
+											<a href="mailto:libraryhelp@wlu.ca"> libraryhelp@wlu.ca</a> | 548-889-3766</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_YOR' ">
 										<p>
@@ -207,7 +207,7 @@
 									<xsl:when test="$external_id = '01OCUL_CRL' ">
 										<p>
 											<xsl:call-template name="afn_en_contact_us"/>
-											<a href="mailto:library.services@carleton.ca"> library.services@carleton.ca</a> | 613-520-2600 x2734</p>
+											<a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a> | 613-520-2600 x2734</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LHD' ">
 										<p>
@@ -276,9 +276,11 @@
 										</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_WLU' ">
+										<!-- START AFN-VERSION 1.9 updated WLU -->
 										<p>
 											<xsl:call-template name="afn_en_contact_us"/>
-											<a href="mailto:wlucirc@wlu.ca"> wlucirc@wlu.ca</a> | (519) 884-0710 x3222</p>
+											<a href="mailto:libraryhelp@wlu.ca"> libraryhelp@wlu.ca</a> | 548-889-3766</p>
+										<!-- END AFN-VERSION 1.9 updated WLU -->
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_YOR' ">
 										<p>
@@ -307,9 +309,9 @@
 				</xsl:when>
 				<xsl:otherwise>
 					<tr>
-							<!-- Fallback - use Carleton default -->
-							<p>Questions? Email <a href="mailto:library.services@carleton.ca">library.services@carleton.ca</a> or call 613-520-2600 x2734</p>
-							<!-- END of Fallback -->
+						<!-- Fallback - use Carleton default -->
+						<p>Questions? Email <a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a> or call 613-520-2600 x2734</p>
+						<!-- END of Fallback -->
 					</tr>
 				</xsl:otherwise>
 			</xsl:choose>
@@ -838,4 +840,18 @@
 	</xsl:template>
 	<!-- END of Org name template -->
 	<!-- END OF AFN CODE -->
+	<!-- Carleton ILL footer -->
+	<xsl:template name="ILLFooter">
+		<table cellpadding="1">
+			<xsl:attribute name="style">
+				<xsl:call-template name="footerTableStyleCss"/>
+			</xsl:attribute>
+			<tr>
+				<td>
+					<br/>If you have any questions, please contact a staff member from Interlibrary Loans at <a href="mailto:interlibraryloans@cunet.carleton.ca">interlibraryloans@cunet.carleton.ca</a> or 613-520-2600 x 2732.
+				</td>
+			</tr>
+		</table>
+	</xsl:template>
+	<!-- END OF Carleton ILL footer -->
 </xsl:stylesheet>
