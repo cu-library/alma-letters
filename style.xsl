@@ -17,6 +17,11 @@
 			h4{
 				line-height: 0.2em;
 			}
+			 <!-- START AFN styles -->
+			 .afn_steps_list li{margin-bottom:1em}
+			 #afn_letter_name_id{margin-top:1em; font-size: 30%;}
+			 .afn_letter_plain_list{list-style-type: none;}
+			 <!-- END AFN styles -->
 		</style>
 	</xsl:template>
 	<xsl:template name="bodyStyleCss">font-family: arial; color:#333; margin:0; padding:0em; font-size:80%</xsl:template>
@@ -24,5 +29,6 @@
 	<xsl:template name="mainTableStyleCss">width:100%; text-align:left</xsl:template>
 	<xsl:template name="headerLogoStyleCss">background-color:#ffffff;  width:100%;</xsl:template>
 	<xsl:template name="headerTableStyleCss">background-color:#e9e9e9;  width:100%; height:30px; text-shadow:1px 1px 1px #fff;</xsl:template>
-	<xsl:template name="footerTableStyleCss"></xsl:template>
+	<xsl:template name="footerTableStyleCss">width:100%; margin-top:1em;  font-weight:700; line-height:2em; font-size:150%;
+	</xsl:template>
 </xsl:stylesheet>

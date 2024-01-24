@@ -38,8 +38,7 @@
 	If you have questions or need assistance, please contact us:
 </xsl:template>
 	<xsl:template name="afn_fr_contact_us">
-		<!-- AFN VERSION 1.6 changed some french text -->
-    Si vous avez des questions, ou si vous avez besoin d’aide, veuillez nous contacter:
+	Si vous avez des questions, ou si vous avez besoin d’aide, veuillez nous contacter:
 </xsl:template>
 	<xsl:variable name="is_afn_patron">
 		<xsl:if test="(notification_data/user_for_printing/user_group = 'AFNUSER') or (notification_data/user/user_group = 'AFNUSER') or (notification_data/request/user_group = 'AFNUSER') or (notification_data/user_for_printing/user_group = 'TUGUSER') or (notification_data/user/user_group = 'TUGUSER') or (notification_data/request/user_group = 'TUGUSER')">	
@@ -107,10 +106,9 @@
 										</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LU' ">
-										<!-- AFN-VERSION 1.3 removed @LaurentianLib -->
 										<p>
 											<xsl:call-template name="afn_fr_contact_us"/>
-											<a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> omni@laurentian.ca / 705-675-4800  </p>
+											<a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> omni@laurentian.ca / 705-675-4800</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_NIP' ">
 										<p>
@@ -118,8 +116,6 @@
 											<a href="mailto:libraryhelp@nipissingu.ca"> libraryhelp@nipissingu.ca</a> | 705-474-3450, ext. 4222 </p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_IT' ">
-										<!-- AFN-VERSION 1.2 removed | durham campus info -->
-										<!-- AFN-VERSION 1.5 Changed url and adjusted French -->
 										<p>
 											<xsl:call-template name="afn_fr_contact_us"/>
 											<a href="https://ontariotechu.ca/sites/library/about/contact-us.php"> Coordonnées de l' Université Ontario Tech</a>
@@ -220,10 +216,9 @@
 										</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LU' ">
-										<!-- AFN-VERSION 1.3 removed @LaurentianLib -->
 										<p>
 											<xsl:call-template name="afn_en_contact_us"/>
-											<a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> / 705-675-4800  </p>
+											<a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> / 705-675-4800</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_NIP' ">
 										<p>
@@ -231,8 +226,6 @@
 											<a href="mailto:libraryhelp@nipissingu.ca"> libraryhelp@nipissingu.ca</a> | 705-474-3450, ext. 4222 </p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_IT' ">
-										<!-- AFN-VERSION 1.2 removed | durham campus info -->
-										<!-- AFN-VERSION 1.5 Changed url -->
 										<p>
 											<xsl:call-template name="afn_en_contact_us"/>
 											<a href="https://ontariotechu.ca/sites/library/about/contact-us.php"> Ontario Tech Contact Information</a>
@@ -276,11 +269,9 @@
 										</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_WLU' ">
-										<!-- START AFN-VERSION 1.9 updated WLU -->
 										<p>
 											<xsl:call-template name="afn_en_contact_us"/>
 											<a href="mailto:libraryhelp@wlu.ca"> libraryhelp@wlu.ca</a> | 548-889-3766</p>
-										<!-- END AFN-VERSION 1.9 updated WLU -->
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_YOR' ">
 										<p>
@@ -325,223 +316,217 @@
 	Visitez Omni de votre institution d'origine
 </xsl:template>
 	<xsl:template name="AFNVisitLoansLink">
-		<table align="left">
-			<tr>
-				<td align="left">
-					<xsl:choose>
-						<xsl:when test="(string-length($is_afn_patron) > 0)">
-							<xsl:choose>
-								<!-- handle AFN supported languages-->
-								<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
-									<xsl:choose>
-										<xsl:when test="$external_id = '01OCUL_AU' ">
-										1. <a href="https://algomau.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_AU:DEFAULT_AU&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_BU' ">
-										1. <a href="https://ocul-bu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_BU:BU_DEFAULT&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_CRL' ">
-										1. <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_CRL:CRL_DEFAULT&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_LHD' ">
-										1. <a href="https://ocul-lhd.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_LHD:LHD_DEFAULT&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_LU' ">
-										1. <a href="https://omni.laurentian.ca/discovery/account?vid=01OCUL_LU:OMNI&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_NIP' ">
-										1. <a href="https://ocul-nip.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_NIP:NIPISSING&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_IT' ">
-										1. <a href="https://ocul-it.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_IT:UO&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_QU' ">
-										1. <a href="https://ocul-qu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_QU:QU_DEFAULT&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_TU' ">
-										1. <a href="https://ocul-tu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_TU:TU_DEFAULT&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_GUE' ">
-										1. <a href="https://ocul-gue.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_GUE:GUELPH&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_UO' ">
-										1. <a href="https://ocul-uo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UO:UO_DEFAULT&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_WTL' ">
-										1. <a href="https://ocul-wtl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WTL:WTL_DEFAULT&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01UTON_UW' ">
-										1. <a href="https://uwindsor.primo.exlibrisgroup.com/discovery/account?vid=01UTON_UW:UWINDSOR&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_UWO' ">
-										1. <a href="https://ocul-uwo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UWO:UWO_DEFAULT&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_WLU' ">
-										1. <a href="https://ocul-wlu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WLU:WLU_DEF&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_YOR' ">
-										1. <a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<!-- AFN-VERSION 1.7 ADD McMaster & OCADU -->
-										<xsl:when test="$external_id = '01OCUL_MU' ">
-										1. <a href="https://mcmaster.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_MU:OMNI&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_OCAD' ">
-										1. <a href="https://ocadu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_OCAD:OMNI&amp;section=loans&amp;lang=fr">
-												<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
-										<xsl:otherwise>
-										1. <xsl:call-template name="afn_fr_visit_home_account_link_text"/>
-										</xsl:otherwise>
-									</xsl:choose>
-								</xsl:when>
-								<!-- default AFN language is english -->
-								<xsl:otherwise>
-									<xsl:choose>
-										<xsl:when test="$external_id = '01OCUL_AU' ">
-										1. <a href="https://algomau.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_AU:DEFAULT_AU&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_BU' ">
-										1. <a href="https://ocul-bu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_BU:BU_DEFAULT&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_CRL' ">
-										1. <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_CRL:CRL_DEFAULT&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_LHD' ">
-										1. <a href="https://ocul-lhd.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_LHD:LHD_DEFAULT&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_LU' ">
-										1. <a href="https://omni.laurentian.ca/discovery/account?vid=01OCUL_LU:OMNI&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_NIP' ">
-										1. <a href="https://ocul-nip.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_NIP:NIPISSING&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_IT' ">
-										1. <a href="https://ocul-it.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_IT:UO&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_QU' ">
-										1. <a href="https://ocul-qu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_QU:QU_DEFAULT&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_TU' ">
-										1. <a href="https://ocul-tu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_TU:TU_DEFAULT&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_GUE' ">
-										1. <a href="https://ocul-gue.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_GUE:GUELPH&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_UO' ">
-										1. <a href="https://ocul-uo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UO:UO_DEFAULT&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_WTL' ">
-										1. <a href="https://ocul-wtl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WTL:WTL_DEFAULT&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01UTON_UW' ">
-										1. <a href="https://uwindsor.primo.exlibrisgroup.com/discovery/account?vid=01UTON_UW:UWINDSOR&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_UWO' ">
-										1. <a href="https://ocul-uwo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UWO:UWO_DEFAULT&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_WLU' ">
-										1. <a href="https://ocul-wlu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WLU:WLU_DEF&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_YOR' ">
-										1. <a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<!-- AFN-VERSION 1.7 ADD McMaster & OCADU -->
-										<xsl:when test="$external_id = '01OCUL_MU' ">
-										1. <a href="https://mcmaster.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_MU:OMNI&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<xsl:when test="$external_id = '01OCUL_OCAD' ">
-										1. <a href="https://ocadu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_OCAD:OMNI&amp;section=loans&amp;lang=en">
-												<xsl:call-template name="afn_en_visit_home_account_link_text"/>
-											</a>
-										</xsl:when>
-										<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
-										<xsl:otherwise>
-										1. <xsl:call-template name="afn_en_visit_home_account_link_text"/>
-										</xsl:otherwise>
-									</xsl:choose>
-								</xsl:otherwise>
-							</xsl:choose>
-						</xsl:when>
-						<xsl:otherwise>
-							<!-- Fallback - use Carleton default -->
-							<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_CRL:CRL_DEFAULT&amp;section=loans&amp;lang=en">Visit Omni at your home institution</a>
-							<!-- END of Fallback -->
-						</xsl:otherwise>
-					</xsl:choose>
-				</td>
-			</tr>
-		</table>
+		<xsl:choose>
+			<xsl:when test="(string-length($is_afn_patron) > 0)">
+				<xsl:choose>
+					<!-- handle AFN supported languages-->
+					<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
+						<xsl:choose>
+							<xsl:when test="$external_id = '01OCUL_AU' ">
+								<a href="https://algomau.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_AU:DEFAULT_AU&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_BU' ">
+								<a href="https://ocul-bu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_BU:BU_DEFAULT&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_CRL' ">
+								<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_CRL:CRL_DEFAULT&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_LHD' ">
+								<a href="https://ocul-lhd.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_LHD:LHD_DEFAULT&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_LU' ">
+								<a href="https://omni.laurentian.ca/discovery/account?vid=01OCUL_LU:OMNI&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_NIP' ">
+								<a href="https://ocul-nip.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_NIP:NIPISSING&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_IT' ">
+								<a href="https://ocul-it.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_IT:UO&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_QU' ">
+								<a href="https://ocul-qu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_QU:QU_DEFAULT&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_TU' ">
+								<a href="https://ocul-tu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_TU:TU_DEFAULT&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_GUE' ">
+								<a href="https://ocul-gue.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_GUE:GUELPH&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_UO' ">
+								<a href="https://ocul-uo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UO:UO_DEFAULT&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_WTL' ">
+								<a href="https://ocul-wtl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WTL:WTL_DEFAULT&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01UTON_UW' ">
+								<a href="https://uwindsor.primo.exlibrisgroup.com/discovery/account?vid=01UTON_UW:UWINDSOR&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_UWO' ">
+								<a href="https://ocul-uwo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UWO:UWO_DEFAULT&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_WLU' ">
+								<a href="https://ocul-wlu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WLU:WLU_DEF&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_YOR' ">
+								<a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<!-- AFN-VERSION 1.7 ADD McMaster & OCADU -->
+							<xsl:when test="$external_id = '01OCUL_MU' ">
+								<a href="https://mcmaster.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_MU:OMNI&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_OCAD' ">
+								<a href="https://ocadu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_OCAD:OMNI&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
+							<xsl:otherwise>
+								<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:when>
+					<!-- default AFN language is english -->
+					<xsl:otherwise>
+						<xsl:choose>
+							<xsl:when test="$external_id = '01OCUL_AU' ">
+								<a href="https://algomau.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_AU:DEFAULT_AU&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_BU' ">
+								<a href="https://ocul-bu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_BU:BU_DEFAULT&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_CRL' ">
+								<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_CRL:CRL_DEFAULT&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_LHD' ">
+								<a href="https://ocul-lhd.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_LHD:LHD_DEFAULT&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_LU' ">
+								<a href="https://omni.laurentian.ca/discovery/account?vid=01OCUL_LU:OMNI&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_NIP' ">
+								<a href="https://ocul-nip.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_NIP:NIPISSING&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_IT' ">
+								<a href="https://ocul-it.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_IT:UO&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_QU' ">
+								<a href="https://ocul-qu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_QU:QU_DEFAULT&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_TU' ">
+								<a href="https://ocul-tu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_TU:TU_DEFAULT&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_GUE' ">
+								<a href="https://ocul-gue.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_GUE:GUELPH&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_UO' ">
+								<a href="https://ocul-uo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UO:UO_DEFAULT&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_WTL' ">
+								<a href="https://ocul-wtl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WTL:WTL_DEFAULT&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01UTON_UW' ">
+								<a href="https://uwindsor.primo.exlibrisgroup.com/discovery/account?vid=01UTON_UW:UWINDSOR&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_UWO' ">
+								<a href="https://ocul-uwo.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_UWO:UWO_DEFAULT&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_WLU' ">
+								<a href="https://ocul-wlu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_WLU:WLU_DEF&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_YOR' ">
+								<a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<!-- AFN-VERSION 1.7 ADD McMaster & OCADU -->
+							<xsl:when test="$external_id = '01OCUL_MU' ">
+								<a href="https://mcmaster.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_MU:OMNI&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<xsl:when test="$external_id = '01OCUL_OCAD' ">
+								<a href="https://ocadu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_OCAD:OMNI&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
+							<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
+							<xsl:otherwise>
+								<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:when>
+			<xsl:otherwise>
+				<!-- Fallback - use Carleton default -->
+				<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_CRL:CRL_DEFAULT&amp;section=loans&amp;lang=en">Visit Omni at your home institution</a>
+				<!-- END of Fallback -->
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 	<!-- create an OCUL AFN language specific variable for login to account link text -->
 	<xsl:template name="afn_en_account_link_text">
@@ -763,7 +748,6 @@
 			</tr>
 		</table>
 	</xsl:template>
-	<!-- AFN-VERSION 1.4 ADD  AFNOrgName template and test_org_code var -->
 	<!-- create an OCUL AFN template for determining org name based on ex libris alma code -->
 	<!--
     test orginization code <path>01OCUL.01OCUL_GUE.mclaughlin</path> eg. 01OCUL_GUE is Guelph 
@@ -839,6 +823,20 @@
 		</xsl:choose>
 	</xsl:template>
 	<!-- END of Org name template -->
+	<!-- START of AFN Letter name template -->
+	<xsl:template name="AFNLetterNameTemplate">
+		<p id="afn_letter_name_id" align="right">        
+        [
+        <xsl:if test="notification_data/general_data/letter_name">
+				<xsl:value-of select="notification_data/general_data/letter_name"/>
+			</xsl:if>
+			<xsl:if test="notification_data/general_data/letter_type">
+		     - <xsl:value-of select="notification_data/general_data/letter_type"/>
+			</xsl:if>
+        ]    
+    </p>
+	</xsl:template>
+	<!-- END of AFN Letter name template -->
 	<!-- END OF AFN CODE -->
 	<!-- Carleton ILL footer -->
 	<xsl:template name="ILLFooter">
