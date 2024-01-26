@@ -278,8 +278,8 @@
 											<tr>
 												<td>
 													<br/>
-												Please check the <a href="https://library.carleton.ca/services/borrowing/requesting-items">website at the pickup library</a> indicated above for service hours and pickup information.
-											<br/>
+                                                Please check the website at the pickup library indicated above for service hours and pickup information.
+                                            <br/>
 												</td>
 											</tr>
 										</table>
@@ -288,20 +288,12 @@
 							</xsl:when>
 							<xsl:otherwise>
 								<!-- Carleton letter -->
+								<xsl:call-template name="toWhomIsConcerned"/>
+								<!-- mailReason.xsl -->
 								<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 									<tr>
 										<td>
-											Hi,
-										</td>
-									</tr>
-									<tr>
-										<td>
-											The items on the hold shelf are still waiting for you.
-										</td>
-									</tr>
-									<tr>
-										<td>
-											If you need a couple of extra days to pick up or would like to change your delivery preference, please reach out and we can see what we can do.
+											The following hold shelf items are still waiting for you:
 										</td>
 									</tr>
 									<xsl:for-each select="notification_data/requests_by_library/library_requests_for_display">
@@ -389,6 +381,11 @@
 											</td>
 										</tr>
 									</xsl:if>
+									<tr>
+										<td>
+											If you need a few extra days for pickup, or would like to change your delivery preference, please reach out and we will see what we can do.
+										</td>
+									</tr>
 									<tr>
 										<td>
 											@@sincerely@@

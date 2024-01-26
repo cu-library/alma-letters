@@ -18,8 +18,6 @@
 				</xsl:attribute>
 				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
-				<xsl:call-template name="senderReceiver"/>
-				<!-- SenderReceiver.xsl -->
 				<br/>
 				<div class="messageArea">
 					<div class="messageBody">
@@ -331,7 +329,9 @@
 							</xsl:when>
 							<xsl:otherwise>
 								<!-- Carleton letter -->
-								<table border="0" cellpadding="5" cellspacing="0">
+								<xsl:call-template name="toWhomIsConcerned"/>
+								<!-- mailReason.xsl -->
+								<table cellspacing="0" cellpadding="5" border="0">
 									<xsl:if test="notification_data/item_loans/item_loan or notification_data/overdue_item_loans/item_loan">
 										<tr>
 											<td>
@@ -401,8 +401,7 @@
 															</tr>
 															<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
 																<xsl:sort select="due_date" order="ascending"/>
-																<!-- tests as to whehter the item is overdue, to avoid duplication from Overdue Items table above -->
-																<xsl:if test="notified_by_profiles = ''"> 
+																<xsl:if test="notified_by_profiles = ''">
 																	<tr>
 																		<td>
 																			<xsl:value-of select="title"/>
@@ -451,15 +450,6 @@
 											</td>
 										</tr>
 									</xsl:if>
-								</table>
-								<br/>
-								<table>
-									<tr>
-										<td>For more information please visit your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
-									</tr>
-									<tr>
-										<td>If you have any questions please contact a staff member from Access Services at <a href="mailto:LibCirc@cunet.carleton.ca">LibCirc@cunet.carleton.ca</a> or 613-520-2600 x2734.</td>
-									</tr>
 								</table>
 								<!-- END OF Carleton letter -->
 							</xsl:otherwise>

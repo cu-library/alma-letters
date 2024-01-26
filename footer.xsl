@@ -32,13 +32,23 @@
 			</tr>
 		</table>
 	</xsl:template>
+		<!-- Carleton contact templates; keeping each on one line prevents awkward spaces after -->
+	<xsl:template name="openingHours"><a href="https://library.carleton.ca/hours">opening hours</a></xsl:template>
+	<xsl:template name="libraryServicesEmail"><a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a></xsl:template>
+	<xsl:template name="libraryServicesPhone">613-520-2600 x2734</xsl:template>
+	<xsl:template name="ILLemail"><a href="mailto:interlibraryloans@cunet.carleton.ca">interlibraryloans@cunet.carleton.ca</a></xsl:template>
+	<xsl:template name="ILLphone">613-520-2600 x 2732</xsl:template>
+	<xsl:template name="curbsideLink"><a href="https://library.carleton.ca/services/borrowing/requesting-items#curbside">curbside service</a></xsl:template>
+	<xsl:template name="accountLogin"><a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">login to your library account</a></xsl:template>
+	<!-- END OF Carleton contact templates -->
 	<!-- AFN CODE -->
 	<!-- create an OCUL AFN language specific variable for contact link text -->
+	<!-- Alex note: adding a space after "contact us:"/"nous contacter:" makes the link not extend to a leaading blank space :) -->
 	<xsl:template name="afn_en_contact_us">
-	If you have questions or need assistance, please contact us:
+	If you have questions or need assistance, please contact us: 
 </xsl:template>
 	<xsl:template name="afn_fr_contact_us">
-	Si vous avez des questions, ou si vous avez besoin d’aide, veuillez nous contacter:
+	Si vous avez des questions, ou si vous avez besoin d’aide, veuillez nous contacter: 
 </xsl:template>
 	<xsl:variable name="is_afn_patron">
 		<xsl:if test="(notification_data/user_for_printing/user_group = 'AFNUSER') or (notification_data/user/user_group = 'AFNUSER') or (notification_data/request/user_group = 'AFNUSER') or (notification_data/user_for_printing/user_group = 'TUGUSER') or (notification_data/user/user_group = 'TUGUSER') or (notification_data/request/user_group = 'TUGUSER')">	
@@ -93,7 +103,7 @@
 									<xsl:when test="$external_id = '01OCUL_CRL' ">
 										<p>
 											<xsl:call-template name="afn_fr_contact_us"/>
-											<a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a> | 613-520-2600 x2734</p>
+											<xsl:call-template name="libraryServicesEmail"/> | <xsl:call-template name="libraryServicesPhone"/></p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LHD' ">
 										<p>
@@ -108,7 +118,7 @@
 									<xsl:when test="$external_id = '01OCUL_LU' ">
 										<p>
 											<xsl:call-template name="afn_fr_contact_us"/>
-											<a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> omni@laurentian.ca / 705-675-4800</p>
+											<a href="mailto:omni@laurentian.ca">omni@laurentian.ca</a> omni@laurentian.ca | 705-675-4800</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_NIP' ">
 										<p>
@@ -203,7 +213,7 @@
 									<xsl:when test="$external_id = '01OCUL_CRL' ">
 										<p>
 											<xsl:call-template name="afn_en_contact_us"/>
-											<a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a> | 613-520-2600 x2734</p>
+											<xsl:call-template name="libraryServicesEmail"/> | <xsl:call-template name="libraryServicesPhone"/></p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LHD' ">
 										<p>
@@ -218,7 +228,7 @@
 									<xsl:when test="$external_id = '01OCUL_LU' ">
 										<p>
 											<xsl:call-template name="afn_en_contact_us"/>
-											<a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> / 705-675-4800</p>
+											<a href="mailto:omni@laurentian.ca">omni@laurentian.ca</a> | 705-675-4800</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_NIP' ">
 										<p>
@@ -245,7 +255,7 @@
 									<xsl:when test="$external_id = '01OCUL_GUE' ">
 										<p>
 											<xsl:call-template name="afn_en_contact_us"/>
-											<a href="mailto:library@uoguelph.ca"> library@uoguelph.ca</a> | 519-824-4120 x 53618</p>
+											<a href="mailto:library@uoguelph.ca">library@uoguelph.ca</a> | 519-824-4120 x 53618</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_UO' ">
 										<p>
@@ -301,7 +311,7 @@
 				<xsl:otherwise>
 					<tr>
 						<!-- Fallback - use Carleton default -->
-						<p>Questions? Email <a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a> or call 613-520-2600 x2734</p>
+						<p>Questions? Email <xsl:call-template name="libraryServicesEmail"/> or call <xsl:call-template name="libraryServicesPhone"/>.</p>
 						<!-- END of Fallback -->
 					</tr>
 				</xsl:otherwise>
@@ -838,6 +848,7 @@
 	</xsl:template>
 	<!-- END of AFN Letter name template -->
 	<!-- END OF AFN CODE -->
+	
 	<!-- Carleton ILL footer -->
 	<xsl:template name="ILLFooter">
 		<table cellpadding="1">
@@ -846,7 +857,7 @@
 			</xsl:attribute>
 			<tr>
 				<td>
-					<br/>If you have any questions, please contact a staff member from Interlibrary Loans at <a href="mailto:interlibraryloans@cunet.carleton.ca">interlibraryloans@cunet.carleton.ca</a> or 613-520-2600 x 2732.
+					<br/>If you have any questions, please contact a staff member from Interlibrary Loans at <xsl:call-template name="ILLemail"/> or <xsl:call-template name="ILLphone"/>.
 				</td>
 			</tr>
 		</table>

@@ -24,7 +24,8 @@
 			 <!-- END AFN styles -->
 		</style>
 	</xsl:template>
-	<xsl:template name="bodyStyleCss">font-family: arial; color:#333; margin:0; padding:0em; font-size:80%</xsl:template>
+	<!-- DO NOT make font-size less than 100%. Less than 100% shows up okay in Outlook, but if someone is forwarding to Gmail the text becomes illegibly tiny. -->
+	<xsl:template name="bodyStyleCss">font-family: arial; color:#333; margin:0; padding:0em; font-size:100%</xsl:template> 
 	<xsl:template name="listStyleCss">list-style: none; margin:0 0 0 1em; padding:0</xsl:template>
 	<xsl:template name="mainTableStyleCss">width:100%; text-align:left</xsl:template>
 	<xsl:template name="headerLogoStyleCss">background-color:#ffffff;  width:100%;</xsl:template>

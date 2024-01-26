@@ -146,7 +146,7 @@
 											<tr>
 												<td>
 													<br/>                                                
-                                                Please check the <a href="https://library.carleton.ca/services/borrowing/requesting-items">website at the pickup library</a> indicated above for service hours and pickup information.
+                                                Please check the website at the pickup library indicated above for service hours and pickup information.
                                                 <br/>
 												</td>
 											</tr>
@@ -162,60 +162,77 @@
 											Hi,
 										</td>
 									</tr>
-									<tr>
-										<td>
-											The materials that you have requested have been processed and are ready for you.
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<ul>
-												<li>
-                                                                                                         If you chose <b>MacOdrum Library</b>, items can be picked up at the Library Services Desk during opening hours.
-											                 For current hours please visit the Library <a href="https://library.carleton.ca/hours">website</a>.
-                                                                                                 </li>
-											</ul>
-											<ul>
-												<li>
-                                                                                                         If you chose <b>Curbside Pick-up</b>, items can be picked up either at the Library Services Desk or by calling <a href="tel:1-343-996-9167">(343) 996-9167</a>
-                                                                                                         once you have arrived at the Curbside Location (exterior of the library building along Library Road (<em>canal side</em>)
-                                                                                                         near the exterior book return) at the Library.<br/>
-													<br/>
-													<b>Hours for Curbside Pick-up</b> are daily, including weekends. Current opening hours are listed on the Library <a href="https://library.carleton.ca/hours">website</a>.
-                                                                                                 </li>
-											</ul>
-											<ul>
-												<li>
-                                                                                                         If you chose <b>Mail Delivery</b>, the items are being processed and will be on route to you shortly.
-                                                                                                 </li>
-											</ul>
-										</td>
-									</tr>
-									<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
-										<tr>
-											<td>
-										@@note_item_held_until@@ <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>.
-										</td>
-										</tr>
-									</xsl:if>
-									<tr>
-										<td>
-											<xsl:call-template name="recordTitle"/>
-											<!-- recordTitle.xsl -->
-										</td>
-									</tr>
-									<xsl:if test="notification_data/request/system_notes !='' ">
-										<tr>
-											<td>
-												<b>@@notes_affect_loan@@:</b>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<xsl:value-of select="notification_data/request/system_notes"/>
-											</td>
-										</tr>
-									</xsl:if>
+									<!-- 	Mail Delivery Decision Tree
+											Different letter displays depending on whether the pickup location is Mail Delivery or something else (MacOdrum Library, Curbside (while we still have it.) 
+									-->
+									<xsl:choose>
+										<!-- If the item is headed for the Mail Delivery Hold Shelf -->
+										<xsl:when test="/notification_data/request/calculated_destination_name= 'Mail Delivery (Carleton students, staff, faculty only) - Mail Delivery Hold Shelf'">
+											<tr>
+												<td>
+													We are processing the following item for mail delivery. It will be on its way to you shortly.
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<strong><xsl:call-template name="recordTitle"/></strong>
+													<!-- recordTitle.xsl -->
+												</td>
+											</tr>
+											<xsl:if test="notification_data/request/system_notes !='' ">
+												<tr>
+													<td>
+														<b>@@notes_affect_loan@@:</b>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<xsl:value-of select="notification_data/request/system_notes"/>
+													</td>
+												</tr>
+											</xsl:if>
+										</xsl:when>
+										<!-- If the destination location is anyting OTHER than the Mail Delivery hold shelf -->
+										<xsl:otherwise>
+											<tr>
+												<td>
+													The following item is ready for pickup:
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<strong><xsl:call-template name="recordTitle"/></strong>
+													<!-- recordTitle.xsl -->
+												</td>
+											</tr>
+											<tr>
+												<td>
+													You can pick it up at the <strong>@@circulation_desk@@</strong> or through our <xsl:call-template name="curbsideLink"/>. Please visit the library website for <xsl:call-template name="openingHours"/>.
+												</td>
+											</tr>
+											<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
+												<tr>
+													<td>
+												@@note_item_held_until@@ <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>.
+												</td>
+												</tr>
+											</xsl:if>
+											<xsl:if test="notification_data/request/system_notes !='' ">
+												<tr>
+													<td>
+														<b>@@notes_affect_loan@@:</b>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<xsl:value-of select="notification_data/request/system_notes"/>
+													</td>
+												</tr>
+											</xsl:if>
+
+										</xsl:otherwise>
+									</xsl:choose>
+									<!-- END OF the Mail Delivery decision tree-->
 									<tr>
 										<td>
 											@@sincerely@@
