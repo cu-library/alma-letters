@@ -40,6 +40,9 @@
 	<xsl:template name="ILLphone">613-520-2600 x 2732</xsl:template>
 	<xsl:template name="curbsideLink"><a href="https://library.carleton.ca/services/borrowing/requesting-items#curbside">curbside service</a></xsl:template>
 	<xsl:template name="accountLogin"><a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">login to your library account</a></xsl:template>
+	<xsl:template name="overdueItemsAndFines"><a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a></xsl:template>
+	<!-- counts number of items in a notification letter -->
+	<xsl:variable name="numOfNotificationItems"><xsl:value-of select="count(notification_data/item_loans/item_loan)"/></xsl:variable>
 	<!-- END OF Carleton contact templates -->
 	<!-- AFN CODE -->
 	<!-- create an OCUL AFN language specific variable for contact link text -->
