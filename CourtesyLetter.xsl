@@ -46,10 +46,10 @@
 											</li>
 											<li>Cliquez sur	<xsl:call-template name="AFNOrgName"/>à la gauche et renouvelez le(s).</li>
 										</ol>
-                            
 										<table cellpadding="5" class="listing">
 											<xsl:attribute name="style">
-												<xsl:call-template name="mainTableStyleCss"/><!-- style.xsl -->
+												<xsl:call-template name="mainTableStyleCss"/>
+												<!-- style.xsl -->
 											</xsl:attribute>
 											<tr>
 												<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
@@ -66,14 +66,23 @@
 												<th>Date de retour</th>
 												<th>Bibliothèque</th>
 											</tr>
-
 											<xsl:for-each select="notification_data/item_loans/item_loan">
 												<tr>
-													<td><xsl:value-of select="title"/></td>
-													<td><xsl:value-of select="description"/></td>
-													<td><xsl:value-of select="author"/></td>
-													<td><xsl:value-of select="due_date"/></td>
-													<td><xsl:value-of select="library_name"/></td>
+													<td>
+														<xsl:value-of select="title"/>
+													</td>
+													<td>
+														<xsl:value-of select="description"/>
+													</td>
+													<td>
+														<xsl:value-of select="author"/>
+													</td>
+													<td>
+														<xsl:value-of select="due_date"/>
+													</td>
+													<td>
+														<xsl:value-of select="library_name"/>
+													</td>
 												</tr>
 											</xsl:for-each>
 										</table>
@@ -90,7 +99,6 @@
 											</li>
 											<li>Click the <xsl:call-template name="AFNOrgName"/>option along the left and renew items</li>
 										</ol>
-							
 										<table cellpadding="5" class="listing">
 											<xsl:attribute name="style">
 												<xsl:call-template name="mainTableStyleCss"/>
@@ -103,14 +111,23 @@
 												<th>Due Date</th>
 												<th>Library</th>
 											</tr>
-
 											<xsl:for-each select="notification_data/item_loans/item_loan">
 												<tr>
-													<td><xsl:value-of select="title"/></td>
-													<td><xsl:value-of select="description"/></td>
-													<td><xsl:value-of select="author"/></td>
-													<td><xsl:value-of select="due_date"/></td>
-													<td><xsl:value-of select="library_name"/></td>
+													<td>
+														<xsl:value-of select="title"/>
+													</td>
+													<td>
+														<xsl:value-of select="description"/>
+													</td>
+													<td>
+														<xsl:value-of select="author"/>
+													</td>
+													<td>
+														<xsl:value-of select="due_date"/>
+													</td>
+													<td>
+														<xsl:value-of select="library_name"/>
+													</td>
 												</tr>
 											</xsl:for-each>
 										</table>
@@ -125,14 +142,12 @@
 								<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 									<tr>
 										<td>
-											It looks like your items are due soon. If you still need them, please login to your
-											<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>
-											to renew them or reach out to us and we’ll see what we can do.
+											It looks like your items are due back soon. If you still need them, please <xsl:call-template name="accountLogin"/> to renew them, or reach out to us and we’ll see what we can do.
 										</td>
 									</tr>
 									<tr>
 										<td>
-											Otherwise, items can be returned at MacOdrum Library or at any university in Ontario.
+											You can return your items at the MacOdrum Library or at any university in Ontario.
 										</td>
 									</tr>
 									<tr>
@@ -149,9 +164,15 @@
 												</tr>
 												<xsl:for-each select="notification_data/item_loans/item_loan">
 													<tr>
-														<td><xsl:value-of select="title"/></td>
-														<td><xsl:value-of select="author"/></td>
-														<td><xsl:value-of select="due_date"/></td>
+														<td>
+															<xsl:value-of select="title"/>
+														</td>
+														<td>
+															<xsl:value-of select="author"/>
+														</td>
+														<td>
+															<xsl:value-of select="due_date"/>
+														</td>
 													</tr>
 												</xsl:for-each>
 											</table>
@@ -169,21 +190,7 @@
 											Carleton University Library
 										</td>
 									</tr>
-									<tr>
-										<td>
-											Need research help or assistance with your account? We're here to help!
-											<a href="https://library.carleton.ca/help">Ask a Librarian</a>
-										</td>
-									</tr>
 								</table>
-								<xsl:variable name="additional_info_1">@@additional_info_1@@</xsl:variable>
-								<xsl:if test="$additional_info_1 != ''">
-									@@additional_info_1@@<br/>
-								</xsl:if>
-								<xsl:variable name="additional_info_2">@@additional_info_2@@</xsl:variable>
-								<xsl:if test="$additional_info_2 != ''">
-									@@additional_info_2@@<br/>
-								</xsl:if>
 								<!-- END OF Carleton Letter -->
 							</xsl:otherwise>
 						</xsl:choose>

@@ -859,8 +859,7 @@
 				<xsl:call-template name="footerTableStyleCss"/>
 			</xsl:attribute>
 			<tr>
-				<td>
-					<br/>If you have any questions, please contact a staff member from Interlibrary Loans at <xsl:call-template name="ILLemail"/> or <xsl:call-template name="ILLphone"/>.
+				<td><p>Questions? Email <xsl:call-template name="ILLemail"/> or call <xsl:call-template name="ILLphone"/>.</p>
 				</td>
 			</tr>
 		</table>
