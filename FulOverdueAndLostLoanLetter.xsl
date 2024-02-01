@@ -234,14 +234,7 @@
 								<!-- mailReason.xsl -->
 								<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 									<tr>
-										<td>It looks like you have materials still checked out and they have now been converted to lost in your 
-							<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
-									</tr>
-									<tr>
-										<td>Once the materials are returned, the replacement charges will be removed.</td>
-									</tr>
-									<tr>
-										<td>Until the materials are returned or removed from your account, all borrowing privileges are suspended.</td>
+										<td>The library has declared your overdue item(s) lost. Please see below for a summary:</td>
 									</tr>
 								</table>
 								<table cellpadding="5" class="listing">
@@ -266,8 +259,6 @@
 													<tr>
 														<th>@@lost_item@@</th>
 														<th>@@description@@</th>
-														<th>@@library@@</th>
-														<th>@@loan_date@@</th>
 														<th>@@due_date@@</th>
 														<th>@@barcode@@</th>
 														<th>@@call_number@@</th>
@@ -280,12 +271,6 @@
 															</td>
 															<td>
 																<xsl:value-of select="item_loan/description"/>
-															</td>
-															<td>
-																<xsl:value-of select="physical_item_display_for_printing/library_name"/>
-															</td>
-															<td>
-																<xsl:value-of select="item_loan/loan_date"/>
 															</td>
 															<td>
 																<xsl:value-of select="item_loan/due_date"/>
@@ -312,24 +297,25 @@
 												</table>
 											</td>
 										</tr>
-										<hr/>
-										<br/>
 									</xsl:for-each>
-									<xsl:if test="notification_data/overdue_notification_fee_amount/sum !=''">
-										<tr>
-											<td>
-												<b>@@overdue_notification_fee@@</b>
-												<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum"/>
-												<xsl:value-of select="notification_data/overdue_notification_fee_amount/currency"/>
-												<xsl:value-of select="ff"/>
-											</td>
-										</tr>
-									</xsl:if>
 								</table>
-								<br/>
 								<table>
 									<tr>
-										<td>If you have questions about the materials or charges, please contact the library and we will see what we can do to help!</td>
+										<td>
+											<xsl:if test="notification_data/user_for_printing/active_balance/sum !=''">
+												<p>
+													<strong>@@fee_amount@@: </strong>
+														<xsl:value-of select="(notification_data/user_for_printing/active_balance/normalized_sum)"/>
+														<xsl:value-of select="notification_data/user_for_printing/active_balance/currency"/>
+												</p>
+											</xsl:if>
+											<p>
+												Returning lost item(s) will remove the <strong>lost item replacement fee(s)</strong> from your account. 
+												<!-- Is there a user block? If yes, tell the patron they have to clear the fine in order to borrow items again. -->
+												<xsl:if test="/notification_data/user_for_printing/blocks !=''">You will be unable to borrow other items until you clear or pay your balance.</xsl:if>
+												</p>
+											<p>If you have questions about your fees or library items, please contact the library and we'll see what we can do to help!</p>
+										</td>
 									</tr>
 									<tr>
 										<td>@@sincerely@@</td>
