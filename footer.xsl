@@ -43,6 +43,16 @@
 	<xsl:template name="overdueItemsAndFines"><a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a></xsl:template>
 	<!-- counts number of items in a notification letter -->
 	<xsl:variable name="numOfNotificationItems"><xsl:value-of select="count(notification_data/item_loans/item_loan)"/></xsl:variable>
+	<!-- variable checks if the loan is an ILL loan (may catch AFN items also, so be careful)-->
+	<xsl:variable name="is_ill_loan">
+		<xsl:if test="(notification_data/display_list/overdue_and_lost_loan_notification_display/physical_item_display_for_printing/library_code = 'RES_SHARE')">TRUE</xsl:if>
+	</xsl:variable>
+	<!-- are any of a number of loans ILL loans? -->
+	<xsl:variable name="is_any_ill_loan">
+		<xsl:for-each select="notification_data/display_list/overdue_and_lost_loan_notification_display/physical_item_display_for_printing">
+			<xsl:if test="(library_code = 'RES_SHARE')">TRUE</xsl:if>
+		</xsl:for-each>
+	</xsl:variable>	
 	<!-- END OF Carleton contact templates -->
 	<!-- AFN CODE -->
 	<!-- create an OCUL AFN language specific variable for contact link text -->
@@ -56,7 +66,7 @@
 	<xsl:variable name="is_afn_patron">
 		<xsl:if test="(notification_data/user_for_printing/user_group = 'AFNUSER') or (notification_data/user/user_group = 'AFNUSER') or (notification_data/request/user_group = 'AFNUSER') or (notification_data/user_for_printing/user_group = 'TUGUSER') or (notification_data/user/user_group = 'TUGUSER') or (notification_data/request/user_group = 'TUGUSER')">	
 		TRUE		
-	</xsl:if>
+		</xsl:if>
 	</xsl:variable>
 	<!-- perform a test to see if the external id looks like OCUL alma codes 01OCUL_AU...just looking at format / first 2 digits 01OCUL 01UTON-->
 	<!-- normally in notification_data/receivers/receiver/user/external_id, but not always. Codes don't match, we'll show no home institution in AFN info -->
