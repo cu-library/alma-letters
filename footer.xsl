@@ -52,6 +52,9 @@
 		<xsl:for-each select="notification_data/display_list/overdue_and_lost_loan_notification_display/physical_item_display_for_printing">
 			<xsl:if test="(library_code = 'RES_SHARE')">TRUE</xsl:if>
 		</xsl:for-each>
+				<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/physical_item_display_for_printing">
+			<xsl:if test="(library_code = 'RES_SHARE')">TRUE</xsl:if>
+		</xsl:for-each>
 	</xsl:variable>	
 	<!-- END OF Carleton contact templates -->
 	<!-- AFN CODE -->
