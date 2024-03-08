@@ -39,7 +39,12 @@
 							</tr>
 							<tr>
 								<td>
-									Otherwise, items can be returned at the MacOdrum Library or at any university in Ontario.
+									<xsl:if test="(string-length($is_any_ill_loan) = 0)">
+										You can return the items at the MacOdrum Library or at any university in Ontario.
+</xsl:if>
+<xsl:if test="(string-length($is_any_ill_loan) > 0)">
+										Please return the items at the MacOdrum Library.
+</xsl:if>
 								</td>
 							</tr>
 							<tr>
