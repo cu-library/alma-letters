@@ -147,12 +147,7 @@
 									</tr>
 									<tr>
 										<td>
-											<xsl:if test="(string-length($is_any_ill_loan) = 0)">
-    										You can return the items at the MacOdrum Library or at any university in Ontario.
-                                            </xsl:if>
-                                            <xsl:if test="(string-length($is_any_ill_loan) > 0)">
-                                            										Please return the items at the MacOdrum Library.
-                                            </xsl:if>
+											<xsl:call-template name="ILLreturnLibrary"/>
 										</td>
 									</tr>
 									<tr>

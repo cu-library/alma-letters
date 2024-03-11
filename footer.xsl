@@ -52,10 +52,22 @@
 		<xsl:for-each select="notification_data/display_list/overdue_and_lost_loan_notification_display/physical_item_display_for_printing">
 			<xsl:if test="(library_code = 'RES_SHARE')">TRUE</xsl:if>
 		</xsl:for-each>
-				<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/physical_item_display_for_printing">
+		<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/physical_item_display_for_printing">
+			<xsl:if test="(library_code = 'RES_SHARE')">TRUE</xsl:if>
+		</xsl:for-each>
+		<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/physical_item_display_for_printing/available_items/available_itemg">
 			<xsl:if test="(library_code = 'RES_SHARE')">TRUE</xsl:if>
 		</xsl:for-each>
 	</xsl:variable>	
+	<!-- Template using the above variable to ask patron to return intems to MacOdrum only (if any of the items are ILL) -->
+	<xsl:template name="ILLreturnLibrary">
+	<xsl:if test="(string-length($is_any_ill_loan) = 0)">
+	You can return the items at the MacOdrum Library or at any university in Ontario.
+	</xsl:if>
+	<xsl:if test="(string-length($is_any_ill_loan) > 0)">
+	You can return the items at the MacOdrum Library.
+	</xsl:if>
+	</xsl:template>
 	<!-- END OF Carleton contact templates -->
 	<!-- AFN CODE -->
 	<!-- create an OCUL AFN language specific variable for contact link text -->
