@@ -877,7 +877,7 @@
 	<!-- END of AFN Letter name template -->
 	<!-- END OF AFN CODE -->
 	
-	<!-- Carleton ILL footer -->
+	<!-- Carleton ILL footer PATRONS -->
 	<xsl:template name="ILLFooter">
 		<table cellpadding="1">
 			<xsl:attribute name="style">
@@ -889,5 +889,23 @@
 			</tr>
 		</table>
 	</xsl:template>
-	<!-- END OF Carleton ILL footer -->
+	<!-- END OF Carleton ILL footer PATRONS -->
+	<!-- Carleton ILL footer PEER-TO-PEER -->
+	<xsl:template name="ILLFooterPeerToPeer">
+	    <table cellpadding="1">
+			<tr>
+				<td><strong>Interlibrary Loans Department</strong></td>
+			</tr>
+			<tr>
+				<td>Carleton University Library</td>
+			</tr>
+			<tr>
+				<td><xsl:call-template name="ILLemail"/></td>
+			</tr>
+			<tr>
+				<td><xsl:call-template name="ILLphone"/></td>
+			</tr>
+		</table>
+	</xsl:template>
+	<!-- END OF Carleton ILL footer PEER-TO-PEER -->
 </xsl:stylesheet>

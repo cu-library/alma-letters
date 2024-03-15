@@ -6,13 +6,13 @@
 	<xsl:include href="footer.xsl"/>
 	<xsl:include href="style.xsl"/>
 	<xsl:include href="recordTitle.xsl"/>
-	<!-- START AFN-VERSION 1.8 START Test if it's an EMAIL partner, if so terminate letter -->
+	<!-- START Test if it's an EMAIL partner, if so terminate letter -->
 	<xsl:variable name="is_email_partner">
 		<xsl:if test="(notification_data/user_for_printing/user_group = 'NZILLUSER') or (notification_data/user/user_group = 'NZILLUSER') or (notification_data/request/user_group = 'NZILLUSER')">	
 		TRUE		
 	</xsl:if>
 	</xsl:variable>
-	<!-- END AFN-VERSION 1.8 Test if it's an EMAIL partner, if so terminate letter -->
+	<!-- END Test if it's an EMAIL partner, if so terminate letter -->
 	<xsl:template match="/">
 		<html>
 			<xsl:if test="notification_data/languages/string">
@@ -38,11 +38,11 @@
 					<div class="messageBody">
 						<!-- AFN CODE -->
 						<xsl:choose>
-							<!-- START AFN-VERSION 1.8 Test if it's an EMAIL partner, if so terminate letter -->
+							<!-- START Test if it's an EMAIL partner, if so terminate letter -->
 							<xsl:when test="(string-length($is_email_partner) > 0)">
 								<xsl:message terminate="yes">user group is an EMAIL ILL PARTNER - TERMINATE </xsl:message>
 							</xsl:when>
-							<!-- END AFN-VERSION 1.8 Test if it's an EMAIL partner, if so terminate letter -->
+							<!-- END Test if it's an EMAIL partner, if so terminate letter -->
 							<!-- AFN test (is_afn_patron) defined in footer.xsl -->
 							<xsl:when test="(string-length($is_afn_patron) > 0)">
 								<!-- handle AFN supported languages (is_preferred_lang_fr) defined in footer.xsl-->
@@ -52,7 +52,6 @@
 										<table cellspacing="0" cellpadding="5" border="0">
 											<tr>
 												<td>
-													<!-- AFN VERSION 1.6 changed some french text -->
 													<!-- START AFN-VERSION 1.10 -->
 												Le document suivant de [<xsl:call-template name="AFNOrgName"/>] - <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, que vous avez demandé le <xsl:value-of select="notification_data/request/create_date"/> peut être récupéré à <b>
 														<xsl:value-of select="notification_data/request/assigned_unit_name"/>
@@ -64,7 +63,6 @@
 												<tr>
 													<td>
 														<br/>
-														<!-- AFN VERSION 1.6 changed some french text -->
 													Le document sera conservé pour vous jusqu'au <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
 													</td>
 												</tr>
@@ -89,13 +87,11 @@
 														<xsl:value-of select="notification_data/request/system_notes"/>
 													</td>
 												</tr>
-												<!-- AFN-VERSION 1.2 moved /xsl:if closing tag below system_notes tr -->
 											</xsl:if>
 											<tr>
 												<td>
 													<br/>
 													<!-- AFN-VERSION 1.1 -->
-													<!-- AFN VERSION 1.6 changed some french text -->
                                                 Pour connaitre les heures de service et des informations liées à la récupération de documents veuillez consulter ci-dessus la page web de la bibliothèque.
                                                 <br/>
 												</td>
@@ -156,14 +152,11 @@
 							</xsl:when>
 							<xsl:otherwise>
 								<!-- Carleton letter -->
+									<xsl:call-template name="toWhomIsConcerned"/>
+									<!-- mailReason.xsl -->
 								<table role="presentation" cellspacing="0" cellpadding="5" border="0">
-									<tr>
-										<td>
-											Hi,
-										</td>
-									</tr>
 									<!-- 	Mail Delivery Decision Tree
-											Different letter displays depending on whether the pickup location is Mail Delivery or something else (MacOdrum Library, Curbside (while we still have it.) 
+											Different letter displays depending on whether the pickup location is Mail Delivery or something else (MacOdrum Library.) 
 									-->
 									<xsl:choose>
 										<!-- If the item is headed for the Mail Delivery Hold Shelf -->
@@ -175,7 +168,9 @@
 											</tr>
 											<tr>
 												<td>
-													<strong><xsl:call-template name="recordTitle"/></strong>
+													<strong>
+														<xsl:call-template name="recordTitle"/>
+													</strong>
 													<!-- recordTitle.xsl -->
 												</td>
 											</tr>
@@ -201,7 +196,9 @@
 											</tr>
 											<tr>
 												<td>
-													<strong><xsl:call-template name="recordTitle"/></strong>
+													<strong>
+														<xsl:call-template name="recordTitle"/>
+													</strong>
 													<!-- recordTitle.xsl -->
 												</td>
 											</tr>
@@ -229,7 +226,6 @@
 													</td>
 												</tr>
 											</xsl:if>
-
 										</xsl:otherwise>
 									</xsl:choose>
 									<!-- END OF the Mail Delivery decision tree-->

@@ -52,8 +52,7 @@
 										<!-- handle AFN language fr -->
 										<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 											<tr>
-												<td>
-													<!-- AFN VERSION 1.6 changed some french text -->                                            
+												<td>                                            
                                             Veuillez noter que le(s) document(s) suivant(s) que vous avez demandé(s) de <b>
 														<xsl:value-of select="notification_data/organization_unit/name"/>
 													</b> est (sont) en attente d’être récupéré(s) au lieu de ramassage indiqué:
@@ -77,7 +76,6 @@
 																<th>Titre</th>
 																<th>Auteur</th>
 																<th>Peut être retiré auprès de :</th>
-																<!-- AFN VERSION 1.6 changed some french text -->
 																<th>L'exemplaire sera réservé à votre nom jusqu'au</th>
 															</tr>
 															<xsl:for-each select="requests/request_for_display">
@@ -110,7 +108,7 @@
 															</xsl:attribute>
 															<tr align="center" bgcolor="#f5f5f5">
 																<td colspan="4">
-																	<!-- AFN VERSION 1.6 changed some french text -->
+																	<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
 																	<h3>Exemplaires à retirer auprès d'autres institutions</h3>
 																</td>
 															</tr>
@@ -124,7 +122,6 @@
 																<th>Titre</th>
 																<th>Auteur</th>
 																<th>Peut être retiré auprès de :</th>
-																<!-- AFN VERSION 1.6 changed some french text -->
 																<th>L'exemplaire sera réservé à votre nom jusqu'au</th>
 															</tr>
 															<xsl:for-each select="notification_data/out_of_institution_requests/request_for_display">
@@ -404,7 +401,7 @@
 						<!-- END OF AFN CODE -->
 					</div>
 				</div>
-				<!-- AFN footer template options from footer.xsl -->
+				<!-- AFN footer options from footer.xsl -->
 				<xsl:call-template name="AFNLastFooter"/>
 				<xsl:call-template name="AFNAccount"/>
 			</body>
