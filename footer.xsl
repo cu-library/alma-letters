@@ -32,17 +32,59 @@
 			</tr>
 		</table>
 	</xsl:template>
-		<!-- Carleton contact templates; keeping each on one line prevents awkward spaces after -->
-	<xsl:template name="openingHours"><a href="https://library.carleton.ca/hours">opening hours</a></xsl:template>
-	<xsl:template name="libraryServicesEmail"><a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a></xsl:template>
+	<!-- Carleton contact templates; keeping each on one line prevents awkward spaces after -->
+	<xsl:template name="openingHours">
+		<a href="https://library.carleton.ca/hours">opening hours</a>
+	</xsl:template>
+	<xsl:template name="libraryServicesEmail">
+		<a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a>
+	</xsl:template>
 	<xsl:template name="libraryServicesPhone">613-520-2600 x2734</xsl:template>
-	<xsl:template name="ILLemail"><a href="mailto:interlibraryloans@cunet.carleton.ca">interlibraryloans@cunet.carleton.ca</a></xsl:template>
-	<xsl:template name="ILLphone">613-520-2600 x 2732</xsl:template>
-	<xsl:template name="curbsideLink"><a href="https://library.carleton.ca/services/borrowing/requesting-items#curbside">curbside service</a></xsl:template>
-	<xsl:template name="accountLogin"><a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">login to your library account</a></xsl:template>
-	<xsl:template name="overdueItemsAndFines"><a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a></xsl:template>
+	<xsl:template name="ILLemail">
+		<a href="mailto:interlibraryloans@cunet.carleton.ca">interlibraryloans@cunet.carleton.ca</a>
+	</xsl:template>
+	<xsl:template name="ILLphone">613-520-2732</xsl:template>
+	<xsl:template name="ILLfax">613-520-6650</xsl:template>
+	<!-- Guelph is using OGU for their code, which is the LAC code... just following suit until we hear otherwise. -->
+	<xsl:template name="ILLLibraryCode">OOCC</xsl:template>
+	<xsl:template name="curbsideLink">
+		<a href="https://library.carleton.ca/services/borrowing/requesting-items#curbside">curbside service</a>
+	</xsl:template>
+	<xsl:template name="accountLogin">
+		<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">login to your library account</a>
+	</xsl:template>
+	<xsl:template name="overdueItemsAndFines">
+		<a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>
+	</xsl:template>
 	<!-- counts number of items in a notification letter -->
-	<xsl:variable name="numOfNotificationItems"><xsl:value-of select="count(notification_data/item_loans/item_loan)"/></xsl:variable>
+	<xsl:variable name="numOfNotificationItems">
+		<xsl:value-of select="count(notification_data/item_loans/item_loan)"/>
+	</xsl:variable>
+	<!-- variable checks if the loan is an ILL loan (may catch AFN items also, so be careful)-->
+	<xsl:variable name="is_ill_loan">
+		<xsl:if test="(notification_data/display_list/overdue_and_lost_loan_notification_display/physical_item_display_for_printing/library_code = 'RES_SHARE')">TRUE</xsl:if>
+	</xsl:variable>
+	<!-- are any of a number of loans ILL loans? -->
+	<xsl:variable name="is_any_ill_loan">
+		<xsl:for-each select="notification_data/display_list/overdue_and_lost_loan_notification_display/physical_item_display_for_printing">
+			<xsl:if test="(library_code = 'RES_SHARE')">TRUE</xsl:if>
+		</xsl:for-each>
+		<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/physical_item_display_for_printing">
+			<xsl:if test="(library_code = 'RES_SHARE')">TRUE</xsl:if>
+		</xsl:for-each>
+		<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/physical_item_display_for_printing/available_items/available_itemg">
+			<xsl:if test="(library_code = 'RES_SHARE')">TRUE</xsl:if>
+		</xsl:for-each>
+	</xsl:variable>
+	<!-- Template using the above variable to ask patron to return intems to MacOdrum only (if any of the items are ILL) -->
+	<xsl:template name="ILLreturnLibrary">
+		<xsl:if test="(string-length($is_any_ill_loan) = 0)">
+    	You can return the items at the MacOdrum Library or at any university in Ontario.
+    	</xsl:if>
+		<xsl:if test="(string-length($is_any_ill_loan) > 0)">
+    	You can return the items at the MacOdrum Library.
+    	</xsl:if>
+	</xsl:template>
 	<!-- END OF Carleton contact templates -->
 	<!-- AFN CODE -->
 	<!-- create an OCUL AFN language specific variable for contact link text -->
@@ -56,7 +98,7 @@
 	<xsl:variable name="is_afn_patron">
 		<xsl:if test="(notification_data/user_for_printing/user_group = 'AFNUSER') or (notification_data/user/user_group = 'AFNUSER') or (notification_data/request/user_group = 'AFNUSER') or (notification_data/user_for_printing/user_group = 'TUGUSER') or (notification_data/user/user_group = 'TUGUSER') or (notification_data/request/user_group = 'TUGUSER')">	
 		TRUE		
-	</xsl:if>
+		</xsl:if>
 	</xsl:variable>
 	<!-- perform a test to see if the external id looks like OCUL alma codes 01OCUL_AU...just looking at format / first 2 digits 01OCUL 01UTON-->
 	<!-- normally in notification_data/receivers/receiver/user/external_id, but not always. Codes don't match, we'll show no home institution in AFN info -->
@@ -106,7 +148,8 @@
 									<xsl:when test="$external_id = '01OCUL_CRL' ">
 										<p>
 											<xsl:call-template name="afn_fr_contact_us"/>
-											<xsl:call-template name="libraryServicesEmail"/> | <xsl:call-template name="libraryServicesPhone"/></p>
+											<xsl:call-template name="libraryServicesEmail"/> | <xsl:call-template name="libraryServicesPhone"/>
+										</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LHD' ">
 										<p>
@@ -216,7 +259,8 @@
 									<xsl:when test="$external_id = '01OCUL_CRL' ">
 										<p>
 											<xsl:call-template name="afn_en_contact_us"/>
-											<xsl:call-template name="libraryServicesEmail"/> | <xsl:call-template name="libraryServicesPhone"/></p>
+											<xsl:call-template name="libraryServicesEmail"/> | <xsl:call-template name="libraryServicesPhone"/>
+										</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LHD' ">
 										<p>
@@ -851,8 +895,7 @@
 	</xsl:template>
 	<!-- END of AFN Letter name template -->
 	<!-- END OF AFN CODE -->
-	
-	<!-- Carleton ILL footer -->
+	<!-- Carleton ILL footer PATRONS -->
 	<xsl:template name="ILLFooter">
 		<table cellpadding="1">
 			<xsl:attribute name="style">
@@ -860,10 +903,34 @@
 			</xsl:attribute>
 			<tr>
 				<td>
-					<br/>If you have any questions, please contact a staff member from Interlibrary Loans at <xsl:call-template name="ILLemail"/> or <xsl:call-template name="ILLphone"/>.
+					<p>Questions? Email <xsl:call-template name="ILLemail"/> or call <xsl:call-template name="ILLphone"/>.</p>
 				</td>
 			</tr>
 		</table>
 	</xsl:template>
-	<!-- END OF Carleton ILL footer -->
+	<!-- END OF Carleton ILL footer PATRONS -->
+	<!-- Carleton ILL footer PEER-TO-PEER -->
+	<xsl:template name="ILLFooterPeerToPeer">
+		<table cellpadding="1">
+			<tr>
+				<td>
+					<strong>Interlibrary Loans Department</strong>
+				</td>
+			</tr>
+			<tr>
+				<td>Carleton University Library</td>
+			</tr>
+			<tr>
+				<td>
+					<xsl:call-template name="ILLemail"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<xsl:call-template name="ILLphone"/>
+				</td>
+			</tr>
+		</table>
+	</xsl:template>
+	<!-- END OF Carleton ILL footer PEER-TO-PEER -->
 </xsl:stylesheet>
