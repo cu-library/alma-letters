@@ -172,7 +172,7 @@
 													<td>
 														<b>
 															<!-- AFN VERSION 1.1 -->
-                                                Total: <xsl:value-of select="notification_data/total_fee"/>
+															Total: <xsl:value-of select="notification_data/total_fee"/>
 														</b>
 													</td>
 												</tr>
@@ -192,7 +192,8 @@
 											<xsl:if test="notification_data/item_loans/item_loan or notification_data/overdue_item_loans/item_loan">
 												<tr>
 													<td>
-														<b>Please see below for item(s) checked out on your account at <xsl:value-of select="notification_data/organization_unit/name"/>
+														<b>
+															Please see below for item(s) checked out on your account at <xsl:value-of select="notification_data/organization_unit/name"/>
 														</b>
 														<br/>
 													</td>
@@ -312,7 +313,7 @@
 												<tr>
 													<td>
 														<b>
-                                            Total: <xsl:value-of select="notification_data/total_fee"/>
+															Total: <xsl:value-of select="notification_data/total_fee"/>
 														</b>
 													</td>
 												</tr>
@@ -337,6 +338,7 @@
 											<td>
 												@@reminder_message@@
 												<br/>
+												<hr/>
 											</td>
 										</tr>
 										<xsl:if test="notification_data/overdue_loans_by_library/library_loans_for_display">
@@ -362,7 +364,7 @@
 																<xsl:sort select="due_date" order="ascending"/>
 																<tr>
 																	<td>
-																		<xsl:value-of select="title"/>
+																		<xsl:value-of select="physical_item/title"/>
 																	</td>
 																	<td>
 																		<xsl:value-of select="description"/>
@@ -404,7 +406,7 @@
 																<xsl:if test="notified_by_profiles = ''">
 																	<tr>
 																		<td>
-																			<xsl:value-of select="title"/>
+																			<xsl:value-of select="physical_item/title"/>
 																		</td>
 																		<td>
 																			<xsl:value-of select="description"/>
@@ -419,6 +421,7 @@
 																</xsl:if>
 															</xsl:for-each>
 														</table>
+														<hr/>
 													</td>
 												</tr>
 											</xsl:for-each>
@@ -427,21 +430,9 @@
 									<xsl:if test="notification_data/organization_fee_list/string">
 										<tr>
 											<td>
-												<b>@@debt_message@@</b>
-											</td>
-										</tr>
-										<xsl:for-each select="notification_data/organization_fee_list/string">
-											<tr>
-												<td>
-													<xsl:value-of select="."/>
-												</td>
-											</tr>
-										</xsl:for-each>
-										<tr>
-											<td>
-												<b>@@total@@
+												@@debt_message@@ <strong>
 													<xsl:value-of select="notification_data/total_fee"/>
-												</b>
+												</strong>.
 											</td>
 										</tr>
 										<tr>

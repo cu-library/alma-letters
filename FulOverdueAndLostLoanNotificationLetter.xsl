@@ -242,7 +242,7 @@
 								</tr>
 								<tr>
 									<td>
-										You can return the items at the MacOdrum Library or at any university in Ontario.
+									    <xsl:call-template name="ILLreturnLibrary"/>
 									</td>
 								</tr>
 							</table>

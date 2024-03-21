@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:include href="style.xsl" />
-	<xsl:include href="header.xsl" />
-	<xsl:include href="footer.xsl" />
+	<xsl:include href="header.xsl"/>
+	<xsl:include href="senderReceiver.xsl"/>
+	<xsl:include href="mailReason.xsl"/>
+	<xsl:include href="footer.xsl"/>
+	<xsl:include href="style.xsl"/>
+	<xsl:include href="recordTitle.xsl"/>
 	<xsl:template match="/">
 		<html>
 			<xsl:if test="notification_data/languages/string">
 				<xsl:attribute name="lang">
-					<xsl:value-of select="notification_data/languages/string" />
+					<xsl:value-of select="notification_data/languages/string"/>
 				</xsl:attribute>
 			</xsl:if>
 			<head>
 				<title>
-					<xsl:value-of select="notification_data/general_data/letter_name" />
+					<xsl:value-of select="notification_data/general_data/letter_name"/>
 				</title>
-				<xsl:call-template name="generalStyle" />
+				<xsl:call-template name="generalStyle"/>
 				<!-- style.xsl -->
 			</head>
 			<body>
 				<xsl:attribute name="style">
-					<xsl:call-template name="bodyStyleCss" />
+					<xsl:call-template name="bodyStyleCss"/>
 					<!-- style.xsl -->
 				</xsl:attribute>
-				<xsl:call-template name="head" />
+				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
@@ -39,21 +42,21 @@
 												<td>
 													<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
 													<!-- Regarding your recent library request made on -->
-													Concernant votre récente demande de bibliothèque effectuée le <xsl:value-of select="notification_data/request/create_date" />
+													Concernant votre récente demande de bibliothèque effectuée le <xsl:value-of select="notification_data/request/create_date"/>
 												</td>
 											</tr>
 										</table>
-										<br />
+										<br/>
 										<table role='presentation' cellspacing="0" cellpadding="5" border="0">
 											<xsl:attribute name="style">
-												<xsl:call-template name="listStyleCss" />
+												<xsl:call-template name="listStyleCss"/>
 												<!-- style.xsl -->
 											</xsl:attribute>
 											<xsl:if test="notification_data/request/display/title !=''">
 												<tr>
 													<td>
 														<strong> Titre: </strong>
-														<xsl:value-of select="notification_data/request/display/title" />
+														<xsl:value-of select="notification_data/request/display/title"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -64,7 +67,7 @@
 														<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
 														<!-- Journal Title -->
 														<strong> Titre de revue: </strong>
-														<xsl:value-of select="notification_data/request/display/journal_title" />
+														<xsl:value-of select="notification_data/request/display/journal_title"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -73,7 +76,7 @@
 												<tr>
 													<td>
 														<strong> Auteur: </strong>
-														<xsl:value-of select="notification_data/request/display/author" />
+														<xsl:value-of select="notification_data/request/display/author"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -84,7 +87,7 @@
 														<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
 														<!-- Publication Date -->
 														<strong> Date de publication: </strong>
-														<xsl:value-of select="notification_data/request/display/publication_date" />
+														<xsl:value-of select="notification_data/request/display/publication_date"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -93,7 +96,7 @@
 												<tr>
 													<td>
 														<strong> Volume: </strong>
-														<xsl:value-of select="notification_data/request/display/volume" />
+														<xsl:value-of select="notification_data/request/display/volume"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -104,7 +107,7 @@
 														<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
 														<!-- Issue -->
 														<strong> Fascicule: </strong>
-														<xsl:value-of select="notification_data/request/display/issue" />
+														<xsl:value-of select="notification_data/request/display/issue"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -113,7 +116,7 @@
 												<tr>
 													<td>
 														<strong> Chapitre: </strong>
-														<xsl:value-of select="notification_data/request/display/chapter" />
+														<xsl:value-of select="notification_data/request/display/chapter"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -122,45 +125,45 @@
 												<tr>
 													<td>
 														<strong> Volume: </strong>
-														<xsl:value-of select="notification_data/request/display/volume_bk" />
+														<xsl:value-of select="notification_data/request/display/volume_bk"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
 											</xsl:if>
 										</table>
-										<br />
-										<table role='presentation' >
+										<br/>
+										<table role='presentation'>
 											<xsl:if test="notification_data/query_note !=''">
 												<tr>
 													<td>
 														<strong> Note: </strong>
-														<xsl:value-of select="notification_data/query_note" />
+														<xsl:value-of select="notification_data/query_note"/>
 													</td>
 												</tr>
 											</xsl:if>
 										</table>
-										<br />
+										<br/>
 									</xsl:when>
 									<xsl:otherwise>
 										<!-- handle AFN default language en -->
 										<table role='presentation' cellspacing="0" cellpadding="5" border="0">
 											<tr>
 												<td>
-													Regarding your recent library request made on <xsl:value-of select="notification_data/request/create_date" />
+													Regarding your recent library request made on <xsl:value-of select="notification_data/request/create_date"/>
 												</td>
 											</tr>
 										</table>
-										<br />
+										<br/>
 										<table role='presentation' cellspacing="0" cellpadding="5" border="0">
 											<xsl:attribute name="style">
-												<xsl:call-template name="listStyleCss" />
+												<xsl:call-template name="listStyleCss"/>
 												<!-- style.xsl -->
 											</xsl:attribute>
 											<xsl:if test="notification_data/request/display/title !=''">
 												<tr>
 													<td>
 														<strong> Title: </strong>
-														<xsl:value-of select="notification_data/request/display/title" />
+														<xsl:value-of select="notification_data/request/display/title"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -169,7 +172,7 @@
 												<tr>
 													<td>
 														<strong> Journal Title: </strong>
-														<xsl:value-of select="notification_data/request/display/journal_title" />
+														<xsl:value-of select="notification_data/request/display/journal_title"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -178,7 +181,7 @@
 												<tr>
 													<td>
 														<strong> Author: </strong>
-														<xsl:value-of select="notification_data/request/display/author" />
+														<xsl:value-of select="notification_data/request/display/author"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -187,7 +190,7 @@
 												<tr>
 													<td>
 														<strong> Publication Date: </strong>
-														<xsl:value-of select="notification_data/request/display/publication_date" />
+														<xsl:value-of select="notification_data/request/display/publication_date"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -196,7 +199,7 @@
 												<tr>
 													<td>
 														<strong> Volume: </strong>
-														<xsl:value-of select="notification_data/request/display/volume" />
+														<xsl:value-of select="notification_data/request/display/volume"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -205,7 +208,7 @@
 												<tr>
 													<td>
 														<strong> Issue: </strong>
-														<xsl:value-of select="notification_data/request/display/issue" />
+														<xsl:value-of select="notification_data/request/display/issue"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -214,7 +217,7 @@
 												<tr>
 													<td>
 														<strong> Chapter: </strong>
-														<xsl:value-of select="notification_data/request/display/chapter" />
+														<xsl:value-of select="notification_data/request/display/chapter"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
@@ -223,42 +226,46 @@
 												<tr>
 													<td>
 														<strong> Volume: </strong>
-														<xsl:value-of select="notification_data/request/display/volume_bk" />
+														<xsl:value-of select="notification_data/request/display/volume_bk"/>
 														<!-- recordTitle.xsl -->
 													</td>
 												</tr>
 											</xsl:if>
 										</table>
-										<br />
-										<table role='presentation' >
+										<br/>
+										<table role='presentation'>
 											<xsl:if test="notification_data/query_note !=''">
 												<tr>
 													<td>
 														<strong> Note: </strong>
-														<xsl:value-of select="notification_data/query_note" />
+														<xsl:value-of select="notification_data/query_note"/>
 													</td>
 												</tr>
 											</xsl:if>
 										</table>
-										<br />
+										<br/>
 									</xsl:otherwise>
 								</xsl:choose>
 							</xsl:when>
 							<xsl:otherwise>
 								<!-- Carleton letter -->
+								<xsl:call-template name="toWhomIsConcerned"/>
+								<!-- mailReason.xsl -->
 								<table border="0" cellpadding="5" cellspacing="0" role="presentation">
 									<tr>
 										<td>
-											Hi,
-										</td>
-									</tr>
-									<tr>
-										<td>
-											We would like to provide some updates to your request:
+											You have a new message about your request for <strong>
+												<xsl:value-of select="notification_data/request/display/title"/>
+											</strong>:
+											<xsl:if test="notification_data/query_note !=''">
+												<blockquote>
+													<xsl:value-of select="notification_data/query_note"/>
+												</blockquote>
+											</xsl:if>
 										</td>
 									</tr>
 								</table>
-								<br/>
+								<h2>Request details</h2>
 								<table border="0" cellpadding="5" cellspacing="0" role="presentation">
 									<xsl:attribute name="style">
 										<xsl:call-template name="listStyleCss"/>
@@ -521,61 +528,6 @@
 										</tr>
 									</xsl:if>
 								</table>
-								<br/>
-								<table border="0" cellpadding="5" cellspacing="0" role="presentation">
-									<xsl:if test="notification_data/query_type !=''">
-										<tr>
-											<td>@@query_to_patron@@</td>
-										</tr>
-									</xsl:if>
-									<xsl:choose>
-										<xsl:when test="notification_data/query_type = 'Type_1_query_name'">
-											<tr>
-												<td>@@Type_1_query_line_1@@</td>
-											</tr>
-											<tr>
-												<td>@@Type_1_query_line_2@@</td>
-											</tr>
-											<tr>
-												<td>@@Type_1_query_line_3@@</td>
-											</tr>
-										</xsl:when>
-										<xsl:when test="notification_data/query_type = 'Type_2_query_name'">
-											<tr>
-												<td>@@Type_2_query_line_1@@</td>
-											</tr>
-											<tr>
-												<td>@@Type_2_query_line_2@@</td>
-											</tr>
-											<tr>
-												<td>@@Type_2_query_line_3@@</td>
-											</tr>
-										</xsl:when>
-										<xsl:otherwise>
-											<tr>
-												<td>@@Type_1_query_line_1@@</td>
-											</tr>
-											<tr>
-												<td>@@Type_1_query_line_2@@</td>
-											</tr>
-											<tr>
-												<td>@@Type_1_query_line_3@@</td>
-											</tr>
-										</xsl:otherwise>
-									</xsl:choose>
-								</table>
-								<br/>
-								<table border="0" cellpadding="5" cellspacing="0" role="presentation">
-									<xsl:if test="notification_data/query_note !=''">
-										<tr>
-											<td>
-												<strong>@@query_note@@: </strong>
-												<xsl:value-of select="notification_data/query_note"/>
-											</td>
-										</tr>
-									</xsl:if>
-								</table>
-								<br/>
 								<table border="0" cellpadding="5" cellspacing="0" role="presentation">
 									<tr>
 										<td>
@@ -584,15 +536,9 @@
 									</tr>
 									<tr>
 										<td>
-											Access Services Department
-											<br />
+											Interlibrary Loans Department
+											<br/>
 											Carleton University Library
-										</td>
-									</tr>
-									<tr>
-										<td>
-											Looking for additional materials that were not in our library?
-											Try requesting them through our <a href="https://library.carleton.ca/services/interlibrary-loans">Resource Sharing</a>!
 										</td>
 									</tr>
 								</table>
@@ -602,8 +548,16 @@
 					</div>
 				</div>
 				<!-- AFN footer template options from footer.xsl -->
-				<xsl:call-template name="AFNLastFooter" />
-				<xsl:call-template name="AFNAccount" />
+				<!-- This is an ILL letter, so it gets the ILL footer when the patron is from Carleton -->
+				<xsl:choose>
+					<xsl:when test="(string-length($is_afn_patron) > 0)">
+						<xsl:call-template name="AFNLastFooter"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:call-template name="ILLFooter"/>
+					</xsl:otherwise>
+				</xsl:choose>
+				<xsl:call-template name="AFNAccount"/>
 			</body>
 		</html>
 	</xsl:template>

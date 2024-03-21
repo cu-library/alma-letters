@@ -39,7 +39,7 @@
 							</tr>
 							<tr>
 								<td>
-									Otherwise, items can be returned at the MacOdrum Library or at any university in Ontario.
+									<xsl:call-template name="ILLreturnLibrary"/>
 								</td>
 							</tr>
 							<tr>

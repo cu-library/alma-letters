@@ -22,6 +22,9 @@
 			 #afn_letter_name_id{margin-top:1em; font-size: 30%;}
 			 .afn_letter_plain_list{list-style-type: none;}
 			 <!-- END AFN styles -->
+			 <!-- Carleton styles -->
+
+			 <!-- END Carleton styles -->
 		</style>
 	</xsl:template>
 	<!-- DO NOT make font-size less than 100%. Less than 100% shows up okay in Outlook, but if someone is forwarding to Gmail the text becomes illegibly tiny. -->
