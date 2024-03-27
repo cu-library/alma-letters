@@ -33,6 +33,7 @@
 		</table>
 	</xsl:template>
 		<!-- Carleton contact templates; keeping each on one line prevents awkward spaces after -->
+	<xsl:template name="AskALibrarian">Need research help or assistance with your account? We're here to help! <a href="https://library.carleton.ca/help">Ask a Librarian</a></xsl:template>
 	<xsl:template name="openingHours"><a href="https://library.carleton.ca/hours">opening hours</a></xsl:template>
 	<xsl:template name="libraryServicesEmail"><a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a></xsl:template>
 	<xsl:template name="libraryServicesPhone">613-520-2600 x2734</xsl:template>
