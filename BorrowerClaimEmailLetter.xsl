@@ -29,7 +29,7 @@
 				<table role='presentation' cellspacing="0" cellpadding="5" border="0">
 					<tr>
 						<td>
-							<h3>@@header@@</h3>
+							@@header@@
 						</td>
 					</tr>
 				</table>
@@ -38,8 +38,7 @@
 						<table role='presentation' cellspacing="0" cellpadding="5" border="0">
 							<tr>
 								<td>
-									<strong>@@requested@@: <xsl:value-of select="notification_data/request/last_send_date"/>.
-									</strong>
+									@@requested@@: <strong><xsl:value-of select="notification_data/request/last_send_date"/></strong>.
 								</td>
 							</tr>
 						</table>
