@@ -23,7 +23,9 @@
 			 .afn_letter_plain_list{list-style-type: none;}
 			 <!-- END AFN styles -->
 			 <!-- Carleton styles -->
-
+			 caption {
+				font-weight: bold;
+			 }
 			 <!-- END Carleton styles -->
 		</style>
 	</xsl:template>
