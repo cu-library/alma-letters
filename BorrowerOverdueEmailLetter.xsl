@@ -28,23 +28,19 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
-						<table role='presentation' cellspacing="0" cellpadding="5" border="0">
-							<tr>
-								<td>
-									Hi,
-								</td>
-							</tr>
+						<xsl:call-template name="toWhomIsConcerned"/>
+						<!-- mailReason.xsl -->
+						<table role='presentation' style="padding: 5px;">
 							<tr>
 								<td>
 									@@overdue_message@@
 								</td>
 							</tr>
 						</table>
-						<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+						<table role='presentation' style="padding: 5px;">
 							<xsl:attribute name="style">
 								<xsl:call-template name="listStyleCss"/>
 							</xsl:attribute>
-
 							<tr>
 								<td>
 									<strong>@@request_id@@: </strong>
@@ -63,75 +59,29 @@
 									<xsl:value-of select="notification_data/request/create_date"/>
 								</td>
 							</tr>
+							<tr>
+								<td>
+									<strong>@@orignal_due_date@@:</strong> <xsl:value-of select="notification_data/request/due_date"/>
+								</td>
+							</tr>
 						</table>
 						<br/>
-						<table role='presentation'>
+						<table role='presentation' style="padding: 5px;">
+							<tr>
+								<td>
+									@@return_message@@
+								</td>
+							</tr>
+						</table>
+						<table style="padding: 5px;">
 							<tr>
 								<td>@@signature@@</td>
 							</tr>
-							<tr>
-								<td>Access Services Department<br/>
-									Carleton University Library</td>
-							</tr>
-							<tr>
-								<td>
-									<xsl:value-of select="notification_data/library/name"/>
-								</td>
-							</tr>
-							<xsl:if test="notification_data/library/address/line1 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line1"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line2 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line2"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line3 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line3"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line4 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line4"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line5 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line5"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/city !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/city"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/country !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/country"/>
-									</td>
-								</tr>
-							</xsl:if>
 						</table>
+						<!-- footer.xsl -->
+						<xsl:call-template name="ILLFooterPeerToPeer"/>
 					</div>
 				</div>
-				<xsl:call-template name="lastFooter"/>
-				<!-- footer.xsl -->
 			</body>
 		</html>
 	</xsl:template>

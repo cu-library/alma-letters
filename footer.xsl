@@ -883,7 +883,7 @@
 	
 	<!-- Carleton ILL footer PATRONS -->
 	<xsl:template name="ILLFooter">
-		<table cellpadding="1">
+		<table style="padding: 5px;">
 			<xsl:attribute name="style">
 				<xsl:call-template name="footerTableStyleCss"/>
 			</xsl:attribute>
@@ -896,7 +896,7 @@
 	<!-- END OF Carleton ILL footer PATRONS -->
 	<!-- Carleton ILL footer PEER-TO-PEER -->
 	<xsl:template name="ILLFooterPeerToPeer">
-	    <table cellpadding="1">
+	    <table style="padding: 5px;">
 			<tr>
 				<td><strong>Interlibrary Loans Department</strong></td>
 			</tr>
