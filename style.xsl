@@ -26,6 +26,9 @@
 			 caption {
 				font-weight: bold;
 			 }
+			 table {
+				padding: 5px;
+			 }
 			 <!-- END Carleton styles -->
 		</style>
 	</xsl:template>

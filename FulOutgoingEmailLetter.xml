@@ -26,35 +26,31 @@
 				</xsl:attribute>
 				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
-				<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+				<table role='presentation'>
 					<tr>
 						<td>
-							<h3>@@header@@</h3>
+							@@header@@
 						</td>
 					</tr>
 				</table>
 				<div class="messageArea">
 					<div class="messageBody">
-						<table role='presentation' cellspacing="0" cellpadding="5" border="0">
-							<xsl:choose>
-								<xsl:when test="notification_data/request/needed_by !=''">
-									<tr>
-										<td>
-											<strong>@@requested_by@@: </strong>
-											<xsl:value-of select="notification_data/request/needed_by"/>
-										</td>
-									</tr>
-								</xsl:when>
-								<xsl:otherwise>
-									<tr>
-										<td>
-											<strong>@@requested@@</strong>
-										</td>
-									</tr>
-								</xsl:otherwise>
-							</xsl:choose>
+						<table role='presentation'>
+							<tr>
+								<td>
+									@@requested@@
+								</td>
+							</tr>
+							<xsl:if test="notification_data/request/needed_by !=''">
+								<tr>
+									<td>
+										<strong>@@requested_by@@: </strong>
+										<xsl:value-of select="notification_data/request/needed_by"/>
+									</td>
+								</tr>
+							</xsl:if>
 						</table>
-						<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+						<table role='presentation'>
 							<xsl:attribute name="style">
 								<xsl:call-template name="listStyleCss"/>
 								<!-- style.xsl -->
@@ -333,64 +329,10 @@
 							<tr>
 								<td>@@signature@@</td>
 							</tr>
-							<tr>
-								<td>
-									<xsl:value-of select="notification_data/library/name"/>
-								</td>
-							</tr>
-							<xsl:if test="notification_data/library/address/line1 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line1"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line2 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line2"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line3 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line3"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line4 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line4"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line5 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line5"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/city !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/city"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/country !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/country"/>
-									</td>
-								</tr>
-							</xsl:if>
 						</table>
 					</div>
 				</div>
-				<xsl:call-template name="lastFooter"/>
+				<xsl:call-template name="ILLFooterPeerToPeer"/>
 				<!-- footer.xsl -->
 			</body>
 		</html>

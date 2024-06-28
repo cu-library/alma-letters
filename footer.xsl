@@ -896,13 +896,35 @@
 	<!-- END OF Carleton ILL footer PATRONS -->
 	<!-- Carleton ILL footer PEER-TO-PEER -->
 	<xsl:template name="ILLFooterPeerToPeer">
-	    <table style="padding: 5px;">
+	    <table class="new">
 			<tr>
 				<td><strong>Interlibrary Loans Department</strong></td>
 			</tr>
-			<tr>
-				<td>Carleton University Library</td>
-			</tr>
+				<tr>
+					<td>
+						Carleton University, MacOdrum Library
+					</td>
+				</tr>
+				<tr>
+					<td>
+						1125 Colonel By Drive
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Ottawa, ON
+					</td>
+				</tr>
+				<tr>
+					<td>
+						K1S 5B6
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Canada
+					</td>
+				</tr>
 			<tr>
 				<td><xsl:call-template name="ILLemail"/></td>
 			</tr>
