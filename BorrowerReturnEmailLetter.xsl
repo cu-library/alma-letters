@@ -26,63 +26,77 @@
 				</xsl:attribute>
 				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
+				<table role='presentation'>
+					<tr>
+						<td>
+							@@header@@
+						</td>
+					</tr>
+				</table>
 				<div class="messageArea">
 					<div class="messageBody">
-						<xsl:call-template name="toWhomIsConcerned"/>
-						<!-- mailReason.xsl -->
-						<table role='presentation' style="padding: 5px;">
+						<table role='presentation'>
 							<tr>
 								<td>
-									@@overdue_message@@
+									@@request@@
 								</td>
 							</tr>
 						</table>
-						<table role='presentation' style="padding: 5px;">
+						<br/>
+						<table role='presentation'>
 							<xsl:attribute name="style">
 								<xsl:call-template name="listStyleCss"/>
+								<!-- style.xsl -->
 							</xsl:attribute>
 							<tr>
 								<td>
-									<strong>@@request_id@@: </strong>
+									<strong> @@requestId@@: </strong>
 									<xsl:value-of select="notification_data/request/external_request_id"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong>@@title@@: </strong>
+									<strong> @@title@@: </strong>
 									<xsl:value-of select="notification_data/request/display/title"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong> @@request_date@@: </strong>
-									<xsl:value-of select="notification_data/request/create_date"/>
+									<strong> @@author@@: </strong>
+									<xsl:value-of select="notification_data/request/display/author"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong>@@orignal_due_date@@:</strong>
-									<xsl:value-of select="notification_data/request/due_date"/>
+									<strong> @@requestDate@@: </strong>
+									<xsl:value-of select="notification_data/request/create_date_str"/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<strong> @@returnDate@@: </strong>
+									<xsl:value-of select="notification_data/return_date"/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br/>
+									<strong> @@note@@: </strong>
+									<xsl:value-of select="notification_data/note_to_partner"/>
 								</td>
 							</tr>
 						</table>
 						<br/>
-						<table role='presentation' style="padding: 5px;">
-							<tr>
-								<td>
-									@@return_message@@
-								</td>
-							</tr>
-						</table>
-						<table style="padding: 5px;">
+						<br/>
+						<table role='presentation'>
 							<tr>
 								<td>@@signature@@</td>
 							</tr>
 						</table>
-						<!-- footer.xsl -->
-						<xsl:call-template name="ILLFooterPeerToPeer"/>
 					</div>
 				</div>
+				<xsl:call-template name="ILLFooterPeerToPeer"/>
+				<!-- footer.xsl -->
 			</body>
 		</html>
 	</xsl:template>

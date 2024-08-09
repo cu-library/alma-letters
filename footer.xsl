@@ -203,12 +203,14 @@
 									<xsl:when test="$external_id = '01OCUL_WLU' ">
 										<p>
 											<xsl:call-template name="afn_fr_contact_us"/>
-											<a href="mailto:libraryhelp@wlu.ca"> libraryhelp@wlu.ca</a> | 548-889-3766</p>
+											<a href="mailto:libraryhelp@wlu.ca"> libraryhelp@wlu.ca</a> | 548-889-3766
+										</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_YOR' ">
 										<p>
 											<xsl:call-template name="afn_fr_contact_us"/>
-											<a href="mailto:askusyul@yorku.ca"> askusyul@yorku.ca</a> | 416-736-5181</p>
+											<a href="mailto:askusyul@yorku.ca"> askusyul@yorku.ca</a> | 416-736-5181
+										</p>
 									</xsl:when>
 									<!-- AFN-VERSION 1.7 ADD McMaster & OCADU -->
 									<xsl:when test="$external_id = '01OCUL_MU' ">
@@ -222,9 +224,16 @@
 									<xsl:when test="$external_id = '01OCUL_OCAD' ">
 										<p>
 											<xsl:call-template name="afn_fr_contact_us"/>
-											<a href="mailto:circulation@ocadu.ca"> circulation@ocadu.ca</a> | 416-977-6000 x358</p>
+											<a href="mailto:circulation@ocadu.ca"> circulation@ocadu.ca</a> | 416-977-6000 x358
+										</p>
 									</xsl:when>
 									<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
+									<xsl:when test="$external_id = '01OCUL_TMU' ">
+                                        <p>
+                                            <xsl:call-template name="afn_fr_contact_us" /> 
+                                            <a href="mailto:access@torontomu.ca"> access@torontomu.ca</a> | 416-979-5055
+                                        </p>
+                                    </xsl:when>
 								</xsl:choose>
 							</tr>
 						</xsl:when>
@@ -332,9 +341,16 @@
 									<xsl:when test="$external_id = '01OCUL_OCAD' ">
 										<p>
 											<xsl:call-template name="afn_en_contact_us"/>
-											<a href="mailto:circulation@ocadu.ca"> circulation@ocadu.ca</a> | 416-977-6000 x358</p>
+											<a href="mailto:circulation@ocadu.ca"> circulation@ocadu.ca</a> | 416-977-6000 x358
+										</p>
 									</xsl:when>
 									<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
+									<xsl:when test="$external_id = '01OCUL_TMU' ">
+                                        <p>
+                                            <xsl:call-template name="afn_en_contact_us" /> 
+                                            <a href="mailto:access@torontomu.ca"> access@torontomu.ca</a> | 416-979-5055
+                                        </p>
+                                    </xsl:when>
 								</xsl:choose>
 							</tr>
 						</xsl:otherwise>
@@ -456,6 +472,11 @@
 								</a>
 							</xsl:when>
 							<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
+							<xsl:when test="$external_id = '01OCUL_TMU' ">
+                                <a href="https://torontomu.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_TMU:01OCUL_TMU&amp;section=loans&amp;lang=fr">
+                                    <xsl:call-template name="afn_fr_visit_home_account_link_text" />
+                                </a>
+                            </xsl:when>
 							<xsl:otherwise>
 								<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
 							</xsl:otherwise>
@@ -556,6 +577,11 @@
 								</a>
 							</xsl:when>
 							<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
+							<xsl:when test="$external_id = '01OCUL_TMU' ">
+                                <a href="https://torontomu.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_TMU:01OCUL_TMU&amp;section=loans&amp;lang=en">
+                                    <xsl:call-template name="afn_en_visit_home_account_link_text" />
+                                </a>
+                            </xsl:when>
 							<xsl:otherwise>
 								<xsl:call-template name="afn_en_visit_home_account_link_text"/>
 							</xsl:otherwise>
@@ -679,6 +705,11 @@
 											</a>
 										</xsl:when>
 										<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
+										<xsl:when test="$external_id = '01OCUL_TMU' ">
+                                            <a href="https://torontomu.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_TMU:01OCUL_TMU&amp;lang=fr">
+                                                <xsl:call-template name="afn_fr_account_link_text" />
+                                            </a>
+                                        </xsl:when>
 									</xsl:choose>
 								</xsl:when>
 								<!-- default AFN language is english -->
@@ -776,6 +807,11 @@
 											</a>
 										</xsl:when>
 										<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
+										<xsl:when test="$external_id = '01OCUL_TMU' ">
+                                            <a href="https://torontomu.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_TMU:01OCUL_TMU&amp;lang=en">
+                                                <xsl:call-template name="afn_en_account_link_text" />
+                                            </a>
+                                        </xsl:when>
 									</xsl:choose>
 								</xsl:otherwise>
 							</xsl:choose>
@@ -857,6 +893,9 @@
             OCAD University
         </xsl:when>
 			<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
+		<xsl:when test="contains($test_org_code, '01OCUL_TMU')">
+            Toronto Metropolitan University
+        </xsl:when>
 			<xsl:otherwise>
 				<!-- Fallback - use Carleton default -->
 				Carleton University

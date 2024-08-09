@@ -26,7 +26,7 @@
 				</xsl:attribute>
 				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
-				<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+				<table role='presentation' cellspacing="0" border="0">
 					<tr>
 						<td>
 							@@header@@
@@ -35,14 +35,16 @@
 				</table>
 				<div class="messageArea">
 					<div class="messageBody">
-						<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+						<table role='presentation' cellspacing="0" border="0">
 							<tr>
 								<td>
-									@@requested@@: <strong><xsl:value-of select="notification_data/request/last_send_date"/></strong>.
+									@@requested@@: <strong>
+										<xsl:value-of select="notification_data/request/last_send_date"/>
+									</strong>.
 								</td>
 							</tr>
 						</table>
-						<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+						<table role='presentation' cellspacing="0" border="0">
 							<xsl:attribute name="style">
 								<xsl:call-template name="listStyleCss"/>
 								<!-- style.xsl -->
@@ -335,7 +337,7 @@
 							</xsl:choose>
 						</table>
 						<br/>
-						<table role='presentation' cellpadding="5">
+						<table role='presentation'>
 							<xsl:choose>
 								<xsl:when test="notification_data/request/needed_by !=''">
 									<tr>
@@ -350,7 +352,7 @@
 								<td>@@please_advise@@</td>
 							</tr>
 						</table>
-						<table cellpadding="5">
+						<table>
 							<tr>
 								<td>@@signature@@</td>
 							</tr>
