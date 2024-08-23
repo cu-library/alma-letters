@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:template name="salutation">
-</xsl:template>
 	<xsl:template name="lastFooter">
 	</xsl:template>
 	<xsl:template name="contactUs">
@@ -32,7 +30,7 @@
 			</tr>
 		</table>
 	</xsl:template>
-		<!-- Carleton contact templates; keeping each on one line prevents awkward spaces after -->
+	<!-- Carleton contact templates; keeping each on one line prevents awkward spaces after -->
 	<xsl:template name="AskALibrarian">Need research help or assistance with your account? We're here to help! <a href="https://library.carleton.ca/help">Ask a Librarian</a></xsl:template>
 	<xsl:template name="openingHours"><a href="https://library.carleton.ca/hours">opening hours</a></xsl:template>
 	<xsl:template name="libraryServicesEmail"><a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a></xsl:template>
@@ -43,7 +41,7 @@
 	<!-- Guelph is using OGU for their code, which is the LAC code... just following suit until we hear otherwise. -->
 	<xsl:template name="ILLLibraryCode">OOCC</xsl:template>
 	<xsl:template name="curbsideLink"><a href="https://library.carleton.ca/services/borrowing/requesting-items#curbside">curbside service</a></xsl:template>
-	<xsl:template name="accountLogin"><a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">login to your library account</a></xsl:template>
+	<xsl:template name="accountLogin"><a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">log in to your library account</a></xsl:template>
 	<xsl:template name="overdueItemsAndFines"><a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a></xsl:template>
 	<!-- counts number of items in a notification letter -->
 	<xsl:variable name="numOfNotificationItems"><xsl:value-of select="count(notification_data/item_loans/item_loan)"/></xsl:variable>
@@ -75,13 +73,13 @@
 	<!-- END OF Carleton contact templates -->
 	<!-- AFN CODE -->
 	<!-- create an OCUL AFN language specific variable for contact link text -->
-	<!-- Alex note: adding a space after "contact us:"/"nous contacter:" makes the link not extend to a leaading blank space :) -->
+	<!-- Alex note: adding a space after "contact us:"/"nous contacter:" makes the link not extend to a leading blank space :) -->
 	<xsl:template name="afn_en_contact_us">
 	If you have questions or need assistance, please contact us: 
-</xsl:template>
+	</xsl:template>
 	<xsl:template name="afn_fr_contact_us">
 	Si vous avez des questions, ou si vous avez besoin d’aide, veuillez nous contacter: 
-</xsl:template>
+	</xsl:template>
 	<xsl:variable name="is_afn_patron">
 		<xsl:if test="(notification_data/user_for_printing/user_group = 'AFNUSER') or (notification_data/user/user_group = 'AFNUSER') or (notification_data/request/user_group = 'AFNUSER') or (notification_data/user_for_printing/user_group = 'TUGUSER') or (notification_data/user/user_group = 'TUGUSER') or (notification_data/request/user_group = 'TUGUSER')">	
 		TRUE		
@@ -359,7 +357,9 @@
 				<xsl:otherwise>
 					<tr>
 						<!-- Fallback - use Carleton default -->
-						<p>Questions? Email <xsl:call-template name="libraryServicesEmail"/> or call <xsl:call-template name="libraryServicesPhone"/>.</p>
+						<td>
+							<p>Questions? Email <xsl:call-template name="libraryServicesEmail"/> or call <xsl:call-template name="libraryServicesPhone"/>.</p>
+						</td>
 						<!-- END of Fallback -->
 					</tr>
 				</xsl:otherwise>
@@ -598,7 +598,7 @@
 	</xsl:template>
 	<!-- create an OCUL AFN language specific variable for login to account link text -->
 	<xsl:template name="afn_en_account_link_text">
-	Login to My Account
+	Log in to My Account
 </xsl:template>
 	<xsl:template name="afn_fr_account_link_text">
 	Connexion à mon compte
@@ -818,7 +818,7 @@
 						</xsl:when>
 						<xsl:otherwise>
 							<!-- Fallback - use Carleton default -->
-							<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_CRL:CRL_DEFAULT&amp;lang=en">Login to My Account</a>
+							<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_CRL:CRL_DEFAULT&amp;lang=en">Log in to My Account</a>
 							<!-- END of Fallback-->
 						</xsl:otherwise>
 					</xsl:choose>
@@ -919,10 +919,30 @@
 	</xsl:template>
 	<!-- END of AFN Letter name template -->
 	<!-- END OF AFN CODE -->
-	
+	<!-- CARLETON TEMPLATES PART 2 -->
+	<!-- Salutation -->
+	<xsl:template name="salutation">
+		<table>
+			<tr>
+				<td>
+					<p>Hi,</p>
+				</td>
+			</tr>
+		</table>
+	</xsl:template>
+	<!-- Access Services Signature -->
+	<xsl:template name="accessSignature">
+	<tr>
+		<td>
+			Access Services Department
+			<br/>
+			Carleton University Library
+		</td>
+	</tr>
+	</xsl:template>
 	<!-- Carleton ILL footer PATRONS -->
 	<xsl:template name="ILLFooter">
-		<table style="padding: 5px;">
+		<table>
 			<xsl:attribute name="style">
 				<xsl:call-template name="footerTableStyleCss"/>
 			</xsl:attribute>

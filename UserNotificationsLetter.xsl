@@ -1,70 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:include href="style.xsl" />
-	<xsl:include href="header.xsl" />
-	<xsl:include href="footer.xsl" />
+	<xsl:include href="style.xsl"/>
+	<xsl:include href="header.xsl"/>
+	<xsl:include href="footer.xsl"/>
 	<xsl:template match="/">
 		<html>
 			<xsl:if test="notification_data/languages/string">
 				<xsl:attribute name="lang">
-					<xsl:value-of select="notification_data/languages/string" />
+					<xsl:value-of select="notification_data/languages/string"/>
 				</xsl:attribute>
 			</xsl:if>
 			<head>
 				<title>
-					<xsl:value-of select="notification_data/general_data/letter_name" />
+					<xsl:value-of select="notification_data/general_data/letter_name"/>
 				</title>
-				<xsl:call-template name="generalStyle" />
+				<xsl:call-template name="generalStyle"/>
 				<!-- style.xsl -->
 			</head>
 			<body>
 				<xsl:attribute name="style">
-					<xsl:call-template name="bodyStyleCss" />
+					<xsl:call-template name="bodyStyleCss"/>
 					<!-- style.xsl -->
 				</xsl:attribute>
-				<xsl:call-template name="head" />
+				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
-						<table border="0" cellpadding="5" cellspacing="0" role="presentation">
+                        <xsl:call-template name="salutation"/>
+						<xsl:choose>
+						    <!-- LOAN_STATUS_NOTICE_DUE_DATE_ERROR Notification -->
+						    <!-- this is a letter meant specifically to notify users affected by an August 19 error in Loan Status Notice letters -->
+							<xsl:when test="notification_data/notification_type = 'LOAN_STATUS_NOTICE_DUE_DATE_ERROR'">
+								<table>
+									<tr>
+										<td>
+											<p>On August 19th, 2024, we notified you about due date changes as a result of adjusted library hours in the fall. <strong>Unfortunately, due to an internal glitch, some of the dates provided were incorrect.</strong></p>
+											<p>Please <xsl:call-template name="accountLogin"/> to see accurate due dates for your items.</p>
+										</td>
+									</tr>
+								</table>
+							</xsl:when>
+							<!-- LOAN_STATUS_NOTICE_DUE_DATE_ERROR Notification end -->
+							<!-- Failsafe: STOPS LETTER FROM SENDING FOR ANY NOTICES THAT IT HAS NOT BEEN CONFIGURED FOR -->
+							<xsl:otherwise>
+							    <xsl:message terminate="yes">this notice is not configured in the letter</xsl:message>
+							</xsl:otherwise>
+							<!-- END OF failsafe -->
+						</xsl:choose>
+						<table>
 							<tr>
 								<td>
-									Hi,
+									<p>@@Sincerely@@</p>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									It looks like your items that are now overdue. If you still need them, please login to your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a> to renew them or reach out to us and we'll see what we can do.
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<xsl:call-template name="ILLreturnLibrary"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									@@Sincerely@@
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Access Services Department
-									<br />
-									Carleton University Library
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Need research help or assistance with your account? We're here to help! <a href="https://library.carleton.ca/help">Ask a Librarian</a>.
-								</td>
-							</tr>
+                            <xsl:call-template name="accessSignature"/>
 						</table>
 					</div>
 				</div>
 				<!-- AFN footer template options from footer.xsl -->
-				<xsl:call-template name="AFNLastFooter" />
-				<xsl:call-template name="AFNAccount" />
+				<xsl:call-template name="AFNLastFooter"/>
+				<xsl:call-template name="AFNAccount"/>
 			</body>
 		</html>
 	</xsl:template>

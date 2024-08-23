@@ -32,12 +32,15 @@
 			 <!-- END Carleton styles -->
 		</style>
 	</xsl:template>
-	<!-- DO NOT make font-size less than 100%. Less than 100% shows up okay in Outlook, but if someone is forwarding to Gmail the text becomes illegibly tiny. -->
+	<!-- 	
+	DO NOT make font-size less than 100%. Less than 100% shows up okay in Outlook, but if someone is forwarding to Gmail the text becomes illegibly tiny. 
+	Additionally, we do need to specify 100%; leaving it out entirely can also make the font illegibly tiny.
+	-->
 	<xsl:template name="bodyStyleCss">font-family: arial; color:#333; margin:0; padding:0em; font-size:100%</xsl:template> 
 	<xsl:template name="listStyleCss">list-style: none; margin:0 0 0 1em; padding:0</xsl:template>
 	<xsl:template name="mainTableStyleCss">width:100%; text-align:left</xsl:template>
 	<xsl:template name="headerLogoStyleCss">background-color:#ffffff;  width:100%;</xsl:template>
 	<xsl:template name="headerTableStyleCss">background-color:#e9e9e9;  width:100%; height:30px; text-shadow:1px 1px 1px #fff;</xsl:template>
-	<xsl:template name="footerTableStyleCss">width:100%; margin-top:1em;  font-weight:700; line-height:2em; font-size:150%;
+	<xsl:template name="footerTableStyleCss">width:100%; font-weight:700; line-height:2em; font-size:100%;
 	</xsl:template>
 </xsl:stylesheet>

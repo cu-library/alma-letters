@@ -283,7 +283,7 @@
 															</td>
 														</xsl:if>
 														<td>
-															<xsl:value-of select="/notification_data/item_loans/item_loan/due_date"/>
+															<xsl:value-of select="due_date"/>
 														</td>
 													</tr>
 												</xsl:for-each>
