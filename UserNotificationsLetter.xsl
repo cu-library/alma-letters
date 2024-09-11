@@ -26,24 +26,31 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
-                        <xsl:call-template name="salutation"/>
+						<xsl:call-template name="salutation"/>
 						<xsl:choose>
-						    <!-- LOAN_STATUS_NOTICE_DUE_DATE_ERROR Notification -->
-						    <!-- this is a letter meant specifically to notify users affected by an August 19 error in Loan Status Notice letters -->
-							<xsl:when test="notification_data/notification_type = 'LOAN_STATUS_NOTICE_DUE_DATE_ERROR'">
+							<!-- USER_TOGGLED_TO_EXTERNAL_LOGIN_INFO Notification -->
+							<xsl:when test="notification_data/notification_type='USER_TOGGLED_TO_EXTERNAL_LOGIN_INFO'">
 								<table>
 									<tr>
 										<td>
-											<p>On August 19th, 2024, we notified you about due date changes as a result of adjusted library hours in the fall. <strong>Unfortunately, due to an internal glitch, some of the dates provided were incorrect.</strong></p>
-											<p>Please <xsl:call-template name="accountLogin"/> to see accurate due dates for your items.</p>
+											<p>Your library account has been updated, and you must now log in using your MyCarletonOne credentials. These are the same credentials you use for other university services, such as your Carleton email and Brightspace. You can no longer sign in with your barcode and PIN.</p>
+											<xsl:for-each select="notification_data/user_for_printing/identifiers/code_value">
+												<xsl:if test="(code='OTHER_ID_1') and (value!='')">
+													<p>MyCarletonOne username: <strong>
+															<xsl:value-of select="value"/>
+														</strong>
+													</p>
+												</xsl:if>
+											</xsl:for-each>
+											<p>For questions about your MyCarletonOne account, please <a href="https://carleton.ca/its/help-centre/accounts-and-passwords/">consult the ITS help page</a> or <a href="https://carleton.ca/its/contact/">contact the ITS Service Desk</a>. The library does not manage MyCarletonOne accounts and cannot assist with password changes.</p>
 										</td>
 									</tr>
 								</table>
 							</xsl:when>
-							<!-- LOAN_STATUS_NOTICE_DUE_DATE_ERROR Notification end -->
+							<!-- USER_TOGGLED_TO_EXTERNAL_LOGIN_INFO notification end -->
 							<!-- Failsafe: STOPS LETTER FROM SENDING FOR ANY NOTICES THAT IT HAS NOT BEEN CONFIGURED FOR -->
 							<xsl:otherwise>
-							    <xsl:message terminate="yes">this notice is not configured in the letter</xsl:message>
+								<xsl:message terminate="yes">this notice is not configured in the letter</xsl:message>
 							</xsl:otherwise>
 							<!-- END OF failsafe -->
 						</xsl:choose>
@@ -53,7 +60,7 @@
 									<p>@@Sincerely@@</p>
 								</td>
 							</tr>
-                            <xsl:call-template name="accessSignature"/>
+							<xsl:call-template name="accessSignature"/>
 						</table>
 					</div>
 				</div>
