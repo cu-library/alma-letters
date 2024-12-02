@@ -31,20 +31,35 @@
 		</table>
 	</xsl:template>
 	<!-- Carleton contact templates; keeping each on one line prevents awkward spaces after -->
-	<xsl:template name="AskALibrarian">Need research help or assistance with your account? We're here to help! <a href="https://library.carleton.ca/help">Ask a Librarian</a></xsl:template>
-	<xsl:template name="openingHours"><a href="https://library.carleton.ca/hours">opening hours</a></xsl:template>
-	<xsl:template name="libraryServicesEmail"><a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a></xsl:template>
+	<xsl:template name="AskALibrarian">Need research help or assistance with your account? We're here to help! <a href="https://library.carleton.ca/help">Ask a Librarian</a>
+	</xsl:template>
+	<xsl:template name="openingHours">
+		<a href="https://library.carleton.ca/hours">opening hours</a>
+	</xsl:template>
+	<xsl:template name="libraryServicesEmail">
+		<a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a>
+	</xsl:template>
 	<xsl:template name="libraryServicesPhone">613-520-2600 x2734</xsl:template>
-	<xsl:template name="ILLemail"><a href="mailto:interlibraryloans@cunet.carleton.ca">interlibraryloans@cunet.carleton.ca</a></xsl:template>
+	<xsl:template name="ILLemail">
+		<a href="mailto:interlibraryloans@cunet.carleton.ca">interlibraryloans@cunet.carleton.ca</a>
+	</xsl:template>
 	<xsl:template name="ILLphone">613-520-2732</xsl:template>
 	<xsl:template name="ILLfax">613-520-6650</xsl:template>
 	<!-- Guelph is using OGU for their code, which is the LAC code... just following suit until we hear otherwise. -->
 	<xsl:template name="ILLLibraryCode">OOCC</xsl:template>
-	<xsl:template name="curbsideLink"><a href="https://library.carleton.ca/services/borrowing/requesting-items#curbside">curbside service</a></xsl:template>
-	<xsl:template name="accountLogin"><a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">log in to your library account</a></xsl:template>
-	<xsl:template name="overdueItemsAndFines"><a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a></xsl:template>
+	<xsl:template name="curbsideLink">
+		<a href="https://library.carleton.ca/services/borrowing/requesting-items#curbside">curbside service</a>
+	</xsl:template>
+	<xsl:template name="accountLogin">
+		<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">log in to your library account</a>
+	</xsl:template>
+	<xsl:template name="overdueItemsAndFines">
+		<a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>
+	</xsl:template>
 	<!-- counts number of items in a notification letter -->
-	<xsl:variable name="numOfNotificationItems"><xsl:value-of select="count(notification_data/item_loans/item_loan)"/></xsl:variable>
+	<xsl:variable name="numOfNotificationItems">
+		<xsl:value-of select="count(notification_data/item_loans/item_loan)"/>
+	</xsl:variable>
 	<!-- variable checks if the loan is an ILL loan (may catch AFN items also, so be careful)-->
 	<xsl:variable name="is_ill_loan">
 		<xsl:if test="(notification_data/display_list/overdue_and_lost_loan_notification_display/physical_item_display_for_printing/library_code = 'RES_SHARE')">TRUE</xsl:if>
@@ -60,13 +75,13 @@
 		<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/physical_item_display_for_printing/available_items/available_itemg">
 			<xsl:if test="(library_code = 'RES_SHARE')">TRUE</xsl:if>
 		</xsl:for-each>
-	</xsl:variable>	
+	</xsl:variable>
 	<!-- Template using the above variable to ask patron to return intems to MacOdrum only (if any of the items are ILL) -->
 	<xsl:template name="ILLreturnLibrary">
-    	<xsl:if test="(string-length($is_any_ill_loan) = 0)">
+		<xsl:if test="(string-length($is_any_ill_loan) = 0)">
     	You can return the items at the MacOdrum Library or at any university in Ontario.
     	</xsl:if>
-    	<xsl:if test="(string-length($is_any_ill_loan) > 0)">
+		<xsl:if test="(string-length($is_any_ill_loan) > 0)">
     	You can return the items at the MacOdrum Library.
     	</xsl:if>
 	</xsl:template>
@@ -133,7 +148,8 @@
 									<xsl:when test="$external_id = '01OCUL_CRL' ">
 										<p>
 											<xsl:call-template name="afn_fr_contact_us"/>
-											<xsl:call-template name="libraryServicesEmail"/> | <xsl:call-template name="libraryServicesPhone"/></p>
+											<xsl:call-template name="libraryServicesEmail"/> | <xsl:call-template name="libraryServicesPhone"/>
+										</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LHD' ">
 										<p>
@@ -227,11 +243,11 @@
 									</xsl:when>
 									<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
 									<xsl:when test="$external_id = '01OCUL_TMU' ">
-                                        <p>
-                                            <xsl:call-template name="afn_fr_contact_us" /> 
-                                            <a href="mailto:access@torontomu.ca"> access@torontomu.ca</a> | 416-979-5055
+										<p>
+											<xsl:call-template name="afn_fr_contact_us"/>
+											<a href="mailto:access@torontomu.ca"> access@torontomu.ca</a> | 416-979-5055
                                         </p>
-                                    </xsl:when>
+									</xsl:when>
 								</xsl:choose>
 							</tr>
 						</xsl:when>
@@ -252,7 +268,8 @@
 									<xsl:when test="$external_id = '01OCUL_CRL' ">
 										<p>
 											<xsl:call-template name="afn_en_contact_us"/>
-											<xsl:call-template name="libraryServicesEmail"/> | <xsl:call-template name="libraryServicesPhone"/></p>
+											<xsl:call-template name="libraryServicesEmail"/> | <xsl:call-template name="libraryServicesPhone"/>
+										</p>
 									</xsl:when>
 									<xsl:when test="$external_id = '01OCUL_LHD' ">
 										<p>
@@ -344,11 +361,11 @@
 									</xsl:when>
 									<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
 									<xsl:when test="$external_id = '01OCUL_TMU' ">
-                                        <p>
-                                            <xsl:call-template name="afn_en_contact_us" /> 
-                                            <a href="mailto:access@torontomu.ca"> access@torontomu.ca</a> | 416-979-5055
+										<p>
+											<xsl:call-template name="afn_en_contact_us"/>
+											<a href="mailto:access@torontomu.ca"> access@torontomu.ca</a> | 416-979-5055
                                         </p>
-                                    </xsl:when>
+									</xsl:when>
 								</xsl:choose>
 							</tr>
 						</xsl:otherwise>
@@ -358,7 +375,7 @@
 					<tr>
 						<!-- Fallback - use Carleton default -->
 						<td>
-							<p>Questions? Email <xsl:call-template name="libraryServicesEmail"/> or call <xsl:call-template name="libraryServicesPhone"/>.</p>
+							Questions? Email <xsl:call-template name="libraryServicesEmail"/> or call <xsl:call-template name="libraryServicesPhone"/>.
 						</td>
 						<!-- END of Fallback -->
 					</tr>
@@ -473,10 +490,10 @@
 							</xsl:when>
 							<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
 							<xsl:when test="$external_id = '01OCUL_TMU' ">
-                                <a href="https://torontomu.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_TMU:01OCUL_TMU&amp;section=loans&amp;lang=fr">
-                                    <xsl:call-template name="afn_fr_visit_home_account_link_text" />
-                                </a>
-                            </xsl:when>
+								<a href="https://torontomu.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_TMU:01OCUL_TMU&amp;section=loans&amp;lang=fr">
+									<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
 							<xsl:otherwise>
 								<xsl:call-template name="afn_fr_visit_home_account_link_text"/>
 							</xsl:otherwise>
@@ -578,10 +595,10 @@
 							</xsl:when>
 							<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
 							<xsl:when test="$external_id = '01OCUL_TMU' ">
-                                <a href="https://torontomu.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_TMU:01OCUL_TMU&amp;section=loans&amp;lang=en">
-                                    <xsl:call-template name="afn_en_visit_home_account_link_text" />
-                                </a>
-                            </xsl:when>
+								<a href="https://torontomu.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_TMU:01OCUL_TMU&amp;section=loans&amp;lang=en">
+									<xsl:call-template name="afn_en_visit_home_account_link_text"/>
+								</a>
+							</xsl:when>
 							<xsl:otherwise>
 								<xsl:call-template name="afn_en_visit_home_account_link_text"/>
 							</xsl:otherwise>
@@ -706,10 +723,10 @@
 										</xsl:when>
 										<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
 										<xsl:when test="$external_id = '01OCUL_TMU' ">
-                                            <a href="https://torontomu.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_TMU:01OCUL_TMU&amp;lang=fr">
-                                                <xsl:call-template name="afn_fr_account_link_text" />
-                                            </a>
-                                        </xsl:when>
+											<a href="https://torontomu.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_TMU:01OCUL_TMU&amp;lang=fr">
+												<xsl:call-template name="afn_fr_account_link_text"/>
+											</a>
+										</xsl:when>
 									</xsl:choose>
 								</xsl:when>
 								<!-- default AFN language is english -->
@@ -808,10 +825,10 @@
 										</xsl:when>
 										<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
 										<xsl:when test="$external_id = '01OCUL_TMU' ">
-                                            <a href="https://torontomu.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_TMU:01OCUL_TMU&amp;lang=en">
-                                                <xsl:call-template name="afn_en_account_link_text" />
-                                            </a>
-                                        </xsl:when>
+											<a href="https://torontomu.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_TMU:01OCUL_TMU&amp;lang=en">
+												<xsl:call-template name="afn_en_account_link_text"/>
+											</a>
+										</xsl:when>
 									</xsl:choose>
 								</xsl:otherwise>
 							</xsl:choose>
@@ -893,7 +910,7 @@
             OCAD University
         </xsl:when>
 			<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
-		<xsl:when test="contains($test_org_code, '01OCUL_TMU')">
+			<xsl:when test="contains($test_org_code, '01OCUL_TMU')">
             Toronto Metropolitan University
         </xsl:when>
 			<xsl:otherwise>
@@ -932,13 +949,13 @@
 	</xsl:template>
 	<!-- Access Services Signature -->
 	<xsl:template name="accessSignature">
-	<tr>
-		<td>
+		<tr>
+			<td>
 			Access Services Department
 			<br/>
 			Carleton University Library
 		</td>
-	</tr>
+		</tr>
 	</xsl:template>
 	<!-- Carleton ILL footer PATRONS -->
 	<xsl:template name="ILLFooter">
@@ -947,7 +964,7 @@
 				<xsl:call-template name="footerTableStyleCss"/>
 			</xsl:attribute>
 			<tr>
-				<td><p>Questions? Email <xsl:call-template name="ILLemail"/> or call <xsl:call-template name="ILLphone"/>.</p>
+				<td>Questions? Email <xsl:call-template name="ILLemail"/> or call <xsl:call-template name="ILLphone"/>.
 				</td>
 			</tr>
 		</table>
@@ -955,40 +972,46 @@
 	<!-- END OF Carleton ILL footer PATRONS -->
 	<!-- Carleton ILL footer PEER-TO-PEER -->
 	<xsl:template name="ILLFooterPeerToPeer">
-	    <table class="new">
+		<table class="new">
 			<tr>
-				<td><strong>Interlibrary Loans Department</strong></td>
+				<td>
+					<strong>Interlibrary Loans Department</strong>
+				</td>
 			</tr>
-				<tr>
-					<td>
+			<tr>
+				<td>
 						Carleton University, MacOdrum Library
 					</td>
-				</tr>
-				<tr>
-					<td>
-						1125 Colonel By Drive
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Ottawa, ON
-					</td>
-				</tr>
-				<tr>
-					<td>
-						K1S 5B6
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Canada
-					</td>
-				</tr>
-			<tr>
-				<td><xsl:call-template name="ILLemail"/></td>
 			</tr>
 			<tr>
-				<td><xsl:call-template name="ILLphone"/></td>
+				<td>
+						1125 Colonel By Drive
+					</td>
+			</tr>
+			<tr>
+				<td>
+						Ottawa, ON
+					</td>
+			</tr>
+			<tr>
+				<td>
+						K1S 5B6
+					</td>
+			</tr>
+			<tr>
+				<td>
+						Canada
+					</td>
+			</tr>
+			<tr>
+				<td>
+					<xsl:call-template name="ILLemail"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<xsl:call-template name="ILLphone"/>
+				</td>
 			</tr>
 		</table>
 	</xsl:template>
