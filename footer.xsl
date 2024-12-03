@@ -947,6 +947,14 @@
 			</tr>
 		</table>
 	</xsl:template>
+	<!-- I want to take the salutation out of its own table, but don't want to break letters that already have the table version in them (as it needs to be moved inside the main letter table.) just replacing salutation with salutation2 in letters as I go -->
+	<xsl:template name="salutation2">
+	    <tr>
+	        <td>
+	            <p>Hi,</p>
+	        </td>
+	    </tr>
+	</xsl:template>
 	<!-- Access Services Signature -->
 	<xsl:template name="accessSignature">
 		<tr>
