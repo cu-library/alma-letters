@@ -157,8 +157,8 @@
 								<!-- AFN TODO -->
 								<!-- handle local institution on hold (ie. PUT YOUR EXISTING HOLD LETTER INFO HERE between the xsl:otherwise tag)-->
 								<!-- Carleton letter -->
-								<xsl:call-template name="salutation"/>
 								<table>
+									<xsl:call-template name="salutation2"/>
 									<tr>
 										<td>
 											<p>We have updated the expiry date for the following item:</p>
@@ -205,6 +205,7 @@
 									<xsl:call-template name="accessSignature"/>
 								</table>
 								<!-- END OF AFN TODO -->
+								<!-- END OF Carleton letter -->
 							</xsl:otherwise>
 						</xsl:choose>
 						<!-- END OF AFN CODE -->
