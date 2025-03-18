@@ -26,50 +26,61 @@
 				</xsl:attribute>
 				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
-				<xsl:call-template name="toWhomIsConcerned"/>
-				<!-- mailReason.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
-						<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+						<table role='presentation'>
+							<xsl:call-template name="salutation2"/>
 							<xsl:choose>
 								<xsl:when test="notification_data/success='true'">
-									<!--<td>@@on@@ <xsl:value-of select="notification_data/general_data/current_date"/> @@we_renewed_y_req_from@@ <xsl:value-of select="notification_data/outgoing/create_date"/> @@detailed_below@@ :</td>-->
 									<tr>
-										<td>@@renewed_loan@@:</td>
+										<td>@@renewed_loan@@</td>
 									</tr>
 								</xsl:when>
 								<xsl:otherwise>
 									<tr>
-										<td>@@not_renewed_loan@@:</td>
+										<td>@@not_renewed_loan@@</td>
 									</tr>
 								</xsl:otherwise>
 							</xsl:choose>
 							<tr>
 								<td>
-									<xsl:call-template name="recordTitle"/>
-									<!-- recordTitle.xsl -->
+									<table>
+										<tr>
+											<td>
+												<xsl:call-template name="recordTitle"/>
+												<!-- recordTitle.xsl -->
+											</td>
+										</tr>
+									</table>
+									
 								</td>
 							</tr>
 							<xsl:choose>
 								<xsl:when test="notification_data/success='true'">
 									<tr>
-										<td><strong>@@new_due_date@@: </strong><xsl:value-of select="notification_data/item_loan_due_date"/>
+										<td>
+											<strong>@@new_due_date@@: </strong>
+											<xsl:value-of select="notification_data/item_loan_due_date"/>
 										</td>
 									</tr>
 								</xsl:when>
 								<xsl:otherwise>
+									<!-- COMMENTING OUT REASON SECTION - I WANT TO SEE WHAT IT ACTUALLY PUTS IN THESE FIRST 
 									<xsl:choose>
 										<xsl:when test="notification_data/note != ''">
 											<tr>
 												<td>
-													<strong>@@failure_reason@@: </strong><xsl:value-of select="notification_data/note"/>
+													<strong>@@failure_reason@@: </strong>
+													<xsl:value-of select="notification_data/note"/>
 												</td>
 											</tr>
 										</xsl:when>
 									</xsl:choose>
+									-->
 									<tr>
 										<td>
-											<strong>Due date: </strong> <xsl:value-of select="notification_data/item_loan_due_date"/>
+											<strong>Due date: </strong>
+											<xsl:value-of select="notification_data/item_loan_due_date"/>
 										</td>
 									</tr>
 								</xsl:otherwise>
@@ -90,7 +101,7 @@
 						</table>
 					</div>
 				</div>
-				<xsl:call-template name="AFNLastFooter"/>
+				<xsl:call-template name="ILLFooter"/>
 				<xsl:call-template name="AFNAccount"/>
 				<!-- footer.xsl -->
 			</body>
