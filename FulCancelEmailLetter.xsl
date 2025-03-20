@@ -26,18 +26,20 @@
 				</xsl:attribute>
 				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
-				<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+				<table role='presentation'>
 					<tr>
 						<td>
-							<h3>@@header@@</h3>
+							@@header@@
 						</td>
 					</tr>
 				</table>
 				<div class="messageArea">
 					<div class="messageBody">
-						<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+						<table role='presentation'>
+							<!--COMMENTING THIS OUT; not sure why it matters what date this was needed by if we're cancelling the request. 
 							<xsl:choose>
 								<xsl:when test="notification_data/request/needed_by !=''">
+								
 									<tr>
 										<td>
 											<strong>@@requested_by@@: </strong>
@@ -56,8 +58,18 @@
 									</tr>
 								</xsl:otherwise>
 							</xsl:choose>
+							-->
+							<!-- Putting in the "otherwise" choice from above instead. -->
+							<tr>
+								<td>
+									@@requested@@
+								</td>
+								<td>
+									<xsl:value-of select="notification_data/request_sending_date"/>
+								</td>
+							</tr>
 						</table>
-						<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+						<table>
 							<xsl:attribute name="style">
 								<xsl:call-template name="listStyleCss"/>
 							</xsl:attribute>
@@ -283,12 +295,14 @@
 									</td>
 								</tr>
 							</xsl:if>
+							<!-- WHY WOULD WE NEED TODAY'S DATE WITHIN THE METADATA FOR THE REQUEST
 							<tr>
 								<td>
 									<strong> @@date@@: </strong>
 									<xsl:value-of select="notification_data/general_data/current_date"/>
 								</td>
 							</tr>
+							-->
 							<xsl:if test="notification_data/request/external_request_id !=''">
 								<tr>
 									<td>
@@ -303,15 +317,16 @@
 									<xsl:value-of select="notification_data/request/format_display"/>
 								</td>
 							</tr>
-							<tr>
-								<td>&#xA0;</td>
-							</tr>
-							<tr>
-								<td>
-									<strong> @@note_to_partner@@: </strong>
-									<xsl:value-of select="notification_data/note_to_partner"/>
-								</td>
-							</tr>
+						</table>
+						<table>
+							<xsl:if test="notification_data/note_to_partner !=''">
+								<tr>
+									<td>
+										<strong> @@note_to_partner@@: </strong>
+										<xsl:value-of select="notification_data/note_to_partner"/>
+									</td>
+								</tr>
+							</xsl:if>
 							<xsl:choose>
 								<xsl:when test="notification_data/request/max_fee !=''">
 									<tr>
@@ -326,8 +341,10 @@
 						<br/>
 						<table role='presentation'>
 							<tr>
-								<td>@@signature@@</td>
+								<td>@@signature@@,</td>
 							</tr>
+						</table>
+						<table>
 							<tr>
 								<td>
 									<xsl:value-of select="notification_data/library/name"/>
@@ -372,6 +389,14 @@
 								<tr>
 									<td>
 										<xsl:value-of select="notification_data/library/address/city"/>
+										<!-- AFN-VERSION 1.0 START -->
+										<xsl:if test="notification_data/library/address/state_province !=''">											
+                                        , <xsl:value-of select="notification_data/library/address/state_province"/>
+										</xsl:if>
+										<xsl:if test="notification_data/library/address/postal_code !=''">											
+                                        , <xsl:value-of select="notification_data/library/address/postal_code"/>
+										</xsl:if>
+										<!-- AFN-VERSION 1.0 END -->
 									</td>
 								</tr>
 							</xsl:if>
