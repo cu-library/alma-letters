@@ -37,11 +37,14 @@
 		<a href="https://library.carleton.ca/hours">opening hours</a>
 	</xsl:template>
 	<xsl:template name="libraryServicesEmail">
-		<a href="mailto:libraryservices@cunet.carleton.ca"> libraryservices@cunet.carleton.ca</a>
+		<a href="mailto:libraryservices@cunet.carleton.ca"> LibraryServices@cunet.carleton.ca</a>
 	</xsl:template>
 	<xsl:template name="libraryServicesPhone">613-520-2600 x2734</xsl:template>
+	<xsl:template name="libraryAccessibilityEmail">
+		<a href="mailto:LibraryAccessibility@cunet.carleton.ca">LibraryAccessibility@cunet.carleton.ca</a>
+	</xsl:template>
 	<xsl:template name="ILLemail">
-		<a href="mailto:interlibraryloans@cunet.carleton.ca">interlibraryloans@cunet.carleton.ca</a>
+		<a href="mailto:interlibraryloans@cunet.carleton.ca">InterlibraryLoans@cunet.carleton.ca</a>
 	</xsl:template>
 	<xsl:template name="ILLphone">613-520-2732</xsl:template>
 	<xsl:template name="ILLfax">613-520-6650</xsl:template>
@@ -93,7 +96,7 @@
 	If you have questions or need assistance, please contact us:
 	</xsl:template>
 	<xsl:template name="afn_fr_contact_us">
-	<!-- AFN VERSION 1.6 changed some french text -->
+		<!-- AFN VERSION 1.6 changed some french text -->
     Si vous avez des questions, ou si vous avez besoin d’aide, veuillez nous contacter:
 	</xsl:template>
 	<xsl:variable name="is_afn_patron">
@@ -949,12 +952,12 @@
 			<xsl:when test="contains($test_org_code, '01OCUL_OCAD')">
             OCAD University
         </xsl:when>
-		<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
-		<!-- AFN-VERSION 1.11 ADD TMU -->
-		<xsl:when test="contains($test_org_code, '01OCUL_TMU')">
+			<!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
+			<!-- AFN-VERSION 1.11 ADD TMU -->
+			<xsl:when test="contains($test_org_code, '01OCUL_TMU')">
             Toronto Metropolitan University
         </xsl:when>
-		<!-- END OF AFN-VERSION 1.11 ADD TMU -->
+			<!-- END OF AFN-VERSION 1.11 ADD TMU -->
 			<xsl:otherwise>
 				<!-- Fallback - use Carleton default -->
 				Carleton University
@@ -990,8 +993,19 @@
 			Access Services Department
 			<br/>
 			Carleton University Library
-		</td>
+			</td>
 		</tr>
+	</xsl:template>
+	<xsl:template name="libraryAccessibilityFooter">
+		<table>
+			<xsl:attribute name="style">
+				<xsl:call-template name="footerTableStyleCss"/>
+			</xsl:attribute>
+			<tr>
+				<td>Questions? Email <xsl:call-template name="libraryAccessibilityEmail"/>.
+				</td>
+			</tr>
+		</table>
 	</xsl:template>
 	<!-- Carleton ILL footer PATRONS -->
 	<xsl:template name="ILLFooter">
