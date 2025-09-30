@@ -996,6 +996,15 @@
 			</td>
 		</tr>
 	</xsl:template>
+	<xsl:template name="libraryAccessibilitySignature">
+		<tr>
+			<td>
+			Library Accessibility Services, Access Services Department
+			<br/>
+			Carleton University Library
+			</td>
+		</tr>
+	</xsl:template>
 	<xsl:template name="libraryAccessibilityFooter">
 		<table>
 			<xsl:attribute name="style">

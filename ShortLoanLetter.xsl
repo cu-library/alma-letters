@@ -14,7 +14,7 @@
 			</head>
 			<body>
 				<xsl:attribute name="style">
-				<xsl:call-template name="bodyStyleCss"/>
+					<xsl:call-template name="bodyStyleCss"/>
 					<!-- style.xsl -->
 				</xsl:attribute>
 				<xsl:call-template name="head"/>
@@ -45,7 +45,16 @@
 								</td>
 							</tr>
 							<tr><td><p>Sincerely,</p></td></tr>
-							<xsl:call-template name="accessSignature"/>
+							<xsl:choose>
+    							<!-- Apply JMC signature if the item is from the JMC location -->
+    							<xsl:when test="notification_data/item_loan/location_code='jmc'">
+						            <xsl:call-template name="libraryAccessibilitySignature"/>
+					            </xsl:when>
+    							<!-- In all other cases: the standard Access Services signature is fine -->
+    							<xsl:otherwise>
+    							    <xsl:call-template name="accessSignature"/>
+    							</xsl:otherwise>
+							</xsl:choose>
 						</table>
 					</div>
 				</div>
