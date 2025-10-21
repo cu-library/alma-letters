@@ -11,14 +11,11 @@
 			</head>
 			<body>
 				<xsl:attribute name="style">
-					<xsl:call-template name="bodyStyleCss"/>
-					<!-- style.xsl -->
+					<xsl:call-template name="bodyStyleCss"/> <!-- style.xsl -->
 				</xsl:attribute>
-				<xsl:call-template name="head"/>
-				<!-- header.xsl -->
+				<xsl:call-template name="head"/> <!-- header.xsl -->
 				<br/>
-				<xsl:call-template name="senderReceiver"/>
-				<!-- SenderReceiver.xsl -->
+				<xsl:call-template name="senderReceiver"/> <!-- SenderReceiver.xsl -->
 				<br/>
 				<div class="messageArea">
 					<div class="messageBody">
@@ -95,7 +92,8 @@
 								</xsl:for-each>
 							</table>
 							<br/>
-							@@additional_info_1@@
+							<br/>@@additional_info_1@@
+
 							<br/>
 							@@additional_info_2@@
 						</table>
@@ -110,8 +108,7 @@
 						</table>
 					</div>
 				</div>
-				<xsl:call-template name="lastFooter"/>
-				<!-- footer.xsl -->
+				<xsl:call-template name="lastFooter"/> <!-- footer.xsl -->
 			</body>
 		</html>
 	</xsl:template>

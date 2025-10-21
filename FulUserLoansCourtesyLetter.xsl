@@ -8,17 +8,25 @@
 	<xsl:include href="recordTitle.xsl"/>
 	<xsl:template match="/">
 		<html>
+			<xsl:if test="notification_data/languages/string">
+				<xsl:attribute name="lang">
+					<xsl:value-of select="notification_data/languages/string"/>
+				</xsl:attribute>
+			</xsl:if>
 			<head>
+				<title>
+					<xsl:value-of select="notification_data/general_data/letter_name"/>
+				</title>
 				<xsl:call-template name="generalStyle"/>
+				<!-- style.xsl -->
 			</head>
 			<body>
 				<xsl:attribute name="style">
-					<xsl:call-template name="bodyStyleCss"/> <!-- style.xsl -->
+					<xsl:call-template name="bodyStyleCss"/>
+					<!-- style.xsl -->
 				</xsl:attribute>
-				<xsl:call-template name="head"/> <!-- header.xsl -->
-				<br/>
-				<xsl:call-template name="senderReceiver"/> <!-- SenderReceiver.xsl -->
-				<br/>
+				<xsl:call-template name="head"/>
+				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
 						<!-- AFN CODE -->
@@ -29,154 +37,128 @@
 								<xsl:choose>
 									<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
 										<!-- handle AFN default language fr -->
-										<table cellspacing="0" cellpadding="5" border="0">
+										<!-- AFN VERSION 1.8 -->
+										<p>Le(s) document(s) suivant(s) de <xsl:call-template name="AFNOrgName"/>arrive(nt) à échéance. Veuillez retourner le(s) document(s) à votre bibliothèque, ou pour un renouvellement: </p>
+										<ol class="afn_steps_list">
+											<li>
+												<!-- use a template from footer.xml with AFN conditional link logic. displays as 1. LINK  -->
+												<xsl:call-template name="AFNVisitLoansLink"/>
+											</li>
+											<li>Cliquez sur	<xsl:call-template name="AFNOrgName"/>à la gauche et renouvelez le(s).</li>
+										</ol>
+										<table cellpadding="5" class="listing">
+											<xsl:attribute name="style">
+												<xsl:call-template name="mainTableStyleCss"/>
+												<!-- style.xsl -->
+											</xsl:attribute>
 											<tr>
-												<td>
-													Le(s) document(s) suivant(s) de <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/>
-						 arrive(nt) à échéance. Veuillez retourner le(s) document(s) à votre bibliothèque, ou pour un renouvellement:
-												</td>
+												<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
+												<!--
+												<th>Title</th>
+												<th>Description</th>
+												<th>Author</th>
+												<th>Due Date</th>
+												<th>Library</th>
+												-->
+												<th>Titre</th>
+												<th>Description</th>
+												<th>Auteur</th>
+												<th>Date de retour</th>
+												<th>Bibliothèque</th>
 											</tr>
-											<tr>
-												<td>
-													<!-- use a template from footer.xml with AFN conditional link logic. displays as 1. LINK  -->
-													<xsl:call-template name="AFNVisitLoansLink" />
-												</td>
-											</tr>
-											<tr>
-												<td>
-													2. Cliquez sur <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/>
-						 option à la gauche et renouvelez le(s).
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<table cellpadding="5" class="listing">
-														<xsl:attribute name="style">
-															<xsl:call-template name="mainTableStyleCss" />
-															<!-- style.xsl -->
-														</xsl:attribute>
-														<tr>
-															<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
-															<!--
-															<th>Title</th>
-															<th>Description</th>
-															<th>Author</th>
-															<th>Due Date</th>
-															<th>Library</th>
-															-->
-															<th>Titre</th>
-															<th>La description</th>
-															<th>Auteur</th>
-															<th>Date d'échéance</th>
-															<th>Bibliothèque</th>
-														</tr>
-														<xsl:for-each select="notification_data/item_loans/item_loan">
-															<tr>
-																<td>
-																	<xsl:value-of select="title"/>
-																</td>
-																<td>
-																	<xsl:value-of select="description"/>
-																</td>
-																<td>
-																	<xsl:value-of select="author"/>
-																</td>
-																<td>
-																	<xsl:value-of select="due_date"/>
-																</td>
-																<td>
-																	<xsl:value-of select="library_name"/>
-																</td>
-															</tr>
-														</xsl:for-each>
-													</table>
-												</td>
-											</tr>
+											<xsl:for-each select="notification_data/item_loans/item_loan">
+												<tr>
+													<td>
+														<xsl:value-of select="title"/>
+													</td>
+													<td>
+														<xsl:value-of select="description"/>
+													</td>
+													<td>
+														<xsl:value-of select="author"/>
+													</td>
+													<td>
+														<xsl:value-of select="due_date"/>
+													</td>
+													<td>
+														<xsl:value-of select="library_name"/>
+													</td>
+												</tr>
+											</xsl:for-each>
 										</table>
+										<!-- END OF AFN VERSION 1.8 -->
 									</xsl:when>
 									<xsl:otherwise>
 										<!-- handle AFN default language en -->
-										<table cellspacing="0" cellpadding="5" border="0">
+										<!-- AFN VERSION 1.8 -->
+										<p>The following item(s) from <xsl:call-template name="AFNOrgName"/>are coming due. Please return the item(s) to your library, or, to renew them:</p>
+										<ol class="afn_steps_list">
+											<li>
+												<!-- use a template from footer.xml with AFN conditional link logic. displays as 1. LINK  -->
+												<xsl:call-template name="AFNVisitLoansLink"/>
+											</li>
+											<li>Click the <xsl:call-template name="AFNOrgName"/>option along the left and renew items</li>
+										</ol>
+										<table cellpadding="5" class="listing">
+											<xsl:attribute name="style">
+												<xsl:call-template name="mainTableStyleCss"/>
+												<!-- style.xsl -->
+											</xsl:attribute>
 											<tr>
-												<td>
-													The following item(s) from <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/>
-						 are coming due. Please return the item(s) to your library, or, to renew them:
-												</td>
+												<th>Title</th>
+												<th>Description</th>
+												<th>Author</th>
+												<th>Due Date</th>
+												<th>Library</th>
 											</tr>
-											<tr>
-												<td>
-													<!-- use a template from footer.xml with AFN conditional link logic. displays as 1. LINK  -->
-													<xsl:call-template name="AFNVisitLoansLink" />
-												</td>
-											</tr>
-											<tr>
-												<td>
-													2. Click the <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/>
-						 option along the left and renew items
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<table cellpadding="5" class="listing">
-														<xsl:attribute name="style">
-															<xsl:call-template name="mainTableStyleCss" />
-															<!-- style.xsl -->
-														</xsl:attribute>
-														<tr>
-															<th>Title</th>
-															<th>Description</th>
-															<th>Author</th>
-															<th>Due Date</th>
-															<th>Library</th>
-														</tr>
-														<xsl:for-each select="notification_data/item_loans/item_loan">
-															<tr>
-																<td>
-																	<xsl:value-of select="title"/>
-																</td>
-																<td>
-																	<xsl:value-of select="description"/>
-																</td>
-																<td>
-																	<xsl:value-of select="author"/>
-																</td>
-																<td>
-																	<xsl:value-of select="due_date"/>
-																</td>
-																<td>
-																	<xsl:value-of select="library_name"/>
-																</td>
-															</tr>
-														</xsl:for-each>
-													</table>
-												</td>
-											</tr>
+											<xsl:for-each select="notification_data/item_loans/item_loan">
+												<tr>
+													<td>
+														<xsl:value-of select="title"/>
+													</td>
+													<td>
+														<xsl:value-of select="description"/>
+													</td>
+													<td>
+														<xsl:value-of select="author"/>
+													</td>
+													<td>
+														<xsl:value-of select="due_date"/>
+													</td>
+													<td>
+														<xsl:value-of select="library_name"/>
+													</td>
+												</tr>
+											</xsl:for-each>
 										</table>
+										<!-- END OF AFN VERSION 1.8 -->
 									</xsl:otherwise>
 								</xsl:choose>
 							</xsl:when>
 							<xsl:otherwise>
 								<!-- Carleton letter -->
-								<table border="0" cellpadding="5" cellspacing="0">
+								<xsl:call-template name="toWhomIsConcerned"/>
+								<!-- mailReason.xsl -->
+								<table role="presentation" cellspacing="0" cellpadding="5" border="0">
 									<tr>
 										<td>
-											We would like to remind you that you have library materials that are due shortly. Please login to your Library Account to check the due dates and renew materials if required for a longer period. If the material has been requested by another patron you will have to return the material before the due date.
+											It looks like your items are due back soon. If you still need them, please <xsl:call-template name="accountLogin"/> to renew them, or reach out to us and we’ll see what we can do.
 										</td>
 									</tr>
 									<tr>
 										<td>
-											Materials can be returned at the MacOdrum Library or at any university in Ontario.
+											<xsl:call-template name="ILLreturnLibrary"/>
 										</td>
 									</tr>
 									<tr>
 										<td>
 											<table cellpadding="5" class="listing">
 												<xsl:attribute name="style">
-													<xsl:call-template name="mainTableStyleCss"/> <!-- style.xsl -->
+													<xsl:call-template name="mainTableStyleCss"/>
+													<!-- style.xsl -->
 												</xsl:attribute>
 												<tr>
 													<th>@@title@@</th>
-													<th>@@description@@</th>
 													<th>@@author@@</th>
 													<th>@@due_date@@</th>
 												</tr>
@@ -184,9 +166,6 @@
 													<tr>
 														<td>
 															<xsl:value-of select="title"/>
-														</td>
-														<td>
-															<xsl:value-of select="description"/>
 														</td>
 														<td>
 															<xsl:value-of select="author"/>
@@ -199,27 +178,28 @@
 											</table>
 										</td>
 									</tr>
-								</table>
-								@@additional_info_1@@
-								<br/>
-								@@additional_info_2@@
-								<br/>
-								<table>
 									<tr>
-										<td>For more information please visit your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
+										<td>
+											@@sincerely@@
+										</td>
 									</tr>
 									<tr>
-										<td>If you have any questions please contact a staff member from Access Services at <a href="mailto:LibCirc@cunet.carleton.ca">LibCirc@cunet.carleton.ca</a> or 613-520-2600 x2734.</td>
+										<td>
+											@@department@@
+											<br/>
+											Carleton University Library
+										</td>
 									</tr>
 								</table>
+								<!-- END OF Carleton Letter -->
 							</xsl:otherwise>
 						</xsl:choose>
 						<!-- END OF AFN CODE -->
 					</div>
 				</div>
 				<!-- AFN footer template options from footer.xsl -->
-				<xsl:call-template name="AFNLastFooter" />
-				<xsl:call-template name="AFNAccount" />
+				<xsl:call-template name="AFNLastFooter"/>
+				<xsl:call-template name="AFNAccount"/>
 			</body>
 		</html>
 	</xsl:template>

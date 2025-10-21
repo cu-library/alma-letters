@@ -158,7 +158,7 @@
 								<!-- handle local institution on hold (ie. PUT YOUR EXISTING HOLD LETTER INFO HERE between the xsl:otherwise tag)-->
 								<!-- Carleton letter -->
 								<table>
-									<xsl:call-template name="salutation2"/>
+								    <xsl:call-template name="salutation2"/>
 									<tr>
 										<td>
 											<p>We have updated the expiry date for the following item:</p>
@@ -176,13 +176,9 @@
 										<td>
 											<p>
 												<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
-													We will now hold the item until <strong>
-														<xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
-													</strong>.
+													We will now hold the item until <strong><xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/></strong>.
 												</xsl:if> 
-												You can pick it up at the <strong>
-													<xsl:value-of select="notification_data/request/assigned_unit_name"/>
-												</strong> or through our <xsl:call-template name="curbsideLink"/>. Please visit the library website for <xsl:call-template name="openingHours"/>.</p>
+												You can pick it up at the <strong><xsl:value-of select="notification_data/request/assigned_unit_name"/></strong> or through our <xsl:call-template name="curbsideLink"/>. Please visit the library website for <xsl:call-template name="openingHours"/>.</p>
 										</td>
 									</tr>
 									<xsl:if test="notification_data/request/system_notes !='' ">

@@ -61,8 +61,7 @@
 							</tr>
 							<tr>
 								<td>
-									<strong>@@orignal_due_date@@:</strong>
-									<xsl:value-of select="notification_data/request/due_date"/>
+									<strong>@@orignal_due_date@@:</strong> <xsl:value-of select="notification_data/request/due_date"/>
 								</td>
 							</tr>
 						</table>

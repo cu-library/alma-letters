@@ -64,8 +64,10 @@
 									<img src="cid:item_id_barcode.png" alt="Item Barcode"/>
 								</td>
 							</tr>
+						</table>
+						<table>
 							<tr>
-								<td>@@we_are_transferring_item_below@@</td>
+								<td><p>@@we_are_transferring_item_below@@</p></td>
 							</tr>
 							<tr>
 								<!-- AFN-VERSION 1.4 adjust from statement (replace td tag) to use org name template -->
@@ -103,6 +105,8 @@
 								</td>
 								<!-- END OF AFN-VERSION 1.5 -->
 							</tr>
+						</table>
+						<table>
 							<tr>
 								<td>
 									<strong>@@transfer_date@@: </strong>
@@ -201,11 +205,15 @@
 									</tr>
 								</xsl:if>
 							</xsl:if>
+						</table>
+						<table>
 							<tr>
 								<td>
 									<xsl:call-template name="recordTitle"/>
 								</td>
 							</tr>
+						</table>
+						<table>
 							<xsl:if test="notification_data/phys_item_display/owning_library_name">
 								<tr>
 									<!-- AFN-VERSION 1.4 adjust owning library to use org name template -->

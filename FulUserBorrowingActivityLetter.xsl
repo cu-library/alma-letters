@@ -13,11 +13,11 @@
 			</head>
 			<body>
 				<xsl:attribute name="style">
-					<xsl:call-template name="bodyStyleCss"/> <!-- style.xsl -->
+					<xsl:call-template name="bodyStyleCss"/>
+					<!-- style.xsl -->
 				</xsl:attribute>
-				<xsl:call-template name="head"/> <!-- header.xsl -->
-				<br/>
-				<xsl:call-template name="senderReceiver"/> <!-- SenderReceiver.xsl -->
+				<xsl:call-template name="head"/>
+				<!-- header.xsl -->
 				<br/>
 				<div class="messageArea">
 					<div class="messageBody">
@@ -51,25 +51,26 @@
 															<td>
 																<table cellpadding="5" class="listing">
 																	<xsl:attribute name="style">
-																		<xsl:call-template name="mainTableStyleCss" />
+																		<xsl:call-template name="mainTableStyleCss"/>
 																	</xsl:attribute>
 																	<tr align="center" bgcolor="#f5f5f5">
 																		<td colspan="5">
 																			<h3>
-																				<xsl:value-of select="organization_unit/name" />
+																				<xsl:value-of select="organization_unit/name"/>
 																			</h3>
 																		</td>
 																	</tr>
 																	<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE
-																		<th>Title</th>
-																		<th>Author</th>
-																		<th>Due Date</th>
-																		<th>Fine</th>
-																		<th>Library</th>
-																	-->
+																	<th>Title</th>
+																	<th>Author</th>
+																	<th>Due Date</th>
+																	<th>Fine</th>
+																	<th>Library</th>
+																	 -->
 																	<tr>
 																		<th>Titre</th>
 																		<th>Auteur</th>
+																		<!-- AFN VERSION 1.6 changed some french text -->
 																		<th>Date de retour</th>
 																		<th>Amende</th>
 																		<th>Bibliothèque</th>
@@ -112,22 +113,23 @@
 															<td>
 																<table cellpadding="5" class="listing">
 																	<xsl:attribute name="style">
-																		<xsl:call-template name="mainTableStyleCss" />
+																		<xsl:call-template name="mainTableStyleCss"/>
 																	</xsl:attribute>
 																	<tr align="center" bgcolor="#f5f5f5">
 																		<td colspan="3">
 																			<h3>
-																				<xsl:value-of select="organization_unit/name" />
+																				<xsl:value-of select="organization_unit/name"/>
 																			</h3>
 																		</td>
 																	</tr>
 																	<tr>
 																		<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE
-																			<th>Title</th>
-																			<th>Due Date</th>
-																			<th>Fine</th>
+																		<th>Title</th>
+																		<th>Due Date</th>
+																		<th>Fine</th>
 																		-->
 																		<th>Titre</th>
+																		<!-- AFN VERSION 1.6 changed some french text -->
 																		<th>Date de retour</th>
 																		<th>Amende</th>
 																	</tr>
@@ -170,7 +172,7 @@
 													<td>
 														<b>
 															<!-- AFN VERSION 1.1 -->
-															Total:<xsl:value-of select="notification_data/total_fee"/>
+															Total: <xsl:value-of select="notification_data/total_fee"/>
 														</b>
 													</td>
 												</tr>
@@ -190,7 +192,8 @@
 											<xsl:if test="notification_data/item_loans/item_loan or notification_data/overdue_item_loans/item_loan">
 												<tr>
 													<td>
-														<b>Please see below for item(s) checked out on your account at <xsl:value-of select="notification_data/organization_unit/name"/>
+														<b>
+															Please see below for item(s) checked out on your account at <xsl:value-of select="notification_data/organization_unit/name"/>
 														</b>
 														<br/>
 													</td>
@@ -206,12 +209,12 @@
 															<td>
 																<table cellpadding="5" class="listing">
 																	<xsl:attribute name="style">
-																		<xsl:call-template name="mainTableStyleCss" />
+																		<xsl:call-template name="mainTableStyleCss"/>
 																	</xsl:attribute>
 																	<tr align="center" bgcolor="#f5f5f5">
 																		<td colspan="5">
 																			<h3>
-																				<xsl:value-of select="organization_unit/name" />
+																				<xsl:value-of select="organization_unit/name"/>
 																			</h3>
 																		</td>
 																	</tr>
@@ -259,12 +262,12 @@
 															<td>
 																<table cellpadding="5" class="listing">
 																	<xsl:attribute name="style">
-																		<xsl:call-template name="mainTableStyleCss" />
+																		<xsl:call-template name="mainTableStyleCss"/>
 																	</xsl:attribute>
 																	<tr align="center" bgcolor="#f5f5f5">
 																		<td colspan="3">
 																			<h3>
-																				<xsl:value-of select="organization_unit/name" />
+																				<xsl:value-of select="organization_unit/name"/>
 																			</h3>
 																		</td>
 																	</tr>
@@ -327,12 +330,15 @@
 							</xsl:when>
 							<xsl:otherwise>
 								<!-- Carleton letter -->
-								<table border="0" cellpadding="5" cellspacing="0">
+								<xsl:call-template name="toWhomIsConcerned"/>
+								<!-- mailReason.xsl -->
+								<table cellspacing="0" cellpadding="5" border="0">
 									<xsl:if test="notification_data/item_loans/item_loan or notification_data/overdue_item_loans/item_loan">
 										<tr>
 											<td>
 												@@reminder_message@@
 												<br/>
+												<hr/>
 											</td>
 										</tr>
 										<xsl:if test="notification_data/overdue_loans_by_library/library_loans_for_display">
@@ -341,7 +347,7 @@
 													<b>@@overdue_loans@@</b>
 												</td>
 											</tr>
-											<xsl:for-each select="notification_data/overdue_loans_by_library/library_loans_for_display">
+											<xsl:for-each select="notification_data/overdue_loans_by_library">
 												<tr>
 													<td>
 														<table cellpadding="5" class="listing">
@@ -354,10 +360,11 @@
 																<th>@@author@@</th>
 																<th>@@due_date@@</th>
 															</tr>
-															<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
+															<xsl:for-each select="library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/item_loan">
+																<xsl:sort select="due_date" order="ascending"/>
 																<tr>
 																	<td>
-																		<xsl:value-of select="title"/>
+																		<xsl:value-of select="physical_item/title"/>
 																	</td>
 																	<td>
 																		<xsl:value-of select="description"/>
@@ -395,22 +402,26 @@
 																<th>@@due_date@@</th>
 															</tr>
 															<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
-																<tr>
-																	<td>
-																		<xsl:value-of select="title"/>
-																	</td>
-																	<td>
-																		<xsl:value-of select="description"/>
-																	</td>
-																	<td>
-																		<xsl:value-of select="author"/>
-																	</td>
-																	<td>
-																		<xsl:value-of select="due_date"/>
-																	</td>
-																</tr>
+																<xsl:sort select="due_date" order="ascending"/>
+																<xsl:if test="notified_by_profiles = ''">
+																	<tr>
+																		<td>
+																			<xsl:value-of select="physical_item/title"/>
+																		</td>
+																		<td>
+																			<xsl:value-of select="description"/>
+																		</td>
+																		<td>
+																			<xsl:value-of select="author"/>
+																		</td>
+																		<td>
+																			<xsl:value-of select="due_date"/>
+																		</td>
+																	</tr>
+																</xsl:if>
 															</xsl:for-each>
 														</table>
+														<hr/>
 													</td>
 												</tr>
 											</xsl:for-each>
@@ -419,20 +430,7 @@
 									<xsl:if test="notification_data/organization_fee_list/string">
 										<tr>
 											<td>
-												<b>@@debt_message@@</b>
-											</td>
-										</tr>
-										<xsl:for-each select="notification_data/organization_fee_list/string">
-											<tr>
-												<td>
-													<xsl:value-of select="."/>
-												</td>
-											</tr>
-										</xsl:for-each>
-										<tr>
-											<td>
-												<b>@@total@@
-													<xsl:value-of select="notification_data/total_fee"/></b>
+												@@debt_message@@ <strong><xsl:value-of select="notification_data/total_fee"/></strong>.
 											</td>
 										</tr>
 										<tr>
@@ -442,24 +440,15 @@
 										</tr>
 									</xsl:if>
 								</table>
-								<br />
-								<table>
-									<tr>
-										<td>For more information please visit your <a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.</td>
-									</tr>
-									<tr>
-										<td>If you have any questions please contact a staff member from Access Services at <a href="mailto:LibCirc@cunet.carleton.ca">LibCirc@cunet.carleton.ca</a> or 613-520-2600 x2734.</td>
-									</tr>
-								</table>
-								<!-- END OF AFN TODO -->
+								<!-- END OF Carleton letter -->
 							</xsl:otherwise>
 						</xsl:choose>
 						<!-- END OF AFN CODE -->
 					</div>
 				</div>
 				<!-- AFN footer template options from footer.xsl -->
-				<xsl:call-template name="AFNLastFooter" />
-				<xsl:call-template name="AFNAccount" />
+				<xsl:call-template name="AFNLastFooter"/>
+				<xsl:call-template name="AFNAccount"/>
 			</body>
 		</html>
 	</xsl:template>

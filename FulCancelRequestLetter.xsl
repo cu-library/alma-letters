@@ -73,8 +73,8 @@
 										<xsl:value-of select="notification_data/request/note" />
 									</td>
 								</tr>
+								
 							</xsl:if>
-							
 							<!-- START stop emails for converted to resource sharing -->
 								<xsl:if test="notification_data/request/status_note">                        
 									<xsl:if test="contains(notification_data/request/status_note, 'ConvertedToResourceSharingRequest')">
@@ -89,7 +89,7 @@
 									<xsl:value-of select="notification_data/request/status_note_display" />
 								</td>
 							</tr>
-                            <xsl:if test="notification_data/request/external_request_id !=''">
+                                                        <xsl:if test="notification_data/request/external_request_id !=''">
 										<tr>
 											<td>
 												<strong>Request ID: </strong>

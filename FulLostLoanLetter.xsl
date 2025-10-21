@@ -91,7 +91,8 @@
 								</xsl:for-each>
 							</table>
 							<br/>
-							@@additional_info_1@@
+							<br/>@@additional_info_1@@
+
 							<br/>
 							@@additional_info_2@@
 						</table>
