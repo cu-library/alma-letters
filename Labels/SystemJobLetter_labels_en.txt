@@ -1,3 +1,0 @@
-code: addressFrom, description: lspsupport@cunet.carleton.ca
-code: letterName, description: System Job Notification
-code: sincerely, description: Sincerely

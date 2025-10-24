@@ -181,8 +181,6 @@
 									For payment options, please contact our <strong>Interlibrary Loans Department</strong>:<br/><br/>
 									Phone number: <xsl:call-template name="ILLphone"/>
 												<br/>
-									Fax number: <xsl:call-template name="ILLfax"/>
-												<br/>
 									Email: <xsl:call-template name="ILLemail"/>
 												<br/>
 									Library Code: <xsl:call-template name="ILLLibraryCode"/>

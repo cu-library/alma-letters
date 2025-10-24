@@ -7,6 +7,10 @@
 	<xsl:include href="style.xsl"/>
 	<xsl:include href="recordTitle.xsl"/>
 	<xsl:template match="/">
+	    <!-- 
+        INTERNAL CODE: FulUserBorrowingActivityLetter
+        LETTER EDITOR NAME: Borrowing Activity Letter
+        -->
 		<html>
 			<head>
 				<xsl:call-template name="generalStyle"/>

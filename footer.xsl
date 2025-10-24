@@ -47,7 +47,6 @@
 		<a href="mailto:interlibraryloans@cunet.carleton.ca">InterlibraryLoans@cunet.carleton.ca</a>
 	</xsl:template>
 	<xsl:template name="ILLphone">613-520-2732</xsl:template>
-	<xsl:template name="ILLfax">613-520-6650</xsl:template>
 	<!-- Guelph is using OGU for their code, which is the LAC code... just following suit until we hear otherwise. -->
 	<xsl:template name="ILLLibraryCode">OOCC</xsl:template>
 	<xsl:template name="curbsideLink">

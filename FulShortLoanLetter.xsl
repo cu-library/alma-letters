@@ -4,6 +4,10 @@
 	<xsl:include href="header.xsl"/>
 	<xsl:include href="footer.xsl"/>
 	<xsl:template match="/">
+	<!-- 
+    INTERNAL CODE: FulShortLoanLetter
+    LETTER EDITOR NAME: Short loan Letter
+    -->
 		<html>
 			<head>
 				<title>

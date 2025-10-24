@@ -10,6 +10,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:include href="recordTitle.xsl" />
 
   <xsl:template match="/">
+    <!-- 
+    INTERNAL CODE: FulReturnReceiptLetter
+    LETTER EDITOR NAME: Return Receipt Letter
+    -->
     <html>
 			<xsl:if test="notification_data/languages/string">
 				<xsl:attribute name="lang">

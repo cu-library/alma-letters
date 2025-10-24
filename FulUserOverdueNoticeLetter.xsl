@@ -7,6 +7,10 @@
 	<xsl:include href="style.xsl"/>
 	<xsl:include href="recordTitle.xsl"/>
 	<xsl:template match="/">
+	    <!-- 
+        INTERNAL CODE: FulUserOverdueNoticeLetter
+        LETTER EDITOR NAME: Overdue Notice Letter
+        -->
 		<html>
 			<xsl:if test="notification_data/languages/string">
 				<xsl:attribute name="lang">
