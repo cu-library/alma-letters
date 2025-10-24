@@ -1,0 +1,18 @@
+code: loans, description: Loans:
+code: department, description: Circulation Department
+code: dear, description: Dear Sir/Madam
+code: subject, description: Library Return Receipt
+code: letterName, description: Library Return Receipt
+code: sincerely, description: Sincerely
+code: inform_returned_items, description: The following items were returned to the library at the 
+code: Bcc, description: None
+code: Cc, description: None
+code: addressFrom, description: Your.Department@organization.com
+code: author, description: Author
+code: description, description: Description
+code: due_date, description: Due date
+code: fine, description: Fine
+code: library, description: Library
+code: note, description: Note
+code: return_date, description: Return date
+code: title, description: Title

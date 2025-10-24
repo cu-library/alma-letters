@@ -1,0 +1,7 @@
+code: subject, description: Réinitialisez le mot de passe
+code: addressFrom, description: library.services@carleton.ca
+code: signature, description: Cordialement,
+code: bodyTextBeforeLink, description: Pour réinitialiser le mot de passe,
+code: bodyTextAfterLink, description: et suivez les instructions affichées.
+code: letterName, description: Réinitialiser le mot de passe
+code: linkLabel, description: cliquer ici

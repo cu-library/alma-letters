@@ -1,0 +1,5 @@
+code: addressFrom, description: Your.Department@organization.com
+code: bodyTextBeforeLink, description: Attached please find your personal information as stored in the library’s resource management system
+code: letterName, description: Personal Information Letter
+code: signature, description: Sincerely,
+code: subject, description: Personal Information Letter

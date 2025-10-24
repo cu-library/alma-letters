@@ -1,0 +1,21 @@
+code: cancel_recall_date_change, description: La demande de rappel du document que vous avez emprunté a été annulée, et la date de retour initiale a été rétablie. Consulter les détails de la modification de la date de retour
+code: cancel_recall_renew, description: La demande de rappel du document que vous avez emprunté a été annulée. Le prêt a été renouvelé. Consulter les détails de la modification de la date de retour
+code: cancel_recall_no_date_change, description: La demande de rappel du document que vous avez emprunté a été annulée. Sa date de retour n'est pas modifiée.
+code: recall_and_date_change, description: Le document que vous avez emprunté fait l'objet d'un rappel. Consulter les détails de la modification de la date de retour
+code: recall_and_no_date_change, description: Votre exemplaire emprunté a été rappelé. Aucun changement de date de retour
+code: message, description: La bibliothèque a modifié la date de retour du document que vous avez emprunté. Consulter les détails de la modification de la date de retour
+code: department, description: Service au public
+code: letterName, description: Changement de date d’échéance pour l’élément de bibliothèque
+code: subject, description: Changement de la date de retour de(s) document(s) de la bibliothèque
+code: new_due_date, description: Nouvelle date de retour
+code: sincerely, description: Cordialement
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: description, description: Description
+code: old_due_date, description: Ancienne date de retour
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: author, description: Auteur
+code: library, description: Bibliothèque
+code: loans, description: Prêts
+code: title, description: Titre
+code: to, description: jusqu'au

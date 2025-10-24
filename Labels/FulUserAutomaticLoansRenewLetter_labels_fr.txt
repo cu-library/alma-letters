@@ -1,0 +1,19 @@
+code: Bcc, description: None
+code: Cc, description: None
+code: additional_info_1, description: EMPTY_STRING
+code: additional_info_2, description: EMPTY_STRING
+code: addressFrom, description: Your.Department@organization.com
+code: author, description: Auteur
+code: call_number, description: Cote
+code: department, description: Banque de prêt
+code: description, description: Description
+code: due_date, description: Date de retour prévu
+code: letterName, description: Lettre de renouvellement de prêts automatique
+code: library, description: Bibliothèque
+code: loans, description: Prêts
+code: location, description: Localisation
+code: message, description: Les exemplaires suivants ont été renouvelés :
+code: renew_status, description: Statut de renouvellement
+code: sincerely, description: Cordialement
+code: subject, description: Avis de renouvellement de prêts automatique
+code: title, description: Titre

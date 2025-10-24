@@ -1,0 +1,4 @@
+code: department, description: Département PEB
+code: letterName, description: Lettre de conversation de demande PEB
+code: signature, description: Cordialement
+code: subject, description: Conversation PEB

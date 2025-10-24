@@ -1,0 +1,48 @@
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: signature, description: Sincerely,
+code: please_advise, description: Please update us on the status of this request.
+code: header, description: Hi,
+code: requested, description: We wanted to remind you that we had requested an item from your library on
+code: Bcc, description: None
+code: Cc, description: None
+code: additional_person_name, description: Additional Person Name
+code: article_or_chapter_title, description: Article\\Chapter Title
+code: author, description: Author
+code: author_initials, description: Author Initials
+code: call_number, description: Call Number
+code: chapter, description: Chapter
+code: chapter_author, description: Chapter Author
+code: chapter_title, description: Chapter Title
+code: date, description: Date
+code: doi, description: DOI
+code: edition, description: Edition
+code: editor, description: Editor
+code: end_page, description: End Page
+code: format, description: Format
+code: isbn, description: ISBN
+code: issn, description: ISSN
+code: issue, description: Issue
+code: journal_title, description: Journal Title
+code: letterName, description: Requested Material Reminder
+code: level_of_service, description: Level of Service
+code: maximum_fee, description: Maximum Fee
+code: note, description: Note
+code: pages, description: Pages
+code: part, description: Part
+code: partner_address, description: Partner's Address
+code: partner_email, description: Partner's Email
+code: place_of_publication, description: Place of Publication
+code: pmid, description: PMID
+code: publication_date, description: Publication Date
+code: publisher, description: Publisher
+code: request_format, description: Request Format
+code: request_id, description: Request ID
+code: request_note, description: Request Note
+code: requested_by, description: This is needed by
+code: series_title_number, description: Series Title Number
+code: source, description: Source
+code: start_page, description: Start Page
+code: subject, description: Requested Material Reminder (%reqId%)
+code: title, description: Title
+code: volume, description: Volume
+code: year, description: Year

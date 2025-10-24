@@ -1,0 +1,16 @@
+code: letterName, description: Item Renewal Request
+code: department, description: Interlibrary Loans Department
+code: subject, description: Item Renewal Request
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: not_renewed_loan, description: We have received your request to renew the following book. Much as we would like to extend this loan for you, the lending library does not grant renewals on their Interlibrary loan materials. Therefore, this book must be returned.
+code: sincerely, description: Sincerely,
+code: renewed_loan, description: We have renewed the following loan:
+code: Bcc, description: None
+code: Cc, description: None
+code: contact_dep, description: Please contact your department for more information
+code: detailed_below, description: detailed below
+code: failure_reason, description: Reason
+code: new_due_date, description: New due date
+code: on, description: On
+code: success_reason, description: Reason: Renewal request approved by supplying library
+code: we_renewed_y_req_from, description: we renewed your request from

@@ -1,0 +1,7 @@
+code: subject, description: MacOdrum Library - Reset Password
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: signature, description: Sincerely,
+code: bodyTextBeforeLink, description: It looks like you have to reset your password. Please
+code: bodyTextAfterLink, description: and follow the instructions provided.
+code: letterName, description: Reset Password
+code: linkLabel, description: click here

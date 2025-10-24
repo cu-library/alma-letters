@@ -1,0 +1,18 @@
+code: addressFrom, description: votre.département@organisation.com
+code: baseFee, description: Frais de base
+code: chargeAmount, description: Montant des frais
+code: copyrightFee, description: Frais de droits d'auteur
+code: department, description: Département PEB
+code: externalIdentifier, description: Identifiant externe
+code: feeType, description: Type de frais
+code: header, description: Madame, Monsieur,
+code: invoiceNumber, description: Numéro de facture
+code: letterName, description: Lettre de facture partenaire
+code: pageOverageFee, description: Frais d'excédent de page
+code: requestSubtotal, description: Sous-total des demandes
+code: requestsTotal, description: Total des demandes
+code: serviceLevelFee, description: Frais de niveau de service
+code: shippingCost, description: Coût d'expédition
+code: signature, description: Cordialement
+code: subject, description: Lettre de facture
+code: title, description: Titre

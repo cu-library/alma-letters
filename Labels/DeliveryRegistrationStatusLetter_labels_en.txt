@@ -1,0 +1,35 @@
+code: notification_sent, description: An email will be sent once the resource becomes available.
+code: department, description: Library Reserves Team
+code: addressFrom, description: (null)
+code: bcc, description: None
+code: cc, description: None
+code: contact_library, description: For more information, please contact the library.
+code: current_queue_position, description: and are currently number
+code: has_expired, description: has expired.
+code: here, description: Access Resource
+code: hold_expire, description: You may need to register again if the hold time expires.
+code: in_queue, description: in the waitlist.
+code: item_available, description: is now available for you.
+code: letterName, description: Delivery Registration Status Report
+code: library, description: Library
+code: link_to_item, description: {alma_url}/view/delivery/{instCode}/{repId}
+code: minutes, description: minute(s).
+code: once_started_viewing, description: Once started viewing, 
+code: register, description: Join
+code: register_successfully, description: You have been added to the waitlist for accessing
+code: registration_status_available, description: Item Available {0}
+code: registration_status_confirmation, description: Registration Confirmation {0}
+code: registration_status_expired, description: Registration Grace Period Expired {0}
+code: registration_status_removed, description: Registration canceled {0}
+code: removed, description: You have been removed from the waitlist for accessing
+code: sincerely, description: Sincerely
+code: status, description: Status
+code: subject, description: Delivery Registration Status Report
+code: time_accessing, description: Unfortunately your availability window for accessing
+code: title, description: Title
+code: to_start_viewing, description: to start viewing the resource before it will be passed on to the next user in the waitlist.
+code: to_view_resource, description: to view the resource.
+code: within_minutes, description: minutes to start viewing the resource before it will be passed on to the next user in the waitlist.
+code: you_can_reregister, description: You can re-join to the waitlist.
+code: you_have, description: You have
+code: you_will_have, description: You will have

@@ -1,0 +1,2 @@
+code: addressFrom, description: Discovery@exlibrisgroup.com
+code: emailSubject, description: New feedback received from a Primo user - {category_name}

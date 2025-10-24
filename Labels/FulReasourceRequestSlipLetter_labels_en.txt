@@ -1,0 +1,52 @@
+code: Bcc, description: None
+code: Cc, description: None
+code: accession_number, description: Accession Number
+code: additional_id, description: Additional Id
+code: addressFrom, description: Your.Department@organization.com
+code: alt_call_number, description: Item Call Number/s
+code: call_number, description: Call Number
+code: chron_i, description: Chronology I
+code: chron_j, description: Chronology J
+code: chron_k, description: Chronology K
+code: chron_l, description: Chronology L
+code: chron_m, description: Chronology M
+code: copyId, description: Copy Id
+code: edition, description: Edition
+code: email, description: Email
+code: enum_a, description: Enumeration A
+code: enum_b, description: Enumeration B
+code: enum_c, description: Enumeration C
+code: enum_d, description: Enumeration D
+code: enum_e, description: Enumeration E
+code: enum_f, description: Enumeration F
+code: enum_g, description: Enumeration G
+code: enum_h, description: Enumeration H
+code: expiration_date, description: Expiration Date
+code: external_id, description: External ID
+code: imprint, description: Imprint
+code: inventory_number, description: Inventory Number/s
+code: isbn, description: ISBN
+code: issn, description: ISSN
+code: item_barcode, description: Item Barcode
+code: letterName, description: Resource Request Slip Letter
+code: location, description: Location
+code: manual_description_note, description: The following manual description has been specified in this request
+code: move_to_library, description: Destination
+code: note_item_specified_request, description: Please note: A specific item is specified in this request
+code: parsedIssueLevelDescription, description: parsed Issue Level Description
+code: permanentLibrary, description: Permanent Library
+code: permanentLocation, description: Permanent Location
+code: please_note, description: Please note
+code: proxy_requester, description: Proxy Requester
+code: request_date, description: Request Date
+code: request_id, description: Request ID
+code: request_note, description: Request Note
+code: request_type, description: Request Type
+code: requested_for, description: Requested For
+code: resource_sharing_request_id, description: Resource sharing internal request id
+code: shelving_location_for_item, description: Shelving Location
+code: shelving_locations_for_holding, description: The resource can be found at any of the following shelving locations
+code: subject, description: Resource Request Slip
+code: supplied_to, description: Supplied To
+code: system_notes, description: System Notes
+code: tel, description: Tel

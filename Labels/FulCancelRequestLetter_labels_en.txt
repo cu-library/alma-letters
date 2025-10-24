@@ -1,0 +1,45 @@
+code: we_cancel_y_req_of, description: we updated your request
+code: reason_deleting_request, description: Reason for update
+code: department, description: Access Services Department
+code: letterName, description: Request Update or Cancellation
+code: subject, description: MacOdrum Library - Request Update or Cancellation
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: Bcc, description: None
+code: Cc, description: None
+code: additional_person_name, description: Additional Person Name
+code: author, description: Author
+code: author_initials, description: Author Initials
+code: call_number, description: Call Number
+code: chapter, description: Chapter
+code: detailed_below, description: detailed below
+code: doi, description: DOI
+code: edition, description: Edition
+code: end_page, description: End Page
+code: end_time, description: End Time
+code: identifier, description: Identifier
+code: isbn, description: ISBN
+code: issn, description: ISSN
+code: issue, description: Issue
+code: journal_title, description: Journal Title
+code: lccn, description: LCCN
+code: manual_description_note, description: The following manual description has been specified in this request
+code: note, description: Note
+code: oclc_nr, description: OCLC Number
+code: on, description: On
+code: pages, description: Pages
+code: part, description: Part
+code: place_of_publication, description: Place of Publication
+code: please_note, description: Please note
+code: pmid, description: PMID
+code: publication_date, description: Publication Date
+code: publisher, description: Publisher
+code: reason_unfilled, description: Reject Reason
+code: request_cancellation_note, description: Cancellation note
+code: request_note, description: Request Note
+code: series_title_number, description: Series Title Number
+code: sincerely, description: Sincerely
+code: source, description: Source
+code: start_page, description: Start Page
+code: start_time, description: Start Time
+code: title, description: Title
+code: volume, description: Volume

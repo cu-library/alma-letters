@@ -1,0 +1,19 @@
+code: Bcc, description: None
+code: Cc, description: None
+code: additional_info_1, description: EMPTY_STRING
+code: additional_info_2, description: EMPTY_STRING
+code: addressFrom, description: Your.Department@organization.com
+code: author, description: Author
+code: call_number, description: Call Number
+code: department, description: Circulation Department
+code: description, description: Description
+code: due_date, description: Due Date
+code: letterName, description: Automatic Loans Renew Letter
+code: library, description: Library
+code: loans, description: Loans
+code: location, description: Location
+code: message, description: The following items have been renewed:
+code: renew_status, description: Renew Status
+code: sincerely, description: Sincerely
+code: subject, description: Automatic Loans Renew Notice
+code: title, description: Title

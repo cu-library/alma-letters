@@ -1,0 +1,22 @@
+code: please_pay_message, description: Please come to the Library Services Desk to pay your balance.
+code: sincerely, description: Thanks,
+code: debt_message, description: We would like to remind you that you have an outstanding fine of
+code: reminder_message, description: Below is a summary of your current loans from the MacOdrum Library.
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: subject, description: Summary of your library borrowing activity
+code: subject_with_overdue, description: Summary of your library borrowing activity - overdue items exist
+code: letterName, description: Summary of your library borrowing activity
+code: department, description: Access Services
+code: description, description: Description
+code: Bcc, description: None
+code: Cc, description: None
+code: author, description: Author
+code: call_number, description: Call Number
+code: due_date, description: Due Date
+code: fine, description: Fine
+code: library, description: Library
+code: loans, description: Loans
+code: location, description: Location
+code: overdue_loans, description: Overdue Loans
+code: title, description: Title
+code: total, description: Total:

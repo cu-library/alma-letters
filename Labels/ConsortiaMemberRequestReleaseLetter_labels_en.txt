@@ -1,0 +1,9 @@
+code: Cc, description: None
+code: addressFrom, description: Your.Department@organization.com
+code: author, description: {0}
+code: greetings, description: Dear Network Zone administrator
+code: letterName, description: A member is requesting to be released from network management
+code: message_notice, description: {0} from {1} is requesting the release of ''{2}'' of ''{3}'' configuration from Network management on {4}. If you agree, please proceed by using the Stop Network Management process from the Consortia Central Configuration Dashboard at the Network Zone level.
+code: message_notice_table, description: {0} from {1} is requesting the release of ''{2}'' configuration from Network management on {3}. If you agree, please proceed by using the Stop Network Management process from the Consortia Central Configuration Dashboard at the Network Zone level.
+code: sincerely, description: Best regards
+code: subject, description: {0} is requesting the release of ''{1}'' from central management {2}

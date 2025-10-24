@@ -1,0 +1,14 @@
+code: department, description: Votre département
+code: addressFrom, description: lspsupport@cunet.carleton.ca
+code: letterName, description: Commande intéressée par
+code: subject, description: Commande intéressée par
+code: You_were_specify, description: Vous avez été signalé(e) comme étant 'Intéressé(e)' pour la commande suivante :
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: callNumber, description: Cote
+code: message, description: Message
+code: mmsId, description: Identifiant MMS
+code: orderNumber, description: Numéro de commande :
+code: receivingNote, description: Note de réception
+code: sincerely, description: Cordialement
+code: title, description: Titre :

@@ -7,6 +7,13 @@
 	<xsl:include href="style.xsl"/>
 	<xsl:include href="recordTitle.xsl"/>
 	<xsl:template match="/">
+	<!-- 
+	NOTE: For some horrible reason, this letter has multiple different names. 
+	Specifically, even though the letters list and letter editor call it "Loan Status Notice", 
+	Ex Libris' internal code for it is FulItemChangeDueDateLetter. 
+	I am calling it FulItemChangeDueDateLetter in the repo because that's what the Python script what 
+	pulls down the letters from Alma wants to call it. - AL
+	-->
 		<html>
 			<xsl:if test="notification_data/languages/string">
 				<xsl:attribute name="lang">

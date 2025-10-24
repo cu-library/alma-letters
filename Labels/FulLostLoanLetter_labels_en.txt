@@ -1,0 +1,25 @@
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: subject, description: MacOdrum Library - Replacement Bill for Library Material
+code: inform_you_item_below, description: The following item(s) has/have been noted 
+code: borrowed_by_you, description: as lost in the system.
+code: decalred_as_lost, description:  Please see below for replacement costs. 
+code: Bcc, description: None
+code: Cc, description: None
+code: additional_info_1, description: EMPTY_STRING
+code: additional_info_2, description: EMPTY_STRING
+code: barcode, description: Barcode
+code: by, description: Author
+code: call_number, description: Call Number
+code: charged_with_fines_fees, description: You will be charged the following Fines and Fees:
+code: dear, description: Dear Sir/Madam
+code: department, description: Circulation Department
+code: description, description: Description
+code: due_date, description: Due date
+code: fee_amount, description: Fee Amount
+code: fee_type, description: Fee Type
+code: letterName, description: Lost Item Bill
+code: library, description: Library
+code: loan_date, description: Loan date
+code: lost_item, description: Lost Item
+code: note, description: Note
+code: sincerely, description: Sincerely

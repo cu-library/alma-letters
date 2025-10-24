@@ -1,0 +1,13 @@
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: author, description: Auteur
+code: header, description: Madame, Monsieur
+code: letterName, description: Lettre email Message général
+code: note, description: Note
+code: request, description: Nous aimerions vous communiquer les informations suivantes concernant la demande PEB
+code: requestDate, description: Date de la demande
+code: requestId, description: Identifiant de la demande
+code: signature, description: Cordialement
+code: subject, description: Lettre email Message général
+code: title, description: Titre

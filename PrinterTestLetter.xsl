@@ -1,6 +1,10 @@
 <xsl:stylesheet version="1.0"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+<!-- 
+INTERNAL NAME: PrinterTestLetter
+LETTER EDITOR NAME: Test Letter
+-->
 <xsl:include href="header.xsl" />
 <xsl:include href="senderReceiver.xsl" />
 <xsl:include href="mailReason.xsl" />

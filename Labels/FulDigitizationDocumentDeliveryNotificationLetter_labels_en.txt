@@ -1,0 +1,28 @@
+code: sincerely, description: Sincerely,
+code: your_request, description: Attached is your digital copy of the material you requested.
+code: to_see_the_resource, description: To download the resource:
+code: click_here, description: click here.
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: subject, description: Document Delivery Notification
+code: letterName, description: Document Delivery Notification
+code: department, description: Access Services Department
+code: for_cas_users, description: For CAS users 
+code: for_saml_users, description: To access with MyCarleton One: 
+code: for_local_users, description: To access with Barcode/Password (enter barcode in 'username' field)
+code: Bcc, description: None
+code: Cc, description: None
+code: attached_are_the_urls, description: Attached are the URLs for the digital resources
+code: borrowing_terms, description: Borrowing terms
+code: citation_id, description: Citation ID
+code: days, description: Days
+code: deliver_in, description: Deliver in
+code: due_date, description: Due Date
+code: hours, description: Hours
+code: keep_for, description: Keep for
+code: max_num_of_views, description: For your information, the maximum number of views of the resource is 
+code: price, description: Price
+code: reading_list_name, description: Reading List name
+code: request_creator, description: Request creator
+code: terms_of_use, description: Terms of use
+code: title, description: Title
+code: without_authentication, description: Without authentication 

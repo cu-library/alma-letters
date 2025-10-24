@@ -1,0 +1,20 @@
+code: addressFrom, description: Your.Department@organization.com
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: author, description: Auteur
+code: bellow_details_charges_credits_due, description: Vous trouverez ci-dessous le détail des débits et crédits relatifs à ce prêt
+code: department, description: Service au public
+code: due_date, description: Date de retour
+code: fee_amount, description: Montant des frais
+code: fee_type, description: Type de frais
+code: following_loaned_item_which_has, description: Le document prêté suivant, auparavant déclaré perdu, a été retrouvé
+code: letterName, description: Remboursement de frais de remplacement d'exemplaire perdu
+code: library, description: Bibliothèque
+code: loan_date, description: Date de prêt
+code: loan_details, description: Détails du prêt
+code: note, description: Note
+code: sincerely, description: Cordialement
+code: subject, description: Remboursement de frais de remplacement d'exemplaire perdu
+code: title, description: Titre
+code: total, description: Total
+code: your_account_balance_will_be_credited, description: Conformément au règlement de la bibliothèque, votre compte sera crédité

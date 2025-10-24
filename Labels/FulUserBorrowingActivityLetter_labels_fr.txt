@@ -1,0 +1,22 @@
+code: please_pay_message, description: Veuillez configurer votre compte le plus tôt possible.
+code: sincerely, description: Cordialement
+code: debt_message, description: Nous aimerions vous rappeler que vous avez une dette :
+code: reminder_message, description: Nous aimerions vous rappeler que vous avez les exemplaires suivants à votre disposition :
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: subject, description: Sommaire de vos emprunts à la bibliothèque
+code: subject_with_overdue, description: Sommaire de vos emprunts à la bibliothèque
+code: letterName, description: Sommaire de vos emprunts à la bibliothèque
+code: department, description: Service au public
+code: description, description: Description
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: author, description: Auteur
+code: call_number, description: Cote
+code: due_date, description: Date de retour
+code: fine, description: Amende
+code: library, description: Bibliothèque
+code: loans, description: Prêts
+code: location, description: Localisation
+code: overdue_loans, description: Prêts en retard
+code: title, description: Titre
+code: total, description: Total :

@@ -1,0 +1,16 @@
+code: header, description: Madame, Monsieur
+code: signature, description: Cordialement
+code: request, description: Cette lettre vous est envoyée en réponse à votre demande récente concernant le renouvellement d'un prêt PEB de votre bibliothèque.
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: addressFrom, description: Your.Department@organization.com
+code: author, description: Auteur
+code: dueDate, description: Date de retour
+code: letterName, description: Lettre email de réponse de renouvellement au prêteur
+code: note, description: Note
+code: renewAnswer, description: Renouveler la réponse
+code: requestDate, description: Date de la demande
+code: requestId, description: Identifiant de la demande
+code: subject, description: Lettre email de réponse de renouvellement au prêteur
+code: supplyDate, description: Date de fourniture
+code: title, description: Titre

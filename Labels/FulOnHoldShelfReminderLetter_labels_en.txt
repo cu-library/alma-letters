@@ -1,0 +1,18 @@
+code: letterName, description: Requested Library Item(s) Are Available for Pickup
+code: sincerely, description: Sincerely,
+code: circulation_desk, description: Library Services Desk
+code: department, description: Access Services Department
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: can_picked_at, description: Pickup location
+code: note_item_held_until, description: Will be held until
+code: subject, description: Requested Library Item(s) Are Available for Pickup
+code: Bcc, description: None
+code: Cc, description: None
+code: additional_id, description: Additional Id
+code: author, description: Author
+code: call_number, description: Call Number
+code: following_items_awaiting_pickup, description: Please note that the following item(s) you requested are waiting to be picked up by you:
+code: message, description: We would like to remind you of the upcoming end of the hold shelf period.
+code: notes_affect_loan, description: Notes that may affect loan
+code: other_institutions, description: Items to be picked up in other institutions
+code: title, description: Title

@@ -1,0 +1,14 @@
+code: letterName, description: Le document demandé est prêt à être récupéré
+code: note_item_held_until, description: L'exemplaire vous sera réservé jusqu'au
+code: department, description: Service au public
+code: sincerely, description: Cordialement
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: subject, description: Le document demandé est prêt à être récupéré
+code: circulation_desk, description: Library Services Desk
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: additional_id, description: Identifiant supplémentaire
+code: call_number, description: Cote
+code: can_picked_at, description: Peut être retiré à
+code: following_item_requested_on, description: L'exemplaire suivant, que vous avez demandé le
+code: notes_affect_loan, description: Notes qui peuvent affecter le prêt

@@ -1,0 +1,15 @@
+code: Bcc, description: None
+code: Cc, description: None
+code: addressFrom, description: Your.Department@organization.com
+code: author, description: Author
+code: due_date, description: Due Date
+code: header, description: Dear Sir/Madam,
+code: letterName, description: Resource Sharing - Recalled item
+code: old_due_date, description: Old Due Date
+code: orignal_due_date, description: Original due date
+code: recall_cancel_message, description: The following item recall has been cancelled and the original due date restored.
+code: recall_message, description: The following item has been recalled. Please return the item by the new due date.
+code: request_id, description: Request ID:
+code: signature, description: Sincerely
+code: subject, description: Resource Sharing - Recalled item
+code: title, description: Title

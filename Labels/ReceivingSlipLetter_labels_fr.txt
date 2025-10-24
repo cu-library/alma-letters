@@ -1,0 +1,35 @@
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: addressFrom, description: Your.Department@organization.com
+code: arrival_date, description: Date d'arrivée
+code: call_number, description: Cote
+code: chronology_i, description: Chronologie I
+code: chronology_j, description: Chronologie J
+code: chronology_k, description: Chronologie K
+code: chronology_l, description: Chronologie L
+code: chronology_m, description: Chronologie M
+code: createDate, description: Date de création
+code: description, description: Description
+code: enumeration_a, description: Numérotation A
+code: enumeration_b, description: Numérotation B
+code: enumeration_c, description: Numérotation C
+code: enumeration_d, description: Numérotation D
+code: enumeration_e, description: Numérotation E
+code: enumeration_f, description: Numérotation F
+code: enumeration_g, description: Numérotation G
+code: enumeration_h, description: Numérotation H
+code: is_rush, description: Cette commande est urgente.
+code: item_barcode, description: Code-barres exemplaire
+code: letterName, description: Avis d'arrivée
+code: library, description: Bibliothèque
+code: location, description: Localisation
+code: mms_id, description: Identifiant MMS
+code: note, description: Note
+code: notes, description: Notes
+code: order_notes, description: Notes de la Commande
+code: order_number, description: Numéro de commande
+code: receiving_note, description: Note de réception
+code: request_note, description: Note de demande
+code: subject, description: Avis d'arrivée
+code: title, description: Titre
+code: vendor, description: Fournisseur

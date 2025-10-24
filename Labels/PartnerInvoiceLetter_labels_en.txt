@@ -1,0 +1,18 @@
+code: addressFrom, description: Your.Department@organization.com
+code: baseFee, description: Base Fee
+code: chargeAmount, description: Charge Amount
+code: copyrightFee, description: Copyright Fee
+code: department, description: Resource Sharing Department
+code: externalIdentifier, description: External Identifier
+code: feeType, description: Fee Type
+code: header, description: Dear Sir/Madam,
+code: invoiceNumber, description: Invoice Number
+code: letterName, description: Partner Invoice Letter
+code: pageOverageFee, description: Page Overage Fee
+code: requestSubtotal, description: Request Subtotal
+code: requestsTotal, description: Requests Total
+code: serviceLevelFee, description: Service Level Fee
+code: shippingCost, description: Shipping cost
+code: signature, description: Sincerely
+code: subject, description: Invoice Letter
+code: title, description: Title

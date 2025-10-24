@@ -1,0 +1,17 @@
+code: signature, description: Sincerely,
+code: header, description: Hi,
+code: request, description: The following item has been shipped from Carleton University.
+code: Bcc, description: None
+code: Cc, description: None
+code: address, description: Address
+code: addressFrom, description: Your.Department@organization.com
+code: author, description: Author
+code: format, description: Format
+code: letterName, description: Lender Ship Email Letter
+code: note, description: Note
+code: requestDate, description: Request Date
+code: requestId, description: Request ID
+code: shippingDate, description: Shipping Date
+code: shippingTOU, description: Terms of use
+code: subject, description: Lender Ship Email Letter
+code: title, description: Title

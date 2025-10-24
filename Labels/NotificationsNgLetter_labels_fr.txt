@@ -1,0 +1,4 @@
+code: addressFrom, description: Your.Department@organization.com
+code: dear, description: Cher/Chère,
+code: letterName, description: Notifications utilisateur (nouvelle génération)
+code: subject, description: Notifications d'Alma

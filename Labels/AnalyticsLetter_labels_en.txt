@@ -1,0 +1,4 @@
+code: letterName, description: Analytics Report
+code: addressFrom, description: lspsupport@cunet.carleton.ca
+code: letterText, description: Attached please find the following Analytics report to which you are subscribed:
+code: deepLinkLetterText, description: See here the Analytics report to which you are subscribed:

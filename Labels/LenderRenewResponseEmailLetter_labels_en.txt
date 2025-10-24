@@ -1,0 +1,16 @@
+code: header, description: Hi,
+code: signature, description: Sincerely,
+code: request, description: Thanks for renewing the item. Please see the details for the renewal:
+code: Bcc, description: None
+code: Cc, description: None
+code: addressFrom, description: Your.Department@organization.com
+code: author, description: Author
+code: dueDate, description: Due Date
+code: letterName, description: Lender Renew Response Email Letter
+code: note, description: Note
+code: renewAnswer, description: Renew Answer
+code: requestDate, description: Request Date
+code: requestId, description: Request ID
+code: subject, description: Lender Renew Response Email Letter
+code: supplyDate, description: Supply Date
+code: title, description: Title

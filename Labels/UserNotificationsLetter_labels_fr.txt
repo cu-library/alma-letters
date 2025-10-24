@@ -1,0 +1,27 @@
+code: letterName, description: Avis de la bibliothèque
+code: subject, description: Avis de la bibliothèque
+code: Sincerely, description: Cordialement
+code: addressFrom, description: library.services@carleton.ca
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: Dear, description: Madame, Monsieur
+code: Line_1, description: Votre mot de passe a été modifié en :
+code: Line_10, description: vide
+code: Line_11, description: vide
+code: Line_12, description: vide
+code: Line_13, description: vide
+code: Line_14, description: vide
+code: Line_15, description: vide
+code: Line_16, description: vide
+code: Line_17, description: vide
+code: Line_18, description: vide
+code: Line_19, description: vide
+code: Line_2, description: Vous pouvez changer votre mot de passe à votre prochaine connexion.
+code: Line_20, description: vide
+code: Line_3, description: vide
+code: Line_4, description: vide
+code: Line_5, description: vide
+code: Line_6, description: vide
+code: Line_7, description: vide
+code: Line_8, description: vide
+code: Line_9, description: vide

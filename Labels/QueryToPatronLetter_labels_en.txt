@@ -1,0 +1,171 @@
+code: Type_1_Sincerely, description: Sincerely,
+code: Type_1_subject, description: Regarding Your Library Request
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: letterName, description: Regarding Your Library Request
+code: query_to_patron, description: Regarding your recent request
+code: Type_1_query_line_1, description: [Please enter your query here]
+code: Type_1_query_line_2, description: [Please enter your query here]
+code: Type_1_query_line_3, description: [Please enter your query here]
+code: Type_2_query_line_1, description: [Please enter your query here]
+code: Bcc, description: None
+code: Cc, description: None
+code: Type_10_query_line_1, description: [Please enter your query here]
+code: Type_10_query_line_2, description: [Please enter your query here]
+code: Type_10_query_line_3, description: [Please enter your query here]
+code: Type_10_subject, description: Regarding your request %reqId%
+code: Type_11_query_line_1, description: [Please enter your query here]
+code: Type_11_query_line_2, description: [Please enter your query here]
+code: Type_11_query_line_3, description: [Please enter your query here]
+code: Type_11_subject, description: Regarding your request %reqId%
+code: Type_12_query_line_1, description: [Please enter your query here]
+code: Type_12_query_line_2, description: [Please enter your query here]
+code: Type_12_query_line_3, description: [Please enter your query here]
+code: Type_12_subject, description: Regarding your request %reqId%
+code: Type_13_query_line_1, description: [Please enter your query here]
+code: Type_13_query_line_2, description: [Please enter your query here]
+code: Type_13_query_line_3, description: [Please enter your query here]
+code: Type_13_subject, description: Regarding your request %reqId%
+code: Type_14_query_line_1, description: [Please enter your query here]
+code: Type_14_query_line_2, description: [Please enter your query here]
+code: Type_14_query_line_3, description: [Please enter your query here]
+code: Type_14_subject, description: Regarding your request %reqId%
+code: Type_15_query_line_1, description: [Please enter your query here]
+code: Type_15_query_line_2, description: [Please enter your query here]
+code: Type_15_query_line_3, description: [Please enter your query here]
+code: Type_15_subject, description: Regarding your request %reqId%
+code: Type_16_query_line_1, description: [Please enter your query here]
+code: Type_16_query_line_2, description: [Please enter your query here]
+code: Type_16_query_line_3, description: [Please enter your query here]
+code: Type_16_subject, description: Regarding your request %reqId%
+code: Type_17_query_line_1, description: [Please enter your query here]
+code: Type_17_query_line_2, description: [Please enter your query here]
+code: Type_17_query_line_3, description: [Please enter your query here]
+code: Type_17_subject, description: Regarding your request %reqId%
+code: Type_18_query_line_1, description: [Please enter your query here]
+code: Type_18_query_line_2, description: [Please enter your query here]
+code: Type_18_query_line_3, description: [Please enter your query here]
+code: Type_18_subject, description: Regarding your request %reqId%
+code: Type_19_query_line_1, description: [Please enter your query here]
+code: Type_19_query_line_2, description: [Please enter your query here]
+code: Type_19_query_line_3, description: [Please enter your query here]
+code: Type_19_subject, description: Regarding your request %reqId%
+code: Type_1_header, description: Dear Sir/Madam,
+code: Type_20_query_line_1, description: [Please enter your query here]
+code: Type_20_query_line_2, description: [Please enter your query here]
+code: Type_20_query_line_3, description: [Please enter your query here]
+code: Type_20_subject, description: Regarding your request %reqId%
+code: Type_21_query_line_1, description: [Please enter your query here]
+code: Type_21_query_line_2, description: [Please enter your query here]
+code: Type_21_query_line_3, description: [Please enter your query here]
+code: Type_21_subject, description: Regarding your request %reqId%
+code: Type_22_query_line_1, description: [Please enter your query here]
+code: Type_22_query_line_2, description: [Please enter your query here]
+code: Type_22_query_line_3, description: [Please enter your query here]
+code: Type_22_subject, description: Regarding your request %reqId%
+code: Type_23_query_line_1, description: [Please enter your query here]
+code: Type_23_query_line_2, description: [Please enter your query here]
+code: Type_23_query_line_3, description: [Please enter your query here]
+code: Type_23_subject, description: Regarding your request %reqId%
+code: Type_24_query_line_1, description: [Please enter your query here]
+code: Type_24_query_line_2, description: [Please enter your query here]
+code: Type_24_query_line_3, description: [Please enter your query here]
+code: Type_24_subject, description: Regarding your request %reqId%
+code: Type_25_query_line_1, description: [Please enter your query here]
+code: Type_25_query_line_2, description: [Please enter your query here]
+code: Type_25_query_line_3, description: [Please enter your query here]
+code: Type_25_subject, description: Regarding your request %reqId%
+code: Type_26_query_line_1, description: [Please enter your query here]
+code: Type_26_query_line_2, description: [Please enter your query here]
+code: Type_26_query_line_3, description: [Please enter your query here]
+code: Type_26_subject, description: Regarding your request %reqId%
+code: Type_27_query_line_1, description: [Please enter your query here]
+code: Type_27_query_line_2, description: [Please enter your query here]
+code: Type_27_query_line_3, description: [Please enter your query here]
+code: Type_27_subject, description: Regarding your request %reqId%
+code: Type_28_query_line_1, description: [Please enter your query here]
+code: Type_28_query_line_2, description: [Please enter your query here]
+code: Type_28_query_line_3, description: [Please enter your query here]
+code: Type_28_subject, description: Regarding your request %reqId%
+code: Type_29_query_line_1, description: [Please enter your query here]
+code: Type_29_query_line_2, description: [Please enter your query here]
+code: Type_29_query_line_3, description: [Please enter your query here]
+code: Type_29_subject, description: Regarding your request %reqId%
+code: Type_2_Sincerely, description: Sincerely
+code: Type_2_header, description: Dear Sir/Madam,
+code: Type_2_query_line_2, description: [Please enter your query here]
+code: Type_2_query_line_3, description: [Please enter your query here]
+code: Type_2_subject, description: Regarding your request %reqId%
+code: Type_30_query_line_1, description: [Please enter your query here]
+code: Type_30_query_line_2, description: [Please enter your query here]
+code: Type_30_query_line_3, description: [Please enter your query here]
+code: Type_30_subject, description: Regarding your request %reqId%
+code: Type_3_Sincerely, description: Sincerely
+code: Type_3_header, description: Dear Sir/Madam,
+code: Type_3_query_line_1, description: [Please enter your query here]
+code: Type_3_query_line_2, description: [Please enter your query here]
+code: Type_3_query_line_3, description: [Please enter your query here]
+code: Type_3_subject, description: Regarding your request %reqId%
+code: Type_4_Sincerely, description: Sincerely
+code: Type_4_header, description: Dear Sir/Madam,
+code: Type_4_query_line_1, description: [Please enter your query here]
+code: Type_4_query_line_2, description: [Please enter your query here]
+code: Type_4_query_line_3, description: [Please enter your query here]
+code: Type_4_subject, description: Regarding your request %reqId%
+code: Type_5_Sincerely, description: Sincerely
+code: Type_5_header, description: Dear Sir/Madam,
+code: Type_5_query_line_1, description: [Please enter your query here]
+code: Type_5_query_line_2, description: [Please enter your query here]
+code: Type_5_query_line_3, description: [Please enter your query here]
+code: Type_5_subject, description: Regarding your request %reqId%
+code: Type_6_header, description: Dear Sir/Madam,
+code: Type_6_query_line_1, description: [Please enter your query here]
+code: Type_6_query_line_2, description: [Please enter your query here]
+code: Type_6_query_line_3, description: [Please enter your query here]
+code: Type_6_subject, description: Regarding your request %reqId%
+code: Type_7_query_line_1, description: [Please enter your query here]
+code: Type_7_query_line_2, description: [Please enter your query here]
+code: Type_7_query_line_3, description: [Please enter your query here]
+code: Type_7_subject, description: Regarding your request %reqId%
+code: Type_8_query_line_1, description: [Please enter your query here]
+code: Type_8_query_line_2, description: [Please enter your query here]
+code: Type_8_query_line_3, description: [Please enter your query here]
+code: Type_8_subject, description: Regarding your request %reqId%
+code: Type_9_query_line_1, description: [Please enter your query here]
+code: Type_9_query_line_2, description: [Please enter your query here]
+code: Type_9_query_line_3, description: [Please enter your query here]
+code: Type_9_subject, description: Regarding your request %reqId%
+code: additional_person_name, description: Additional Person Name
+code: article_or_chapter_title, description: Article\\Chapter Title
+code: author, description: Author
+code: author_initials, description: Author Initials
+code: call_number, description: Call Number
+code: chapter, description: Chapter
+code: date, description: Date
+code: doi, description: DOI
+code: edition, description: Edition
+code: end_page, description: End Page
+code: format, description: Format
+code: internal_id, description: Internal ID
+code: isbn, description: ISBN
+code: issn, description: ISSN
+code: issue, description: Issue
+code: journal_title, description: Journal Title
+code: maximum_fee, description: Maximum Fee
+code: note, description: Note
+code: pages, description: Pages
+code: part, description: Part
+code: place_of_publication, description: Place of Publication
+code: pmid, description: PMID
+code: publication_date, description: Publication Date
+code: publisher, description: Publisher
+code: query_note, description: Note
+code: request_format, description: Request Format
+code: request_id, description: Request ID
+code: request_note, description: Request Note
+code: requested, description: Regarding your request
+code: series_title_number, description: Series Title Number
+code: source, description: Source
+code: start_page, description: Start Page
+code: title, description: Title
+code: volume, description: Volume
+code: year, description: Year

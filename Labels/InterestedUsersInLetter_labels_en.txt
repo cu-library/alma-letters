@@ -1,0 +1,10 @@
+code: department, description: Electronic Resources and Acquisitions Department (ERA)
+code: addressFrom, description: lspsupport@cunet.carleton.ca
+code: interestedUsersList, description: Interested Users List
+code: letterName, description: List Of Interested Users
+code: orderNumber, description: Order Number:
+code: sincerely, description: Sincerely
+code: subject, description: List Of Interested Users
+code: title, description: Title:
+code: userMail, description: User Mail
+code: userName, description: User Name

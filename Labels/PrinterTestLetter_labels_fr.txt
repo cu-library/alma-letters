@@ -1,0 +1,3 @@
+code: addressFrom, description: Your.Department@organization.com
+code: letterName, description: Test de l'imprimante
+code: subject, description: Test de l'imprimante

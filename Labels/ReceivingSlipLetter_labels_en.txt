@@ -1,0 +1,35 @@
+code: Bcc, description: None
+code: Cc, description: None
+code: addressFrom, description: Your.Department@organization.com
+code: arrival_date, description: Arrival Date
+code: call_number, description: Call Number
+code: chronology_i, description: Chronology I
+code: chronology_j, description: Chronology J
+code: chronology_k, description: Chronology K
+code: chronology_l, description: Chronology L
+code: chronology_m, description: Chronology M
+code: createDate, description: Create Date
+code: description, description: Description
+code: enumeration_a, description: Enumeration A
+code: enumeration_b, description: Enumeration B
+code: enumeration_c, description: Enumeration C
+code: enumeration_d, description: Enumeration D
+code: enumeration_e, description: Enumeration E
+code: enumeration_f, description: Enumeration F
+code: enumeration_g, description: Enumeration G
+code: enumeration_h, description: Enumeration H
+code: is_rush, description: This order is rush
+code: item_barcode, description: Item Barcode
+code: letterName, description: Arrival Slip
+code: library, description: Library
+code: location, description: Location
+code: mms_id, description: MMS ID
+code: note, description: Note
+code: notes, description: Notes
+code: order_notes, description: Order's Notes
+code: order_number, description: Order Number
+code: receiving_note, description: Receiving Note
+code: request_note, description: Request Note
+code: subject, description: Arrival Slip
+code: title, description: Title
+code: vendor, description: Vendor

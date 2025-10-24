@@ -1,0 +1,11 @@
+code: addressFrom, description: lspsupport@cunet.carleton.ca
+code: ADFS_recomendation, description: In addition, if your institution uses ADFS, we recommend that you replace the certificate to avoid any complications
+code: author, description: Alma System Administration Team
+code: expiry_reminder, description: This is an automated reminder that the SAML certificate with code ''{0}'' used by your institution will expire on {1}
+code: further_questions, description: If you have any further questions, please submit a support case
+code: greetings, description: Dear Library System Administrator
+code: letterName, description: Your SAML certificate is about to expire
+code: linked_instructions, description: Replacing a Signed Certificate
+code: recomendation, description: Our recommendation is to consult with the IT department of your institution, and if required, replace the certificate for Alma and/or Primo VE. If replacing the certificate, this must be done in coordination with your IDP. For more information, see 
+code: sincerely, description: Sincerely
+code: subject, description: SAML certificate expiration notice

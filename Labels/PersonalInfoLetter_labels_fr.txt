@@ -1,0 +1,5 @@
+code: addressFrom, description: Your.Department@organization.com
+code: bodyTextBeforeLink, description: Vous trouverez ci-jointes vos informations personnelles, telles qu'enregistrées dans le système de gestion des ressources de la bibliothèque
+code: letterName, description: Lettre d'informations personnelles
+code: signature, description: Cordialement,
+code: subject, description: Lettre d'informations personnelles

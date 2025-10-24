@@ -1,0 +1,3 @@
+code: subject, description: Item(s) sent by Omni (Carleton University)
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: letterName, description: Item(s) sent by Omni (Carleton University)

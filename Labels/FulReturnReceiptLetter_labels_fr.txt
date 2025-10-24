@@ -1,0 +1,18 @@
+code: loans, description: Prêts :
+code: department, description: Service au public
+code: dear, description: Madame, Monsieur
+code: subject, description: Reçu de retour
+code: letterName, description: Reçu de retour
+code: sincerely, description: Cordialement
+code: inform_returned_items, description: Les prêts suivants ont été retournés à la bibliothèque au
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: addressFrom, description: Your.Department@organization.com
+code: author, description: Auteur
+code: description, description: Description
+code: due_date, description: Date de retour
+code: fine, description: Amende
+code: library, description: Bibliothèque
+code: note, description: Note
+code: return_date, description: Date de retour
+code: title, description: Titre

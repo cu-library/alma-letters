@@ -1,0 +1,14 @@
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: note_item_held_until, description: We have updated this item's expiry date. We will now hold it until
+code: department, description: Access Services Department
+code: circulation_desk, description: Circulation Desk
+code: subject, description: Hold Shelf Expiry Date Update
+code: letterName, description: Hold Shelf Expiry Date Update
+code: sincerely, description: Sincerely,
+code: Bcc, description: None
+code: Cc, description: None
+code: additional_id, description: Additional Id
+code: call_number, description: Call Number
+code: can_picked_at, description: can be picked up at 
+code: following_item_requested_on, description: The following item, which you requested on 
+code: notes_affect_loan, description: Notes that may affect loan

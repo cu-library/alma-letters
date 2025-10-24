@@ -1,0 +1,72 @@
+code: signature, description: Cordialement
+code: returned, description: L'exemplaire suivant emprunté à votre institution est retourné.
+code: addressFrom, description: Your.Department@organization.com
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: address, description: Adresse d'expédition
+code: affiliation, description: Affiliation
+code: apology_message, description: Message d'excuse
+code: applicant_name, description: Nom du demandeur
+code: arrival_date, description: Date d'arrivée
+code: article, description: Article
+code: author, description: Auteur
+code: authority, description: Autorité
+code: basic_fee, description: Frais de base
+code: bib_auth, description: Autorité bibliographique
+code: bib_record_id, description: Identifiant de notice bibliographique
+code: bib_record_title, description: Titre
+code: bib_standard_number, description: Numéro standard
+code: bor_request_local_id, description: Numéro de la demande
+code: call_number, description: Cote
+code: copy, description: Copie
+code: copy_type, description: Type de copie
+code: create_date, description: Date de création
+code: delivery_address, description: Adresse de livraison
+code: email, description: E-mail
+code: from, description: Du
+code: issue, description: Fascicule
+code: journal_title, description: Titre de revue
+code: lending_request_create_date, description: Date de la demande
+code: lending_request_local_id, description: Numéro de réception
+code: letterName, description: Lettre d'avis de retour de PEB
+code: loan, description: Prêt
+code: message_to_lender, description: Message au prêteur
+code: nacsis_request_id, description: Identifiant de la demande
+code: note_to_partner, description: Note au partenaire
+code: page, description: Page
+code: payment_type, description: Classe de paiement
+code: phone, description: Téléphone
+code: pod_id, description: ID de groupement
+code: pod_name, description: Nom du groupement
+code: quantity, description: Quantité
+code: receive_date, description: Date d'arrivée
+code: receiving_library_address, description: Adresse de la bibliothèque destinataire
+code: registration_number, description: Numéro d'enregistrement
+code: request_id, description: Identifiant de la demande
+code: request_status, description: Statut de la demande
+code: request_type, description: Type de demande
+code: requested_date, description: Date de réception
+code: requesting_library, description: Bibliothèque demandeuse
+code: requesting_library_address, description: Adresse de la bibliothèque demandeuse
+code: required_return_date, description: Date de retour requise
+code: return_date_bor, description: Date de retour pour l'emprunteur
+code: return_date_len, description: Date de retour pour le prêteur
+code: return_deadline, description: Date limite de retour
+code: returned_to, description: Retourné à
+code: service_type, description: Type de demande
+code: shipping_costs, description: Coûts d'expédition
+code: shipping_date, description: Date d'expédition
+code: shipping_fee, description: Frais d'expédition
+code: shipping_method, description: Méthode d'expédition
+code: size, description: Taille
+code: slip_title, description: Lettre de transmission
+code: source, description: Source
+code: subject, description: Lettre d'avis de retour de PEB
+code: subtotal, description: Sous-total
+code: title, description: Titre
+code: total, description: Total
+code: unit_price, description: Prix unitaire
+code: update_date, description: Date de mise à jour
+code: volume, description: Volume
+code: volume_number, description: Nombre de volumes
+code: year, description: Année

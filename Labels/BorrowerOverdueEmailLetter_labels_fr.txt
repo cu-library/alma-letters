@@ -1,0 +1,16 @@
+code: subject, description: Lettre de rappel PEB à l'attention du demandeur
+code: letterName, description: Lettre de rappel PEB à l'attention du demandeur
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: orignal_due_date, description: Date de retour d'origine
+code: signature, description: Cordialement
+code: overdue_message, description: Nous sommes au regret de vous informer que la date de mise à disposition de l'exemplaire est passée.
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: author, description: Auteur
+code: needed_by_date, description: Demandé pour
+code: request_date, description: Date de la demande
+code: request_id, description: ID de la demande
+code: request_info, description: Information sur la demande
+code: return_message, description: Merci de rendre l'exemplaire dans les meilleurs délais
+code: supplied_date, description: Date de fourniture
+code: title, description: Titre

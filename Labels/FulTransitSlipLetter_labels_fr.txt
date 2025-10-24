@@ -1,0 +1,24 @@
+code: subject, description: Lettre de transit
+code: letterName, description: Lettre de transit
+code: addressFrom, description: Your.Department@organization.com
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: call_number, description: Cote
+code: email, description: E-mail
+code: expiration_date, description: Date d'expiration
+code: from, description: Depuis
+code: item_barcode, description: Code-barres exemplaire
+code: material_type, description: Type de matériel
+code: owning_library, description: Bibliothèque propriétaire
+code: print_date, description: Date d'impression
+code: request_date, description: Date de la demande
+code: request_id, description: Identifiant de la demande
+code: request_note, description: Note de demande
+code: requested_for, description: Demandé pour
+code: system_notes, description: Notes de système
+code: tel, description: Tél
+code: to, description: Vers
+code: transfer_date, description: Date de transfert
+code: transfer_time, description: Temps de transfert
+code: user_note, description: Note de l'utilisateur
+code: we_are_transferring_item_below, description: Nous transférons le document ci-dessous

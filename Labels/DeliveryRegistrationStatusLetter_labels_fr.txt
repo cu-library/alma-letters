@@ -1,0 +1,35 @@
+code: notification_sent, description: Une notification sera envoyée une fois que la ressource sera disponible.
+code: department, description: Département de gestion des ressources
+code: addressFrom, description: (null)
+code: bcc, description: Aucun
+code: cc, description: Aucun
+code: contact_library, description: Pour plus d'informations, veuillez contacter la bibliothèque.
+code: current_queue_position, description: et vous trouvez actuellement à la position numéro
+code: has_expired, description: a expiré.
+code: here, description: Accéder à la ressource
+code: hold_expire, description: Vous devrez peut-être vous réinscrire si le délai de réservation expire.
+code: in_queue, description: dans la file d'attente.
+code: item_available, description: est désormais à votre disposition.
+code: letterName, description: Rapport de statut d'enregistrement du service d'accès
+code: library, description: Bibliothèque
+code: link_to_item, description: {alma_url}/view/delivery/{instCode}/{repId}
+code: minutes, description: minute(s).
+code: once_started_viewing, description: Une fois que vous aurez commencé la consultation,
+code: register, description: Inscription
+code: register_successfully, description: Vous avez été ajouté à la file d'attente pour accéder à
+code: registration_status_available, description: Exemplaire disponible {0}
+code: registration_status_confirmation, description: Confirmation d''enregistrement {0}
+code: registration_status_expired, description: Période de grâce d''enregistrement expirée {0}
+code: registration_status_removed, description: Enregistrement annulé {0}
+code: removed, description: Vous avez été supprimé de la file d'attente pour accéder à
+code: sincerely, description: Cordialement
+code: status, description: Statut
+code: subject, description: Rapport de statut d'enregistrement du service d'accès
+code: time_accessing, description: Malheureusement, votre fenêtre de disponibilité pour accéder à
+code: title, description: Titre
+code: to_start_viewing, description: pour commencer à consulter la ressource avant qu'elle ne passe au prochain utilisateur de la file d'attente.
+code: to_view_resource, description: pour voir la ressource.
+code: within_minutes, description: minutes pour commencer à consulter la ressource avant qu'elle ne passe au prochain utilisateur de la file d'attente.
+code: you_can_reregister, description: Vous pouvez vous réinscrire à la file d'attente.
+code: you_have, description: Vous avez
+code: you_will_have, description: Vous aurez

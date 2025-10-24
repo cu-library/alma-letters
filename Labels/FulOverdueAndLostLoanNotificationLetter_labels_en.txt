@@ -1,0 +1,53 @@
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: subject, description:  Library Item(s) Are Overdue
+code: letterName, description: Library Item(s) Are Overdue
+code: sincerely, description: Sincerely,
+code: department, description: Access Services Department
+code: inform_you_item_below_type2, description: The following item(s) are overdue on your library account. 
+code: inform_you_item_below_type3, description: The following item(s) are long overdue on your library account. 
+code: inform_you_item_below_type4, description: FINAL NOTICE: The following item(s) are long overdue on your library account. 
+code: inform_you_item_below_type1, description: The following item(s) are overdue on your library account. 
+code: borrowed_by_you, description: borrowed by you
+code: decalred_as_lost, description: Please return or renew these item(s) as soon as possible.
+code: decalred_as_lost_type1, description: Please return or renew these item(s) as soon as possible.
+code: decalred_as_lost_type4, description: Please return or renew these item(s) as soon as possible.
+code: description, description: Description
+code: additional_info_1_type2, description: If not returned or renewed, these items will be declared lost and you will be billed for the cost of replacement. 
+code: additional_info_1_type4, description: These items will soon be declared lost and result in replacement fees and a blocked account.
+code: additional_info_1_type1, description: If not returned or renewed, these items will be declared lost and you will be billed for the cost of replacement. 
+code: additional_info_1, description: If not returned or renewed, these items will be declared lost and you will be billed for the cost of replacement. 
+code: decalred_as_lost_type2, description: Please return or renew these item(s) as soon as possible.
+code: inform_you_item_below, description: The following item(s) are overdue on your library account. 
+code: decalred_as_lost_type3, description: Please return or renew these item(s) as soon as possible.
+code: additional_info_1_type3, description: These items will soon be declared lost and result in replacement fees and a blocked account.
+code: Bcc, description: None
+code: Cc, description: None
+code: additional_info_1_type5, description: EMPTY_STRING
+code: additional_info_2, description: EMPTY_STRING
+code: additional_info_2_type1, description: EMPTY_STRING
+code: additional_info_2_type2, description: EMPTY_STRING
+code: additional_info_2_type3, description: EMPTY_STRING
+code: additional_info_2_type4, description: EMPTY_STRING
+code: additional_info_2_type5, description: EMPTY_STRING
+code: barcode, description: Barcode
+code: by, description: Author
+code: call_number, description: Call Number
+code: charged_with_fines_fees, description: Related Fees
+code: charged_with_fines_fees_type1, description: You will be charged the following Fines and Fees:
+code: charged_with_fines_fees_type2, description: You will be charged the following Fines and Fees:
+code: charged_with_fines_fees_type3, description: You will be charged the following Fines and Fees:
+code: charged_with_fines_fees_type4, description: You will be charged the following Fines and Fees:
+code: charged_with_fines_fees_type5, description: You will be charged the following Fines and Fees:
+code: dear, description: Dear Sir/Madam
+code: decalred_as_lost_type5, description: must be returned, otherwise they will be declared as lost.
+code: due_date, description: Due date
+code: fee_amount, description: Fee Amount
+code: fee_type, description: Fee Type
+code: inform_you_item_below_type5, description: This is to inform you that the items with the details below
+code: library, description: Library
+code: loan_date, description: Loan date
+code: lost_item, description: Title
+code: note, description: Note
+code: notification_profiles, description: Profiles
+code: notification_type, description: Notification Type
+code: overdue_notification_fee, description: Overdue Notification Fee:

@@ -1,0 +1,18 @@
+code: message, description: Nous aimerions vous rappeler que les exemplaires suivants à votre disposition doivent être retournés aujourd'hui :
+code: department, description: Service au public
+code: subject, description: Documents à rendre aujourd’hui
+code: letterName, description: Documents à rendre aujourd’hui
+code: sincerely, description: Cordialement
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: description, description: Description
+code: loans, description: Prêts
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: additional_info_1, description: EMPTY_STRING
+code: additional_info_2, description: EMPTY_STRING
+code: author, description: Auteur
+code: call_number, description: Cote
+code: due_date, description: Date de retour
+code: library, description: Bibliothèque
+code: location, description: Localisation
+code: title, description: Titre

@@ -1,0 +1,96 @@
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: additional_person_name, description: Nom supplémentaire
+code: addressFrom, description: Your.Department@organization.com
+code: affiliation, description: Affiliation
+code: apology_message, description: Message d'excuse
+code: applicant_name, description: Nom du demandeur
+code: article, description: Article
+code: assignee, description: Bénéficiaire
+code: author, description: Auteur
+code: author_initials, description: Initiales de l'auteur
+code: authority, description: Autorité
+code: basic_fee, description: Frais de base
+code: bib_auth, description: Autorité bibliographique
+code: bib_record_id, description: Identifiant de notice bibliographique
+code: bib_record_title, description: Titre
+code: bib_standard_number, description: Numéro standard
+code: bor_request_local_id, description: Numéro de la demande
+code: borrower_reference, description: Référence de l'emprunteur
+code: call_number, description: Cote
+code: chapter, description: Chapitre
+code: chapter_author, description: Auteur du chapitre
+code: chapter_title, description: Titre du chapitre
+code: copy, description: Copie
+code: copy_type, description: Type de copie
+code: create_date, description: Date de création
+code: date_needed_by, description: Nécessaire pour le
+code: delivery_address, description: Adresse de livraison
+code: doi, description: DOI
+code: edition, description: Édition
+code: editor, description: Éditeur
+code: end_page, description: Page de fin
+code: external_identifier, description: Identifiant externe
+code: format, description: Format
+code: from, description: Du
+code: isbn, description: ISBN
+code: issn, description: ISSN
+code: issue, description: Fascicule
+code: item_barcode, description: Code-barres exemplaire
+code: journal_title, description: Titre de revue
+code: lcc_number, description: LCCN
+code: lending_request_create_date, description: Date de la demande
+code: lending_request_local_id, description: Numéro de réception
+code: letterName, description: Lettre de PEB entrant
+code: level_of_service, description: Niveau de Service
+code: library, description: Bibliothèque
+code: loan, description: Prêt
+code: location, description: Localisation
+code: message_to_lender, description: Message au prêteur
+code: my_id, description: Mon identifiant
+code: nacsis_request_id, description: Identifiant de la demande
+code: note, description: Note
+code: oclc_number, description: Numéro OCLC
+code: page, description: Page
+code: pages, description: Pages
+code: part, description: Partie
+code: payment_type, description: Classe de paiement
+code: place_of_publication, description: Lieu de publication
+code: pmid, description: PMID
+code: publication_date, description: Date de publication
+code: publisher, description: Éditeur
+code: quantity, description: Quantité
+code: receive_date, description: Date d'arrivée
+code: receiving_library_address, description: Adresse de la bibliothèque destinataire
+code: registration_number, description: Numéro d'enregistrement
+code: request_note, description: Note de demande
+code: request_status, description: Statut de la demande
+code: request_type, description: Type de demande
+code: requested_date, description: Date de réception
+code: requester_email, description: E-mail du demandeur
+code: requesting_library, description: Bibliothèque demandeuse
+code: requesting_library_address, description: Adresse de la bibliothèque demandeuse
+code: resource_sharing_request_id, description: Identifiant de demande PEB interne
+code: return_date_bor, description: Date de retour pour l'emprunteur
+code: return_date_len, description: Date de retour pour le prêteur
+code: return_deadline, description: Date limite de retour
+code: series_title_number, description: Numéro de collection
+code: service_type, description: Type de demande
+code: shelving_location_for_item, description: Emplacement sur les rayons / Localisation
+code: shipping_costs, description: Coûts d'expédition
+code: shipping_date, description: Date d'expédition
+code: shipping_fee, description: Frais d'expédition
+code: shipping_method, description: Méthode d'expédition
+code: size, description: Taille
+code: slip_title, description: Lettre de transmission
+code: source, description: Source
+code: start_page, description: Page début
+code: subject, description: Avis de PEB entrant
+code: subtotal, description: Sous-total
+code: supplied_to, description: Fourni à
+code: total, description: Total
+code: unit_price, description: Prix unitaire
+code: update_date, description: Date de mise à jour
+code: volume, description: Volume
+code: volume_number, description: Nombre de volumes
+code: year, description: Année

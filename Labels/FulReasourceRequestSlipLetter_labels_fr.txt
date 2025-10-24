@@ -1,0 +1,52 @@
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: accession_number, description: Numéro d'entrée
+code: additional_id, description: Identifiant supplémentaire
+code: addressFrom, description: Your.Department@organization.com
+code: alt_call_number, description: Cote/s alternative/s
+code: call_number, description: Cote
+code: chron_i, description: Chronologie I
+code: chron_j, description: Chronologie J
+code: chron_k, description: Chronologie K
+code: chron_l, description: Chronologie L
+code: chron_m, description: Chronologie M
+code: copyId, description: Numéro d'exemplaire
+code: edition, description: Édition
+code: email, description: E-mail
+code: enum_a, description: Numérotation A
+code: enum_b, description: Numérotation B
+code: enum_c, description: Numérotation C
+code: enum_d, description: Numérotation D
+code: enum_e, description: Numérotation E
+code: enum_f, description: Numérotation F
+code: enum_g, description: Numérotation G
+code: enum_h, description: Numérotation H
+code: expiration_date, description: Date d'expiration
+code: external_id, description: Identifiant externe
+code: imprint, description: Publication
+code: inventory_number, description: Numéro/s d'inventaire
+code: isbn, description: ISBN
+code: issn, description: ISSN
+code: item_barcode, description: Code-barres exemplaire
+code: letterName, description: Lettre d'avis de demande de ressource
+code: location, description: Localisation
+code: manual_description_note, description: La description manuelle suivante a été spécifiée dans cette demande
+code: move_to_library, description: Destination
+code: note_item_specified_request, description: Veuillez noter : un exemplaire spécifique est spécifié dans cette demande
+code: parsedIssueLevelDescription, description: Fascicule analysé Niveau Description
+code: permanentLibrary, description: Bibliothèque
+code: permanentLocation, description: Emplacement permanent
+code: please_note, description: Veuillez noter
+code: proxy_requester, description: Proxy Demandeur
+code: request_date, description: Date de la demande
+code: request_id, description: Identifiant de la demande
+code: request_note, description: Note de demande
+code: request_type, description: Type de demande
+code: requested_for, description: Demandé pour
+code: resource_sharing_request_id, description: Identifiant de demande PEB interne
+code: shelving_location_for_item, description: Emplacement sur les rayons / Localisation
+code: shelving_locations_for_holding, description: La ressource n'a pas été trouvée dans les cotes de rangement suivantes.
+code: subject, description: Avis de demande de ressource
+code: supplied_to, description: Fourni à
+code: system_notes, description: Notes de système
+code: tel, description: Tél

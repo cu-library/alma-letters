@@ -1,0 +1,14 @@
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: Bcc, description: None
+code: Cc, description: None
+code: author, description: Author
+code: checkedInDate, description: Checked In Date
+code: header, description: Dear Sir/Madam,
+code: letterName, description: Lender Checked-in Email Letter
+code: note, description: Note
+code: request, description: This is to inform you that your Resource Sharing loaned item has been returned and checked-in at our library.
+code: requestId, description: Request ID
+code: signature, description: Sincerely
+code: subject, description: Lender Checked-in Email Letter
+code: supplyDate, description: Supply Date
+code: title, description: Title

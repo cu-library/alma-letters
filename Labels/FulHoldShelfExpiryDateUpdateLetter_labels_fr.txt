@@ -1,0 +1,14 @@
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: note_item_held_until, description: La date d'expiration de l'exemplaire a été mise à jour. Ce dernier vous sera réservé jusqu'au
+code: department, description: Banque de prêt
+code: circulation_desk, description: Bureau de prêt
+code: subject, description: Mise à jour de la date d'expiration de la réserve
+code: letterName, description: Mise à jour de la date d'expiration de la réserve
+code: sincerely, description: Cordialement
+code: Bcc, description: None
+code: Cc, description: None
+code: additional_id, description: Identifiant supplémentaire
+code: call_number, description: Cote
+code: can_picked_at, description: peut être retiré à l'emplacement suivant :
+code: following_item_requested_on, description: L'exemplaire suivant, que vous avez demandé le
+code: notes_affect_loan, description: Notes pouvant affecter le prêt

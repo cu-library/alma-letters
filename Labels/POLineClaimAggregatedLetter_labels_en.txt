@@ -1,0 +1,44 @@
+code: 490_series_statement, description: Series Statement
+code: 830_series_uniform_title, description: Series Uniform Title
+code: Bcc, description: None
+code: Cc, description: None
+code: addressFrom, description: Your.Department@organization.com
+code: alternate_complete_edition, description: Alternative Complete Edition
+code: alternate_creator, description: Alternative Creator
+code: alternate_publisher, description: Alternative Publisher
+code: alternate_title, description: Alternative Title
+code: andOthers, description: and Others
+code: attached_information_combined, description: Attached information shows ''{0}'' resources that have been ordered but not received / granted access to.
+code: author, description: Author
+code: claim, description: Claim
+code: currency, description: Currency
+code: delivery_type, description: Delivery Type
+code: department, description: Acquisitions Department
+code: expected_arrival_date, description: Expected Arrival Date
+code: identifier, description: Identifier
+code: item_description, description: Item Description
+code: last_item_details, description: Last item received details
+code: last_receive_item_description, description: Last Received Item Description
+code: last_received_date, description: Last Received Item Date
+code: letterName, description: Claim
+code: library_code, description: Library Code
+code: library_name, description: Library Name
+code: missing_issues, description: Missing Issues
+code: not_yet_activated, description: Not yet granted access to
+code: not_yet_arrived, description: Not yet arrived
+code: num_units_arrived, description: No. of Units Arrived
+code: num_units_ordered, description: No. of Units Ordered
+code: order_date, description: Order Date
+code: order_line_ref_num, description: Order Line Reference Number
+code: please_supply, description: Please supply the required resource/s or advise
+code: publication_date, description: Publication Date
+code: publication_place, description: Publication Place
+code: publisher, description: Publisher
+code: sincerely, description: Sincerely
+code: subject, description: Order Claim
+code: title, description: Title
+code: total_price, description: Total Price
+code: unit_price, description: Unit Price
+code: vendor_contact, description: Vendor Contact
+code: vendor_note, description: Vendor Note
+code: vendor_ref_num, description: Vendor Reference Number

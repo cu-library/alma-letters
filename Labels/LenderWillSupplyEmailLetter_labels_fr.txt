@@ -1,0 +1,16 @@
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: addressFrom, description: Your.Department@organization.com
+code: author, description: Auteur
+code: autoWillSupplyAvailable, description:  
+code: autoWillSupplyUnavailable, description: Votre demande sera satisfaite quand un exemplaire sera disponible. Le retour des exemplaires est prévu le {0}.
+code: header, description: Madame, Monsieur
+code: letterName, description: Lettre email Va fournir au prêteur
+code: note, description: Note
+code: reason, description: Raison Va fournir
+code: request, description: Veuillez noter que votre demande PEB sera traitée à une date ultérieure.
+code: requestDate, description: Date de la demande
+code: requestId, description: Identifiant de la demande
+code: signature, description: Cordialement
+code: subject, description: Lettre email Va fournir au prêteur
+code: title, description: Titre

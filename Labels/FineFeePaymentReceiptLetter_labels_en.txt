@@ -1,0 +1,18 @@
+code: sincerely, description: Sincerely,
+code: letterName, description: Payment Receipt
+code: subject, description: MacOdrum Library - Payment Receipt
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: department, description: Access Services Department
+code: Bcc, description: None
+code: Cc, description: None
+code: alternative_call_number, description: Item Call Number
+code: barcode, description: Barcode
+code: call_number, description: Call Number
+code: fee_type, description: Fee Type
+code: note, description: Note
+code: paid_amount, description: Paid Amount
+code: payment_date, description: Payment Date
+code: payment_method, description: Payment Method
+code: receipt_no, description: Receipt No
+code: total, description: Total
+code: transaction_id, description: Transaction ID

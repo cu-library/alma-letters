@@ -1,0 +1,14 @@
+code: receiveDate, description: Date de réception
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: header, description: Madame, Monsieur
+code: letterName, description: Lettre email de réception à l'emprunteur
+code: subject, description: Lettre email de réception à l'emprunteur
+code: signature, description: Cordialement
+code: request, description: Veuillez noter que la demande PEB suivante que vous avez déposée a été reçue dans notre bibliothèque le :
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: author, description: Auteur
+code: note, description: Note
+code: requestDate, description: Date de la demande
+code: requestId, description: Identifiant de la demande
+code: title, description: Titre

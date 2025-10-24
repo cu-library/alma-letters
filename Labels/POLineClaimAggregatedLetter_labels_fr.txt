@@ -1,0 +1,44 @@
+code: 490_series_statement, description: Mention de collection
+code: 830_series_uniform_title, description: Titre uniforme de collection
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: addressFrom, description: Your.Department@organization.com
+code: alternate_complete_edition, description: Édition complète alternative
+code: alternate_creator, description: Créateur alternatif
+code: alternate_publisher, description: Éditeur alternatif
+code: alternate_title, description: Titre alternatif
+code: andOthers, description: et autres
+code: attached_information_combined, description: Les informations jointes montrent "{0}" ressources commandées, mais qui n''ont pas été réceptionnée/auxquelles l''accès n''a pas été accordé.
+code: author, description: Auteur
+code: claim, description: Réclamer
+code: currency, description: Devise
+code: delivery_type, description: Type de livraison
+code: department, description: Département des acquisitions
+code: expected_arrival_date, description: Date d'arrivée prévue
+code: identifier, description: Identifiant
+code: item_description, description: Description d'exemplaire
+code: last_item_details, description: Détails du dernier exemplaire reçu
+code: last_receive_item_description, description: Description du dernier exemplaire reçu
+code: last_received_date, description: Date du dernier exemplaire reçu
+code: letterName, description: Réclamer
+code: library_code, description: Code de bibliothèque
+code: library_name, description: Nom de la bibliothèque
+code: missing_issues, description: Fascicules manquants
+code: not_yet_activated, description: Accès pas encore accordé
+code: not_yet_arrived, description: Pas encore arrivé
+code: num_units_arrived, description: Nbre d'unités arrivées
+code: num_units_ordered, description: Nbre d'unités commandées
+code: order_date, description: Date de commande
+code: order_line_ref_num, description: Numéro de référence de ligne de commande
+code: please_supply, description: Veuillez fournir la ou les ressources demandée(s) ou répondre
+code: publication_date, description: Date de publication
+code: publication_place, description: Lieu de publication
+code: publisher, description: Éditeur
+code: sincerely, description: Cordialement
+code: subject, description: Réclamer commande
+code: title, description: Titre
+code: total_price, description: Prix total
+code: unit_price, description: Prix unitaire
+code: vendor_contact, description: Contact fournisseur
+code: vendor_note, description: Note fournisseur
+code: vendor_ref_num, description: Numéro de référence du fournisseur

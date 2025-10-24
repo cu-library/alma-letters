@@ -1,0 +1,10 @@
+code: department, description: Votre département
+code: addressFrom, description: lspsupport@cunet.carleton.ca
+code: interestedUsersList, description: Liste des utilisateurs intéressés
+code: letterName, description: Liste d'utilisateurs intéressés
+code: orderNumber, description: Numéro de commande :
+code: sincerely, description: Cordialement
+code: subject, description: Liste d'utilisateurs intéressés
+code: title, description: Titre :
+code: userMail, description: E-mail de l'utilisateur
+code: userName, description: Nom d'utilisateur

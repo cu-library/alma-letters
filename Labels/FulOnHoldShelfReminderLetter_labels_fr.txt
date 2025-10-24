@@ -1,0 +1,18 @@
+code: letterName, description: Avis de rappel : Le(s) document demandé(s) est(sont) prêt à être récupéré(s)
+code: sincerely, description: Cordialement
+code: circulation_desk, description: Library Services Desk
+code: department, description: Département de circulation
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: can_picked_at, description: Peut être retiré auprès de :
+code: note_item_held_until, description: L'exemplaire sera réservé à votre nom jusqu'au
+code: subject, description: Avis de rappel : Le(s) document demandé(s) est(sont) prêt à être récupéré(s)
+code: Bcc, description: None
+code: Cc, description: None
+code: additional_id, description: Identifiant supplémentaire
+code: author, description: Auteur
+code: call_number, description: Cote
+code: following_items_awaiting_pickup, description: Veuillez noter que l'exemplaire ou les exemplaires que vous avez demandés indiqués ci-dessous sont en attente de retrait :
+code: message, description: Nous vous rappelons que la période de disponibilité au rayon des réservations touche à sa fin.
+code: notes_affect_loan, description: Notes pouvant affecter le prêt
+code: other_institutions, description: Exemplaires à retirer auprès d'autres institutions
+code: title, description: Titre

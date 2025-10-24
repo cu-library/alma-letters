@@ -1,0 +1,47 @@
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: additional_person_name, description: Nom supplémentaire
+code: article_or_chapter_title, description: Titre de l'article\\du chapitre
+code: author, description: Auteur
+code: author_initials, description: Initiales de l'auteur
+code: call_number, description: Cote
+code: chapter, description: Chapitre
+code: date, description: Date
+code: desired_due_date, description: Échéance souhaitée
+code: doi, description: DOI
+code: edition, description: Édition
+code: end_page, description: Page de fin
+code: format, description: Format
+code: header, description: Madame, Monsieur
+code: isbn, description: ISBN
+code: issn, description: ISSN
+code: issue, description: Fascicule
+code: journal_title, description: Titre de revue
+code: letterName, description: Demande de renouvellement de prêt d'une demande PEB
+code: maximum_fee, description: Frais maximum
+code: note, description: Note
+code: note_to_partner, description: Note au partenaire
+code: original_due_date, description: Date de retour d'origine
+code: pages, description: Pages
+code: part, description: Partie
+code: partner_address, description: Adresse du partenaire
+code: partner_email, description: Adresse électronique du partenaire
+code: place_of_publication, description: Lieu de publication
+code: pmid, description: PMID
+code: publication_date, description: Date de publication
+code: publisher, description: Éditeur
+code: receiving_date, description: Date de réception
+code: request_format, description: Format de la demande
+code: request_id, description: Identifiant de la demande
+code: request_note, description: Note de demande
+code: requested, description: Nous souhaiterions renouveler le prêt de la demande PEB suivante. Veuillez nous informer de la possibilité de renouvellement et à quelle date.
+code: requested_by, description: Ce qui suit est requis par
+code: series_title_number, description: Numéro de collection
+code: signature, description: Cordialement
+code: source, description: Source
+code: start_page, description: Page début
+code: subject, description: Demande de renouvellement d'une demande PEB (%reqId%)
+code: title, description: Titre
+code: volume, description: Volume
+code: year, description: Année

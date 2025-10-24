@@ -1,0 +1,19 @@
+code: department, description: Service au public
+code: sincerely, description: Cordialement
+code: subject, description: Lettre de reçu de prêt
+code: addressFrom, description: library.services@carleton.ca
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: author, description: Auteur
+code: dear, description: Madame, Monsieur
+code: delivered_to, description: Remis à
+code: description, description: Description
+code: due_date, description: Date de retour
+code: fine, description: Amende
+code: inform_loaned_items, description: Les documents suivants ont été empruntés à la bibliothèque au
+code: letterName, description: Lettre de reçu de prêt
+code: library, description: Bibliothèque
+code: loan_date, description: Date de prêt
+code: loans, description: Prêts :
+code: note, description: Note
+code: title, description: Titre

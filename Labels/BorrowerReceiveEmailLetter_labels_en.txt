@@ -1,0 +1,14 @@
+code: receiveDate, description: Date Received: 
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: header, description: Hi,
+code: letterName, description: Requested item received
+code: subject, description: Carleton University - Requested item received
+code: signature, description: Sincerely,
+code: request, description: We would like to inform you that we have received the item you supplied to our Resource Sharing request.
+code: Bcc, description: None
+code: Cc, description: None
+code: author, description: Author
+code: note, description: Note
+code: requestDate, description: Request Date
+code: requestId, description: Request ID
+code: title, description: Title

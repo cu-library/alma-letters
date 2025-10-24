@@ -1,0 +1,14 @@
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: header, description: Madame, Monsieur
+code: letterName, description: Lettre email de retour à l'emprunteur
+code: subject, description: Lettre email de retour à l'emprunteur
+code: request, description: Merci de votre attention. L'exemplaire prêté par votre institution lui a été rendu.
+code: signature, description: Cordialement
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: author, description: Auteur
+code: note, description: Note
+code: requestDate, description: Date de la demande
+code: requestId, description: Identifiant de la demande
+code: returnDate, description: Date de retour
+code: title, description: Titre

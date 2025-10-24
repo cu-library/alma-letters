@@ -1,0 +1,24 @@
+code: subject, description: Transit slip
+code: letterName, description: Transit Slip
+code: addressFrom, description: LSPsupport@cunet.carleton.ca
+code: Bcc, description: None
+code: Cc, description: None
+code: call_number, description: Call Number
+code: email, description: Email
+code: expiration_date, description: Expiration Date
+code: from, description: From
+code: item_barcode, description: Item Barcode
+code: material_type, description: Material Type
+code: owning_library, description: Owning Library
+code: print_date, description: Print Date
+code: request_date, description: Request Date
+code: request_id, description: Request ID
+code: request_note, description: Request Note
+code: requested_for, description: Requested For
+code: system_notes, description: System Notes
+code: tel, description: Tel
+code: to, description: To
+code: transfer_date, description: Transfer Date
+code: transfer_time, description: Transfer Time
+code: user_note, description: User Note
+code: we_are_transferring_item_below, description: We are transferring the item below

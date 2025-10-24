@@ -1,0 +1,6 @@
+code: subject, description: Rapport des amendes et frais
+code: letterName, description: Lettre de rapport des amendes et frais
+code: addressFrom, description: library.services@carleton.ca
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: message, description: Le rapport des amendes et frais est ci-joint.

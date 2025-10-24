@@ -1,0 +1,11 @@
+code: addressFrom, description: (null)
+code: bcc, description: None
+code: c.pa.email_body1, description: The digital files you have requested are now available for
+code: c.pa.email_body2, description: The content will be available for download for a week.
+code: c.pa.email_size, description: Size:
+code: cc, description: None
+code: department, description: Resource Management Department
+code: letterName, description: Download Representation Letter 
+code: link, description: download.
+code: sincerely, description: Sincerely
+code: subject, description: Download representation finished

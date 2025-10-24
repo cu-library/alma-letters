@@ -1,0 +1,4 @@
+code: addressFrom, description: alma@exlibrisgroup.com
+code: dear, description: Dear
+code: letterName, description: User Notifications (New Gen)
+code: subject, description: Notification From Alma

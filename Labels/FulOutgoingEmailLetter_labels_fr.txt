@@ -1,0 +1,47 @@
+code: requested_by, description: Ce qui suit est requis par
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: letterName, description: Matériel demandé
+code: header, description: Madame, Monsieur
+code: requested, description: Ce qui suit est requis pour votre bibliothèque
+code: signature, description: Cordialement
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: additional_person_name, description: Nom supplémentaire
+code: article_or_chapter_title, description: Titre de l'Article\\du Chapitre
+code: author, description: Auteur
+code: author_initials, description: Initiales de l'auteur
+code: call_number, description: Cote
+code: chapter, description: Chapitre
+code: chapter_author, description: Auteur du chapitre
+code: chapter_title, description: Titre du chapitre
+code: date, description: Date
+code: doi, description: DOI
+code: edition, description: Édition
+code: editor, description: Éditeur
+code: end_page, description: Page de fin
+code: format, description: Format
+code: isbn, description: ISBN
+code: issn, description: ISSN
+code: issue, description: Fascicule
+code: journal_title, description: Titre de revue
+code: level_of_service, description: Niveau de Service
+code: maximum_fee, description: Frais maximum
+code: note, description: Note
+code: pages, description: Pages
+code: part, description: Partie
+code: partner_address, description: Adresse du Partenaire
+code: partner_email, description: Adresse électronique du Partenaire
+code: place_of_publication, description: Lieu de publication
+code: pmid, description: PMID
+code: publication_date, description: Date de publication
+code: publisher, description: Éditeur
+code: request_format, description: Format de Demande
+code: request_id, description: Identifiant de la demande
+code: request_note, description: Note de demande
+code: series_title_number, description: Numéro de collection
+code: source, description: Source
+code: start_page, description: Page début
+code: subject, description: Matériel Requis (%reqId%)
+code: title, description: Titre
+code: volume, description: Volume
+code: year, description: Année

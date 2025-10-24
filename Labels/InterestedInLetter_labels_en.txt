@@ -1,0 +1,14 @@
+code: department, description: The Acquisitions Team (ERA)
+code: addressFrom, description: lspsupport@cunet.carleton.ca
+code: letterName, description: The title you requested is in the final stages of processing at the Library
+code: subject, description: The title you requested is in the final stages of processing at the Library
+code: You_were_specify, description: A title you recently requested is now being processed by the Acquisitions team. Electronic material can be accessed through Omni within 3 hours of receiving this message. Print material will take 3-5 days to process. If you have questions about your order, please contact
+code: Bcc, description: None
+code: Cc, description: None
+code: callNumber, description: Call Number
+code: message, description: Message
+code: mmsId, description: MMS ID
+code: orderNumber, description: Order Number:
+code: receivingNote, description: Receiving Note
+code: sincerely, description: Sincerely
+code: title, description: Title:

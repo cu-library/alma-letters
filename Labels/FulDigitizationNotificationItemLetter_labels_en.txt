@@ -1,0 +1,28 @@
+code: your_request, description: Attached is your digital copy of the material you requested.
+code: of, description: of
+code: sincerely, description: Sincerely,
+code: request_type_digitization, description: Request Type: Digitization
+code: department, description: Access Services Department
+code: subject, description: Digital Copy Request
+code: letterName, description: Digital Copy Request
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: citation_id, description: Citation ID
+code: the_request_relates, description: The request relates to external request id
+code: Bcc, description: None
+code: Cc, description: None
+code: attached_are_the_urls, description: Attached are the URLs for the digital resources
+code: borrowing_terms, description: Borrowing terms
+code: days, description: Days
+code: deliver_in, description: Deliver in
+code: due_date, description: Due Date
+code: file_not_uploaded_file_exists, description: The digitized file was not uploaded due to an existing file in the citation
+code: file_not_uploaded_general_error, description: Due to a general error, the file could not be uploaded to the citation
+code: file_not_uploaded_multiple_files, description: Because the digitization request contains multiple files, they could not be automatically uploaded to the citation
+code: file_uploaded, description: The digitized file was uploaded to the citation
+code: hours, description: Hours
+code: keep_for, description: Keep for
+code: material, description: Material
+code: price, description: Price
+code: reading_list_name, description: Reading List name
+code: request_creator, description: Request creator
+code: terms_of_use, description: Terms of use

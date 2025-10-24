@@ -1,0 +1,11 @@
+code: subject, description: MacOdrum Library - Courtesy Notice
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: Bcc, description: None
+code: Cc, description: None
+code: department, description: Circulation Department
+code: due_back, description: is due back at
+code: fine_policy, description: after which there will be a fine of
+code: letterName, description: Courtesy Notice
+code: per, description: per
+code: sincerely, description: Sincerely
+code: title, description: The item 

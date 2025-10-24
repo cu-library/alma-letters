@@ -1,0 +1,15 @@
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: addressFrom, description: Your.Department@organization.com
+code: author, description: Auteur
+code: due_date, description: Date de retour
+code: header, description: Madame, Monsieur
+code: letterName, description: Partage de ressources - Exemplaire rappelé
+code: old_due_date, description: Ancienne date de retour
+code: orignal_due_date, description: Date de retour d'origine
+code: recall_cancel_message, description: Le rappel de l'exemplaire suivant a été annulé et la date de retour d'origine a été rétablie.
+code: recall_message, description: L'exemplaire suivant a été rappelé. Veuillez retourner l'exemplaire d'ici la nouvelle date limite.
+code: request_id, description: Identifiant de demande :
+code: signature, description: Cordialement
+code: subject, description: Partage de ressources - Exemplaire rappelé
+code: title, description: Titre

@@ -6,6 +6,7 @@
 	<xsl:include href="footer.xsl"/>
 	<xsl:include href="style.xsl"/>
 	<xsl:include href="recordTitle.xsl"/>
+	<!-- INTERNAL NAME: FulPlaceOnHoldShelfLetter; Letter Editor calls it "On Hold Shelf Letter" -->
 	<!-- START AFN-VERSION 1.8 START Test if it's an EMAIL partner, if so terminate letter -->
 	<xsl:variable name="is_email_partner">
 		<xsl:if test="(notification_data/user_for_printing/user_group = 'NZILLUSER') or (notification_data/user/user_group = 'NZILLUSER') or (notification_data/request/user_group = 'NZILLUSER')">	

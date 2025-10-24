@@ -41,6 +41,5 @@
 	<xsl:template name="mainTableStyleCss">width:100%; text-align:left</xsl:template>
 	<xsl:template name="headerLogoStyleCss">background-color:#ffffff;  width:100%;</xsl:template>
 	<xsl:template name="headerTableStyleCss">background-color:#e9e9e9;  width:100%; height:30px; text-shadow:1px 1px 1px #fff;</xsl:template>
-	<xsl:template name="footerTableStyleCss">width:100%; font-weight:700; line-height:2em; font-size:100%;
-	</xsl:template>
+	<xsl:template name="footerTableStyleCss">width:100%; font-weight:700; line-height:2em; font-size:100%;</xsl:template>
 </xsl:stylesheet>

@@ -1,0 +1,17 @@
+code: signature, description: Cordialement
+code: header, description: Madame, Monsieur
+code: request, description: L'exemplaire demandé concernant la demande PEB suivante vous a été expédié.
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: address, description: Adresse
+code: addressFrom, description: Your.Department@organization.com
+code: author, description: Auteur
+code: format, description: Format
+code: letterName, description: Lettre email d'envoi au prêteur
+code: note, description: Note
+code: requestDate, description: Date de la demande
+code: requestId, description: Identifiant de la demande
+code: shippingDate, description: Date d'expédition
+code: shippingTOU, description: Conditions d'utilisation
+code: subject, description: Lettre email d'envoi au prêteur
+code: title, description: Titre

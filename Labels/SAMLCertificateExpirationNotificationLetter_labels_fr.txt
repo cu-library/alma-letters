@@ -1,0 +1,11 @@
+code: addressFrom, description: Your.Department@organization.com
+code: ADFS_recomendation, description: De plus, si votre institution utilise ADFS, nous vous recommandons de remplacer le certificat pour éviter toute complication
+code: author, description: Équipe d'administration système Alma
+code: expiry_reminder, description: Ceci est un rappel automatique pour vous indiquer que le certificat SAML code "{0}" utilisé par votre institution expirera le {1}
+code: further_questions, description: Si vous avez d'autres questions, veuillez envoyer un ticket à l'assistance
+code: greetings, description: Cher administrateur du système de bibliothèque
+code: letterName, description: Votre certificat SAML est sur le point d'expirer
+code: linked_instructions, description: Remplacer un certificat signé
+code: recomendation, description: Nous vous recommandons de contacter le département informatique de votre institution et, si nécessaire, de remplacer le certificat pour Alma et/ou Primo VE. En cas de remplacement du certificat, le processus doit être effectué en coordination avec votre IDP. Pour plus d'informations, voir
+code: sincerely, description: Cordialement
+code: subject, description: Avis d'expiration de certificat SAML

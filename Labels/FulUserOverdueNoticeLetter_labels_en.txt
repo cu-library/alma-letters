@@ -1,0 +1,18 @@
+code: message, description: We would like to remind you that the following items you have checked out are due today. Please login to your Library Account to renew items, providing there are no other holds, or return them to the library.
+code: department, description: Access Services Department
+code: subject, description: Library Item(s) Due Today
+code: letterName, description: Library Item(s) Due Today
+code: sincerely, description: Sincerely,
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: description, description: Description
+code: loans, description: Loans
+code: Bcc, description: None
+code: Cc, description: None
+code: additional_info_1, description: EMPTY_STRING
+code: additional_info_2, description: EMPTY_STRING
+code: author, description: Author
+code: call_number, description: Call Number
+code: due_date, description: Due Date
+code: library, description: Library
+code: location, description: Location
+code: title, description: Title

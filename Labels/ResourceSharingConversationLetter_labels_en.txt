@@ -1,0 +1,4 @@
+code: department, description: Resource Sharing Department
+code: letterName, description: Resource Sharing Conversation Letter
+code: signature, description: Sincerely
+code: subject, description: Resource Sharing Conversation

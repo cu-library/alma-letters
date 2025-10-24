@@ -1,0 +1,3 @@
+code: addressFrom, description: lspsupport@library.carleton.ca
+code: letterName, description: Notification de traitement système
+code: sincerely, description: Cordialement

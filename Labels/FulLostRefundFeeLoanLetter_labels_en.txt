@@ -1,0 +1,20 @@
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: Bcc, description: None
+code: Cc, description: None
+code: author, description: Author
+code: bellow_details_charges_credits_due, description: Bellow are the details of charges and credits due to this Loan
+code: department, description: Circulation Department
+code: due_date, description: Due date
+code: fee_amount, description: Fee Amount
+code: fee_type, description: Fee Type
+code: following_loaned_item_which_has, description: The following loaned item which has been previously declared as lost has been found
+code: letterName, description: Lost Item Replacement Fee Refund
+code: library, description: Library
+code: loan_date, description: Loan date
+code: loan_details, description: Loan Details
+code: note, description: Note
+code: sincerely, description: Sincerely
+code: subject, description: Lost Item Replacement Fee Refund
+code: title, description: Title
+code: total, description: Total
+code: your_account_balance_will_be_credited, description: According to library policies, your account balance will be credited

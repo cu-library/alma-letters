@@ -1,0 +1,9 @@
+code: Cc, description: None
+code: addressFrom, description: votre.département@organisation.com
+code: author, description: {0}
+code: greetings, description: Cher administrateur de la Zone Réseau
+code: letterName, description: Un membre demande à être libéré de la gestion du réseau.
+code: message_notice, description: {0} de {1} demande à ce que ''{2}'' soit libéré(e) de la configuration de ''{3}'' dans la gestion du réseau, le {4}. Si vous êtes d''accord, veuillez utiliser le processus d''arrêt de gestion du réseau dans le tableau de bord de configuration centrale du consortium au niveau de la Zone Réseau.
+code: message_notice_table, description: {0} de {1} demande à ce que ''{2}'' soit libéré(e) de la configuration dans la gestion du réseau, le {3}. Si vous êtes d''accord, veuillez utiliser le processus d''arrêt de gestion du réseau dans le tableau de bord de configuration centrale du consortium au niveau de la Zone Réseau.
+code: sincerely, description: Cordialement
+code: subject, description: {0} demande à ce que ''{1}'' soit libéré(e) de la gestion centralisée {2}

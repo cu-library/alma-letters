@@ -1,0 +1,3 @@
+code: subject, description: Attribué à l'information
+code: addressFrom, description: libcirc@library.carleton.ca
+code: letterName, description: Attribuer à

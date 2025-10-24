@@ -1,0 +1,45 @@
+code: we_cancel_y_req_of, description: Nous avons annulé la demande suivante
+code: reason_deleting_request, description: Motif de suppression de la demande
+code: department, description: Service au public
+code: letterName, description: Lettre d'annulation de la demande
+code: subject, description: Annulation de la demande
+code: addressFrom, description:  library.services@carleton.ca
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: additional_person_name, description: Nom supplémentaire
+code: author, description: Auteur
+code: author_initials, description: Initiales de l'auteur
+code: call_number, description: Cote
+code: chapter, description: Chapitre
+code: detailed_below, description: Détaillé ci-dessous
+code: doi, description: DOI
+code: edition, description: Édition
+code: end_page, description: Page de fin
+code: end_time, description: Heure de fin
+code: identifier, description: Identifiant
+code: isbn, description: ISBN
+code: issn, description: ISSN
+code: issue, description: Fascicule
+code: journal_title, description: Titre de revue
+code: lccn, description: LCCN
+code: manual_description_note, description: La description manuelle suivante a été spécifiée dans cette demande
+code: note, description: Note
+code: oclc_nr, description: Numéro OCLC
+code: on, description: Sur
+code: pages, description: Pages
+code: part, description: Partie
+code: place_of_publication, description: Lieu de publication
+code: please_note, description: Veuillez noter
+code: pmid, description: PMID
+code: publication_date, description: Date de publication
+code: publisher, description: Éditeur
+code: reason_unfilled, description: Motif de rejet
+code: request_cancellation_note, description: Note d'annulation
+code: request_note, description: Note de demande
+code: series_title_number, description: Numéro de collection
+code: sincerely, description: Cordialement
+code: source, description: Source
+code: start_page, description: Page de début
+code: start_time, description: Heure de début
+code: title, description: Titre
+code: volume, description: Volume

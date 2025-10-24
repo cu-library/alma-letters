@@ -1,0 +1,72 @@
+code: signature, description: Sincerely,
+code: returned, description: The following item has been returned and is now being forwarded to you.
+code: addressFrom, description: InterLibraryLoans@cunet.carleton.ca
+code: Bcc, description: None
+code: Cc, description: None
+code: address, description: Shipping Address
+code: affiliation, description: Affiliation
+code: apology_message, description: Apology message
+code: applicant_name, description: Applicant Name
+code: arrival_date, description: Arrival Date
+code: article, description: Article
+code: author, description: Author
+code: authority, description: Authority
+code: basic_fee, description: Basic Fee
+code: bib_auth, description: Bibliographic Authority
+code: bib_record_id, description: Bibliographic Record ID
+code: bib_record_title, description: Title
+code: bib_standard_number, description: Standard Number
+code: bor_request_local_id, description: Request Number
+code: call_number, description: Call Number
+code: copy, description: Copy
+code: copy_type, description: Copy Type
+code: create_date, description: Create Date
+code: delivery_address, description: Delivery Address
+code: email, description: Email
+code: from, description: From
+code: issue, description: Issue
+code: journal_title, description: Journal Title
+code: lending_request_create_date, description: Request Date
+code: lending_request_local_id, description: Reception Number
+code: letterName, description: Resource Sharing Return Slip Letter
+code: loan, description: Loan
+code: message_to_lender, description: Message to lender
+code: nacsis_request_id, description: Request ID
+code: note_to_partner, description: Note to Partner
+code: page, description: Page
+code: payment_type, description: Payment Class
+code: phone, description: Phone
+code: pod_id, description: Pod ID
+code: pod_name, description: Pod Name
+code: quantity, description: Quantity
+code: receive_date, description: Arrival Date
+code: receiving_library_address, description: Receiving Library Address
+code: registration_number, description: Registration Number
+code: request_id, description: Request ID
+code: request_status, description: Request Status
+code: request_type, description: Request Type
+code: requested_date, description: Reception Date
+code: requesting_library, description: Requesting Library
+code: requesting_library_address, description: Requesting Library Address
+code: required_return_date, description: Required Return Date
+code: return_date_bor, description: Return Date Borrower
+code: return_date_len, description: Return Date Lender
+code: return_deadline, description: Return Deadline
+code: returned_to, description: Returned to
+code: service_type, description: Request Type
+code: shipping_costs, description: Shipping Costs
+code: shipping_date, description: Shipping Date
+code: shipping_fee, description: Shipping Fee
+code: shipping_method, description: Shipping Method
+code: size, description: Size
+code: slip_title, description: Letter of Transmittal
+code: source, description: Source
+code: subject, description: Resource Sharing Return Slip Letter
+code: subtotal, description: Subtotal
+code: title, description: Title
+code: total, description: Total
+code: unit_price, description: Unit Price
+code: update_date, description: Update Date
+code: volume, description: Volume
+code: volume_number, description: Volume Number
+code: year, description: Year

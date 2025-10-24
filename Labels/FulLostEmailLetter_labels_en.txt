@@ -1,0 +1,47 @@
+code: signature, description: Sincerely,
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: header, description: Hi,
+code: item_reported_lost, description: Unfortunately one of the items from your institution has been reported as lost. 
+code: Bcc, description: None
+code: Cc, description: None
+code: additional_person_name, description: Additional Person Name
+code: article_or_chapter_title, description: Article\\Chapter Title
+code: author, description: Author
+code: author_initials, description: Author Initials
+code: call_number, description: Call Number
+code: chapter, description: Chapter
+code: date, description: Date
+code: desired_due_date, description: Desired due date
+code: doi, description: DOI
+code: edition, description: Edition
+code: end_page, description: End Page
+code: format, description: Format
+code: isbn, description: ISBN
+code: issn, description: ISSN
+code: issue, description: Issue
+code: journal_title, description: Journal Title
+code: letterName, description: Report of a Lost Resource Sharing Item
+code: maximum_fee, description: Maximum Fee
+code: note, description: Note
+code: note_to_partner, description: Note to partner
+code: original_due_date, description: Original due date
+code: pages, description: Pages
+code: part, description: Part
+code: partner_address, description: Partner's Address
+code: partner_email, description: Partner's Email
+code: place_of_publication, description: Place of Publication
+code: pmid, description: PMID
+code: publication_date, description: Publication Date
+code: publisher, description: Publisher
+code: receiving_date, description: Receiving date
+code: request_format, description: Request Format
+code: request_id, description: Request ID
+code: request_note, description: Request Note
+code: requested_by, description: The following is needed by
+code: series_title_number, description: Series Title Number
+code: source, description: Source
+code: start_page, description: Start Page
+code: subject, description: Report of a Lost Resource Sharing Item (%reqId%)
+code: title, description: Title
+code: volume, description: Volume
+code: year, description: Year

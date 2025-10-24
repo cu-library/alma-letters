@@ -1,0 +1,27 @@
+code: letterName, description: Library Login Credentials Update
+code: subject, description: MacOdrum Library - Library Login Credentials Change
+code: Sincerely, description: Sincerely,
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: Bcc, description: None
+code: Cc, description: None
+code: Dear, description: Dear Sir/Madam
+code: Line_1, description: Your password has been changed to: 
+code: Line_10, description: empty
+code: Line_11, description: empty
+code: Line_12, description: empty
+code: Line_13, description: empty
+code: Line_14, description: empty
+code: Line_15, description: empty
+code: Line_16, description: empty
+code: Line_17, description: empty
+code: Line_18, description: empty
+code: Line_19, description: empty
+code: Line_2, description: You may change your password in your next login.
+code: Line_20, description: empty
+code: Line_3, description: empty
+code: Line_4, description: empty
+code: Line_5, description: empty
+code: Line_6, description: empty
+code: Line_7, description: empty
+code: Line_8, description: empty
+code: Line_9, description: empty

@@ -1,0 +1,6 @@
+code: subject, description: MacOdrum Library - Fines And Fees Report
+code: letterName, description: Fines And Fees Report
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: Bcc, description: None
+code: Cc, description: None
+code: message, description: The fines and fees report is attached.

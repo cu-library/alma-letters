@@ -1,0 +1,53 @@
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: subject, description: Document(s) en retard
+code: letterName, description: Document(s) en retard
+code: sincerely, description: Cordialement
+code: department, description: Banque de prêt
+code: inform_you_item_below_type2, description: Nous vous informons que les documents décrits ci-dessous
+code: inform_you_item_below_type3, description: Nous vous informons que les documents décrits ci-dessous
+code: inform_you_item_below_type4, description: Nous vous informons que les documents décrits ci-dessous
+code: inform_you_item_below_type1, description: Nous vous informons que les documents décrits ci-dessous
+code: borrowed_by_you, description: que vous avez empruntés
+code: decalred_as_lost, description: doivent être retournés, dans le cas contraire ils seront déclarés perdus.
+code: decalred_as_lost_type1, description: doivent être retournés, dans le cas contraire ils seront déclarés perdus.
+code: decalred_as_lost_type4, description: doivent être retournés, dans le cas contraire ils seront déclarés perdus.
+code: description, description: Description
+code: additional_info_1_type2, description: EMPTY_STRING
+code: additional_info_1_type4, description: EMPTY_STRING
+code: additional_info_1_type1, description: EMPTY_STRING
+code: additional_info_1, description: EMPTY_STRING
+code: decalred_as_lost_type2, description: doivent être retournés, dans le cas contraire ils seront déclarés perdus.
+code: inform_you_item_below, description: Nous vous informons que les documents décrits ci-dessous
+code: decalred_as_lost_type3, description: doivent être retournés, dans le cas contraire ils seront déclarés perdus.
+code: additional_info_1_type3, description: EMPTY_STRING
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: additional_info_1_type5, description: EMPTY_STRING
+code: additional_info_2, description: EMPTY_STRING
+code: additional_info_2_type1, description: EMPTY_STRING
+code: additional_info_2_type2, description: EMPTY_STRING
+code: additional_info_2_type3, description: EMPTY_STRING
+code: additional_info_2_type4, description: EMPTY_STRING
+code: additional_info_2_type5, description: EMPTY_STRING
+code: barcode, description: Code-barres
+code: by, description: Auteur
+code: call_number, description: Cote
+code: charged_with_fines_fees, description: Nous vous demandons de vous acquitter des frais et amendes suivantes :
+code: charged_with_fines_fees_type1, description: Nous vous demandons de vous acquitter des frais et amendes suivantes :
+code: charged_with_fines_fees_type2, description: Nous vous demandons de vous acquitter des frais et amendes suivantes :
+code: charged_with_fines_fees_type3, description: Nous vous demandons de vous acquitter des frais et amendes suivantes :
+code: charged_with_fines_fees_type4, description: Nous vous demandons de vous acquitter des frais et amendes suivantes :
+code: charged_with_fines_fees_type5, description: Nous vous demandons de vous acquitter des frais et amendes suivantes :
+code: dear, description: Madame, Monsieur
+code: decalred_as_lost_type5, description: doivent être retournés, dans le cas contraire ils seront déclarés perdus.
+code: due_date, description: Date de retour
+code: fee_amount, description: Montant des frais
+code: fee_type, description: Type de frais
+code: inform_you_item_below_type5, description: Nous vous informons que les documents décrits ci-dessous
+code: library, description: Bibliothèque
+code: loan_date, description: Date de prêt
+code: lost_item, description: Exemplaire perdu
+code: note, description: Note
+code: notification_profiles, description: Profils
+code: notification_type, description: Type de notification
+code: overdue_notification_fee, description: Frais d'avis de retard :

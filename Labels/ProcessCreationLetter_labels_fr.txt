@@ -1,0 +1,6 @@
+code: addressFrom, description: Your.Department@organization.com
+code: department, description: Service au public
+code: letterName, description: Création de processus
+code: process_created, description: Le processus a été créé et planifié
+code: sincerely, description: Cordialement
+code: subject, description: moteur de création de processus

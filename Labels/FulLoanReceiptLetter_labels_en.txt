@@ -1,0 +1,19 @@
+code: department, description: Access Services Department
+code: sincerely, description: Sincerely,
+code: subject, description: MacOdrum Library - Loan Receipt Letter
+code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: Bcc, description: None
+code: Cc, description: None
+code: author, description: Author
+code: dear, description: Dear Sir/Madam
+code: delivered_to, description: Delivered to
+code: description, description: Description
+code: due_date, description: Due date
+code: fine, description: Fine
+code: inform_loaned_items, description: The following items have been loaned from the library at the 
+code: letterName, description: Loan Receipt Letter
+code: library, description: Library
+code: loan_date, description: Loan date
+code: loans, description: Loans:
+code: note, description: Note
+code: title, description: Title

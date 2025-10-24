@@ -1,0 +1,11 @@
+code: addressFrom, description: (null)
+code: bcc, description: Aucun
+code: c.pa.email_body1, description: Les fichiers numériques que vous avez demandés sont désormais disponibles pour
+code: c.pa.email_body2, description: Le contenu pourra être téléchargé pendant une semaine.
+code: c.pa.email_size, description: Taille :
+code: cc, description: Aucun
+code: department, description: Département de gestion des ressources
+code: letterName, description: Traitement de téléchargement de fichier
+code: link, description: télécharger.
+code: sincerely, description: Cordialement
+code: subject, description: Traitement de téléchargement de fichiers terminé

@@ -1,0 +1,25 @@
+code: addressFrom, description: Your.Department@organization.com
+code: subject, description: Facture d'exemplaire perdu
+code: inform_you_item_below, description: Nous souhaitons vous informer que l'exemplaire détaillé ci-dessous
+code: borrowed_by_you, description: Emprunté par vous
+code: decalred_as_lost, description: a été déclaré perdu
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: additional_info_1, description: EMPTY_STRING
+code: additional_info_2, description: EMPTY_STRING
+code: barcode, description: Code-barres
+code: by, description: Auteur
+code: call_number, description: Cote
+code: charged_with_fines_fees, description: Vous devrez payer les amendes et frais suivants :
+code: dear, description: Madame, Monsieur
+code: department, description: Service au public
+code: description, description: Description
+code: due_date, description: Date de retour prévue
+code: fee_amount, description: Montant des frais
+code: fee_type, description: Type de frais
+code: letterName, description: Facture d'exemplaire perdu
+code: library, description: Bibliothèque
+code: loan_date, description: Date de prêt
+code: lost_item, description: Exemplaire perdu
+code: note, description: Note
+code: sincerely, description: Cordialement

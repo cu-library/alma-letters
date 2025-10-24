@@ -1,0 +1,16 @@
+code: Bcc, description: None
+code: Cc, description: None
+code: addressFrom, description: Your.Department@organization.com
+code: author, description: Author
+code: autoWillSupplyAvailable, description:  
+code: autoWillSupplyUnavailable, description: Your request will be supplied when an item becomes available, items are due back on {0}.
+code: header, description: Dear Sir/Madam,
+code: letterName, description: Lender Will Supply Email Letter
+code: note, description: Note
+code: reason, description: Will Supply Reason
+code: request, description: Please be advised that your Resource Sharing request will be supplied at a later date.
+code: requestDate, description: Request Date
+code: requestId, description: Request ID
+code: signature, description: Sincerely
+code: subject, description: Lender Will Supply Email Letter
+code: title, description: Title

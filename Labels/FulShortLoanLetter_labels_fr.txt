@@ -1,0 +1,11 @@
+code: subject, description: Lettre de courtoisie
+code: addressFrom, description: LibCirc@cunet.carleton.ca
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: department, description: Service au public
+code: due_back, description: doit être rendu à
+code: fine_policy, description: après quoi s'appliquera une amende d'un montant de
+code: letterName, description: Lettre de courtoisie
+code: per, description: par
+code: sincerely, description: Cordialement
+code: title, description: Le document

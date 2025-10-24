@@ -1,0 +1,16 @@
+code: subject, description: Carleton University - Overdue Item
+code: letterName, description: Carleton University - Overdue Item
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: orignal_due_date, description: Due date
+code: signature, description: Sincerely,
+code: overdue_message, description: We are reaching out about the following overdue item:
+code: Bcc, description: None
+code: Cc, description: None
+code: author, description: Author
+code: needed_by_date, description: Needed by Date
+code: request_date, description: Request Date
+code: request_id, description: Request ID
+code: request_info, description: Request information
+code: return_message, description: Please return the item as soon as possible.
+code: supplied_date, description: Supplied Date
+code: title, description: Title

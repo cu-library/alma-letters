@@ -1,0 +1,35 @@
+code: sincerely, description: Cordialement
+code: dear, description: Madame, Monsieur
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: department, description: Service au public
+code: debt_of, description: vous avez accumulé des amendes/frais de bibliothèque de
+code: line1, description: Article
+code: line3, description: Ligne3
+code: please_settle, description: Les amendes impayées à la bibliothèque affectent votre capacité à recevoir votre diplôme après l'obtention de votre diplôme. Veuillez payer les amendes de votre bibliothèque le plus tôt possible.
+code: we_would_like, description: Nous tenons à vous rappeler qu'à
+code: line13, description: Ligne13
+code: letterName, description: Amendes/Frais/Facture de Carleton University
+code: subject, description: Amendes/Frais/Facture de Carleton University
+code: line2, description: Please see details below:
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: fee_amount, description: Montant des frais
+code: fee_type, description: Type de frais
+code: fine_fee_notification_fee, description: Notification de frais- Frais de gestion :
+code: line10, description: Ligne10
+code: line11, description: Ligne11
+code: line12, description: Ligne12
+code: line14, description: Ligne14
+code: line15, description: Ligne15
+code: line16, description: Ligne16
+code: line17, description: Ligne17
+code: line18, description: Ligne18
+code: line19, description: Ligne19
+code: line20, description: Ligne20
+code: line4, description: Ligne4
+code: line5, description: Ligne5
+code: line6, description: Ligne6
+code: line7, description: Ligne7
+code: line8, description: Ligne8
+code: line9, description: Ligne9
+code: note, description: Note

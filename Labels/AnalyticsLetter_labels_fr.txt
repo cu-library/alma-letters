@@ -1,0 +1,4 @@
+code: letterName, description: E-mail automatique Analytics
+code: addressFrom, description: lspsupport@library.carleton.ca
+code: letterText, description: Veuillez trouver ci-joint le rapport Analytics auquel vous êtes abonné :
+code: deepLinkLetterText, description: Consultez ici le rapport Analytics auquel vous êtes abonné :
