@@ -62,7 +62,7 @@
 											</tr>
 											<tr>
 											    <td>
-											<p>For questions about your MyCarletonOne account, please <a href="https://carleton.ca/its/help-centre/accounts-and-passwords/">consult the ITS help page</a> or <a href="https://carleton.ca/its/contact/">contact the ITS Service Desk</a>. The library does not manage MyCarletonOne accounts and cannot assist with password changes.</p>
+											<p>For questions about your MyCarletonOne account, please <a href="https://carleton.ca/its/help-centre/accounts-and-passwords/">consult the ITS help page</a> or <a href="https://itsjira.carleton.ca/servicedesk/customer/portal/5">contact the ITS Service Desk</a>. The library does not manage MyCarletonOne accounts and cannot assist with password changes.</p>
 										</td>
 									</tr>
 								</table>

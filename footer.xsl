@@ -84,7 +84,7 @@
     	You can return the items at the MacOdrum Library or at any university in Ontario.
     	</xsl:if>
 		<xsl:if test="(string-length($is_any_ill_loan) > 0)">
-    	You can return the items at the MacOdrum Library.
+    	If you have already requested renewal, you will receive a separate message to tell you if that was successful or not. It may take a few days for us to hear back from the lending library.<br /><br />You can return your items at the MacOdrum Library.
     	</xsl:if>
 	</xsl:template>
 	<!-- END OF Carleton contact templates -->

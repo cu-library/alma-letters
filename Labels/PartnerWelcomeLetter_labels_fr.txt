@@ -1,0 +1,19 @@
+code: additional_info_1, description: Ce compte permet de rechercher et de soumettre des demandes à partir des collections prêtables de la bibliothèque. Les mises à jour concernant les demandes seront envoyées par e-mail.
+code: additional_info_2, description: Connexion via la fonction Découverte de la bibliothèque
+code: additional_info_3, description: Une fois connecté, accédez au service de partage de ressources, faites votre recherche dans la découverte, puis envoyez les demandes.
+code: additional_info_4, description: EMPTY_STRING
+code: additional_info_5, description: EMPTY_STRING
+code: additional_info_6, description: EMPTY_STRING
+code: addressFrom, description: Your.Department@organization.com
+code: bcc, description: None
+code: cc, description: None
+code: closing_message, description: Nous vous remercions d'avoir utilisé le service de partage de ressources de la bibliothèque.
+code: department, description: Département de prêt
+code: letterName, description: Lettre de bienvenue au partenaire
+code: library_homepage, description: Page d'accueil de la bibliothèque
+code: library_homepage_link, description: EMPTY_STRING
+code: sincerely, description: Cordialement
+code: subject, description: Confirmation de création du compte du partenaire de bibliothèque
+code: user_id, description: Voici votre identifiant d'utilisateur
+code: user_password, description: Voici votre mot de passe
+code: welcome_message, description: Un compte permettant d'accéder au service de partage de ressources de prêt de notre bibliothèque a été créé.

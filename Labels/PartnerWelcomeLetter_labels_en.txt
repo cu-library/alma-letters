@@ -1,0 +1,19 @@
+code: additional_info_1, description: This account enables discovery and submission of requests from the lendable collections in the library. Updates about the requests will be sent via email.
+code: additional_info_2, description: Login via the library’s Discovery
+code: additional_info_3, description: Once logged in, access the resource sharing service, search the discovery and then place requests.
+code: additional_info_4, description: EMPTY_STRING
+code: additional_info_5, description: EMPTY_STRING
+code: additional_info_6, description: EMPTY_STRING
+code: addressFrom, description: Your.Department@organization.com
+code: bcc, description: None
+code: cc, description: None
+code: closing_message, description: Thank you for using the library resource sharing service.
+code: department, description: Circulation Department
+code: letterName, description: Partner Welcome Letter
+code: library_homepage, description: Library Homepage
+code: library_homepage_link, description: EMPTY_STRING
+code: sincerely, description: Sincerely
+code: subject, description: Confirmation of Library Partner Account Creation
+code: user_id, description: This is your user ID
+code: user_password, description: This is your password
+code: welcome_message, description: An account has been created for use of accessing our library’s lending resource sharing service.
