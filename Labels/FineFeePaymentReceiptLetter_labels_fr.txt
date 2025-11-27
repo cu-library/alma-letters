@@ -3,16 +3,16 @@ code: letterName, description: Reçu
 code: subject, description: MacOdrum Library - Reçu
 code: addressFrom, description: libraryservices@cunet.carleton.ca
 code: department, description: Service au public
-code: Bcc, description: Aucun
-code: Cc, description: Aucun
-code: alternative_call_number, description: Cote d’exemplaire
+code: receipt_no, description: N° de reçu
+code: fee_type, description: Type de frais
+code: payment_date, description: Date de paiement
+code: paid_amount, description: Montant acquitté
+code: payment_method, description: Méthode de paiement
+code: transaction_id, description: Identifiant de transaction
 code: barcode, description: Code-barres
 code: call_number, description: Cote
-code: fee_type, description: Type de frais
+code: alternative_call_number, description: Cote d’exemplaire
 code: note, description: Note
-code: paid_amount, description: Montant acquitté
-code: payment_date, description: Date de paiement
-code: payment_method, description: Méthode de paiement
-code: receipt_no, description: N° de reçu
 code: total, description: Total
-code: transaction_id, description: Identifiant de transaction
+code: Cc, description: Aucun
+code: Bcc, description: Aucun
