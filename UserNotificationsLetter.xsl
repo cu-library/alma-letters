@@ -62,7 +62,7 @@
 											</tr>
 											<tr>
 											    <td>
-											<p>For questions about your MyCarletonOne account, please <a href="https://carleton.ca/its/help-centre/accounts-and-passwords/">consult the ITS help page</a> or <a href="https://itsjira.carleton.ca/servicedesk/customer/portal/5">contact the ITS Service Desk</a>. The library does not manage MyCarletonOne accounts and cannot assist with password changes.</p>
+											<p>For questions about your MyCarletonOne account, please <xsl:call-template name="ITSAccountHelp" /> or <xsl:call-template name="ITSServiceDesk" />. The library does not manage MyCarletonOne accounts and cannot assist with password changes.</p>
 										</td>
 									</tr>
 								</table>
@@ -87,8 +87,7 @@
 										<td>
 											<p>Due to a system issue, your MacOdrum Library login credentials have been reset. 
 											Your login barcode is: <strong><xsl:value-of select="/notification_data/receivers/receiver/user/user_name"/></strong></p>
-											<p>Please <a href="https://ocul-crl.alma.exlibrisgroup.com//view/resetPw?institutionCode=01OCUL_CRL">reset your password</a>, 
-											using this barcode as your User ID. The barcode and new password will be your Omni credentials going forward.</p>
+											<p>Please <xsl:call-template name="resetPW" />, using this barcode as your User ID. The barcode and new password will be your Omni credentials going forward.</p>
 											<p>We apologize for the inconvenience.</p>
 										</td>
 									</tr>

@@ -30,42 +30,70 @@
 			</tr>
 		</table>
 	</xsl:template>
+
 	<!-- Carleton contact templates; keeping each on one line prevents awkward spaces after -->
-	<xsl:template name="AskALibrarian">Need research help or assistance with your account? We're here to help! <a href="https://library.carleton.ca/help">Ask a Librarian</a>
-	</xsl:template>
-	<xsl:template name="openingHours">
-		<a href="https://library.carleton.ca/hours">opening hours</a>
-	</xsl:template>
-	<xsl:template name="libraryServicesEmail">
-		<a href="mailto:libraryservices@cunet.carleton.ca"> LibraryServices@cunet.carleton.ca</a>
-	</xsl:template>
-	<xsl:template name="libraryServicesPhone">613-520-2600 x2734</xsl:template>
-	<xsl:template name="libraryAccessibilityEmail">
-		<a href="mailto:LibraryAccessibility@cunet.carleton.ca">LibraryAccessibility@cunet.carleton.ca</a>
-	</xsl:template>
-	<xsl:template name="ILLemail">
-		<a href="mailto:interlibraryloans@cunet.carleton.ca">InterlibraryLoans@cunet.carleton.ca</a>
-	</xsl:template>
-	<xsl:template name="ILLphone">613-520-2732</xsl:template>
-	<!-- Guelph is using OGU for their code, which is the LAC code... just following suit until we hear otherwise. -->
-	<xsl:template name="ILLLibraryCode">OOCC</xsl:template>
-	<xsl:template name="curbsideLink">
-		<a href="https://library.carleton.ca/services/borrowing/requesting-items#curbside">curbside service</a>
-	</xsl:template>
+
 	<xsl:template name="accountLogin">
 		<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">log in to your library account</a>
 	</xsl:template>
-	<xsl:template name="overdueItemsAndFines">
-		<a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>
+	
+	<xsl:template name="bookOrderRequests">
+	    <a href="mailto:acqorders@cunet.carleton.ca">acqorders@cunet.carleton.ca</a>
 	</xsl:template>
+	
+	<xsl:template name="curbsideLink">
+		<a href="https://library.carleton.ca/services/borrowing/requesting-items#curbside">curbside service</a>
+	</xsl:template>
+	
+	<xsl:template name="ILLemail">
+		<a href="mailto:interlibraryloans@cunet.carleton.ca">InterlibraryLoans@cunet.carleton.ca</a>
+	</xsl:template>
+	
+	<!-- Guelph is using OGU for their code, which is the LAC code... just following suit until we hear otherwise. -->
+	<xsl:template name="ILLLibraryCode">OOCC</xsl:template>
+	
+	<xsl:template name="ILLphone">613-520-2732</xsl:template>
+	
+	<xsl:template name="ITSAccountHelp">
+	    <a href="https://carleton.ca/its/help-centre/accounts-and-passwords/">consult the ITS help page</a>
+	</xsl:template>
+	
+	<xsl:template name="ITSServiceDesk">
+	    <a href="https://itsjira.carleton.ca/servicedesk/customer/portal/5">contact the ITS Service Desk</a>
+	</xsl:template>
+	
+	<xsl:template name="libraryAccessibilityEmail">
+		<a href="mailto:LibraryAccessibility@cunet.carleton.ca">LibraryAccessibility@cunet.carleton.ca</a>
+	</xsl:template>
+	
+	<xsl:template name="libraryServicesEmail">
+		<a href="mailto:libraryservices@cunet.carleton.ca"> LibraryServices@cunet.carleton.ca</a>
+	</xsl:template>
+	
+	<xsl:template name="libraryServicesPhone">613-520-2600 x2734</xsl:template>
+	
 	<!-- counts number of items in a notification letter -->
 	<xsl:variable name="numOfNotificationItems">
 		<xsl:value-of select="count(notification_data/item_loans/item_loan)"/>
 	</xsl:variable>
+	
+	<xsl:template name="openingHours">
+		<a href="https://library.carleton.ca/hours">opening hours</a>
+	</xsl:template>
+
+	<xsl:template name="overdueItemsAndFines">
+		<a href="https://library.carleton.ca/services/borrowing/overdue-fines-lost-or-damaged-materials">Overdue Items and Fines</a>
+	</xsl:template>
+	
+	<xsl:template name="resetPW">
+	    <a href="https://ocul-crl.alma.exlibrisgroup.com//view/resetPw?institutionCode=01OCUL_CRL">reset your password</a>
+	</xsl:template>
+	
 	<!-- variable checks if the loan is an ILL loan (may catch AFN items also, so be careful)-->
 	<xsl:variable name="is_ill_loan">
 		<xsl:if test="(notification_data/display_list/overdue_and_lost_loan_notification_display/physical_item_display_for_printing/library_code = 'RES_SHARE')">TRUE</xsl:if>
 	</xsl:variable>
+	
 	<!-- are any of a number of loans ILL loans? -->
 	<xsl:variable name="is_any_ill_loan">
 		<xsl:for-each select="notification_data/display_list/overdue_and_lost_loan_notification_display/physical_item_display_for_printing">
@@ -78,6 +106,7 @@
 			<xsl:if test="(library_code = 'RES_SHARE')">TRUE</xsl:if>
 		</xsl:for-each>
 	</xsl:variable>
+	
 	<!-- Template using the above variable to ask patron to return intems to MacOdrum only (if any of the items are ILL) -->
 	<xsl:template name="ILLreturnLibrary">
 		<xsl:if test="(string-length($is_any_ill_loan) = 0)">
@@ -87,7 +116,9 @@
     	If you have already requested renewal, you will receive a separate message to tell you if that was successful or not. It may take a few days for us to hear back from the lending library.<br /><br />You can return your items at the MacOdrum Library.
     	</xsl:if>
 	</xsl:template>
+	
 	<!-- END OF Carleton contact templates -->
+	
 	<!-- AFN CODE -->
 	<!-- create an OCUL AFN language specific variable for contact link text -->
 	<!-- Alex note: adding a space after "contact us:"/"nous contacter:" makes the link not extend to a leading blank space :) -->

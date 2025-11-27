@@ -35,7 +35,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 				<br />
 				<xsl:call-template name="toWhomIsConcerned" /> <!-- mailReason.xsl -->
-					@@You_were_specify@@ <a href="mailto:acqorders@cunet.carleton.ca">acqorders@cunet.carleton.ca</a>.
+					@@You_were_specify@@ <xsl:call-template name="bookOrderRequests" />.
 				<br />
 				<table role='presentation'  cellspacing="0" cellpadding="5" border="0">
 				<tr>

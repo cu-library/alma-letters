@@ -108,12 +108,6 @@
 									Carleton University Library
 								</td>
 							</tr>
-							<tr>
-								<td>
-									Looking for additional materials that were not in our library?
-									Try requesting them through our <a href="https://library.carleton.ca/services/interlibrary-loans">Resource Sharing</a>!
-								</td>
-							</tr>
 						</table>
 					</div>
 				</div>

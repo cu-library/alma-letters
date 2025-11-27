@@ -40,8 +40,7 @@
 							</tr>
 							<tr>
 								<td>
-									For more information please visit your
-									<a href="https://ocul-crl.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_CRL:CRL_DEFAULT">Library Account</a>.
+									For more information, please <xsl:call-template name="accountLogin" />.
 								</td>
 							</tr>
 							<tr>
@@ -54,12 +53,6 @@
 									Access Services Department
 									<br />
 									Carleton University Library
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Need research help or assistance with your account? We're here to help!
-									<a href="https://library.carleton.ca/help">Ask a Librarian</a>
 								</td>
 							</tr>
 						</table>
