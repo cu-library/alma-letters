@@ -28,54 +28,56 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
-						<xsl:call-template name="toWhomIsConcerned"/>
-						<!-- mailReason.xsl -->
-						<table role='presentation' style="padding: 5px;">
+						<table>
+						    <tr>
+						        <td>Hello,</td>
+						    </tr>
+						</table>
+						<table>
 							<tr>
 								<td>
-									@@overdue_message@@
+									We are reaching out about the following overdue item:
 								</td>
 							</tr>
 						</table>
-						<table role='presentation' style="padding: 5px;">
+						<table>
 							<xsl:attribute name="style">
 								<xsl:call-template name="listStyleCss"/>
 							</xsl:attribute>
 							<tr>
 								<td>
-									<strong>@@request_id@@: </strong>
+									<strong>Request ID: </strong>
 									<xsl:value-of select="notification_data/request/external_request_id"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong>@@title@@: </strong>
+									<strong>Title: </strong>
 									<xsl:value-of select="notification_data/request/display/title"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong> @@request_date@@: </strong>
+									<strong>Request date: </strong>
 									<xsl:value-of select="notification_data/request/create_date"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong>@@orignal_due_date@@:</strong> <xsl:value-of select="notification_data/request/due_date"/>
+									<strong>Due date: </strong> <xsl:value-of select="notification_data/request/due_date"/>
 								</td>
 							</tr>
 						</table>
-						<br/>
-						<table role='presentation' style="padding: 5px;">
+						<table>
 							<tr>
 								<td>
-									@@return_message@@
+									Please return the item as soon as possible.
 								</td>
 							</tr>
 						</table>
-						<table style="padding: 5px;">
+						<table>
 							<tr>
-								<td>@@signature@@</td>
+								<td>Sincerely,</td>
 							</tr>
 						</table>
 						<!-- footer.xsl -->

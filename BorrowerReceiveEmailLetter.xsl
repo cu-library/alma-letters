@@ -26,70 +26,71 @@
 				</xsl:attribute>
 				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
-				<table role='presentation'>
+				<table>
 					<tr>
 						<td>
-							@@header@@
+							Hello,
 						</td>
 					</tr>
 				</table>
 				<div class="messageArea">
 					<div class="messageBody">
-						<table role='presentation'>
+						<table>
 							<tr>
 								<td>
-									@@request@@
+									 We would like to inform you that we have received the item you supplied to us.
 							    </td>
 							</tr>
 						</table>
-						<br/>
-						<table role='presentation'>
+						<table>
 							<xsl:attribute name="style">
 								<xsl:call-template name="listStyleCss"/>
 								<!-- style.xsl -->
 							</xsl:attribute>
 							<tr>
+								<td>
+									<strong>Request date: </strong>
+									<xsl:value-of select="notification_data/request/create_date_str"/>
+								</td>
+							</tr>
+							<tr>
 							    <td>
-							        <strong>@@receiveDate@@</strong><xsl:value-of select="notification_data/item_arrival_date"/>
+							        <strong>Date received: </strong><xsl:value-of select="notification_data/item_arrival_date"/>
 							    </td>
 							</tr>
 							<tr>
 								<td>
-									<strong> @@requestId@@: </strong>
+									<strong>Request ID: </strong>
 									<xsl:value-of select="notification_data/request/external_request_id"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong> @@title@@: </strong>
+									<strong>Title: </strong>
 									<xsl:value-of select="notification_data/request/display/title"/>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									<strong> @@author@@: </strong>
-									<xsl:value-of select="notification_data/request/display/author"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<strong> @@requestDate@@: </strong>
-									<xsl:value-of select="notification_data/request/create_date_str"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<br/>
-									<strong> @@note@@: </strong>
-									<xsl:value-of select="notification_data/note_to_partner"/>
-								</td>
-							</tr>
+							<xsl:if test="notification_data/request/display/author != ''">
+    							<tr>
+    								<td>
+    									<strong>Author: </strong>
+    									<xsl:value-of select="notification_data/request/display/author"/>
+    								</td>
+    							</tr>
+    						</xsl:if>
+                            <xsl:if test="notification_data/note_to_partner != ''">
+    							<tr>
+    							    <td>
+    							        <br/>
+    							        <strong>Note: </strong>
+    									<xsl:value-of select="notification_data/note_to_partner"/>
+    							    </td>
+    							</tr>
+    						</xsl:if>
 						</table>
-						<br/>
-						<br/>
-						<table role='presentation'>
+						<table>
 							<tr>
-								<td>@@signature@@</td>
+								<td>Sincerely,</td>
 							</tr>
 						</table>
 					</div>
