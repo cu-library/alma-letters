@@ -1,4 +1,6 @@
 code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: letterName, description: Signalement d'un Exemplaire PEB endommagé
+code: subject, description: Signalement d'un Exemplaire PEB endommagé (%reqId%)
 code: Bcc, description: Aucun
 code: Cc, description: Aucun
 code: additional_person_name, description: Nom supplémentaire
@@ -19,7 +21,6 @@ code: issn, description: ISSN
 code: issue, description: Fascicule
 code: item_reported_damaged, description: Nous souhaitons vous informer que l'exemplaire de la demande PEB suivante a été signalé comme étant endommagé.
 code: journal_title, description: Titre de journal
-code: letterName, description: Signalement d'un Exemplaire PEB endommagé
 code: maximum_fee, description: Frais maximum
 code: note, description: Note
 code: note_to_partner, description: Note au partenaire
@@ -41,7 +42,6 @@ code: series_title_number, description: Numéro de collection
 code: signature, description: Cordialement
 code: source, description: Source
 code: start_page, description: Page de début
-code: subject, description: Signalement d'un Exemplaire PEB endommagé (%reqId%)
 code: title, description: Titre
 code: volume, description: Volume
 code: year, description: Année

@@ -1,4 +1,6 @@
 code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: letterName, description: Damaged Resource Sharing Item
+code: subject, description: Damaged Resource Sharing Item (%reqId%)
 code: Bcc, description: None
 code: Cc, description: None
 code: additional_person_name, description: Additional Person Name
@@ -19,7 +21,6 @@ code: issn, description: ISSN
 code: issue, description: Issue
 code: item_reported_damaged, description: We would like to inform you that the item of the following resource sharing request has been reported damaged.
 code: journal_title, description: Journal Title
-code: letterName, description: Report of a Damaged Resource Sharing Item
 code: maximum_fee, description: Maximum Fee
 code: note, description: Note
 code: note_to_partner, description: Note to partner
@@ -41,7 +42,6 @@ code: series_title_number, description: Series Title Number
 code: signature, description: Sincerely
 code: source, description: Source
 code: start_page, description: Start Page
-code: subject, description: Report of a Damaged Resource Sharing Item (%reqId%)
 code: title, description: Title
 code: volume, description: Volume
 code: year, description: Year

@@ -2,6 +2,8 @@ code: signature, description: Sincerely,
 code: addressFrom, description: interlibraryloans@cunet.carleton.ca
 code: header, description: Hi,
 code: item_reported_lost, description: Unfortunately one of the items from your institution has been reported as lost. 
+code: letterName, description: Lost Resource Sharing Item
+code: subject, description: Lost Resource Sharing Item (%reqId%)
 code: Bcc, description: None
 code: Cc, description: None
 code: additional_person_name, description: Additional Person Name
@@ -20,7 +22,6 @@ code: isbn, description: ISBN
 code: issn, description: ISSN
 code: issue, description: Issue
 code: journal_title, description: Journal Title
-code: letterName, description: Report of a Lost Resource Sharing Item
 code: maximum_fee, description: Maximum Fee
 code: note, description: Note
 code: note_to_partner, description: Note to partner
@@ -41,7 +42,6 @@ code: requested_by, description: The following is needed by
 code: series_title_number, description: Series Title Number
 code: source, description: Source
 code: start_page, description: Start Page
-code: subject, description: Report of a Lost Resource Sharing Item (%reqId%)
 code: title, description: Title
 code: volume, description: Volume
 code: year, description: Year

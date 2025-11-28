@@ -37,14 +37,14 @@
 								<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
 									<!-- handle AFN French fr -->
 									<br/>
-									<table cellspacing="0" cellpadding="5" border="0">
+									<table>
 										<tr>
 											<td>
 												<h>Pour éviter les frais indiqués, veuillez retourner le document (ou les documents) suivant(s) à votre bibliothèque. Une fois le(s) document(s) retourné(s), les frais correspondants seront supprimés de votre compte.</h>
 											</td>
 										</tr>
 									</table>
-									<table cellpadding="5" class="listing">
+									<table class="listing">
 										<xsl:attribute name="style">
 											<xsl:call-template name="mainTableStyleCss"/>
 											<!-- style.xsl -->
@@ -52,7 +52,7 @@
 										<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
 											<tr>
 												<td>
-													<table cellpadding="5" class="listing">
+													<table class="listing">
 														<xsl:attribute name="style">
 															<xsl:call-template name="mainTableStyleCss"/>
 														</xsl:attribute>
@@ -145,14 +145,14 @@
 								<xsl:otherwise>
 									<!-- handle AFN default language en -->
 									<br/>
-									<table cellspacing="0" cellpadding="5" border="0">
+									<table>
 										<tr>
 											<td>
 												<h>To avoid incurring the indicated fees, please return the following item(s) to your library. When an item is returned, associated fees will be removed from your account.</h>
 											</td>
 										</tr>
 									</table>
-									<table cellpadding="5" class="listing">
+									<table class="listing">
 										<xsl:attribute name="style">
 											<xsl:call-template name="mainTableStyleCss"/>
 											<!-- style.xsl -->
@@ -160,7 +160,7 @@
 										<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
 											<tr>
 												<td>
-													<table cellpadding="5" class="listing">
+													<table class="listing">
 														<xsl:attribute name="style">
 															<xsl:call-template name="mainTableStyleCss"/>
 														</xsl:attribute>
@@ -229,24 +229,19 @@
 							<!-- Carleton letter -->
 							<xsl:call-template name="toWhomIsConcerned"/>
 							<!-- mailReason.xsl -->
-							<table role="presentation" cellspacing="0" cellpadding="5" border="0">
+							<table>
 								<tr>
 									<td>
-										Some of the materials you have checked out are now overdue.
-									</td>
-								</tr>
-								<tr>
-									<td>
-										If you still need them, please <xsl:call-template name="accountLogin"/> to renew them, or reach out to us and we'll see what we can do. We will not be able to renew the item if another library user has requested it.
-									</td>
-								</tr>
-								<tr>
-									<td>
-									    <xsl:call-template name="ILLreturnLibrary"/>
+									    <p>Some of the materials you have checked out are now overdue.</p>
+									    <p>
+										If you still need them, please <xsl:call-template name="accountLogin"/> to renew them, 
+										or reach out to us and we'll see what we can do. We will not be able to renew the item if 
+										another library user has requested it.</p>
+										<xsl:call-template name="ILLreturnLibrary"/>
 									</td>
 								</tr>
 							</table>
-							<table cellpadding="5" class="listing">
+							<table class="listing">
 								<xsl:attribute name="style">
 									<xsl:call-template name="mainTableStyleCss"/>
 									<!-- style.xsl -->
@@ -254,7 +249,7 @@
 								<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
 									<tr>
 										<td>
-											<table cellpadding="5" class="listing">
+											<table class="listing">
 												<xsl:attribute name="style">
 													<xsl:call-template name="mainTableStyleCss"/>
 												</xsl:attribute>
@@ -266,11 +261,11 @@
 													</td>
 												</tr>
 												<tr>
-													<th>@@lost_item@@</th>
-													<th>@@description@@</th>
-													<th>@@due_date@@</th>
-													<th>@@barcode@@</th>
-													<th>@@call_number@@</th>
+													<th>Title</th>
+													<th><!--Description column--></th>
+													<th>Due date</th>
+													<th>Barcode</th>
+													<th>Call number</th>
 												</tr>
 												<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display">
 													<tr>
@@ -300,7 +295,7 @@
 								<xsl:if test="notification_data/overdue_notification_fee_amount/sum !=''">
 									<tr>
 										<td>
-											<b>@@overdue_notification_fee@@</b>
+											<strong>Overdue notification fee:</strong>
 											<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum"/>
 											<xsl:value-of select="notification_data/overdue_notification_fee_amount/currency"/>
 											<xsl:value-of select="ff"/>
@@ -312,15 +307,15 @@
 							<table>
 								<tr>
 									<td>
-									@@sincerely@@
-								</td>
+									Sincerely,
+								    </td>
 								</tr>
 								<tr>
 									<td>
-									@@department@@
-									<br/>
-									Carleton University Library
-								</td>
+    									Access Services Department
+    									<br/>
+    									Carleton University Library
+    								</td>
 								</tr>
 							</table>
 						</xsl:otherwise>

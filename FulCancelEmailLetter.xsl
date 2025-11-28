@@ -29,13 +29,13 @@
 				<table role='presentation'>
 					<tr>
 						<td>
-							@@header@@
+							Hello,
 						</td>
 					</tr>
 				</table>
 				<div class="messageArea">
 					<div class="messageBody">
-						<table role='presentation'>
+						<table>
 							<!--COMMENTING THIS OUT; not sure why it matters what date this was needed by if we're cancelling the request. 
 							<xsl:choose>
 								<xsl:when test="notification_data/request/needed_by !=''">
@@ -62,10 +62,10 @@
 							<!-- Putting in the "otherwise" choice from above instead. -->
 							<tr>
 								<td>
-									@@requested@@
+									We would like to cancel the following resource sharing request, sent to you on
 								</td>
 								<td>
-									<xsl:value-of select="notification_data/request_sending_date"/>
+									<xsl:value-of select="notification_data/request_sending_date"/>.
 								</td>
 							</tr>
 						</table>
@@ -75,14 +75,14 @@
 							</xsl:attribute>
 							<tr>
 								<td>
-									<strong> @@format@@:  </strong>
+									<strong>Format: </strong>
 									<xsl:value-of select="notification_data/request/display/material_type"/>
 								</td>
 							</tr>
 							<xsl:if test="notification_data/request/display/title !=''">
 								<tr>
 									<td>
-										<strong> @@title@@: </strong>
+										<strong>Title: </strong>
 										<xsl:value-of select="notification_data/request/display/title"/>
 									</td>
 								</tr>
@@ -90,7 +90,7 @@
 							<xsl:if test="notification_data/request/display/journal_title !=''">
 								<tr>
 									<td>
-										<strong> @@journal_title@@: </strong>
+										<strong>Journal title: </strong>
 										<xsl:value-of select="notification_data/request/display/journal_title"/>
 									</td>
 								</tr>
@@ -98,23 +98,15 @@
 							<xsl:if test="notification_data/request/display/author !=''">
 								<tr>
 									<td>
-										<strong> @@author@@: </strong>
+										<strong>Author: </strong>
 										<xsl:value-of select="notification_data/request/display/author"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/request/display/autho_initials !=''">
-								<tr>
-									<td>
-										<strong> @@author_initials@@: </strong>
-										<xsl:value-of select="notification_data/request/display/autho_initials"/>
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/publisher !=''">
 								<tr>
 									<td>
-										<strong> @@publisher@@: </strong>
+										<strong>Publisher: </strong>
 										<xsl:value-of select="notification_data/request/display/publisher"/>
 									</td>
 								</tr>
@@ -122,7 +114,7 @@
 							<xsl:if test="notification_data/request/display/place_of_publication !=''">
 								<tr>
 									<td>
-										<strong> @@place_of_publication@@: </strong>
+										<strong>Place of publication: </strong>
 										<xsl:value-of select="notification_data/request/display/place_of_publication"/>
 									</td>
 								</tr>
@@ -130,7 +122,7 @@
 							<xsl:if test="notification_data/request/display/date !=''">
 								<tr>
 									<td>
-										<strong> @@publication_date@@: </strong>
+										<strong>Publication date: </strong>
 										<xsl:value-of select="notification_data/request/display/date"/>
 									</td>
 								</tr>
@@ -138,7 +130,7 @@
 							<xsl:if test="notification_data/request/display/year !=''">
 								<tr>
 									<td>
-										<strong> @@year@@: </strong>
+										<strong>Year: </strong>
 										<xsl:value-of select="notification_data/request/display/year"/>
 									</td>
 								</tr>
@@ -146,23 +138,15 @@
 							<xsl:if test="notification_data/request/display/edition !=''">
 								<tr>
 									<td>
-										<strong> @@edition@@: </strong>
+										<strong>Edition: </strong>
 										<xsl:value-of select="notification_data/request/display/edition"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/request/display/call_number !=''">
-								<tr>
-									<td>
-										<strong> @@call_number@@: </strong>
-										<xsl:value-of select="notification_data/request/display/call_number"/>
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/volume !=''">
 								<tr>
 									<td>
-										<strong> @@volume@@: </strong>
+										<strong>Volume: </strong>
 										<xsl:value-of select="notification_data/request/display/volume"/>
 									</td>
 								</tr>
@@ -170,23 +154,15 @@
 							<xsl:if test="notification_data/request/display/issue !=''">
 								<tr>
 									<td>
-										<strong> @@issue@@: </strong>
+										<strong>Issue: </strong>
 										<xsl:value-of select="notification_data/request/display/issue"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/request/display/additional_person_name !=''">
-								<tr>
-									<td>
-										<strong> @@additional_person_name@@: </strong>
-										<xsl:value-of select="notification_data/request/display/additional_person_name"/>
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/source !=''">
 								<tr>
 									<td>
-										<strong> @@source@@: </strong>
+										<strong>Source: </strong>
 										<xsl:value-of select="notification_data/request/display/source"/>
 									</td>
 								</tr>
@@ -194,7 +170,7 @@
 							<xsl:if test="notification_data/request/display/series_title_number !=''">
 								<tr>
 									<td>
-										<strong> @@series_title_number@@: </strong>
+										<strong>Series title number: </strong>
 										<xsl:value-of select="notification_data/request/display/series_title_number"/>
 									</td>
 								</tr>
@@ -202,7 +178,7 @@
 							<xsl:if test="notification_data/request/display/isbn !=''">
 								<tr>
 									<td>
-										<strong> @@isbn@@: </strong>
+										<strong>ISBN: </strong>
 										<xsl:value-of select="notification_data/request/display/isbn"/>
 									</td>
 								</tr>
@@ -210,7 +186,7 @@
 							<xsl:if test="notification_data/request/display/issn !=''">
 								<tr>
 									<td>
-										<strong> @@issn@@: </strong>
+										<strong>ISSN: </strong>
 										<xsl:value-of select="notification_data/request/display/issn"/>
 									</td>
 								</tr>
@@ -218,7 +194,7 @@
 							<xsl:if test="notification_data/request/display/doi !=''">
 								<tr>
 									<td>
-										<strong> @@doi@@: </strong>
+										<strong>DOI: </strong>
 										<xsl:value-of select="notification_data/request/display/doi"/>
 									</td>
 								</tr>
@@ -226,7 +202,7 @@
 							<xsl:if test="notification_data/request/display/pmid !=''">
 								<tr>
 									<td>
-										<strong> @@pmid@@: </strong>
+										<strong>PMID: </strong>
 										<xsl:value-of select="notification_data/request/display/pmid"/>
 									</td>
 								</tr>
@@ -234,7 +210,7 @@
 							<xsl:if test="notification_data/request/display/note !=''">
 								<tr>
 									<td>
-										<strong> @@note@@: </strong>
+										<strong>Note: </strong>
 										<xsl:value-of select="notification_data/request/display/note"/>
 									</td>
 								</tr>
@@ -242,7 +218,7 @@
 							<xsl:if test="notification_data/request/display/chapter !=''">
 								<tr>
 									<td>
-										<strong> @@chapter@@: </strong>
+										<strong>Chapter: </strong>
 										<xsl:value-of select="notification_data/request/display/chapter"/>
 									</td>
 								</tr>
@@ -250,7 +226,7 @@
 							<xsl:if test="notification_data/request/display/volume_bk !=''">
 								<tr>
 									<td>
-										<strong> @@volume@@: </strong>
+										<strong>Volume: </strong>
 										<xsl:value-of select="notification_data/request/display/volume_bk"/>
 									</td>
 								</tr>
@@ -258,7 +234,7 @@
 							<xsl:if test="notification_data/request/display/part !=''">
 								<tr>
 									<td>
-										<strong> @@part@@: </strong>
+										<strong>Part: </strong>
 										<xsl:value-of select="notification_data/request/display/part"/>
 									</td>
 								</tr>
@@ -266,7 +242,7 @@
 							<xsl:if test="notification_data/request/display/pages !=''">
 								<tr>
 									<td>
-										<strong> @@pages@@: </strong>
+										<strong>Pages: </strong>
 										<xsl:value-of select="notification_data/request/display/pages"/>
 									</td>
 								</tr>
@@ -274,7 +250,7 @@
 							<xsl:if test="notification_data/request/display/start_page !=''">
 								<tr>
 									<td>
-										<strong> @@start_page@@: </strong>
+										<strong>Start page: </strong>
 										<xsl:value-of select="notification_data/request/display/start_page"/>
 									</td>
 								</tr>
@@ -282,7 +258,7 @@
 							<xsl:if test="notification_data/request/display/end_page !=''">
 								<tr>
 									<td>
-										<strong> @@end_page@@: </strong>
+										<strong>End page: </strong>
 										<xsl:value-of select="notification_data/request/display/end_page"/>
 									</td>
 								</tr>
@@ -290,30 +266,22 @@
 							<xsl:if test="notification_data/request/note !=''">
 								<tr>
 									<td>
-										<strong> @@request_note@@: </strong>
+										<strong>Request note: </strong>
 										<xsl:value-of select="notification_data/request/note"/>
 									</td>
 								</tr>
 							</xsl:if>
-							<!-- WHY WOULD WE NEED TODAY'S DATE WITHIN THE METADATA FOR THE REQUEST
-							<tr>
-								<td>
-									<strong> @@date@@: </strong>
-									<xsl:value-of select="notification_data/general_data/current_date"/>
-								</td>
-							</tr>
-							-->
 							<xsl:if test="notification_data/request/external_request_id !=''">
 								<tr>
 									<td>
-										<strong> @@request_id@@: </strong>
+										<strong>Request ID: </strong>
 										<xsl:value-of select="notification_data/request/external_request_id"/>
 									</td>
 								</tr>
 							</xsl:if>
 							<tr>
 								<td>
-									<strong> @@request_format@@: </strong>
+									<strong>Request format: </strong>
 									<xsl:value-of select="notification_data/request/format_display"/>
 								</td>
 							</tr>
@@ -322,95 +290,21 @@
 							<xsl:if test="notification_data/note_to_partner !=''">
     							<tr>
     								<td>
-    									<strong> @@note_to_partner@@: </strong>
+    									<strong>Note from ILL department: </strong>
     									<xsl:value-of select="notification_data/note_to_partner"/>
     								</td>
     							</tr>
 							</xsl:if>
-							<xsl:choose>
-								<xsl:when test="notification_data/request/max_fee !=''">
-									<tr>
-										<td>
-											<strong>@@maximum_fee@@: </strong>
-											<xsl:value-of select="notification_data/request/max_fee"/>
-										</td>
-									</tr>
-								</xsl:when>
-							</xsl:choose>
 						</table>
 						<br/>
-						<table role='presentation'>
-							<tr>
-								<td>@@signature@@,</td>
-							</tr>
-						</table>
 						<table>
 							<tr>
-								<td>
-									<xsl:value-of select="notification_data/library/name"/>
-								</td>
+								<td>Sincerely,</td>
 							</tr>
-							<xsl:if test="notification_data/library/address/line1 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line1"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line2 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line2"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line3 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line3"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line4 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line4"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line5 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line5"/>
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/city !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/city"/>
-										<!-- AFN-VERSION 1.0 START -->
-										<xsl:if test="notification_data/library/address/state_province !=''">											
-                                        , <xsl:value-of select="notification_data/library/address/state_province"/>
-										</xsl:if>
-										<xsl:if test="notification_data/library/address/postal_code !=''">											
-                                        , <xsl:value-of select="notification_data/library/address/postal_code"/>
-										</xsl:if>
-										<!-- AFN-VERSION 1.0 END -->
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/country !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/country"/>
-									</td>
-								</tr>
-							</xsl:if>
 						</table>
 					</div>
 				</div>
-				<xsl:call-template name="lastFooter"/>
+				<xsl:call-template name="ILLFooterPeerToPeer"/>
 				<!-- footer.xsl -->
 			</body>
 		</html>

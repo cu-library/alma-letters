@@ -1059,6 +1059,7 @@
 		</table>
 	</xsl:template>
 	<!-- END OF Carleton ILL footer PATRONS -->
+	
 	<!-- Carleton ILL footer PEER-TO-PEER -->
 	<xsl:template name="ILLFooterPeerToPeer">
 		<table class="new">

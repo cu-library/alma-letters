@@ -1,49 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0"
-xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:include href="header.xsl" />
-	<xsl:include href="senderReceiver.xsl" />
-	<xsl:include href="mailReason.xsl" />
-	<xsl:include href="footer.xsl" />
-	<xsl:include href="style.xsl" />
-	<xsl:include href="recordTitle.xsl" />
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:include href="header.xsl"/>
+	<xsl:include href="senderReceiver.xsl"/>
+	<xsl:include href="mailReason.xsl"/>
+	<xsl:include href="footer.xsl"/>
+	<xsl:include href="style.xsl"/>
+	<xsl:include href="recordTitle.xsl"/>
 	<xsl:template match="/">
 		<html>
 			<head>
-				<xsl:call-template name="generalStyle" />
+				<xsl:call-template name="generalStyle"/>
 			</head>
 			<body>
 				<xsl:attribute name="style">
-					<xsl:call-template name="bodyStyleCss" />
+					<xsl:call-template name="bodyStyleCss"/>
 					<!-- style.xsl -->
 				</xsl:attribute>
-				<xsl:call-template name="head" />
+				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
-
-				<table cellspacing="0" cellpadding="5" border="0">
+				<table>
 					<tr>
 						<td>
-							@@header@@
+							Hello,
 						</td>
 					</tr>
 				</table>
-
 				<div class="messageArea">
 					<div class="messageBody">
-						<table cellspacing="0" cellpadding="5" border="0">
+						<table>
 							<tr>
-									<td>
+								<td>
 										@@item_reported_lost@@
 									</td>
 							</tr>
 						</table>
 						<table cellspacing="0" cellpadding="5" border="0">
-
 							<xsl:attribute name="style">
-								<xsl:call-template name="listStyleCss" />
+								<xsl:call-template name="listStyleCss"/>
 								<!-- style.xsl -->
 							</xsl:attribute>
-
 							<tr>
 								<td>
 									<b>Request Information:</b>
@@ -52,15 +47,15 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 							<tr>
 								<td>
 									<b> @@request_id@@: </b>
-									<xsl:value-of select="notification_data/request/external_request_id" />
+									<xsl:value-of select="notification_data/request/external_request_id"/>
 									<!-- recordTitle.xsl -->
-									</td>
+								</td>
 							</tr>
 							<xsl:if test="notification_data/request/display/title !=''">
 								<tr>
 									<td>
 										<b> @@title@@: </b>
-										<xsl:value-of select="notification_data/request/display/title" />
+										<xsl:value-of select="notification_data/request/display/title"/>
 										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
@@ -69,7 +64,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 								<tr>
 									<td>
 										<b> @@journal_title@@: </b>
-										<xsl:value-of select="notification_data/request/display/journal_title" />
+										<xsl:value-of select="notification_data/request/display/journal_title"/>
 										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
@@ -81,15 +76,18 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 								</td>
 							</tr>
 						</table>
-						<br />
+						<br/>
 						<table>
 							<tr>
 								<td>
-								A staff member from Carleton will be in touch shortly to discuss.<br/><br/>
+								A staff member from Carleton will be in touch shortly to discuss.<br/>
+									<br/>
 								</td>
 							</tr>
 							<tr>
-								<td>@@signature@@<br/><br/></td>
+								<td>@@signature@@<br/>
+									<br/>
+								</td>
 							</tr>
 							<tr>
 								<td>
@@ -99,63 +97,62 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 							</tr>
 							<tr>
 								<td>
-									<xsl:value-of select="notification_data/library/name" />
+									<xsl:value-of select="notification_data/library/name"/>
 								</td>
 							</tr>
 							<xsl:if test="notification_data/library/address/line1 !=''">
 								<tr>
 									<td>
-										<xsl:value-of select="notification_data/library/address/line1" />
+										<xsl:value-of select="notification_data/library/address/line1"/>
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/library/address/line2 !=''">
 								<tr>
 									<td>
-										<xsl:value-of select="notification_data/library/address/line2" />
+										<xsl:value-of select="notification_data/library/address/line2"/>
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/library/address/line3 !=''">
 								<tr>
 									<td>
-										<xsl:value-of select="notification_data/library/address/line3" />
+										<xsl:value-of select="notification_data/library/address/line3"/>
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/library/address/line4 !=''">
 								<tr>
 									<td>
-										<xsl:value-of select="notification_data/library/address/line4" />
+										<xsl:value-of select="notification_data/library/address/line4"/>
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/library/address/line5 !=''">
 								<tr>
 									<td>
-										<xsl:value-of select="notification_data/library/address/line5" />
+										<xsl:value-of select="notification_data/library/address/line5"/>
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/library/address/city !=''">
 								<tr>
 									<td>
-										<xsl:value-of select="notification_data/library/address/city" />
+										<xsl:value-of select="notification_data/library/address/city"/>
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/library/address/country !=''">
 								<tr>
 									<td>
-										<xsl:value-of select="notification_data/library/address/country" />
+										<xsl:value-of select="notification_data/library/address/country"/>
 									</td>
 								</tr>
-
 							</xsl:if>
 						</table>
 					</div>
 				</div>
-				<xsl:call-template name="lastFooter" />
+				<xsl:call-template name="lastFooter"/>
 				<!-- footer.xsl -->
 			</body>
 		</html>
