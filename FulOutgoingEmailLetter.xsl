@@ -26,10 +26,10 @@
 				</xsl:attribute>
 				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
-				<table role='presentation'>
+				<table>
 					<tr>
 						<td>
-							@@header@@
+							Hello,
 						</td>
 					</tr>
 				</table>
@@ -38,296 +38,229 @@
 						<table role='presentation'>
 							<tr>
 								<td>
-									@@requested@@
-								</td>
-							</tr>
-							<xsl:if test="notification_data/request/needed_by !=''">
-								<tr>
-									<td>
-										<strong>@@requested_by@@: </strong>
-										<xsl:value-of select="notification_data/request/needed_by"/>
-									</td>
-								</tr>
-							</xsl:if>
+									We would like to request the following item. 
+									<xsl:if test="notification_data/request/needed_by !=''">
+										<strong>Please note: it is needed by <xsl:value-of select="notification_data/request/needed_by"/>.</strong>
+									</xsl:if>
+    							</td>
+    						</tr>
 						</table>
-						<table role='presentation'>
+						<table>
 							<xsl:attribute name="style">
 								<xsl:call-template name="listStyleCss"/>
 								<!-- style.xsl -->
 							</xsl:attribute>
 							<tr>
 								<td>
-									<strong> @@request_format@@: </strong>
+									<strong>Requested format: </strong>
 									<xsl:value-of select="notification_data/request/format_display"/>
-									<!-- recordTitle.xsl -->
 								</td>
 							</tr>
 							<xsl:if test="notification_data/request/display/title !=''">
 								<tr>
 									<td>
-										<strong> @@title@@: </strong>
+										<strong>Title: </strong>
 										<xsl:value-of select="notification_data/request/display/title"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/journal_title !=''">
 								<tr>
 									<td>
-										<strong> @@journal_title@@: </strong>
+										<strong>Journal title: </strong>
 										<xsl:value-of select="notification_data/request/display/journal_title"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/author !=''">
 								<tr>
 									<td>
-										<strong> @@author@@: </strong>
+										<strong>Author: </strong>
 										<xsl:value-of select="notification_data/request/display/author"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/publisher !=''">
 								<tr>
 									<td>
-										<strong> @@publisher@@: </strong>
+										<strong>Publisher: </strong>
 										<xsl:value-of select="notification_data/request/display/publisher"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/place_of_publication !=''">
 								<tr>
 									<td>
-										<strong> @@place_of_publication@@: </strong>
+										<strong>Place of publication: </strong>
 										<xsl:value-of select="notification_data/request/display/place_of_publication"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/publication_date !=''">
 								<tr>
 									<td>
-										<strong> @@publication_date@@: </strong>
+										<strong>Publication date: </strong>
 										<xsl:value-of select="notification_data/request/display/publication_date"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/year !=''">
 								<tr>
 									<td>
-										<strong> @@year@@: </strong>
+										<strong>Year: </strong>
 										<xsl:value-of select="notification_data/request/display/year"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/edition !=''">
 								<tr>
 									<td>
-										<strong> @@edition@@: </strong>
+										<strong>Edition: </strong>
 										<xsl:value-of select="notification_data/request/display/edition"/>
-										<!-- recordTitle.xsl -->
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/request/display/call_number !=''">
-								<tr>
-									<td>
-										<strong> @@call_number@@: </strong>
-										<xsl:value-of select="notification_data/request/display/call_number"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/volume !=''">
 								<tr>
 									<td>
-										<strong> @@volume@@: </strong>
+										<strong>Volume: </strong>
 										<xsl:value-of select="notification_data/request/display/volume"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/issue !=''">
 								<tr>
 									<td>
-										<strong> @@issue@@: </strong>
+										<strong>Issue: </strong>
 										<xsl:value-of select="notification_data/request/display/issue"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/source !=''">
 								<tr>
 									<td>
-										<strong> @@source@@: </strong>
+										<strong>Source: </strong>
 										<xsl:value-of select="notification_data/request/display/source"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/series_title_number !=''">
 								<tr>
 									<td>
-										<strong> @@series_title_number@@: </strong>
+										<strong>Series title number: </strong>
 										<xsl:value-of select="notification_data/request/display/series_title_number"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/isbn !=''">
 								<tr>
 									<td>
-										<strong> @@isbn@@: </strong>
+										<strong>ISBN: </strong>
 										<xsl:value-of select="notification_data/request/display/isbn"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/issn !=''">
 								<tr>
 									<td>
-										<strong> @@issn@@: </strong>
+										<strong>ISSN: </strong>
 										<xsl:value-of select="notification_data/request/display/issn"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/doi !=''">
 								<tr>
 									<td>
-										<strong> @@doi@@: </strong>
+										<strong>DOI: </strong>
 										<xsl:value-of select="notification_data/request/display/doi"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/pmid !=''">
 								<tr>
 									<td>
-										<strong> @@pmid@@: </strong>
+										<strong>PMID: </strong>
 										<xsl:value-of select="notification_data/request/display/pmid"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/note !=''">
 								<tr>
 									<td>
-										<strong> @@note@@: </strong>
+										<strong>Note: </strong>
 										<xsl:value-of select="notification_data/request/display/note"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/chapter !=''">
 								<tr>
 									<td>
-										<strong> @@chapter@@: </strong>
+										<strong>Chapter: </strong>
 										<xsl:value-of select="notification_data/request/display/chapter"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/volume_bk !=''">
 								<tr>
 									<td>
-										<strong> @@volume@@: </strong>
+										<strong>Volume: </strong>
 										<xsl:value-of select="notification_data/request/display/volume_bk"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/part !=''">
 								<tr>
 									<td>
-										<strong> @@part@@: </strong>
+										<strong>Part: </strong>
 										<xsl:value-of select="notification_data/request/display/part"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/pages !=''">
 								<tr>
 									<td>
-										<strong> @@pages@@: </strong>
+										<strong>Pages: </strong>
 										<xsl:value-of select="notification_data/request/display/pages"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/start_page !=''">
 								<tr>
 									<td>
-										<strong> @@start_page@@: </strong>
+										<strong>Start page: </strong>
 										<xsl:value-of select="notification_data/request/display/start_page"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/end_page !=''">
 								<tr>
 									<td>
-										<strong> @@end_page@@: </strong>
+										<strong>End page: </strong>
 										<xsl:value-of select="notification_data/request/display/end_page"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/note !=''">
 								<tr>
 									<td>
-										<strong> @@request_note@@: </strong>
+										<strong>Request note: </strong>
 										<xsl:value-of select="notification_data/request/note"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
-							<tr>
-								<td>
-									<strong> @@date@@: </strong>
-									<xsl:value-of select="notification_data/general_data/current_date"/>
-									<!-- recordTitle.xsl -->
-								</td>
-							</tr>
 							<xsl:if test="notification_data/request/external_request_id !=''">
 								<tr>
 									<td>
-										<strong> @@request_id@@: </strong>
+										<strong>Request ID: </strong>
 										<xsl:value-of select="notification_data/request/external_request_id"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
-							<xsl:choose>
-								<xsl:when test="notification_data/request/max_fee !=''">
-									<tr>
-										<td>
-											<strong>@@maximum_fee@@: </strong>
-											<xsl:value-of select="notification_data/request/max_fee"/>
-										</td>
-									</tr>
-								</xsl:when>
-							</xsl:choose>
-							<xsl:choose>
-								<xsl:when test="notification_data/level_of_service !=''">
-									<tr>
-										<td>
-											<strong>@@level_of_service@@: </strong>
-											<xsl:value-of select="notification_data/level_of_service"/>
-										</td>
-									</tr>
-								</xsl:when>
-							</xsl:choose>
 						</table>
 						<br/>
-						<table role='presentation'>
+						<table>
 							<tr>
-								<td>@@signature@@</td>
+								<td>Sincerely,</td>
 							</tr>
 						</table>
 					</div>

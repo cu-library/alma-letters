@@ -1,4 +1,6 @@
 code: addressFrom, description: interlibraryloans@cunet.carleton.ca
+code: letterName, description: Request for Renewal of Resource Sharing Item
+code: subject, description: Request for Renewal of Resource Sharing Item (%reqId%)
 code: Bcc, description: None
 code: Cc, description: None
 code: additional_person_name, description: Additional Person Name
@@ -18,7 +20,6 @@ code: isbn, description: ISBN
 code: issn, description: ISSN
 code: issue, description: Issue
 code: journal_title, description: Journal Title
-code: letterName, description: Request for Renewal of a Resource Sharing Request
 code: maximum_fee, description: Maximum Fee
 code: note, description: Note
 code: note_to_partner, description: Note to partner
@@ -41,7 +42,6 @@ code: series_title_number, description: Series Title Number
 code: signature, description: Sincerely
 code: source, description: Source
 code: start_page, description: Start Page
-code: subject, description: Request for Renewal of a Resource Sharing Request (%reqId%)
 code: title, description: Title
 code: volume, description: Volume
 code: year, description: Year
