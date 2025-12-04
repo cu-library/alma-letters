@@ -2,6 +2,7 @@ code: addressFrom, description: libraryservices@cunet.carleton.ca
 code: subject, description: Document(s) en retard
 code: letterName, description: Document(s) en retard
 code: sincerely, description: Cordialement
+code: department, description: Banque de prêt
 code: inform_you_item_below_type2, description: Nous vous informons que les documents décrits ci-dessous
 code: inform_you_item_below_type3, description: Nous vous informons que les documents décrits ci-dessous
 code: inform_you_item_below_type4, description: Nous vous informons que les documents décrits ci-dessous
@@ -10,7 +11,6 @@ code: borrowed_by_you, description: que vous avez empruntés
 code: decalred_as_lost, description: doivent être retournés, dans le cas contraire ils seront déclarés perdus.
 code: decalred_as_lost_type1, description: doivent être retournés, dans le cas contraire ils seront déclarés perdus.
 code: decalred_as_lost_type4, description: doivent être retournés, dans le cas contraire ils seront déclarés perdus.
-code: department, description: Banque de prêt
 code: description, description: Description
 code: additional_info_1_type2, description: EMPTY_STRING
 code: additional_info_1_type4, description: EMPTY_STRING

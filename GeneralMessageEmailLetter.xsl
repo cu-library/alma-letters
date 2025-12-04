@@ -30,132 +30,69 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 				<xsl:call-template name="head" />
 				<!-- header.xsl -->
 
-			    <table role='presentation'  cellspacing="0" cellpadding="5" border="0">
+			    <table>
 					<tr>
-						<td>
-
-							<h3>@@header@@</h3>
-
-						</td>
+						<td>Hello,</td>
 					</tr>
 				</table>
 
 				<div class="messageArea">
 					<div class="messageBody">
-						<table role='presentation'  cellspacing="0" cellpadding="5" border="0">
+						<table>
 
 							<tr>
 								<td>
-									<strong>@@request@@</strong>
+									We have a message regarding the following Resource Sharing request:
 								</td>
 							</tr>
-
 						</table>
 
-                        <br/>
-						<table role='presentation'  cellspacing="0" cellpadding="5" border="0">
+						<table>
 							<xsl:attribute name="style">
 								<xsl:call-template name="listStyleCss"/>
 								<!-- style.xsl -->
 							</xsl:attribute>
 							<tr>
 								<td>
-									<strong> @@requestId@@: </strong>
+									<strong>Request ID: </strong>
 									<xsl:value-of select="notification_data/request/external_request_id"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong> @@title@@: </strong>
+									<strong>Title:  </strong>
 									<xsl:value-of select="notification_data/request/display/title"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong> @@author@@: </strong>
+									<strong>Author: </strong>
 									<xsl:value-of select="notification_data/request/display/author"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong> @@requestDate@@: </strong>
+									<strong>Request date: </strong>
 									<xsl:value-of select="notification_data/request/create_date_str"/>
 								</td>
 							</tr>
+						</table>
+						<table>
 							<tr>
 								<td>
-									<br/>
-									<strong> @@note@@: </strong>
+									<strong>Message: </strong>
 									<xsl:value-of select="notification_data/note_to_partner"/>
 								</td>
 							</tr>
 						</table>
-
-						<br/><br/>
-
-						<table role='presentation' >
+						<table>
 							<tr>
-								<td>@@signature@@</td>
+								<td>Sincerely,</td>
 							</tr>
-							<tr>
-								<td>
-									<xsl:value-of select="notification_data/library/name" />
-								</td>
-							</tr>
-							<xsl:if test="notification_data/library/address/line1 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line1" />
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line2 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line2" />
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line3 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line3" />
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line4 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line4" />
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line5 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line5" />
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/city !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/city" />
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/country !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/country" />
-									</td>
-								</tr>
-
-							</xsl:if>
 						</table>
 					</div>
 				</div>
-				<xsl:call-template name="lastFooter" />
+				<xsl:call-template name="ILLFooterPeerToPeer" />
 				<!-- footer.xsl -->
 			</body>
 		</html>
