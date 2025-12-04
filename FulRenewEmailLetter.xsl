@@ -143,7 +143,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 							<xsl:if test="notification_data/request/display/series_title_number !=''">
 								<tr>
 									<td>
-										<strong>Series: </strong>
+										<strong>Series information: </strong>
 										<xsl:value-of select="notification_data/request/display/series_title_number" />
 									</td>
 								</tr>

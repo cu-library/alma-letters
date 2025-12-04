@@ -30,16 +30,12 @@
 					<div class="messageBody">
 						<table>
 						    <tr>
-						        <td>
-						            <p>Hello,</p>
-						        </td>
+						        <td>Hello,</td>
 						    </tr>
 							<tr>
 								<td>
-									<p>
-									    We wanted to remind you that we had requested an item from your library on: 
+									    We wanted to remind you that we had requested an item from your library on 
 									    <strong><xsl:value-of select="notification_data/request/last_send_date"/></strong>.
-									</p>
 								</td>
 							</tr>
 						</table>
@@ -51,9 +47,8 @@
 							<xsl:if test="notification_data/request/display/material_type !=''">
     							<tr>
     								<td>
-    									<strong>Format: </strong>
+    									<strong>Material type: </strong>
     									<xsl:value-of select="notification_data/request/display/material_type"/>
-    									<!-- recordTitle.xsl -->
     								</td>
     							</tr>
 							</xsl:if>
@@ -62,7 +57,6 @@
 									<td>
 										<strong>Title: </strong>
 										<xsl:value-of select="notification_data/request/display/title"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -71,7 +65,6 @@
 									<td>
 										<strong>Journal title: </strong>
 										<xsl:value-of select="notification_data/request/display/journal_title"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -80,7 +73,6 @@
 									<td>
 										<strong>Author: </strong>
 										<xsl:value-of select="notification_data/request/display/author"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -89,7 +81,6 @@
 									<td>
 										<strong>Publisher: </strong>
 										<xsl:value-of select="notification_data/request/display/publisher"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -98,7 +89,6 @@
 									<td>
 										<strong>Place of publication: </strong>
 										<xsl:value-of select="notification_data/request/display/place_of_publication"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -107,7 +97,6 @@
 									<td>
 										<strong>Publication date: </strong>
 										<xsl:value-of select="notification_data/request/display/publication_date"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -116,7 +105,6 @@
 									<td>
 										<strong>Year: </strong>
 										<xsl:value-of select="notification_data/request/display/year"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -125,7 +113,6 @@
 									<td>
 										<strong>Edition: </strong>
 										<xsl:value-of select="notification_data/request/display/edition"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -134,7 +121,6 @@
 									<td>
 										<strong>Call number: </strong>
 										<xsl:value-of select="notification_data/request/display/call_number"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -143,7 +129,6 @@
 									<td>
 										<strong>Volume: </strong>
 										<xsl:value-of select="notification_data/request/display/volume"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -152,25 +137,14 @@
 									<td>
 										<strong>Issue: </strong>
 										<xsl:value-of select="notification_data/request/display/issue"/>
-										<!-- recordTitle.xsl -->
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/request/display/source !=''">
-								<tr>
-									<td>
-										<strong>Source: </strong>
-										<xsl:value-of select="notification_data/request/display/source"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/display/series_title_number !=''">
 								<tr>
 									<td>
-										<strong>Series title number: </strong>
+										<strong>Series information: </strong>
 										<xsl:value-of select="notification_data/request/display/series_title_number"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -179,7 +153,6 @@
 									<td>
 										<strong>ISBN: </strong>
 										<xsl:value-of select="notification_data/request/display/isbn"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -188,7 +161,6 @@
 									<td>
 										<strong>ISSN: </strong>
 										<xsl:value-of select="notification_data/request/display/issn"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -197,7 +169,6 @@
 									<td>
 										<strong>DOI: </strong>
 										<xsl:value-of select="notification_data/request/display/doi"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -206,7 +177,6 @@
 									<td>
 										<strong>PMID: </strong>
 										<xsl:value-of select="notification_data/request/display/pmid"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -215,7 +185,6 @@
 									<td>
 										<strong>Note: </strong>
 										<xsl:value-of select="notification_data/request/display/note"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -224,7 +193,6 @@
 									<td>
 										<strong>Chapter: </strong>
 										<xsl:value-of select="notification_data/request/display/chapter"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -233,7 +201,6 @@
 									<td>
 										<strong>Volume: </strong>
 										<xsl:value-of select="notification_data/request/display/volume_bk"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -242,7 +209,6 @@
 									<td>
 										<strong>Part: </strong>
 										<xsl:value-of select="notification_data/request/display/part"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -251,7 +217,6 @@
 									<td>
 										<strong>Pages: </strong>
 										<xsl:value-of select="notification_data/request/display/pages"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -260,7 +225,6 @@
 									<td>
 										<strong>Start page: </strong>
 										<xsl:value-of select="notification_data/request/display/start_page"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -269,7 +233,6 @@
 									<td>
 										<strong>End page: </strong>
 										<xsl:value-of select="notification_data/request/display/end_page"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -278,7 +241,6 @@
 									<td>
 										<strong>Request note: </strong>
 										<xsl:value-of select="notification_data/request/note"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
@@ -287,15 +249,13 @@
 									<td>
 										<strong>Request ID: </strong>
 										<xsl:value-of select="notification_data/request/external_request_id"/>
-										<!-- recordTitle.xsl -->
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/request/format_display !=''"><tr>
 								<td>
-									<strong>Request format: </strong>
+									<strong>Requested format: </strong>
 									<xsl:value-of select="notification_data/request/format_display"/>
-									<!-- recordTitle.xsl -->
 								</td>
 							</tr>
 							</xsl:if>
@@ -306,18 +266,14 @@
 								<xsl:when test="notification_data/request/needed_by !=''">
 									<tr>
 										<td>
-											<p>
 											    <strong>This is needed by: </strong>
 											    <xsl:value-of select="notification_data/request/needed_by"/>
-											</p>
 										</td>
 									</tr>
 								</xsl:when>
 							</xsl:choose>
 							<tr>
-								<td>
-								    <p>Please update us on the status of this request.</p>
-								</td>
+								<td>Please update us on the status of this request.</td>
 							</tr>
 						</table>
 						<table>

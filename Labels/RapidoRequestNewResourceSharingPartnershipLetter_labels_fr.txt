@@ -1,7 +1,9 @@
+code: letterName, description: Rapido Request New Resource Sharing Partnership
+code: subject, description: Rapido Request New Resource Sharing Partnership
+code: addressFrom, description: Your.Department@organization.com
 code: Bcc, description: None
 code: Cc, description: None
 code: additional_person_name, description: Additional Person Name
-code: addressFrom, description: Your.Department@organization.com
 code: article_or_chapter_title, description: Article\\Chapter Title
 code: author, description: Author
 code: author_initials, description: Author Initials
@@ -26,7 +28,6 @@ code: isbn, description: ISBN
 code: issn, description: ISSN
 code: issue, description: Issue
 code: journal_title, description: Journal Title
-code: letterName, description: Rapido Request New Resource Sharing Partnership
 code: level_of_service, description: Level of Service
 code: maximum_fee, description: Maximum Fee
 code: note, description: Note
@@ -46,7 +47,6 @@ code: signature, description: Sincerely
 code: source, description: Source
 code: start, description: Your holdings contains the following resource and we would like to request it from your library
 code: start_page, description: Start Page
-code: subject, description: Rapido Request New Resource Sharing Partnership
 code: title, description: Title
 code: volume, description: Volume
 code: year, description: Year

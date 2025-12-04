@@ -138,7 +138,7 @@
 							<xsl:if test="notification_data/request/display/series_title_number !=''">
 								<tr>
 									<td>
-                                        <strong>Series title number: </strong>
+                                        <strong>Series information: </strong>
 										<xsl:value-of select="notification_data/request/display/series_title_number"/>
 									</td>
 								</tr>
