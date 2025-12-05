@@ -1,3 +1,4 @@
+code: letterName, description: Facture d'exemplaire perdu
 code: addressFrom, description: Your.Department@organization.com
 code: subject, description: Facture d'exemplaire perdu
 code: inform_you_item_below, description: Nous souhaitons vous informer que l'exemplaire détaillé ci-dessous
@@ -17,7 +18,6 @@ code: description, description: Description
 code: due_date, description: Date de retour prévue
 code: fee_amount, description: Montant des frais
 code: fee_type, description: Type de frais
-code: letterName, description: Facture d'exemplaire perdu
 code: library, description: Bibliothèque
 code: loan_date, description: Date de prêt
 code: lost_item, description: Exemplaire perdu

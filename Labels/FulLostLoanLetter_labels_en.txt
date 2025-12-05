@@ -1,5 +1,6 @@
+code: letterName, description: Bill for Lost Library Item
 code: addressFrom, description: libraryservices@cunet.carleton.ca
-code: subject, description: MacOdrum Library - Replacement Bill for Library Material
+code: subject, description: Bill for Lost Library Item
 code: inform_you_item_below, description: The following item(s) has/have been noted 
 code: borrowed_by_you, description: as lost in the system.
 code: decalred_as_lost, description:  Please see below for replacement costs. 
@@ -17,7 +18,6 @@ code: description, description: Description
 code: due_date, description: Due date
 code: fee_amount, description: Fee Amount
 code: fee_type, description: Fee Type
-code: letterName, description: Lost Item Bill
 code: library, description: Library
 code: loan_date, description: Loan date
 code: lost_item, description: Lost Item
