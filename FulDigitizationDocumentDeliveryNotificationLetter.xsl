@@ -3,6 +3,7 @@
 	<xsl:include href="style.xsl"/>
 	<xsl:include href="header.xsl"/>
 	<xsl:include href="footer.xsl"/>
+	<xsl:include href="mailReason.xsl" />
 	<xsl:variable name="conta1">0</xsl:variable>
 	<xsl:variable name="stepType" select="/notification_data/request/work_flow_entity/step_type"/>
 	<xsl:variable name="externalRequestId" select="/notification_data/external_request_id"/>
@@ -11,6 +12,10 @@
 	<xsl:variable name="isDigitalDocDelivery" select="/notification_data/digital_document_delivery"/>
 	<xsl:variable name="fileUploaded" select="/notification_data/file_uploaded"/>
 	<xsl:template match="/">
+    	<!-- 
+        INTERNAL CODE: FulDigitizationDocumentDeliveryNotificationLetter
+        LETTER EDITOR NAME: Document Delivery Notification Letter
+        -->
 		<html>
 			<xsl:if test="notification_data/languages/string">
 				<xsl:attribute name="lang">
@@ -33,27 +38,25 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
+					    <xsl:call-template name="toWhomIsConcerned" />
 						<table>
-						<xsl:call-template name="salutation2"/>
-							<tr>
-								<td><p>Attached is a digital copy of the material you requested.</p></td>
-							</tr>
 							<tr>
 								<td>
-									<p>As a reminder, please see our copyright statement:</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<em>
-										I acknowledge and agree that this item is being supplied solely for my own personal use, and may only be used for the purpose of research, education, private study, review, or criticism. I agree that I will not share, distribute, publish, or make copies of this item, or otherwise provide it to any other person.
-									</em>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p><strong>@@title@@: </strong> 
-									<xsl:value-of select="notification_data/phys_item_display/title"/></p>
+								    <p>Attached is a digital copy of the material you requested.</p>
+								    <p>As a reminder, please see our copyright statement:</p>
+								    <p>
+								        <em>
+								            I acknowledge and agree that this item is being supplied solely for my own 
+								            personal use, and may only be used for the purpose of research, education, 
+								            private study, review, or criticism. I agree that I will not share, 
+								            distribute, publish, or make copies of this item, or otherwise provide it 
+								            to any other person.
+								        </em>
+								    </p>
+								    <p>
+								        <strong>Title: </strong> 
+									    <xsl:value-of select="notification_data/phys_item_display/title"/>
+								    </p>
 								</td>
 							</tr>
 							<!-- WE HAVE THIS LABEL DISABLED AND THIS CELL ISN'T CONFIGURED TO DISPLAY ANYTHING. COMMENTING OUT FOR NOW. -AL 
@@ -90,8 +93,13 @@
 								<xsl:when test="notification_data/borrowing_document_delivery_max_num_of_views != ''">
 									<tr>
 										<td>
-											<p>For your information, the maximum number of views of the resource is 
-											<xsl:value-of select="notification_data/borrowing_document_delivery_max_num_of_views"/>.</p>
+											<p>
+											    The resource allows a maximum of
+											    <strong>
+											        <xsl:value-of select="notification_data/borrowing_document_delivery_max_num_of_views"/>
+											        views
+											    </strong>.
+										    </p>
 										</td>
 									</tr>
 								</xsl:when>

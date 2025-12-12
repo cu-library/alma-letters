@@ -1,10 +1,10 @@
+code: letterName, description: Lettre d'emprunt par procuration
+code: subject, description: Lettre d'emprunt par procuration
 code: department, description: Service au public
 code: sincerely, description: Cordialement
 code: addressFrom, description: library.services@carleton.ca
 code: Bcc, description: Aucun
 code: Cc, description: Aucun
-code: letterName, description: Lettre d'emprunt par procuration
 code: picked_up_by, description: retiré par
 code: request_complete, description: La demande a été traitée.
-code: subject, description: Lettre d'emprunt par procuration
 code: the_item, description: Le document

@@ -3,6 +3,7 @@
 	<xsl:include href="style.xsl" />
 	<xsl:include href="header.xsl" />
 	<xsl:include href="footer.xsl" />
+	<xsl:include href="mailReason.xsl" />
 	<xsl:template match="/">
 		<html>
 			<xsl:if test="notification_data/languages/string">
@@ -26,34 +27,70 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
-						<table role="presentation" cellspacing="0" cellpadding="5" border="0">
+					    <xsl:call-template name="toWhomIsConcerned" />
+						<table>
 							<tr>
 								<td>
-									Hi,
+								    <strong>
+								        <!-- If the patron has a preferred first name, use that. Otherwise, use the regular first name. -->
+								        <xsl:choose>
+								            <xsl:when test="/notification_data/borrower/preferred_first_name != ''">
+								                <xsl:value-of select="/notification_data/borrower/preferred_first_name" />
+								            </xsl:when>
+								            <xsl:otherwise>
+								                <xsl:value-of select="/notification_data/borrower/first_name" />
+								            </xsl:otherwise>
+								        </xsl:choose>
+								        <xsl:value-of select="/notification_data/borrower/last_name" />
+								    </strong>
+									has picked up the following item on your behalf: 
 								</td>
 							</tr>
+						</table>
+						<table>
+						    <xsl:attribute name="style">
+								<xsl:call-template name="listStyleCss"/>
+								<!-- style.xsl -->
+							</xsl:attribute>
+							<xsl:for-each select="notification_data/phys_item_display">
+    							<tr>
+    							    <td>
+    							        <strong>Title: </strong>
+    							        <xsl:value-of select="title" />
+    							    </td>
+    							</tr>
+    							<xsl:if test="author != ''">
+        							<tr>
+        							    <td>
+        							        <strong>Author: </strong>
+        							        <xsl:value-of select="author" />
+        							    </td>
+        							</tr>
+    							</xsl:if>
+    							<xsl:if test="barcode != ''">
+        							<tr>
+        							    <td>
+        							        <strong>Barcode: </strong>
+        							        <xsl:value-of select="barcode" />
+        							    </td>
+        							</tr>
+    							</xsl:if>
+							</xsl:for-each>
+						</table>
+						<table>
 							<tr>
 								<td>
-									Thanks for picking up your item(s)!
+									This item is checked out on your account and is due back by <strong><xsl:value-of select="/notification_data/due_date" /></strong>.
 								</td>
 							</tr>
+						</table>
+						<table>
 							<tr>
 								<td>
-									Looking for additional materials that were not in our library?<br />
-									Try requesting them through our Resource Sharing!
+									Sincerely,
 								</td>
 							</tr>
-							<tr>
-								<td>
-									@@sincerely@@
-								</td>
-							</tr>
-							<tr>
-								<td>
-									@@department@@<br />
-									Carleton University Library
-								</td>
-							</tr>
+							<xsl:call-template name="accessSignature" />
 						</table>
 					</div>
 				</div>

@@ -40,6 +40,12 @@
 	<xsl:template name="bookOrderRequests">
 	    <a href="mailto:acqorders@cunet.carleton.ca">acqorders@cunet.carleton.ca</a>
 	</xsl:template>
+
+    <xsl:template name="courseReservesEmail">
+        <a href="mailto:CourseReserves@cunet.carleton.ca">CourseReserves@cunet.carleton.ca</a>
+    </xsl:template>
+
+    <xsl:template name="courseReservesPhone">613-520-2600 x2533</xsl:template>
 	
 	<xsl:template name="curbsideLink">
 		<a href="https://library.carleton.ca/services/borrowing/requesting-items#curbside">curbside service</a>
@@ -1026,6 +1032,29 @@
 			</td>
 		</tr>
 	</xsl:template>
+    <!-- Course Reserves signature and footer -->
+    <xsl:template name="courseReservesSignature">
+        <tr>
+            <td>
+                Course Reserves, Access Services Department
+                <br/>
+                Carleton University Library
+            </td>
+        </tr>
+    </xsl:template>
+    <xsl:template name="courseReservesFooter">
+		<table>
+			<xsl:attribute name="style">
+				<xsl:call-template name="footerTableStyleCss"/>
+			</xsl:attribute>
+			<tr>
+				<td>Questions? Email <xsl:call-template name="courseReservesEmail"/> or call <xsl:call-template name="courseReservesPhone"/>.
+				</td>
+			</tr>
+		</table>
+    </xsl:template>
+
+    <!-- Library Accessibility signature and footer -->
 	<xsl:template name="libraryAccessibilitySignature">
 		<tr>
 			<td>

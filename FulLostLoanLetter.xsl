@@ -34,7 +34,7 @@
 						<!-- mailReason.xsl -->
 						<table>
 							<tr>
-								<td>The library has declared an item you borrowed as lost. Please see the summary below:</td>
+							    <td>The library has declared an item you borrowed as lost. Please see the summary below:</td>
 							</tr>
 						</table>
 						<table>
