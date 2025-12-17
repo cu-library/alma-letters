@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:include href="style.xsl"/>
 	<xsl:include href="header.xsl"/>
+	<xsl:include href="senderReceiver.xsl"/>
+	<xsl:include href="mailReason.xsl"/>
 	<xsl:include href="footer.xsl"/>
-	<xsl:include href="mailReason.xsl" />
+	<xsl:include href="style.xsl"/>
+	<xsl:include href="recordTitle.xsl"/>
 	<xsl:variable name="conta1">0</xsl:variable>
 	<xsl:variable name="stepType" select="/notification_data/request/work_flow_entity/step_type"/>
 	<xsl:variable name="externalRequestId" select="/notification_data/external_request_id"/>
@@ -12,7 +14,7 @@
 	<xsl:variable name="isDigitalDocDelivery" select="/notification_data/digital_document_delivery"/>
 	<xsl:variable name="fileUploaded" select="/notification_data/file_uploaded"/>
 	<xsl:template match="/">
-    	<!-- 
+		<!-- 
         INTERNAL CODE: FulDigitizationDocumentDeliveryNotificationLetter
         LETTER EDITOR NAME: Document Delivery Notification Letter
         -->
@@ -38,25 +40,21 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
-					    <xsl:call-template name="toWhomIsConcerned" />
+						<xsl:call-template name="toWhomIsConcerned"/>
 						<table>
 							<tr>
 								<td>
-								    <p>Attached is a digital copy of the material you requested.</p>
-								    <p>As a reminder, please see our copyright statement:</p>
-								    <p>
-								        <em>
-								            I acknowledge and agree that this item is being supplied solely for my own 
-								            personal use, and may only be used for the purpose of research, education, 
-								            private study, review, or criticism. I agree that I will not share, 
-								            distribute, publish, or make copies of this item, or otherwise provide it 
-								            to any other person.
+									<p>Attached is a digital copy of the material you requested.</p>
+									<p>As a reminder, please see our copyright statement:</p>
+									<p>
+										<em>
+								            <xsl:call-template name="copyrightStatement"/>
 								        </em>
-								    </p>
-								    <p>
-								        <strong>Title: </strong> 
-									    <xsl:value-of select="notification_data/phys_item_display/title"/>
-								    </p>
+									</p>
+									<p>
+										<strong>Title: </strong>
+										<xsl:value-of select="notification_data/phys_item_display/title"/>
+									</p>
 								</td>
 							</tr>
 							<!-- WE HAVE THIS LABEL DISABLED AND THIS CELL ISN'T CONFIGURED TO DISPLAY ANYTHING. COMMENTING OUT FOR NOW. -AL 
@@ -94,28 +92,34 @@
 									<tr>
 										<td>
 											<p>
-											    The resource allows a maximum of
+												<!-- repeated text, keep as label -->
+											    @@max_num_of_views@@ 
 											    <strong>
-											        <xsl:value-of select="notification_data/borrowing_document_delivery_max_num_of_views"/>
-											        views
-											    </strong>.
+													<xsl:value-of select="notification_data/borrowing_document_delivery_max_num_of_views"/>
+											        views</strong>.
 										    </p>
 										</td>
 									</tr>
 								</xsl:when>
+								<!-- not sure when this condition would flip -->
 								<xsl:when test="(notification_data/request/document_delivery_max_num_of_views != '') and ((notification_data/download_url_local != '' ) or (notification_data/download_url_saml != '') or (notification_data/download_url_cas != ''))">
 									<tr>
 										<td>
-											@@max_num_of_views@@
-											<xsl:value-of select="notification_data/request/document_delivery_max_num_of_views"/>
-											.
+											<p>
+												<!-- repeated text, keep as label -->
+										        @@max_num_of_views@@
+										        <strong>
+													<xsl:value-of select="notification_data/request/document_delivery_max_num_of_views"/>
+										            views</strong>.
+										    </p>
 										</td>
 									</tr>
 								</xsl:when>
 							</xsl:choose>
-							<xsl:if test="/notification_data/url_list/string">
+							<!-- not sure when this condition would flip either -->
+							<xsl:if test="/notification_data/url_list/string !=''">
 								<tr>
-									<td>@@attached_are_the_urls@@:</td>
+									<td>Here are the resource URLs:</td>
 								</tr>
 								<xsl:for-each select="/notification_data/url_list/string">
 									<tr>
@@ -130,9 +134,11 @@
 									</tr>
 								</xsl:for-each>
 							</xsl:if>
+						</table>
+						<table>
 							<tr>
 								<td>
-									@@sincerely@@
+									Sincerely,
 								</td>
 							</tr>
 							<xsl:call-template name="accessSignature"/>

@@ -9,6 +9,7 @@ code: department, description: Banque de prêt
 code: for_cas_users, description: Pour les utilisateurs CAS
 code: for_saml_users, description: Pour les utilisateurs SAML (ajouter idpCode si besoin)
 code: for_local_users, description: Pour les utilisateurs LDAP/locaux
+code: max_num_of_views, description: Pour votre information, le nombre maximal de vues de la ressource est
 code: Bcc, description: Aucun
 code: Cc, description: Aucun
 code: attached_are_the_urls, description: Les URL des ressources numériques sont en pièce jointe
@@ -19,7 +20,6 @@ code: deliver_in, description: Livrer dans
 code: due_date, description: Date de retour
 code: hours, description: Heures
 code: keep_for, description: Garder pendant
-code: max_num_of_views, description: Pour votre information, le nombre maximal de vues de la ressource est
 code: price, description: Prix
 code: reading_list_name, description: Nom de la liste de lecture
 code: request_creator, description: Créateur de la demande

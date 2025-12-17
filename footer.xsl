@@ -1022,6 +1022,10 @@
 			</td>
 		</tr>
 	</xsl:template>
+	<xsl:template name="copyrightStatement">
+			I acknowledge and agree that this item is being supplied solely for my own personal use, and may only be used for the purpose of research, education, private study, review, or criticism. 
+			I agree that I will not share, distribute, publish, or make copies of this item, or otherwise provide it to any other person.
+	</xsl:template>
 	<!-- Access Services Signature -->
 	<xsl:template name="accessSignature">
 		<tr>
@@ -1135,4 +1139,7 @@
 		</table>
 	</xsl:template>
 	<!-- END OF Carleton ILL footer PEER-TO-PEER -->
+	<xsl:template name="holidayClosure">
+	    Note: the Library is closed for the holidays from 5pm December 23, reopening January 5.
+	</xsl:template>
 </xsl:stylesheet>

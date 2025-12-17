@@ -3,11 +3,11 @@ code: fee_amount, description: Montant des frais
 code: charged_with_fines_fees, description: Nous vous demandons de vous acquitter des frais et amendes suivantes :
 code: addressFrom, description: libraryservices@cunet.carleton.ca
 code: department, description: Service au public
-code: subject, description: Facture pour la perte de document(s)
-code: letterName, description: Facture pour la perte de document(s)
 code: description, description: Description
 code: additional_info_2, description: EMPTY_STRING
 code: additional_info_1, description: EMPTY_STRING
+code: subject, description: Facture pour la perte de document(s)
+code: letterName, description: Facture pour la perte de document(s)
 code: sincerely, description: Cordialement
 code: inform_you_item_below, description: Nous vous informons que les documents décrits ci-dessous
 code: borrowed_by_you, description: Emprunté par vous

@@ -50,7 +50,7 @@
 								<xsl:choose>
 									<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
 										<!-- handle AFN language fr -->
-										<table cellspacing="0" cellpadding="5" border="0">
+										<table>
 											<tr>
 												<td>
 													<!-- AFN VERSION 1.6 changed some french text -->
@@ -105,7 +105,7 @@
 									</xsl:when>
 									<xsl:otherwise>
 										<!-- handle AFN language default english 'en' -->
-										<table cellspacing="0" cellpadding="5" border="0">
+										<table>
 											<tr>
 												<td>
 													<!-- START AFN-VERSION 1.10 -->
@@ -159,7 +159,7 @@
 								<!-- Carleton letter -->
 								<xsl:call-template name="toWhomIsConcerned"/>
 								<!-- mailReason.xsl -->
-								<table role="presentation" cellspacing="0" cellpadding="5" border="0">
+								<table>
 									<!-- 	Mail Delivery Decision Tree
 											Different letter displays depending on whether the pickup location is Mail Delivery or something else (MacOdrum Library.) 
 									-->
@@ -196,56 +196,42 @@
 										<xsl:otherwise>
 											<tr>
 												<td>
-													The following item is ready for pickup:
+													<p>
+													    The following item is ready for pickup:
+												    </p>
+													<p>
+													    <strong><xsl:call-template name="recordTitle"/></strong>
+												    </p>
+													<p>
+													    You can pick it up at the <strong>Library Services Desk</strong> 
+													    or through our <xsl:call-template name="curbsideLink"/>. 
+													    Please visit the library website for <xsl:call-template name="openingHours"/>.
+												    </p>
+												    <xsl:if test="notification_data/request/work_flow_entity/expiration_date">
+    												    <p>
+    												        We will hold the item until 
+    												        <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>.
+    												    </p>
+												    </xsl:if>
+												    <xsl:if test="notification_data/request/system_notes !='' ">
+												        <p>
+												            <strong>Loan note:</strong> <xsl:value-of select="notification_data/request/system_notes"/>
+												        </p>
+												    </xsl:if>
+												    <p>
+												        <strong><xsl:call-template name="holidayClosure"/></strong>
+												    </p>
 												</td>
 											</tr>
-											<tr>
-												<td>
-													<strong>
-														<xsl:call-template name="recordTitle"/>
-													</strong>
-													<!-- recordTitle.xsl -->
-												</td>
-											</tr>
-											<tr>
-												<td>
-													You can pick it up at the <strong>@@circulation_desk@@</strong> or through our <xsl:call-template name="curbsideLink"/>. Please visit the library website for <xsl:call-template name="openingHours"/>.
-												</td>
-											</tr>
-											<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
-												<tr>
-													<td>
-													@@note_item_held_until@@ <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>.
-												</td>
-												</tr>
-											</xsl:if>
-											<xsl:if test="notification_data/request/system_notes !='' ">
-												<tr>
-													<td>
-														<b>@@notes_affect_loan@@:</b>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<xsl:value-of select="notification_data/request/system_notes"/>
-													</td>
-												</tr>
-											</xsl:if>
 										</xsl:otherwise>
 									</xsl:choose>
 									<!-- END OF the Mail Delivery decision tree-->
 									<tr>
 										<td>
-											@@sincerely@@
+											Sincerely,
 										</td>
 									</tr>
-									<tr>
-										<td>
-											@@department@@
-											<br/>
-											Carleton University Library
-										</td>
-									</tr>
+									<xsl:call-template name="accessSignature"/>
 								</table>
 							</xsl:otherwise>
 						</xsl:choose>
