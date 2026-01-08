@@ -3,6 +3,7 @@
 	<xsl:include href="style.xsl"/>
 	<xsl:include href="header.xsl"/>
 	<xsl:include href="footer.xsl"/>
+	<xsl:include href="mailReason.xsl"/>
 	<xsl:variable name="conta1">0</xsl:variable>
 	<xsl:variable name="stepType" select="/notification_data/request/work_flow_entity/step_type"/>
 	<xsl:variable name="externalRequestId" select="/notification_data/external_request_id"/>
@@ -32,18 +33,12 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
+					    <xsl:call-template name="toWhomIsConcerned"/>
 						<table>
-							<xsl:call-template name="salutation2"/>
-							<tr>
-								<td><p>Attached is a digital copy of the material you requested.</p></td>
-							</tr>
 							<tr>
 								<td>
-									<p>As a reminder, please see our copyright statement:</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
+								    <p>Attached is a digital copy of the material you requested.</p>
+								    <p>Please note our copyright statement:</p>
 								    <em><xsl:call-template name="copyrightStatement"/></em>
 								</td>
 							</tr>

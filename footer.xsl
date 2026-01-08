@@ -1139,7 +1139,14 @@
 		</table>
 	</xsl:template>
 	<!-- END OF Carleton ILL footer PEER-TO-PEER -->
+	
+	<!-- 
+	    HOLIDAY CLOSURE TEMPLATE:
+	    Used when we close for the holidays. Used for a) Hold Shelf Expiry Date Update Letter, b) On Hold Shelf Letter, and c) On Hold Shelf Reminder Letter.
+	    The template is set up to stay in the letters. The content gets removed/commented out when we're not closed for holiday. 
+	-->
 	<xsl:template name="holidayClosure">
-	    Note: the Library is closed for the holidays from 5pm December 23, reopening January 5.
+	    <!-- Note: the Library is closed for the holidays from 5pm December 23, reopening January 5. -->
 	</xsl:template>
+	
 </xsl:stylesheet>

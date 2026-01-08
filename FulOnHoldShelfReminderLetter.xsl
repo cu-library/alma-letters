@@ -376,7 +376,12 @@
 									</xsl:if>
 									<tr>
 										<td>
-											If you need a few extra days for pickup, or would like to change your delivery preference, please reach out and we will see what we can do. <strong><xsl:call-template name="holidayClosure"/></strong>
+											If you need a few extra days for pickup, or would like to change your delivery preference, please reach out and we will see what we can do. 
+											<!-- 
+											    HOLIDAY CLOSURE TEMPLATE: used when we close for the holidays, but left in letter for convenience.
+											    You can edit the template in footer.xsl 
+											-->
+											    <strong><xsl:call-template name="holidayClosure"/></strong>
 										</td>
 									</tr>
 								</table>

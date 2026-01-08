@@ -2,6 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:include href="header.xsl"/>
 	<xsl:include href="footer.xsl"/>
+	<xsl:include href="mailReason.xsl"/>
 	<xsl:include href="style.xsl"/>
 	<xsl:include href="recordTitle.xsl"/>
 	<!-- START AFN-VERSION 1.8 START Test if it's an EMAIL partner, if so terminate letter -->
@@ -157,8 +158,8 @@
 								<!-- AFN TODO -->
 								<!-- handle local institution on hold (ie. PUT YOUR EXISTING HOLD LETTER INFO HERE between the xsl:otherwise tag)-->
 								<!-- Carleton letter -->
+								<xsl:call-template name="toWhomIsConcerned"/>
 								<table>
-								    <xsl:call-template name="salutation2"/>
 									<tr>
 										<td>
 											<p>We have updated the expiry date for the following item:</p>
@@ -178,13 +179,23 @@
 												<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
 													We will now hold the item until <strong><xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/></strong>.
 												</xsl:if> 
-												You can pick it up at the <strong><xsl:value-of select="notification_data/request/assigned_unit_name"/></strong> or through our <xsl:call-template name="curbsideLink"/>. Please visit the library website for <xsl:call-template name="openingHours"/>.</p>
+												You can pick it up at the 
+												<strong><xsl:value-of select="notification_data/request/assigned_unit_name"/></strong> 
+												or through our <xsl:call-template name="curbsideLink"/>. 
+												Please visit the library website for <xsl:call-template name="openingHours"/>.
+												<!-- 
+											        HOLIDAY CLOSURE TEMPLATE: used when we close for the holidays, but left in letter for 
+											        convenience.
+											        You can edit the template in footer.xsl 
+                                                -->
+											    <strong><xsl:call-template name="holidayClosure"/></strong>
+											</p>
 										</td>
 									</tr>
 									<xsl:if test="notification_data/request/system_notes !='' ">
 										<tr>
 											<td>
-												<strong>@@notes_affect_loan@@:</strong>
+												<strong>Loan notes:</strong>
 											</td>
 										</tr>
 										<tr>
@@ -193,9 +204,11 @@
 											</td>
 										</tr>
 									</xsl:if>
+								</table>
+								<table>
 									<tr>
 										<td>
-											<p>@@sincerely@@</p>
+											<p>Sincerely,</p>
 										</td>
 									</tr>
 									<xsl:call-template name="accessSignature"/>

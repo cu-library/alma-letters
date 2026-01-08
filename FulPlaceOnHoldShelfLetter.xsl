@@ -206,6 +206,12 @@
 													    You can pick it up at the <strong>Library Services Desk</strong> 
 													    or through our <xsl:call-template name="curbsideLink"/>. 
 													    Please visit the library website for <xsl:call-template name="openingHours"/>.
+													    <!-- 
+											                HOLIDAY CLOSURE TEMPLATE: used when we close for the holidays, but left in letter 
+											                for convenience.
+											                You can edit the template in footer.xsl 
+											            -->
+											            <strong><xsl:call-template name="holidayClosure"/></strong>
 												    </p>
 												    <xsl:if test="notification_data/request/work_flow_entity/expiration_date">
     												    <p>
@@ -218,9 +224,7 @@
 												            <strong>Loan note:</strong> <xsl:value-of select="notification_data/request/system_notes"/>
 												        </p>
 												    </xsl:if>
-												    <p>
-												        <strong><xsl:call-template name="holidayClosure"/></strong>
-												    </p>
+												
 												</td>
 											</tr>
 										</xsl:otherwise>
