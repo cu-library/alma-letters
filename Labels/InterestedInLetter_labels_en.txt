@@ -6,9 +6,19 @@ code: You_were_specify, description: A title you recently requested is now being
 code: Bcc, description: None
 code: Cc, description: None
 code: callNumber, description: Call Number
+code: details_activated, description: E-resource was activated.
+code: details_cancelled, description: Order was Cancelled.
+code: details_item_arrival_time, description: Will be available in {0} hours.
+code: details_received, description: Item was received.
+code: letter_name_activated, description: Order Interested In 
+code: letter_name_cancelled, description: Order Interested In 
+code: letter_name_received, description: Order Interested In 
 code: message, description: Message
 code: mmsId, description: MMS ID
-code: orderNumber, description: Order Number:
+code: orderNumber, description: Order Number
 code: receivingNote, description: Receiving Note
 code: sincerely, description: Sincerely
-code: title, description: Title:
+code: subject_activated, description: Order Interested In 
+code: subject_cancelled, description: Order Interested In 
+code: subject_received, description: Order Interested In 
+code: title, description: Title

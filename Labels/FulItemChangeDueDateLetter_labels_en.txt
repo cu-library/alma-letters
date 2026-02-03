@@ -12,10 +12,10 @@ code: sincerely, description: Sincerely,
 code: addressFrom, description: libraryservices@cunet.carleton.ca
 code: description, description: Description
 code: old_due_date, description: Original Due Date
-code: Bcc, description: None
-code: Cc, description: None
+code: to, description: to
+code: title, description: Title
+code: loans, description: Loans
 code: author, description: Author
 code: library, description: Library
-code: loans, description: Loans
-code: title, description: Title
-code: to, description: to
+code: Cc, description: None
+code: Bcc, description: None

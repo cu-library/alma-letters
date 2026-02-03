@@ -6,9 +6,19 @@ code: You_were_specify, description: Vous avez été signalé(e) comme étant 'I
 code: Bcc, description: Aucun
 code: Cc, description: Aucun
 code: callNumber, description: Cote
+code: details_activated, description: La ressource électronique a été activée.
+code: details_cancelled, description: La commande a été annulée.
+code: details_item_arrival_time, description: Sera disponible dans {0} heures.
+code: details_received, description: L'exemplaire a été reçu.
+code: letter_name_activated, description: Commande pour utilisateur intéressé 
+code: letter_name_cancelled, description: Commande pour utilisateur intéressé 
+code: letter_name_received, description: Commande pour utilisateur intéressé 
 code: message, description: Message
 code: mmsId, description: Identifiant MMS
 code: orderNumber, description: Numéro de commande :
 code: receivingNote, description: Note de réception
 code: sincerely, description: Cordialement
+code: subject_activated, description: Commande pour utilisateur intéressé 
+code: subject_cancelled, description: Commande pour utilisateur intéressé 
+code: subject_received, description: Commande pour utilisateur intéressé 
 code: title, description: Titre :
