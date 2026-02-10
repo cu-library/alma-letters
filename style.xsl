@@ -29,6 +29,16 @@
 			 table {
 				padding: 5px;
 			 }
+            
+            .acq-orders th, td {
+                vertical-align: top;
+                padding: 0.25em;
+            }
+            
+            .acq-orders th {
+                text-align: left;
+                white-space: nowrap;
+            }
 			 <!-- END Carleton styles -->
 		</style>
 	</xsl:template>
