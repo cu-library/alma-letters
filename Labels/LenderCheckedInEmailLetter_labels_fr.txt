@@ -1,14 +1,14 @@
+code: subject, description: Lettre email de retour au prêteur
+code: letterName, description: Lettre email de retour au prêteur
 code: addressFrom, description: Your.Department@organization.com
 code: Bcc, description: Aucun
 code: Cc, description: Aucun
 code: author, description: Auteur
 code: checkedInDate, description: Date de retour
 code: header, description: Madame, Monsieur
-code: letterName, description: Lettre email de retour au prêteur
 code: note, description: Note
 code: request, description: Pour votre information, l'exemplaire PEB prêté a été retourné dans votre bibliothèque.
 code: requestId, description: Identifiant de la demande
 code: signature, description: Cordialement
-code: subject, description: Lettre email de retour au prêteur
 code: supplyDate, description: Date de fourniture
 code: title, description: Titre

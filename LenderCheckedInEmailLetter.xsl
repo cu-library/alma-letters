@@ -15,6 +15,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 				</xsl:attribute>
 			</xsl:if>
 
+			<!-- AFN-VERSION 1.0 START -->
+			<xsl:variable name="letter_lang" select="notification_data/languages/string"/>
+			<!-- AFN-VERSION 1.0 END -->
+
 			<head>
 				<title>
 					<xsl:value-of select="notification_data/general_data/subject"/>
@@ -29,142 +33,114 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 				</xsl:attribute>
 				<xsl:call-template name="head" />
 				<!-- header.xsl -->
-
-			    <table role='presentation'  cellspacing="0" cellpadding="5" border="0">
-					<tr>
-						<td>
-
-							<h3>@@header@@</h3>
-
-						</td>
-					</tr>
-				</table>
-
+			    <xsl:call-template name="toWhomIsPartners" />
 				<div class="messageArea">
 					<div class="messageBody">
-						<table role='presentation'  cellspacing="0" cellpadding="5" border="0">
-
+						<table>
 							<tr>
 								<td>
-									<strong>@@request@@</strong>
+									We would like to inform you that the we have received and checked in 
+									your return of the following item.
 								</td>
 							</tr>
-
 						</table>
-
-                        <br/>
-						<table role='presentation'  cellspacing="0" cellpadding="5" border="0">
+						<table>
 							<xsl:attribute name="style">
 								<xsl:call-template name="listStyleCss"/>
 								<!-- style.xsl -->
 							</xsl:attribute>
 							<tr>
 								<td>
-									<strong> @@requestId@@: </strong>
+									<strong>Request ID: </strong>
 									<xsl:value-of select="notification_data/request/external_request_id"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong> @@title@@: </strong>
+									<strong>Title: </strong>
 									<xsl:value-of select="notification_data/request/display/title"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong> @@author@@: </strong>
+									<strong>Author: </strong>
 									<xsl:value-of select="notification_data/request/display/author"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong> @@supplyDate@@: </strong>
+									<strong>Date item supplied: </strong>
 									<xsl:value-of select="notification_data/request/item_sent_date"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong> @@checkedInDate@@: </strong>
+									<strong>Check-in date: </strong>
 									<xsl:value-of select="notification_data/checked_in_date"/>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									<br/>
-									<strong> @@note@@: </strong>
-									<xsl:value-of select="notification_data/note_to_partner"/>
-								</td>
-							</tr>
+							<!-- AFN-VERSION 1.0 START -->
+							<!-- Add due date, no label for it so we must check language code -->							
+							<xsl:if test="notification_data/request/due_date !=''">
+								<tr>
+									<td>
+										<xsl:if test="$letter_lang = 'fr'">
+        									<!-- due date label if lang is 'fr' -->
+											<strong>Date d'échéance: </strong>
+    									</xsl:if>
+										<xsl:if test="$letter_lang = 'en'">
+											<strong>Due date: </strong>
+    									</xsl:if>
+										<xsl:value-of select="notification_data/request/due_date" />
+									</td>
+								</tr>
+							</xsl:if>
+							<!-- Add Shipping Cost -->						
+							<xsl:if test="notification_data/request/shipping_cost/sum > 0">
+								<tr>
+									<td>										
+										<xsl:if test="$letter_lang = 'fr'">
+        									<!-- Shipping cost label if lang is 'fr' -->
+											<strong>Frais de port: </strong>
+    									</xsl:if>
+										<xsl:if test="$letter_lang = 'en'">
+											<strong>Shipping cost: </strong>
+    									</xsl:if>
+										<xsl:value-of select="notification_data/request/shipping_cost/sum" />&#160;<xsl:value-of select="notification_data/request/shipping_cost/currency" />
+									</td>
+								</tr>
+							</xsl:if>	
+							<!-- Add Notes -->							
+							<xsl:if test="notification_data/request/note_to_partner !=''">
+								<tr>
+									<td>
+										<strong>Note: </strong>
+										<xsl:value-of select="notification_data/request/note_to_partner"/>
+									</td>
+								</tr>
+							</xsl:if>							
+							<!-- Add the standard note just after note to partner -->
+							<xsl:if test="notification_data/request/note !=''">
+								<tr>
+									<td>
+									    <strong>Request note: </strong>										
+										<xsl:value-of select="notification_data/request/note" />
+									</td>
+								</tr>
+							</xsl:if>
+							<!-- AFN-VERSION 1.0 END -->
 						</table>
-
-						<br/><br/>
-
-						<table role='presentation' >
+						<table>
 							<tr>
-								<td>@@signature@@</td>
+								<td>Sincerely,</td>
 							</tr>
-							<tr>
-								<td>
-									<xsl:value-of select="notification_data/library/name" />
-								</td>
-							</tr>
-							<xsl:if test="notification_data/library/address/line1 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line1" />
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line2 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line2" />
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line3 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line3" />
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line4 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line4" />
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/line5 !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/line5" />
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/city !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/city" />
-									</td>
-								</tr>
-							</xsl:if>
-							<xsl:if test="notification_data/library/address/country !=''">
-								<tr>
-									<td>
-										<xsl:value-of select="notification_data/library/address/country" />
-									</td>
-								</tr>
-
-							</xsl:if>
 						</table>
 					</div>
 				</div>
-				<xsl:call-template name="lastFooter" />
+				<xsl:call-template name="ILLFooterPeerToPeer" />
+				<xsl:call-template name="lastFooter" />				
 				<!-- footer.xsl -->
 			</body>
 		</html>
 	</xsl:template>
 </xsl:stylesheet>
-

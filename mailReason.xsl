@@ -11,4 +11,15 @@
 			</tr>
 		</table>
 	</xsl:template>
+	<xsl:template name="toWhomIsPartners">
+	    <table>
+			<tr>
+				<td>
+					<xsl:for-each select="notification_data">
+						<span>Hello,</span>
+					</xsl:for-each>
+				</td>
+			</tr>
+		</table>
+	</xsl:template>
 </xsl:stylesheet>
