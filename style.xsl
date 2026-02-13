@@ -39,6 +39,10 @@
                 text-align: left;
                 white-space: nowrap;
             }
+            
+            #LAXbarcode {
+                text-align: center;    
+            }
 			 <!-- END Carleton styles -->
 		</style>
 	</xsl:template>

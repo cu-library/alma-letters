@@ -27,8 +27,8 @@
 					<!-- style.xsl -->
 				</xsl:attribute>
 				<h1>
-					<strong>Send @@to@@:
-                <!-- START OF AFN-VERSION 1.5 -->
+					<strong>Send to:
+                         <!-- START OF AFN-VERSION 1.5 -->
 						<xsl:choose>
 							<xsl:when test="notification_data/request/calculated_destination_name != ''">
 								<xsl:value-of select="notification_data/request/calculated_destination_name"/>
@@ -47,9 +47,9 @@
 						<table>
 							<tr>
 								<td>
-									<strong>@@print_date@@: </strong>
-									<xsl:value-of select="notification_data/request/create_date"/>
--									<xsl:value-of select="notification_data/request/create_time"/>
+									<strong>Print Date: </strong>
+									<xsl:value-of select="notification_data/request/create_date"/> - 
+									<xsl:value-of select="notification_data/request/create_time"/>
 								</td>
 							</tr>
 							<tr>
@@ -60,14 +60,23 @@
 							</tr>
 							<tr>
 								<td>
-									<strong>@@item_barcode@@: </strong>
+									<strong>@@item_barcode@@: </strong> 
+									<xsl:for-each select="notification_data/phys_item_display">
+									    <xsl:value-of select="barcode"/>
+                                        <!-- COMMENTED OUT UNTIL APPROVAL  
+										<xsl:call-template name="LAXbarcode"/>
+										-->
+									</xsl:for-each>
+									<br/>
 									<img src="cid:item_id_barcode.png" alt="Item Barcode"/>
 								</td>
 							</tr>
 						</table>
 						<table>
 							<tr>
-								<td><p>@@we_are_transferring_item_below@@</p></td>
+								<td>
+									<p>@@we_are_transferring_item_below@@</p>
+								</td>
 							</tr>
 							<tr>
 								<!-- AFN-VERSION 1.4 adjust from statement (replace td tag) to use org name template -->

@@ -1026,6 +1026,7 @@
 			I acknowledge and agree that this item is being supplied solely for my own personal use, and may only be used for the purpose of research, education, private study, review, or criticism. 
 			I agree that I will not share, distribute, publish, or make copies of this item, or otherwise provide it to any other person.
 	</xsl:template>
+	
 	<!-- Access Services Signature -->
 	<xsl:template name="accessSignature">
 		<tr>
@@ -1036,6 +1037,7 @@
 			</td>
 		</tr>
 	</xsl:template>
+	
     <!-- Course Reserves signature and footer -->
     <xsl:template name="courseReservesSignature">
         <tr>
@@ -1046,6 +1048,7 @@
             </td>
         </tr>
     </xsl:template>
+    
     <xsl:template name="courseReservesFooter">
 		<table>
 			<xsl:attribute name="style">
@@ -1068,6 +1071,7 @@
 			</td>
 		</tr>
 	</xsl:template>
+	
 	<xsl:template name="libraryAccessibilityFooter">
 		<table>
 			<xsl:attribute name="style">
@@ -1079,6 +1083,7 @@
 			</tr>
 		</table>
 	</xsl:template>
+	
 	<!-- Carleton ILL footer PATRONS -->
 	<xsl:template name="ILLFooter">
 		<table>
@@ -1147,6 +1152,55 @@
 	-->
 	<xsl:template name="holidayClosure">
 	    <!-- Note: the Library is closed for the holidays from 5pm December 23, reopening January 5. -->
+	</xsl:template>
+	
+	<!-- LAX barcode template: fixes storage barcodes so that they are easier to parse. Works for Ful Resource Request Slip Letter and Ful Transit Slip Letter; not implemented in any others.  -->
+	<xsl:template name="LAXbarcode">
+        	<xsl:choose>
+        		<xsl:when test="location_code = 'lax'">
+        			<table id="LAXbarcode">
+        				<tr>
+        					<th>T</th>
+        					<th>S</th>
+        					<th>SIDE</th>
+        					<th>BAY</th>
+        					<th>SHELF</th>
+        					<th>TRAY</th>
+        					<th>ITEM</th>
+        					<th>C</th>
+        				</tr>
+        				<tr>
+        					<td>
+        						<xsl:value-of select="substring(barcode, 1,1)"/>
+        					</td>
+        					<td>
+        						<xsl:value-of select="substring(barcode, 2,1)"/>
+        					</td>
+        					<td>
+        						<xsl:value-of select="substring(barcode, 3,2)"/>
+        					</td>
+        					<td>
+        						<xsl:value-of select="substring(barcode, 5,2)"/>
+        					</td>
+        					<td>
+        						<xsl:value-of select="substring(barcode, 7,2)"/>
+        					</td>
+        					<td>
+        						<xsl:value-of select="substring(barcode, 9,2)"/>
+        					</td>
+        					<td>
+        						<xsl:value-of select="substring(barcode, 11,2)"/>
+        					</td>
+        					<td>
+        						<xsl:value-of select="substring(barcode, 13,1)"/>
+        					</td>
+        				</tr>
+        			</table>
+        		</xsl:when>
+        		<xsl:otherwise>
+        		    <xsl:value-of select="barcode"/>&#160;
+        		</xsl:otherwise>
+        	</xsl:choose>
 	</xsl:template>
 	
 </xsl:stylesheet>
