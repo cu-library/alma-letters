@@ -26,9 +26,10 @@
 					<xsl:call-template name="bodyStyleCss"/>
 					<!-- style.xsl -->
 				</xsl:attribute>
-				<h1>
-					<strong>Send to:
+				<h1>Send to:
                          <!-- START OF AFN-VERSION 1.5 -->
+                         <!-- If the item wants to go somewhere specific, put down that place.
+                         If not, just put down its home institution. -->
 						<xsl:choose>
 							<xsl:when test="notification_data/request/calculated_destination_name != ''">
 								<xsl:value-of select="notification_data/request/calculated_destination_name"/>
@@ -38,7 +39,6 @@
 							</xsl:otherwise>
 						</xsl:choose>
 						<!-- END OF AFN-VERSION 1.5 -->
-					</strong>
 				</h1>
 				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
@@ -47,8 +47,8 @@
 						<table>
 							<tr>
 								<td>
-									<strong>Print Date: </strong>
-									<xsl:value-of select="notification_data/request/create_date"/> - 
+									<strong>Print date: </strong>
+									<xsl:value-of select="notification_data/request/create_date"/>&#160;
 									<xsl:value-of select="notification_data/request/create_time"/>
 								</td>
 							</tr>

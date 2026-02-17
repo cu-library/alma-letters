@@ -1,3 +1,4 @@
+code: letterName, description: Lettre d'avis de demande de ressource
 code: Bcc, description: Aucun
 code: Cc, description: Aucun
 code: accession_number, description: Numéro d'entrée
@@ -28,7 +29,6 @@ code: inventory_number, description: Numéro/s d'inventaire
 code: isbn, description: ISBN
 code: issn, description: ISSN
 code: item_barcode, description: Code-barres exemplaire
-code: letterName, description: Lettre d'avis de demande de ressource
 code: location, description: Localisation
 code: manual_description_note, description: La description manuelle suivante a été spécifiée dans cette demande
 code: move_to_library, description: Destination

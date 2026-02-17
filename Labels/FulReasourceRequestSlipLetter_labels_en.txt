@@ -1,3 +1,4 @@
+code: letterName, description: Resource Request Slip
 code: Bcc, description: None
 code: Cc, description: None
 code: accession_number, description: Accession Number
@@ -28,7 +29,6 @@ code: inventory_number, description: Inventory Number/s
 code: isbn, description: ISBN
 code: issn, description: ISSN
 code: item_barcode, description: Item Barcode
-code: letterName, description: Resource Request Slip Letter
 code: location, description: Location
 code: manual_description_note, description: The following manual description has been specified in this request
 code: move_to_library, description: Destination
