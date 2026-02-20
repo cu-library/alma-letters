@@ -1,14 +1,14 @@
+code: letterName, description: Lettre email de rejet au prêteur
+code: subject, description: Lettre email de rejet au prêteur
+code: addressFrom, description: Your.Department@organization.com
 code: Bcc, description: Aucun
 code: Cc, description: Aucun
-code: addressFrom, description: Your.Department@organization.com
 code: author, description: Auteur
 code: header, description: Madame, Monsieur
-code: letterName, description: Lettre email de rejet au prêteur
 code: note, description: Note
 code: reason, description: Motif de rejet
 code: request, description: Nous avons le regret de vous informer que nous n'avons pas pu satisfaire votre demande PEB.
 code: requestDate, description: Date de la demande
 code: requestId, description: Identifiant de la demande
 code: signature, description: Cordialement
-code: subject, description: Lettre email de rejet au prêteur
 code: title, description: Titre

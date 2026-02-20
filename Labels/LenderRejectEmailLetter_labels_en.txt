@@ -1,14 +1,14 @@
+code: letterName, description: Resource Sharing Request Rejected
+code: subject, description: Resource Sharing Request Rejected
+code: addressFrom, description: interlibraryloans@cunet.carleton.ca
 code: Bcc, description: None
 code: Cc, description: None
-code: addressFrom, description: Your.Department@organization.com
 code: author, description: Author
 code: header, description: Dear Sir/Madam,
-code: letterName, description: Lender Reject Email Letter
 code: note, description: Note
 code: reason, description: Reject Reason
 code: request, description: We regret to inform you that we cannot fill your Resource Sharing request.
 code: requestDate, description: Request Date
 code: requestId, description: Request ID
 code: signature, description: Sincerely
-code: subject, description: Lender Reject Email Letter
 code: title, description: Title
