@@ -54,18 +54,16 @@
 							</tr>
 							<tr>
 								<td>
-									<strong>@@request_id@@: </strong>
+									<strong>Request ID: </strong>
 									<img src="cid:request_id_barcode.png" alt="Request Barcode"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong>@@item_barcode@@: </strong> 
+									<strong>Item barcode: </strong> 
 									<xsl:for-each select="notification_data/phys_item_display">
-									    <xsl:value-of select="barcode"/>
-                                        <!-- COMMENTED OUT UNTIL APPROVAL  
-										<xsl:call-template name="LAXbarcode"/>
-										-->
+									    <!-- Separated out version of barcode. Only shows up for LAX items. -->
+                                        <xsl:call-template name="LAXbarcode"/>
 									</xsl:for-each>
 									<br/>
 									<img src="cid:item_id_barcode.png" alt="Item Barcode"/>
@@ -75,7 +73,7 @@
 						<table>
 							<tr>
 								<td>
-									<p>@@we_are_transferring_item_below@@</p>
+									We are transferring the item below
 								</td>
 							</tr>
 							<tr>
@@ -86,7 +84,7 @@
 									<destination_institution_code>01OCUL_YOR</destination_institution_code>
 								-->
 								<td>
-									<strong>@@from@@: </strong>
+									<strong>From: </strong>
 									<xsl:choose>
 										<xsl:when test="(string-length($destination_inst_code) > 0) and (contains(notification_data/request/assigned_unit_name, $destination_inst_code))">
 											<xsl:call-template name="AFNOrgName"/>
@@ -102,7 +100,7 @@
 							<tr>
 								<!-- START OF AFN-VERSION 1.5 -->
 								<td>
-									<strong>@@to@@: </strong>
+									<strong>To: </strong>
 									<xsl:choose>
 										<xsl:when test="notification_data/request/calculated_destination_name != ''">
 											<xsl:value-of select="notification_data/request/calculated_destination_name"/>
@@ -118,28 +116,28 @@
 						<table>
 							<tr>
 								<td>
-									<strong>@@transfer_date@@: </strong>
+									<strong>Transfer date: </strong>
 									<xsl:value-of select="notification_data/request/create_date"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<strong>@@transfer_time@@: </strong>
+									<strong>Transfer time: </strong>
 									<xsl:value-of select="notification_data/request/create_time"/>
 								</td>
 							</tr>
 							<xsl:if test="notification_data/request/material_type_display">
 								<tr>
 									<td>
-										<strong>@@material_type@@: </strong>
+										<strong>Material type: </strong>
 										<xsl:value-of select="notification_data/request/material_type_display"/>
 									</td>
 								</tr>
 							</xsl:if>
-							<xsl:if test="notification_data/user_for_printing/note">
+							<xsl:if test="notification_data/user_for_printing/note != ''">
 								<tr>
 									<td>
-										<strong>@@user_note@@:</strong>
+										<strong>User note:</strong>
 									</td>
 								</tr>
 								<tr>
@@ -148,10 +146,10 @@
 									</td>
 								</tr>
 							</xsl:if>
-							<xsl:if test="notification_data/request/system_notes">
+							<xsl:if test="notification_data/request/system_notes!=''">
 								<tr>
 									<td>
-										<strong>@@system_notes@@:</strong>
+										<strong>System notes:</strong>
 									</td>
 								</tr>
 								<tr>
@@ -160,10 +158,10 @@
 									</td>
 								</tr>
 							</xsl:if>
-							<xsl:if test="notification_data/request/note">
+							<xsl:if test="notification_data/request/note!=''">
 								<tr>
 									<td>
-										<strong>@@request_note@@:</strong>
+										<strong>Request note:</strong>
 									</td>
 								</tr>
 								<tr>
@@ -172,10 +170,11 @@
 									</td>
 								</tr>
 							</xsl:if>
-							<xsl:if test="notification_data/user_for_printing/name">
+							<!-- CONDITIONAL ON WHETHER THIS IS A REQUEST FOR A PATRON -->
+							<xsl:if test="notification_data/user_for_printing/name!=''">
 								<tr>
 									<td>
-										<strong>@@requested_for@@:</strong>
+										<strong>Requested for:</strong>
 									</td>
 								</tr>
 								<tr>
@@ -183,37 +182,38 @@
 										<xsl:value-of select="notification_data/user_for_printing/name"/>
 									</td>
 								</tr>
-								<xsl:if test="notification_data/user_for_printing/email">
+								<xsl:if test="notification_data/user_for_printing/email!=''">
 									<tr>
 										<td>
-											<strong>@@email@@: </strong>
+											<strong>Email: </strong>
 											<xsl:value-of select="notification_data/user_for_printing/email"/>
 										</td>
 									</tr>
 								</xsl:if>
-								<xsl:if test="notification_data/user_for_printing/phone">
+								<xsl:if test="notification_data/user_for_printing/phone!=''">
 									<tr>
 										<td>
-											<strong>@@tel@@: </strong>
+											<strong>Tel: </strong>
 											<xsl:value-of select="notification_data/user_for_printing/phone"/>
 										</td>
 									</tr>
 								</xsl:if>
 								<tr>
 									<td>
-										<strong>@@request_date@@: </strong>
+										<strong>Request date: </strong>
 										<xsl:value-of select="notification_data/request/create_date"/>
 									</td>
 								</tr>
-								<xsl:if test="notification_data/request/lastInterestDate">
+								<xsl:if test="notification_data/request/lastInterestDate!=''">
 									<tr>
 										<td>
-											<strong>@@expiration_date@@: </strong>
+											<strong>Last interest date: </strong>
 											<xsl:value-of select="notification_data/request/lastInterestDate"/>
 										</td>
 									</tr>
 								</xsl:if>
 							</xsl:if>
+							<!-- END OF CONDITIONAL BASED ON WHETHER THIS IS A REQUEST FOR A PATRON -->
 						</table>
 						<table>
 							<tr>
@@ -227,7 +227,7 @@
 								<tr>
 									<!-- AFN-VERSION 1.4 adjust owning library to use org name template -->
 									<td>
-										<strong>@@owning_library@@: </strong>
+										<strong>Owning library: </strong>
 										<xsl:choose>
 											<xsl:when test="(string-length($destination_inst_code) > 0) and (contains(notification_data/request/assigned_unit_name, $destination_inst_code))">
 												<xsl:call-template name="AFNOrgName"/> - <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>

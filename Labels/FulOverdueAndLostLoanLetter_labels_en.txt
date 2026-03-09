@@ -3,11 +3,11 @@ code: fee_amount, description: Your total account balance
 code: charged_with_fines_fees, description: Fees
 code: addressFrom, description: libraryservices@cunet.carleton.ca
 code: department, description: Access Services Department
+code: subject, description: Bill for Lost Library Item(s)
+code: letterName, description: Bill for Lost Library Item(s)
 code: description, description: Description
 code: additional_info_2, description: If the item(s) are returned, the replacement fee will be removed. The process fee is non-refundable and must be paid. 
 code: additional_info_1, description: Please note that your borrowing privileges have been suspended. Accounts owing $20 or more are blocked.
-code: subject, description: Bill for Lost Library Item(s)
-code: letterName, description: Bill for Lost Library Item(s)
 code: sincerely, description: Sincerely
 code: inform_you_item_below, description: The following item(s) are long overdue on your library account and
 code: borrowed_by_you, description: borrowed by you

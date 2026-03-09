@@ -16,9 +16,11 @@
 					<xsl:call-template name="bodyStyleCss"/>
 					<!-- style.xsl -->
 				</xsl:attribute>
-				<h1>
+				<xsl:if test="notification_data/user_for_printing/name!=''">
+				    <h1>
 				    Requested for: <xsl:value-of select="notification_data/user_for_printing/name"/>
 				</h1>
+				</xsl:if>
 				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
 				<div class="messageArea">
@@ -53,17 +55,29 @@
 									<img alt="Item Barcode Image" src="cid:item_id_barcode.png"/>
 								</td>
 							</tr>
-							<xsl:for-each select="/notification_data/phys_item_display/available_items/available_item">
-								<tr>
-									<td>
-										<strong>Item barcode: </strong>
-										<xsl:value-of select="barcode"/>
-										<!-- COMMENTED OUT UNTIL APPROVAL  
-										<xsl:call-template name="LAXbarcode"/>
-										-->
-									</td>
-								</tr>
-							</xsl:for-each>
+							<xsl:if test="/notification_data/phys_item_display/barcode!=''">
+							    <xsl:for-each select="/notification_data/phys_item_display">
+    								<tr>
+    									<td>
+    										<strong>Item barcode: </strong>
+    										<!-- Separated out version of barcode. Only shows up for LAX items. -->
+    										<xsl:call-template name="LAXbarcode"/>
+    									</td>
+    								</tr>
+						    	</xsl:for-each>
+							</xsl:if>
+							<xsl:if test="/notification_data/phys_item_display/barcode='' and /notification_data/phys_item_display/available_items/available_item/barcode!=''">
+							    <xsl:for-each select="/notification_data/phys_item_display/available_items/available_item">
+    								<tr>
+    									<td>
+    										<strong>Item barcode: </strong>
+    										<!-- Separated out version of barcode. Only shows up for LAX items. -->
+    										<xsl:call-template name="LAXbarcode"/>
+    									</td>
+    								</tr>
+						    	</xsl:for-each>
+							</xsl:if>
+						
 							<xsl:if test="notification_data/external_id != ''">
 								<tr>
 									<td>
@@ -130,14 +144,6 @@
 										<h2>
 											<strong>Call number: </strong>
 											<xsl:value-of select="notification_data/phys_item_display/call_number"/>
-										</h2>
-									</td>
-								</xsl:if>
-								<xsl:if test="notification_data/phys_item_display/accession_number != ''">
-									<td>
-										<h2>
-											<strong>Accession number: </strong>
-											<xsl:value-of select="notification_data/phys_item_display/accession_number"/>
 										</h2>
 									</td>
 								</xsl:if>
@@ -227,7 +233,7 @@
 							<xsl:if test="notification_data/request/system_notes != ''">
 								<tr>
 									<td>
-										<strong>System notes:</strong>
+										<strong>System notes: </strong>
 										<xsl:value-of select="notification_data/request/system_notes"/>
 									</td>
 								</tr>
@@ -235,7 +241,7 @@
 							<xsl:if test="notification_data/request/note != ''">
 								<tr>
 									<td>
-										<strong>Request note:</strong>
+										<strong>Request note: </strong>
 										<xsl:value-of select="notification_data/request/note"/>
 									</td>
 								</tr>

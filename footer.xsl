@@ -1157,7 +1157,7 @@
 	<!-- LAX barcode template: fixes storage barcodes so that they are easier to parse. Works for Ful Resource Request Slip Letter and Ful Transit Slip Letter; not implemented in any others.  -->
 	<xsl:template name="LAXbarcode">
         	<xsl:choose>
-        		<xsl:when test="location_code = 'lax'">
+        		<xsl:when test="starts-with(barcode,'15') and (string-length(barcode)=13)">
         			<table id="LAXbarcode">
         				<tr>
         					<th>T</th>

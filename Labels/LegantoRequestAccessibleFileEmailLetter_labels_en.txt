@@ -1,0 +1,20 @@
+code: Additional_email_address, description: Additional email address(es):
+code: Additional_info_1, description: EMPTY_STRING
+code: Additional_info_2, description: EMPTY_STRING
+code: Course_code, description: Course code:
+code: Course_details_header, description: Course details:
+code: Course_instructor, description: Course instructor/s:
+code: Course_name, description: Course name:
+code: Item_author, description: Author:
+code: Item_details_header, description: Item details:
+code: Item_identifier, description: Item identifier:
+code: Item_title, description: Title:
+code: Request_comment, description: Request comment:
+code: Signature, description: Thank you
+code: User_details_header, description: Requester details:
+code: User_email, description: Email address:
+code: View_in_leganto, description: View in Leganto
+code: addressFrom, description: Your.Department@organization.com
+code: letterName, description: Leganto request for accessible file
+code: subject, description: Leganto request for accessible file
+code: user_ requested_accessible_file.statment, description: A user has requested an accessible file from their Leganto course resource list. Please send the accessible file to the user via email.

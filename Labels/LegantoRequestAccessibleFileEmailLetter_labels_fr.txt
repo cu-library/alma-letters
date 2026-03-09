@@ -1,0 +1,20 @@
+code: Additional_email_address, description: Adresse(s) e-mail supplémentaire(s) :
+code: Additional_info_1, description: EMPTY_STRING
+code: Additional_info_2, description: EMPTY_STRING
+code: Course_code, description: Code du cours :
+code: Course_details_header, description: Détails du cours :
+code: Course_instructor, description: Enseignant(s) du cours :
+code: Course_name, description: Nom du cours :
+code: Item_author, description: Auteur :
+code: Item_details_header, description: Détails de l'exemplaire :
+code: Item_identifier, description: Identifiant de l'exemplaire :
+code: Item_title, description: Titre :
+code: Request_comment, description: Commentaire de la demande :
+code: Signature, description: Merci
+code: User_details_header, description: Détails du demandeur :
+code: User_email, description: Adresse e-mail :
+code: View_in_leganto, description: Consulter dans Leganto
+code: addressFrom, description: votre.département@organisation.com
+code: letterName, description: Demande de fichier accessible Leganto
+code: subject, description: Demande de fichier accessible Leganto
+code: user_ requested_accessible_file.statment, description: Un utilisateur a demandé un fichier accessible depuis sa liste de ressources de cours Leganto. Veuillez envoyer le fichier accessible par e-mail à l'utilisateur.

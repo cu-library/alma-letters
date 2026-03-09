@@ -1,6 +1,6 @@
 code: subject, description: Lettre de transit
 code: letterName, description: Lettre de transit
-code: addressFrom, description: Your.Department@organization.com
+code: addressFrom, description: LSPsupport@cunet.carleton.ca
 code: Bcc, description: Aucun
 code: Cc, description: Aucun
 code: call_number, description: Cote
