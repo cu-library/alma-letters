@@ -6,13 +6,13 @@ code: sincerely, description: Sincerely,
 code: addressFrom, description: libraryservices@cunet.carleton.ca
 code: description, description: Description
 code: loans, description: Loans
-code: Bcc, description: None
-code: Cc, description: None
-code: additional_info_1, description: EMPTY_STRING
-code: additional_info_2, description: EMPTY_STRING
-code: author, description: Author
-code: call_number, description: Call Number
+code: title, description: Title
 code: due_date, description: Due Date
+code: author, description: Author
 code: library, description: Library
 code: location, description: Location
-code: title, description: Title
+code: call_number, description: Call Number
+code: additional_info_1, description: EMPTY_STRING
+code: additional_info_2, description: EMPTY_STRING
+code: Cc, description: None
+code: Bcc, description: None

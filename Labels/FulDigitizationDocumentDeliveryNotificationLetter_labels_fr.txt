@@ -10,19 +10,19 @@ code: for_cas_users, description: Pour les utilisateurs CAS
 code: for_saml_users, description: Pour les utilisateurs SAML (ajouter idpCode si besoin)
 code: for_local_users, description: Pour les utilisateurs LDAP/locaux
 code: max_num_of_views, description: Pour votre information, le nombre maximal de vues de la ressource est
-code: Bcc, description: Aucun
-code: Cc, description: Aucun
+code: title, description: Titre
 code: attached_are_the_urls, description: Les URL des ressources numériques sont en pièce jointe
-code: borrowing_terms, description: Conditions d’emprunt
-code: citation_id, description: Identifiant de référence
-code: days, description: Jours
-code: deliver_in, description: Livrer dans
-code: due_date, description: Date de retour
-code: hours, description: Heures
-code: keep_for, description: Garder pendant
-code: price, description: Prix
+code: Cc, description: Aucun
+code: Bcc, description: Aucun
 code: reading_list_name, description: Nom de la liste de lecture
+code: citation_id, description: Identifiant de référence
 code: request_creator, description: Créateur de la demande
 code: terms_of_use, description: Conditions d'utilisation
-code: title, description: Titre
+code: borrowing_terms, description: Conditions d’emprunt
+code: deliver_in, description: Livrer dans
+code: hours, description: Heures
+code: keep_for, description: Garder pendant
+code: days, description: Jours
+code: price, description: Prix
+code: due_date, description: Date de retour
 code: without_authentication, description: Sans authentification 

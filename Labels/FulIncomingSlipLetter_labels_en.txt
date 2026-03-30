@@ -1,96 +1,96 @@
-code: Bcc, description: None
-code: Cc, description: None
-code: additional_person_name, description: Additional Person Name
+code: borrower_reference, description: Borrower Reference
+code: my_id, description: My ID
+code: external_identifier, description: External Identifier
 code: addressFrom, description: Your.Department@organization.com
-code: affiliation, description: Affiliation
-code: apology_message, description: Apology message
-code: applicant_name, description: Applicant Name
-code: article, description: Article
+code: letterName, description: Resource Sharing Lending Slip Letter
+code: subject, description: Resource Sharing Lending Slip
+code: supplied_to, description: Supplied To
+code: date_needed_by, description: Date Needed By
+code: request_note, description: Request Note
+code: requester_email, description: Requester Email
+code: item_barcode, description: Item Barcode
+code: location, description: Location
+code: library, description: Library
+code: shelving_location_for_item, description: Shelving Location
+code: call_number, description: Call Number
 code: assignee, description: Assignee
+code: journal_title, description: Journal Title
 code: author, description: Author
 code: author_initials, description: Author Initials
-code: authority, description: Authority
-code: basic_fee, description: Basic Fee
-code: bib_auth, description: Bibliographic Authority
-code: bib_record_id, description: Bibliographic Record ID
-code: bib_record_title, description: Title
-code: bib_standard_number, description: Standard Number
-code: bor_request_local_id, description: Request Number
-code: borrower_reference, description: Borrower Reference
-code: call_number, description: Call Number
-code: chapter, description: Chapter
-code: chapter_author, description: Chapter Author
-code: chapter_title, description: Chapter Title
-code: copy, description: Copy
-code: copy_type, description: Copy Type
-code: create_date, description: Create Date
-code: date_needed_by, description: Date Needed By
-code: delivery_address, description: Delivery Address
-code: doi, description: DOI
+code: publisher, description: Publisher
+code: place_of_publication, description: Place of Publication
+code: publication_date, description: Publication Date
+code: year, description: Year
 code: edition, description: Edition
-code: editor, description: Editor
-code: end_page, description: End Page
-code: external_identifier, description: External Identifier
-code: format, description: Format
-code: from, description: From
+code: issue, description: Issue
+code: additional_person_name, description: Additional Person Name
+code: source, description: Source
+code: series_title_number, description: Series Title Number
 code: isbn, description: ISBN
 code: issn, description: ISSN
-code: issue, description: Issue
-code: item_barcode, description: Item Barcode
-code: journal_title, description: Journal Title
-code: lcc_number, description: LCCN
-code: lending_request_create_date, description: Request Date
-code: lending_request_local_id, description: Reception Number
-code: letterName, description: Resource Sharing Lending Slip Letter
-code: level_of_service, description: Level of Service
-code: library, description: Library
-code: loan, description: Loan
-code: location, description: Location
-code: message_to_lender, description: Message to lender
-code: my_id, description: My ID
-code: nacsis_request_id, description: Request ID
-code: note, description: Note
-code: oclc_number, description: OCLC Number
-code: page, description: Page
-code: pages, description: Pages
-code: part, description: Part
-code: payment_type, description: Payment Class
-code: place_of_publication, description: Place of Publication
+code: doi, description: DOI
 code: pmid, description: PMID
-code: publication_date, description: Publication Date
-code: publisher, description: Publisher
-code: quantity, description: Quantity
-code: receive_date, description: Arrival Date
-code: receiving_library_address, description: Receiving Library Address
-code: registration_number, description: Registration Number
-code: request_note, description: Request Note
-code: request_status, description: Request Status
-code: request_type, description: Request Type
-code: requested_date, description: Reception Date
-code: requester_email, description: Requester Email
-code: requesting_library, description: Requesting Library
-code: requesting_library_address, description: Requesting Library Address
+code: note, description: Note
+code: chapter, description: Chapter
+code: chapter_title, description: Chapter Title
+code: chapter_author, description: Chapter Author
+code: editor, description: Editor
+code: volume, description: Volume
+code: part, description: Part
+code: pages, description: Pages
+code: start_page, description: Start Page
+code: end_page, description: End Page
+code: oclc_number, description: OCLC Number
+code: lcc_number, description: LCCN
+code: level_of_service, description: Level of Service
+code: Cc, description: None
+code: Bcc, description: None
 code: resource_sharing_request_id, description: Resource sharing internal request id
+code: shipping_method, description: Shipping Method
+code: request_status, description: Request Status
+code: service_type, description: Request Type
+code: loan, description: Loan
+code: copy, description: Copy
+code: bor_request_local_id, description: Request Number
+code: lending_request_create_date, description: Request Date
+code: payment_type, description: Payment Class
+code: copy_type, description: Copy Type
+code: lending_request_local_id, description: Reception Number
+code: requested_date, description: Reception Date
+code: shipping_date, description: Shipping Date
+code: return_deadline, description: Return Deadline
+code: size, description: Size
+code: unit_price, description: Unit Price
+code: quantity, description: Quantity
+code: subtotal, description: Subtotal
+code: basic_fee, description: Basic Fee
+code: shipping_fee, description: Shipping Fee
+code: total, description: Total
+code: article, description: Article
+code: volume_number, description: Volume Number
+code: page, description: Page
+code: applicant_name, description: Applicant Name
+code: affiliation, description: Affiliation
+code: nacsis_request_id, description: Request ID
+code: format, description: Format
+code: update_date, description: Update Date
+code: request_type, description: Request Type
+code: bib_record_id, description: Bibliographic Record ID
+code: create_date, description: Create Date
+code: bib_record_title, description: Title
+code: bib_standard_number, description: Standard Number
+code: registration_number, description: Registration Number
+code: receive_date, description: Arrival Date
 code: return_date_bor, description: Return Date Borrower
 code: return_date_len, description: Return Date Lender
-code: return_deadline, description: Return Deadline
-code: series_title_number, description: Series Title Number
-code: service_type, description: Request Type
-code: shelving_location_for_item, description: Shelving Location
-code: shipping_costs, description: Shipping Costs
-code: shipping_date, description: Shipping Date
-code: shipping_fee, description: Shipping Fee
-code: shipping_method, description: Shipping Method
-code: size, description: Size
+code: authority, description: Authority
+code: bib_auth, description: Bibliographic Authority
 code: slip_title, description: Letter of Transmittal
-code: source, description: Source
-code: start_page, description: Start Page
-code: subject, description: Resource Sharing Lending Slip
-code: subtotal, description: Subtotal
-code: supplied_to, description: Supplied To
-code: total, description: Total
-code: unit_price, description: Unit Price
-code: update_date, description: Update Date
-code: volume, description: Volume
-code: volume_number, description: Volume Number
-code: year, description: Year
+code: apology_message, description: Apology message
+code: message_to_lender, description: Message to lender
+code: delivery_address, description: Delivery Address
+code: from, description: From
+code: shipping_costs, description: Shipping Costs
+code: requesting_library, description: Requesting Library
+code: requesting_library_address, description: Requesting Library Address
+code: receiving_library_address, description: Receiving Library Address

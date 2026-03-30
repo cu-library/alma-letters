@@ -3,22 +3,22 @@ code: addressFrom, description: lspsupport@cunet.carleton.ca
 code: letterName, description: Commande intéressée par
 code: subject, description: Commande intéressée par
 code: You_were_specify, description: Vous avez été signalé(e) comme étant 'Intéressé(e)' pour la commande suivante :
-code: Bcc, description: Aucun
-code: Cc, description: Aucun
+code: orderNumber, description: Numéro de commande :
+code: title, description: Titre :
+code: message, description: Message
 code: callNumber, description: Cote
+code: sincerely, description: Cordialement
+code: mmsId, description: Identifiant MMS
+code: receivingNote, description: Note de réception
+code: Cc, description: Aucun
+code: Bcc, description: Aucun
+code: subject_received, description: Commande pour utilisateur intéressé 
+code: letter_name_received, description: Commande pour utilisateur intéressé 
+code: details_received, description: L'exemplaire a été reçu.
+code: subject_activated, description: Commande pour utilisateur intéressé 
+code: letter_name_activated, description: Commande pour utilisateur intéressé 
 code: details_activated, description: La ressource électronique a été activée.
+code: subject_cancelled, description: Commande pour utilisateur intéressé 
+code: letter_name_cancelled, description: Commande pour utilisateur intéressé 
 code: details_cancelled, description: La commande a été annulée.
 code: details_item_arrival_time, description: Sera disponible dans {0} heures.
-code: details_received, description: L'exemplaire a été reçu.
-code: letter_name_activated, description: Commande pour utilisateur intéressé 
-code: letter_name_cancelled, description: Commande pour utilisateur intéressé 
-code: letter_name_received, description: Commande pour utilisateur intéressé 
-code: message, description: Message
-code: mmsId, description: Identifiant MMS
-code: orderNumber, description: Numéro de commande :
-code: receivingNote, description: Note de réception
-code: sincerely, description: Cordialement
-code: subject_activated, description: Commande pour utilisateur intéressé 
-code: subject_cancelled, description: Commande pour utilisateur intéressé 
-code: subject_received, description: Commande pour utilisateur intéressé 
-code: title, description: Titre :

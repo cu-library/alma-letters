@@ -6,20 +6,22 @@
 	<xsl:include href="footer.xsl"/>
 	<xsl:include href="style.xsl"/>
 	<xsl:include href="recordTitle.xsl"/>
+	<!-- Location variable to be used for excluding items that aren't in the location we want. -->
+	<xsl:variable name="location" select="notification_data/phys_item_display/location_name"/>
 	<xsl:template match="/">
 		<html>
 			<head>
 				<xsl:call-template name="generalStyle"/>
 			</head>
 			<body>
-			    <xsl:attribute name="style">
+				<xsl:attribute name="style">
 					<xsl:call-template name="bodyStyleCss"/>
 					<!-- style.xsl -->
 				</xsl:attribute>
 				<xsl:if test="notification_data/user_for_printing/name!=''">
-				    <h1>
+					<h1>
 				    Requested for: <xsl:value-of select="notification_data/user_for_printing/name"/>
-				</h1>
+					</h1>
 				</xsl:if>
 				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
@@ -55,29 +57,41 @@
 									<img alt="Item Barcode Image" src="cid:item_id_barcode.png"/>
 								</td>
 							</tr>
+							<!-- Barcode information can appear in two different sections of the XML. This is the first potential node. -->
+							<!-- AFN items seem to put barcode info in this node. -->
 							<xsl:if test="/notification_data/phys_item_display/barcode!=''">
-							    <xsl:for-each select="/notification_data/phys_item_display">
-    								<tr>
-    									<td>
-    										<strong>Item barcode: </strong>
-    										<!-- Separated out version of barcode. Only shows up for LAX items. -->
-    										<xsl:call-template name="LAXbarcode"/>
-    									</td>
-    								</tr>
-						    	</xsl:for-each>
+								<!-- Displays all available barcodes. -->
+								<xsl:for-each select="/notification_data/phys_item_display">
+									<!-- 
+										We are going to prevent it from displaying barcodes that don't match our preferred location.
+										Basically this excludes RSV and LAX items from displaying unless they are the only place where the item is available. 
+									-->
+									<xsl:if test="$location = location_name">
+										<tr>
+											<td>
+												<strong>@@item_barcode@@: </strong>
+												<!-- Separated out version of barcode. Only shows up for LAX items. -->
+												<xsl:call-template name="LAXbarcode"/>
+											</td>
+										</tr>
+									</xsl:if>
+								</xsl:for-each>
 							</xsl:if>
+							<!-- Second (more often used) XML section where barcode info is available from. Code chunk follows the same pattern as above. -->
 							<xsl:if test="/notification_data/phys_item_display/barcode='' and /notification_data/phys_item_display/available_items/available_item/barcode!=''">
-							    <xsl:for-each select="/notification_data/phys_item_display/available_items/available_item">
-    								<tr>
-    									<td>
-    										<strong>Item barcode: </strong>
-    										<!-- Separated out version of barcode. Only shows up for LAX items. -->
-    										<xsl:call-template name="LAXbarcode"/>
-    									</td>
-    								</tr>
-						    	</xsl:for-each>
+								<xsl:for-each select="/notification_data/phys_item_display/available_items/available_item">
+									<xsl:if test="$location = location_name">
+										<tr>
+											<td>
+												<strong>@@item_barcode@@: </strong>
+												<!-- Separated out version of barcode. Only shows up for LAX items. -->
+												<xsl:call-template name="LAXbarcode"/>
+											</td>
+										</tr>
+									</xsl:if>
+								</xsl:for-each>
 							</xsl:if>
-						
+							<!-- END OF barcode section -->
 							<xsl:if test="notification_data/external_id != ''">
 								<tr>
 									<td>

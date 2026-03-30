@@ -4,11 +4,11 @@ code: letterName, description: Requested Item Returned
 code: subject, description: Carleton University - Requested Item Returned
 code: request, description: We would like to inform you that we are returning an item we borrowed from your institution.
 code: signature, description: Sincerely,
-code: Bcc, description: None
-code: Cc, description: None
-code: author, description: Author
-code: note, description: Note
-code: requestDate, description: Request Date
 code: requestId, description: Request ID
-code: returnDate, description: Return Date
 code: title, description: Title
+code: author, description: Author
+code: requestDate, description: Request Date
+code: returnDate, description: Return Date
+code: note, description: Note
+code: Cc, description: None
+code: Bcc, description: None

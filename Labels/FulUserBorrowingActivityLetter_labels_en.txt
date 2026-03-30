@@ -8,15 +8,15 @@ code: subject_with_overdue, description: Summary of your library borrowing activ
 code: letterName, description: Summary of your library borrowing activity
 code: department, description: Access Services
 code: description, description: Description
-code: Bcc, description: None
-code: Cc, description: None
-code: author, description: Author
-code: call_number, description: Call Number
-code: due_date, description: Due Date
-code: fine, description: Fine
-code: library, description: Library
 code: loans, description: Loans
-code: location, description: Location
 code: overdue_loans, description: Overdue Loans
 code: title, description: Title
+code: due_date, description: Due Date
+code: fine, description: Fine
+code: author, description: Author
+code: library, description: Library
+code: location, description: Location
+code: call_number, description: Call Number
 code: total, description: Total:
+code: Cc, description: None
+code: Bcc, description: None
