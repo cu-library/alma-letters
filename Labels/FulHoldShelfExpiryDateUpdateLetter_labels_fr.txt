@@ -9,6 +9,6 @@ code: Bcc, description: None
 code: Cc, description: None
 code: additional_id, description: Identifiant supplémentaire
 code: call_number, description: Cote
-code: can_picked_at, description: peut être retiré à l'emplacement suivant :
+code: can_picked_at, description: peut être retiré à l'emplacement suivant :
 code: following_item_requested_on, description: L'exemplaire suivant, que vous avez demandé le
 code: notes_affect_loan, description: Notes pouvant affecter le prêt

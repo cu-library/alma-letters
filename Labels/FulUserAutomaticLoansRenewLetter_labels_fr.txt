@@ -12,7 +12,7 @@ code: letterName, description: Lettre de renouvellement de prêts automatique
 code: library, description: Bibliothèque
 code: loans, description: Prêts
 code: location, description: Localisation
-code: message, description: Les exemplaires suivants ont été renouvelés :
+code: message, description: Les exemplaires suivants ont été renouvelés :
 code: renew_status, description: Statut de renouvellement
 code: sincerely, description: Cordialement
 code: subject, description: Avis de renouvellement de prêts automatique

@@ -1,13 +1,13 @@
+code: message, description: The following item(s) are coming due. Please return the item(s) or renew online. 
 code: letterName, description: A reminder from your library
+code: description, description: Description
+code: loans, description: Loans
 code: short_loans_message, description: The following item(s) are coming due. Please return the item(s) or renew online. 
 code: author, description: Author
 code: sincerely, description: Sincerely,
 code: subject, description: A reminder from your library
 code: addressFrom, description: libraryservices@cunet.carleton.ca
 code: department, description: Access Services Department
-code: message, description: The following item(s) are coming due. Please return the item(s) or renew online. 
-code: description, description: Description
-code: loans, description: Loans
 code: Bcc, description: None
 code: Cc, description: None
 code: additional_info_1, description: EMPTY_STRING

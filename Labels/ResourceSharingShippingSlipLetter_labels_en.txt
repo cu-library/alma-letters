@@ -89,6 +89,7 @@ code: shipping_method, description: Shipping Method
 code: size, description: Size
 code: slip_title, description: Letter of Transmittal
 code: source, description: Source
+code: specific_edition, description: Specific Edition Indicator
 code: start_page, description: Start Page
 code: subject, description: Resource Sharing Shipping Slip Letter
 code: subtotal, description: Subtotal

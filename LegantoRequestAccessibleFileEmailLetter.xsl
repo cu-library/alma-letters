@@ -65,6 +65,11 @@
 									@@Item_author@@ <xsl:value-of select="notification_data/item_author" />
 								</td>
 							</tr>
+							<tr>
+								<td>
+									@@Item_identifier@@ <xsl:value-of select="notification_data/citation_id" />
+								</td>
+							</tr>
 
 							<tr><td><br /></td></tr>
 

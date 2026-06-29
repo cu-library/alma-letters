@@ -22,6 +22,7 @@
 			 #afn_letter_name_id{margin-top:1em; font-size: 30%;}
 			 .afn_letter_plain_list{list-style-type: none;}
 			 <!-- END AFN styles -->
+			 
 			 <!-- Carleton styles -->
 			 caption {
 				font-weight: bold;
@@ -42,6 +43,35 @@
             
             #LAXbarcode {
                 text-align: center;    
+            }
+            
+            .slip-spacing {
+                border-collapse:collapse;
+                margin-left: 10px;
+            }
+            
+            <!-- formatting for when slips had everything in a table, commented out
+            
+            .slip-location * {
+                margin: 0px;
+                padding: 0px;
+                vertical-align:baseline;
+            }
+            
+            .slip-location th {
+                padding-right: 10px;
+            
+            }
+            
+            -->
+            
+            .minimize-space {
+                margin: 5px;
+            }
+            
+            .location-call-title {
+                margin: 0px;
+                text-align: right;
             }
 			 <!-- END Carleton styles -->
 		</style>

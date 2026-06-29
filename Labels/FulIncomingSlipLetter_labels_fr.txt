@@ -84,6 +84,7 @@ code: shipping_method, description: Méthode d'expédition
 code: size, description: Taille
 code: slip_title, description: Lettre de transmission
 code: source, description: Source
+code: specific_edition, description: Indicateur d'édition spécifique
 code: start_page, description: Page début
 code: subject, description: Avis de PEB entrant
 code: subtotal, description: Sous-total

@@ -1198,7 +1198,8 @@
         			</table>
         		</xsl:when>
         		<xsl:otherwise>
-        		    <xsl:value-of select="barcode"/>&#160;
+        		    <xsl:value-of select="barcode"/>
+        		    <br/>
         		</xsl:otherwise>
         	</xsl:choose>
 	</xsl:template>

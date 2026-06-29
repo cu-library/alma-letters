@@ -36,6 +36,16 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
+        				
+        		    	<xsl:variable name="same_due_date">
+            		    	<xsl:for-each select="notification_data/item_loans/item_loan">
+            		    	    <xsl:if test="old_due_date != due_date">DIFFERENT DATE</xsl:if>
+            		    	</xsl:for-each>
+        		    	</xsl:variable>
+        		    	<xsl:if test="(string-length($same_due_date) = 0 and notification_data/message='DUE_DATE_CHANGE_ONLY')">
+        		    	    <xsl:message terminate="yes">new due date is the same day as old due date</xsl:message>
+        		    	</xsl:if>
+        		    	    
 						<!-- AFN CODE -->
 						<xsl:choose>
 							<!-- AFN test (is_afn_patron) defined in footer.xsl -->

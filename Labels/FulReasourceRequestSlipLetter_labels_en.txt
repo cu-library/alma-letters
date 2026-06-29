@@ -1,4 +1,4 @@
-code: item_barcode, description: Item barcode
+code: item_barcode, description: Item barcode(s)
 code: letterName, description: Resource Request Slip
 code: shelving_location_for_item, description: Shelving location
 code: Bcc, description: None
