@@ -8,13 +8,13 @@ code: department, description: Service au public
 code: message, description: Nous aimerions vous rappeler que les exemplaires suivants à votre disposition doivent être retournés sous peu :
 code: description, description: Description
 code: loans, description: Prêts
-code: title, description: Titre
-code: due_date, description: Date de retour prévue
-code: renew_status, description: Statut de renouvellement
-code: library, description: Bibliothèque
-code: location, description: Localisation
-code: call_number, description: Cote
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
 code: additional_info_1, description: EMPTY_STRING
 code: additional_info_2, description: EMPTY_STRING
-code: Cc, description: Aucun
-code: Bcc, description: Aucun
+code: call_number, description: Cote
+code: due_date, description: Date de retour prévue
+code: library, description: Bibliothèque
+code: location, description: Localisation
+code: renew_status, description: Statut de renouvellement
+code: title, description: Titre

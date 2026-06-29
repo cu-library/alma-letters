@@ -31,14 +31,22 @@
 							<xsl:if test="notification_data/request/selected_inventory_type='ITEM'">
 								<tr>
 									<td>
-										<strong>Please note: A specific item is specified in this request.</strong>
+										<strong>Please note: </strong>
+										This request is for a specific item.
 									</td>
 								</tr>
 							</xsl:if>
+							<!--
+							"manual_description" seems to appear on requests for records that have
+							no items. The manual_description value is a concatenation of Description field
+							and Publication Date field from the request form in Primo. 
+							Basically, this would only come up very rarely.
+							-->
 							<xsl:if test="notification_data/request/manual_description != ''">
 								<tr>
 									<td>
-										<strong>Please note: </strong>The following manual description has been specified in this request -
+										<strong>Please note: </strong>
+										The requester has added the following description: 
 										<xsl:value-of select="notification_data/request/manual_description"/>
 									</td>
 								</tr>
@@ -57,34 +65,48 @@
 									<img alt="Item Barcode Image" src="cid:item_id_barcode.png"/>
 								</td>
 							</tr>
-							<!-- Barcode information can appear in two different sections of the XML. This is the first potential node. -->
+							<!-- 
+							Barcode information can appear in two different sections of the XML. 
+							This is the first potential node. 
+							-->
 							<!-- AFN items seem to put barcode info in this node. -->
 							<xsl:if test="/notification_data/phys_item_display/barcode!=''">
 								<!-- Displays all available barcodes. -->
 								<xsl:for-each select="/notification_data/phys_item_display">
 									<!-- 
-										We are going to prevent it from displaying barcodes that don't match our preferred location.
-										Basically this excludes RSV and LAX items from displaying unless they are the only place where the item is available. 
+									We are going to prevent it from displaying barcodes that don't match 
+									our preferred location. Basically this excludes RSV and LAX items 
+									from displaying unless they are the only place where the item is 
+									available. 
 									-->
 									<xsl:if test="$location = location_name">
 										<tr>
 											<td>
 												<strong>@@item_barcode@@: </strong>
-												<!-- Separated out version of barcode. Only shows up for LAX items. -->
+												<!-- 
+												Separated out version of barcode. 
+												Only shows up for LAX items. 
+												-->
 												<xsl:call-template name="LAXbarcode"/>
 											</td>
 										</tr>
 									</xsl:if>
 								</xsl:for-each>
 							</xsl:if>
-							<!-- Second (more often used) XML section where barcode info is available from. Code chunk follows the same pattern as above. -->
+							<!-- 
+							Second (more often used) XML section where barcode info is available from. 
+							Code chunk follows the same pattern as above. 
+							-->
 							<xsl:if test="/notification_data/phys_item_display/barcode='' and /notification_data/phys_item_display/available_items/available_item/barcode!=''">
 								<xsl:for-each select="/notification_data/phys_item_display/available_items/available_item">
 									<xsl:if test="$location = location_name">
 										<tr>
 											<td>
 												<strong>@@item_barcode@@: </strong>
-												<!-- Separated out version of barcode. Only shows up for LAX items. -->
+												<!-- 
+												Separated out version of barcode. 
+												Only shows up for LAX items. 
+												-->
 												<xsl:call-template name="LAXbarcode"/>
 											</td>
 										</tr>
@@ -115,32 +137,28 @@
 							</tr>
 							<xsl:if test="notification_data/phys_item_display/isbn != ''">
 								<tr>
-									<td>ISBN:
-
+									<td>ISBN: 
 										<xsl:value-of select="notification_data/phys_item_display/isbn"/>
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/phys_item_display/issn != ''">
 								<tr>
-									<td>ISSN:
-
+									<td>ISSN: 
 										<xsl:value-of select="notification_data/phys_item_display/issn"/>
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/phys_item_display/edition != ''">
 								<tr>
-									<td>Edition:
-
+									<td>Edition: 
 										<xsl:value-of select="notification_data/phys_item_display/edition"/>
 									</td>
 								</tr>
 							</xsl:if>
 							<xsl:if test="notification_data/phys_item_display/imprint != ''">
 								<tr>
-									<td>Imprint:
-
+									<td>Imprint: 
 										<xsl:value-of select="notification_data/phys_item_display/imprint"/>
 									</td>
 								</tr>
@@ -163,70 +181,25 @@
 								</xsl:if>
 							</tr>
 							<xsl:if test="notification_data/phys_item_display/shelving_location/string">
-								<xsl:if test="notification_data/request/selected_inventory_type='ITEM'">
-									<tr>
-										<td>
-											<strong>Shelving location: </strong>
-											<xsl:for-each select="notification_data/phys_item_display/shelving_location/string">
+							    <tr>
+							        <td>
+							            <strong>Annex shelving location: </strong>
+							            <xsl:for-each select="notification_data/phys_item_display/shelving_location/string">
 												<xsl:value-of select="."/>
-											</xsl:for-each>
-										</td>
-									</tr>
-								</xsl:if>
-								<xsl:if test="notification_data/request/selected_inventory_type='HOLDING'">
-									<tr>
-										<td>
-											<strong>@@shelving_locations_for_holding@@: </strong>
-											<xsl:for-each select="notification_data/phys_item_display/shelving_location/string">
-												<xsl:value-of select="."/>
-											</xsl:for-each>
-										</td>
-									</tr>
-								</xsl:if>
-								<xsl:if test="notification_data/request/selected_inventory_type='VIRTUAL_HOLDING'">
-									<tr>
-										<td>
-											<strong>@@shelving_locations_for_holding@@: </strong>
-											<xsl:for-each select="notification_data/phys_item_display/shelving_location/string">
-												<xsl:value-of select="."/>
-											</xsl:for-each>
-										</td>
-									</tr>
-								</xsl:if>
+										</xsl:for-each>
+							        </td>
+							    </tr>
 							</xsl:if>
 							<xsl:if test="notification_data/phys_item_display/display_alt_call_numbers/string">
-								<xsl:if test="notification_data/request/selected_inventory_type='ITEM'">
-									<tr>
-										<td>
-											<strong>@@alt_call_number@@: </strong>
-											<xsl:for-each select="notification_data/phys_item_display/display_alt_call_numbers/string">
+							    <tr>
+							        <td>
+							            <strong>Item call number(s): </strong>
+							            <xsl:for-each select="notification_data/phys_item_display/display_alt_call_numbers/string">
 												<xsl:value-of select="."/>
-											</xsl:for-each>
-										</td>
-									</tr>
-								</xsl:if>
-								<xsl:if test="notification_data/request/selected_inventory_type='HOLDING'">
-									<tr>
-										<td>
-											<strong>@@alt_call_number@@: </strong>
-											<xsl:for-each select="notification_data/phys_item_display/display_alt_call_numbers/string">
-												<xsl:value-of select="."/>
-											</xsl:for-each>
-										</td>
-									</tr>
-								</xsl:if>
-								<xsl:if test="notification_data/request/selected_inventory_type='VIRTUAL_HOLDING'">
-									<tr>
-										<td>
-											<strong>@@alt_call_number@@: </strong>
-											<xsl:for-each select="notification_data/phys_item_display/display_alt_call_numbers/string">
-												<xsl:value-of select="."/>
-											</xsl:for-each>
-										</td>
-									</tr>
-								</xsl:if>
+										</xsl:for-each>
+							        </td>
+							    </tr>
 							</xsl:if>
-							<b/>
 							<tr>
 								<td>
 									<strong>Destination: </strong>

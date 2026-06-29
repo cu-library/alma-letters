@@ -1,5 +1,6 @@
 code: item_barcode, description: Code-barres exemplaire
 code: letterName, description: Lettre d'avis de demande de ressource
+code: shelving_location_for_item, description: Emplacement sur les rayons / Localisation
 code: Bcc, description: Aucun
 code: Cc, description: Aucun
 code: accession_number, description: Numéro d'entrée
@@ -44,7 +45,6 @@ code: request_note, description: Note de demande
 code: request_type, description: Type de demande
 code: requested_for, description: Demandé pour
 code: resource_sharing_request_id, description: Identifiant de demande PEB interne
-code: shelving_location_for_item, description: Emplacement sur les rayons / Localisation
 code: shelving_locations_for_holding, description: La ressource n'a pas été trouvée dans les cotes de rangement suivantes.
 code: subject, description: Avis de demande de ressource
 code: supplied_to, description: Fourni à

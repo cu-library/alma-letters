@@ -8,13 +8,13 @@ code: department, description: Access Services Department
 code: message, description: The following item(s) are coming due. Please return the item(s) or renew online. 
 code: description, description: Description
 code: loans, description: Loans
-code: title, description: Title
-code: due_date, description: Due Date
-code: renew_status, description: Renew Status
-code: library, description: Library
-code: location, description: Location
-code: call_number, description: Call Number
+code: Bcc, description: None
+code: Cc, description: None
 code: additional_info_1, description: EMPTY_STRING
 code: additional_info_2, description: EMPTY_STRING
-code: Cc, description: None
-code: Bcc, description: None
+code: call_number, description: Call Number
+code: due_date, description: Due Date
+code: library, description: Library
+code: location, description: Location
+code: renew_status, description: Renew Status
+code: title, description: Title

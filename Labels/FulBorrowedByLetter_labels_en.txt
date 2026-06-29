@@ -3,8 +3,8 @@ code: subject, description: Library item checked out by proxy
 code: department, description: Access Services Department
 code: sincerely, description: Sincerely,
 code: addressFrom, description: libraryservices@cunet.carleton.ca
+code: Bcc, description: None
+code: Cc, description: None
 code: picked_up_by, description: was picked up by
 code: request_complete, description: The request is completed.
-code: Cc, description: None
-code: Bcc, description: None
 code: the_item, description: The item

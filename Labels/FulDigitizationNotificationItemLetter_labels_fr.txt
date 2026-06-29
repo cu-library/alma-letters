@@ -8,21 +8,21 @@ code: letterName, description: Lettre de notification d'exemplaire
 code: addressFrom, description: libraryservices@cunet.carleton.ca
 code: citation_id, description: Identifiant de référence
 code: the_request_relates, description: La demande se réfère à l'identifiant de demande externe
-code: material, description: Matériel
-code: attached_are_the_urls, description: Veuillez trouver ci-joint les liens vers les sources numériques
-code: Cc, description: Aucun
 code: Bcc, description: Aucun
-code: reading_list_name, description: Nom de la liste de lecture
-code: request_creator, description: Créateur de la demande
-code: file_uploaded, description: Le fichier numérisé a été chargé sur la référence
+code: Cc, description: Aucun
+code: attached_are_the_urls, description: Veuillez trouver ci-joint les liens vers les sources numériques
+code: borrowing_terms, description: Conditions d’emprunt
+code: days, description: Jours
+code: deliver_in, description: Livrer dans
+code: due_date, description: Date de retour
 code: file_not_uploaded_file_exists, description: Le fichier numérisé n'a pas été chargé car il existait déjà un fichier dans la référence
 code: file_not_uploaded_general_error, description: En raison d'une erreur générale, le fichier n'a pas pu être chargé sur la référence
 code: file_not_uploaded_multiple_files, description: La demande de numérisation contenait plusieurs fichiers, ils n'ont donc pas pu être automatiquement chargés sur la référence
-code: terms_of_use, description: Conditions d'utilisation
-code: borrowing_terms, description: Conditions d’emprunt
-code: deliver_in, description: Livrer dans
+code: file_uploaded, description: Le fichier numérisé a été chargé sur la référence
 code: hours, description: Heures
 code: keep_for, description: Garder pendant
-code: days, description: Jours
+code: material, description: Matériel
 code: price, description: Prix
-code: due_date, description: Date de retour
+code: reading_list_name, description: Nom de la liste de lecture
+code: request_creator, description: Créateur de la demande
+code: terms_of_use, description: Conditions d'utilisation

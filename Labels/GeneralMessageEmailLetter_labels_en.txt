@@ -1,13 +1,13 @@
 code: addressFrom, description: interlibraryloans@cunet.carleton.ca
 code: subject, description: Message from Carleton University Library
 code: letterName, description: Message from Carleton University Library
-code: header, description: Dear Sir/Madam,
-code: request, description: We would like to notify you regarding the following Resource Sharing request 
-code: requestId, description: Request ID
-code: title, description: Title
-code: author, description: Author
-code: requestDate, description: Request Date
-code: note, description: Note
-code: signature, description: Sincerely
-code: Cc, description: None
 code: Bcc, description: None
+code: Cc, description: None
+code: author, description: Author
+code: header, description: Dear Sir/Madam,
+code: note, description: Note
+code: request, description: We would like to notify you regarding the following Resource Sharing request 
+code: requestDate, description: Request Date
+code: requestId, description: Request ID
+code: signature, description: Sincerely
+code: title, description: Title

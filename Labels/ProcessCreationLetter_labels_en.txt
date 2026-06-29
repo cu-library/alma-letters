@@ -1,6 +1,6 @@
 code: addressFrom, description: Your.Department@organization.com
+code: department, description: Circulation Department
 code: letterName, description: Process Creation
-code: subject, description: process creation engine
 code: process_created, description: The process has been created and scheduled
 code: sincerely, description: Sincerely
-code: department, description: Circulation Department
+code: subject, description: process creation engine

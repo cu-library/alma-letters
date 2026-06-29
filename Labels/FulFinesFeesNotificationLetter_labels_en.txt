@@ -11,25 +11,25 @@ code: line13, description: We accept debit or credit cards or campus card as a f
 code: letterName, description: Fines/Fees from Carleton University
 code: subject, description: Fines/Fees from Carleton University
 code: line2, description: Details:
+code: Bcc, description: None
+code: Cc, description: None
+code: fee_amount, description: Fee Amount
 code: fee_type, description: Fee Type
-code: line14, description: Line14
-code: line15, description: Line15
-code: line7, description: Line7
-code: line8, description: Line8
-code: line9, description: Line9
+code: fine_fee_notification_fee, description: Fees Notification - Handling Fee:
 code: line10, description: Line10
 code: line11, description: Line11
 code: line12, description: Line12
+code: line14, description: Line14
+code: line15, description: Line15
 code: line16, description: Line16
 code: line17, description: Line17
 code: line18, description: Line18
 code: line19, description: Line19
 code: line20, description: Line20
-code: Cc, description: None
-code: Bcc, description: None
-code: fine_fee_notification_fee, description: Fees Notification - Handling Fee:
 code: line4, description: Line4
 code: line5, description: Line5
 code: line6, description: Line6
-code: fee_amount, description: Fee Amount
+code: line7, description: Line7
+code: line8, description: Line8
+code: line9, description: Line9
 code: note, description: Note

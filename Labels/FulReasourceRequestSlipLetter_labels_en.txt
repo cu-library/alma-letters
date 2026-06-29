@@ -1,5 +1,6 @@
 code: item_barcode, description: Item barcode
 code: letterName, description: Resource Request Slip
+code: shelving_location_for_item, description: Shelving location
 code: Bcc, description: None
 code: Cc, description: None
 code: accession_number, description: Accession Number
@@ -44,7 +45,6 @@ code: request_note, description: Request Note
 code: request_type, description: Request Type
 code: requested_for, description: Requested For
 code: resource_sharing_request_id, description: Resource sharing internal request id
-code: shelving_location_for_item, description: Shelving Location
 code: shelving_locations_for_holding, description: The resource can be found at any of the following shelving locations
 code: subject, description: Resource Request Slip
 code: supplied_to, description: Supplied To

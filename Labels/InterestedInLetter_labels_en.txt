@@ -3,22 +3,22 @@ code: addressFrom, description: lspsupport@cunet.carleton.ca
 code: letterName, description: Your requested title is in the final stages of processing at the Library
 code: subject, description: Your requested title is in the final stages of processing at the Library
 code: You_were_specify, description: A title you recently requested is now being processed by the Acquisitions team. Electronic material can be accessed through Omni within 3 hours of receiving this message. Print material will take 3-5 days to process. If you have questions about your order, please contact
-code: orderNumber, description: Order Number
-code: title, description: Title
-code: message, description: Message
-code: callNumber, description: Call Number
-code: sincerely, description: Sincerely
-code: mmsId, description: MMS ID
-code: receivingNote, description: Receiving Note
-code: Cc, description: None
 code: Bcc, description: None
-code: subject_received, description: Order Interested In 
-code: letter_name_received, description: Order Interested In 
-code: details_received, description: Item was received.
-code: subject_activated, description: Order Interested In 
-code: letter_name_activated, description: Order Interested In 
+code: Cc, description: None
+code: callNumber, description: Call Number
 code: details_activated, description: E-resource was activated.
-code: subject_cancelled, description: Order Interested In 
-code: letter_name_cancelled, description: Order Interested In 
 code: details_cancelled, description: Order was Cancelled.
 code: details_item_arrival_time, description: Will be available in {0} hours.
+code: details_received, description: Item was received.
+code: letter_name_activated, description: Order Interested In 
+code: letter_name_cancelled, description: Order Interested In 
+code: letter_name_received, description: Order Interested In 
+code: message, description: Message
+code: mmsId, description: MMS ID
+code: orderNumber, description: Order Number
+code: receivingNote, description: Receiving Note
+code: sincerely, description: Sincerely
+code: subject_activated, description: Order Interested In 
+code: subject_cancelled, description: Order Interested In 
+code: subject_received, description: Order Interested In 
+code: title, description: Title

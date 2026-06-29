@@ -5,12 +5,12 @@ code: addressFrom, description: Your.Department@organization.com
 code: not_renewed_loan, description: Le prêt suivant n'a pas été renouvelé
 code: sincerely, description: Cordialement
 code: renewed_loan, description: Nous souhaitons vous informer que le prêt suivant a été renouvelé. Veuillez consulter les détails ci-après
-code: Cc, description: Aucun
 code: Bcc, description: Aucun
-code: on, description: Sur
-code: detailed_below, description: Détaillé ci-dessous
-code: success_reason, description: Motif : Demande de renouvellement approuvée par la bibliothèque fournisseur
-code: failure_reason, description: Raison
-code: we_renewed_y_req_from, description: nous avons renouvelé votre demande du
+code: Cc, description: Aucun
 code: contact_dep, description: Pour plus de renseignements, veuillez contacter votre service
+code: detailed_below, description: Détaillé ci-dessous
+code: failure_reason, description: Raison
 code: new_due_date, description: Nouvelle date de retour
+code: on, description: Sur
+code: success_reason, description: Motif : Demande de renouvellement approuvée par la bibliothèque fournisseur
+code: we_renewed_y_req_from, description: nous avons renouvelé votre demande du

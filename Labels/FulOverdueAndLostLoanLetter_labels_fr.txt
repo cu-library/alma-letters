@@ -12,16 +12,16 @@ code: sincerely, description: Cordialement
 code: inform_you_item_below, description: Nous vous informons que les documents décrits ci-dessous
 code: borrowed_by_you, description: Emprunté par vous
 code: decalred_as_lost, description: ont été déclarés perdus
+code: Bcc, description: Aucun
+code: Cc, description: Aucun
+code: barcode, description: Code-barres
 code: by, description: Auteur
 code: dear, description: Madame, Monsieur
+code: due_date, description: Date de retour
+code: fee_type, description: Type de frais
 code: library, description: Bibliothèque
 code: loan_date, description: Date de prêt
 code: lost_item, description: Exemplaire perdu
-code: due_date, description: Date de retour
-code: barcode, description: Code-barres
-code: fee_type, description: Type de frais
 code: note, description: Note
 code: notification_profiles, description: Profils
-code: Cc, description: Aucun
-code: Bcc, description: Aucun
 code: overdue_notification_fee, description: Frais d'avis de retard :

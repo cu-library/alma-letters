@@ -12,16 +12,16 @@ code: sincerely, description: Sincerely
 code: inform_you_item_below, description: The following item(s) are long overdue on your library account and
 code: borrowed_by_you, description: borrowed by you
 code: decalred_as_lost, description: have been declared lost.
+code: Bcc, description: None
+code: Cc, description: None
+code: barcode, description: Barcode
 code: by, description: Author
 code: dear, description: Dear Sir/Madam
+code: due_date, description: Due date
+code: fee_type, description: Fee Type
 code: library, description: Library
 code: loan_date, description: Loan date
 code: lost_item, description: Title
-code: due_date, description: Due date
-code: barcode, description: Barcode
-code: fee_type, description: Fee Type
 code: note, description: Note
 code: notification_profiles, description: Profiles
-code: Cc, description: None
-code: Bcc, description: None
 code: overdue_notification_fee, description: Overdue Notification Fee:
