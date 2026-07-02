@@ -107,24 +107,30 @@
 						<!-- START OF BIBLIOGRAPHIC INFO -->
 						<div>
 							<h2 class="location-call-title">
-								<strong>Location: </strong>
-								<xsl:value-of select="notification_data/phys_item_display/location_name"/>
-								<br/>
-								<strong>Call number: </strong>
-								<xsl:choose>
-									<xsl:when test="notification_data/phys_item_display/display_alt_call_numbers/string!=''">
-										<xsl:for-each select="notification_data/phys_item_display/display_alt_call_numbers/string">
-											<xsl:value-of select="."/>
-											<br/>
-										</xsl:for-each>
-									</xsl:when>
-									<xsl:otherwise>
-										<xsl:value-of select="notification_data/phys_item_display/call_number"/>
-										<br/>
-									</xsl:otherwise>
-								</xsl:choose>
-								<strong>Title: </strong>
-								<xsl:value-of select="notification_data/phys_item_display/title"/>
+							    <xsl:if test="notification_data/phys_item_display/location_name!=''">
+							        <strong>Location: </strong>
+								    <xsl:value-of select="notification_data/phys_item_display/location_name"/>
+								    <br/>
+							    </xsl:if>
+								<xsl:if test="notification_data/phys_item_display/display_alt_call_numbers/string!='' or notification_data/phys_item_display/call_number!=''">
+    								<strong>Call number: </strong>
+    								<xsl:choose>
+    									<xsl:when test="notification_data/phys_item_display/display_alt_call_numbers/string!=''">
+    										<xsl:for-each select="notification_data/phys_item_display/display_alt_call_numbers/string">
+    											<xsl:value-of select="."/>
+    											<br/>
+    										</xsl:for-each>
+    									</xsl:when>
+    									<xsl:otherwise>
+    										<xsl:value-of select="notification_data/phys_item_display/call_number"/>
+    										<br/>
+    									</xsl:otherwise>
+    								</xsl:choose>
+    							</xsl:if>
+    							<xsl:if test="notification_data/phys_item_display/title!=''">
+    							    <strong>Title: </strong>
+								    <xsl:value-of select="notification_data/phys_item_display/title"/>
+    							</xsl:if>
 							</h2>
 						</div>
 						<div class="slip-spacing">
