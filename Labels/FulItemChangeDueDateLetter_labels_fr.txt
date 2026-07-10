@@ -19,4 +19,4 @@ code: library, description: Bibliothèque
 code: loans, description: Prêts
 code: title, description: Titre
 code: to, description: jusqu'au
-code: user_expiry_date_change_message, description: Loans due-date are updated since a user expiry change has been made.
+code: user_expiry_date_change_message, description: Les dates de retour prévues des prêts sont mises à jour en raison d'une modification de la date d'expiration de l'utilisateur.
