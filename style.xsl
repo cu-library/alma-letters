@@ -45,30 +45,18 @@
                 text-align: center;    
             }
             
+            <!-- Standard spacing for print slips -->
             .slip-spacing {
                 border-collapse:collapse;
                 margin-left: 10px;
             }
             
-            <!-- formatting for when slips had everything in a table, commented out
-            
-            .slip-location * {
-                margin: 0px;
-                padding: 0px;
-                vertical-align:baseline;
-            }
-            
-            .slip-location th {
-                padding-right: 10px;
-            
-            }
-            
-            -->
-            
+            <!-- Used to minimize margin space in print slips -->
             .minimize-space {
                 margin: 5px;
             }
             
+            <!-- Used for Location/Call number/Title formatting in print slips -->
             .location-call-title {
                 margin: 0px;
                 text-align: right;
