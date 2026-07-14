@@ -1,3 +1,4 @@
+code: addressFrom, description: LSPsupport@cunet.carleton.ca
 code: item_barcode, description: Item barcode(s)
 code: letterName, description: Resource Request Slip
 code: shelving_location_for_item, description: Shelving location
@@ -5,7 +6,6 @@ code: Bcc, description: None
 code: Cc, description: None
 code: accession_number, description: Accession Number
 code: additional_id, description: Additional Id
-code: addressFrom, description: Your.Department@organization.com
 code: alt_call_number, description: Item Call Number/s
 code: call_number, description: Call Number
 code: chron_i, description: Chronology I

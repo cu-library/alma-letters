@@ -9,6 +9,10 @@
 	<!-- Location variable to be used for excluding items that aren't in the location we want. -->
 	<xsl:variable name="location" select="notification_data/phys_item_display/location_name"/>
 	<xsl:template match="/">
+	    <!-- 
+        INTERNAL CODE: FulReasourceRequestSlipLetter (yes, with the misspelling)
+        LETTER EDITOR NAME: Ful Resource Request Slip Letter
+        -->
 		<html>
 			<head>
 				<xsl:call-template name="generalStyle"/>

@@ -1,3 +1,4 @@
+code: addressFrom, description: LSPsupport@cunet.carleton.ca
 code: item_barcode, description: Code-barres exemplaire
 code: letterName, description: Lettre d'avis de demande de ressource
 code: shelving_location_for_item, description: Emplacement sur les rayons / Localisation
@@ -5,7 +6,6 @@ code: Bcc, description: Aucun
 code: Cc, description: Aucun
 code: accession_number, description: Numéro d'entrée
 code: additional_id, description: Identifiant supplémentaire
-code: addressFrom, description: Your.Department@organization.com
 code: alt_call_number, description: Cote/s alternative/s
 code: call_number, description: Cote
 code: chron_i, description: Chronologie I
