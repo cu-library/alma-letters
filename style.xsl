@@ -56,11 +56,12 @@
                 margin: 5px;
             }
             
-            <!-- Used for Location/Call number/Title formatting in print slips -->
+            <!-- Used for right-aligned Location/Call number/Title formatting in Resource Request slip -->
             .location-call-title {
                 margin: 0px;
                 text-align: right;
             }
+            
 			 <!-- END Carleton styles -->
 		</style>
 	</xsl:template>

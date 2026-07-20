@@ -27,18 +27,18 @@
 					<!-- style.xsl -->
 				</xsl:attribute>
 				<h1>Send to:
-                         <!-- START OF AFN-VERSION 1.5 -->
-                         <!-- If the item wants to go somewhere specific, put down that place.
+                    <!-- START OF AFN-VERSION 1.5 -->
+					<!-- If the item wants to go somewhere specific, put down that place.
                          If not, just put down its home institution. -->
-						<xsl:choose>
-							<xsl:when test="notification_data/request/calculated_destination_name != ''">
-								<xsl:value-of select="notification_data/request/calculated_destination_name"/>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:value-of select="notification_data/request/out_of_institution_owner_institution_name"/>
-							</xsl:otherwise>
-						</xsl:choose>
-						<!-- END OF AFN-VERSION 1.5 -->
+					<xsl:choose>
+						<xsl:when test="notification_data/request/calculated_destination_name != ''">
+							<xsl:value-of select="notification_data/request/calculated_destination_name"/>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="notification_data/request/out_of_institution_owner_institution_name"/>
+						</xsl:otherwise>
+					</xsl:choose>
+					<!-- END OF AFN-VERSION 1.5 -->
 				</h1>
 				<xsl:call-template name="head"/>
 				<!-- header.xsl -->
@@ -60,10 +60,10 @@
 							</tr>
 							<tr>
 								<td>
-									<strong>Item barcode: </strong> 
+									<strong>Item barcode: </strong>
 									<xsl:for-each select="notification_data/phys_item_display">
-									    <!-- Separated out version of barcode. Only shows up for LAX items. -->
-                                        <xsl:call-template name="LAXbarcode"/>
+										<!-- Separated out version of barcode. Only shows up for LAX items. -->
+										<xsl:call-template name="LAXbarcode"/>
 									</xsl:for-each>
 									<br/>
 									<img src="cid:item_id_barcode.png" alt="Item Barcode"/>
