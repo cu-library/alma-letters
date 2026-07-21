@@ -27,8 +27,15 @@
 			 caption {
 				font-weight: bold;
 			 }
-			 table {
+			 
+			 <!-- class selector used for transitioning from table formatting to div/p elements -->
+			 table, .down-with-unnecessary-tables {
 				padding: 5px;
+			 }
+			 
+			 th 
+			 {
+			    padding-right: 5px;
 			 }
             
             .acq-orders th, td {

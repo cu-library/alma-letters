@@ -108,7 +108,7 @@
 		<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/physical_item_display_for_printing">
 			<xsl:if test="(library_code = 'RES_SHARE')">TRUE</xsl:if>
 		</xsl:for-each>
-		<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/physical_item_display_for_printing/available_items/available_itemg">
+		<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/physical_item_display_for_printing/available_items/available_item">
 			<xsl:if test="(library_code = 'RES_SHARE')">TRUE</xsl:if>
 		</xsl:for-each>
 	</xsl:variable>
@@ -116,11 +116,31 @@
 	<!-- Template using the above variable to ask patron to return intems to MacOdrum only (if any of the items are ILL) -->
 	<xsl:template name="ILLreturnLibrary">
 		<xsl:if test="(string-length($is_any_ill_loan) = 0)">
-    	You can return the items at the MacOdrum Library or at any university in Ontario.
+    	<p>You can return the items at the MacOdrum Library or at any university in Ontario.</p>
     	</xsl:if>
 		<xsl:if test="(string-length($is_any_ill_loan) > 0)">
-    	If you have already requested renewal, you will receive a separate message to tell you if that was successful or not. It may take a few days for us to hear back from the lending library.<br /><br />You can return your items at the MacOdrum Library.
+    	<p>If you have already requested renewal, you will receive a separate message to tell you if that was successful or not. It may take a few days for us to hear back from the lending library.</p>
+    	<p>You can return your items at the MacOdrum Library.</p>
     	</xsl:if>
+	</xsl:template>
+	
+	<!-- optional description column in table -->
+	<xsl:variable name="does_any_have_description">
+	    <xsl:for-each select="notification_data/item_loans/item_loan">
+	        <xsl:if test="description!=''">TRUE</xsl:if>
+	    </xsl:for-each>
+	</xsl:variable>
+	
+	<xsl:template name="descriptionTH">
+	    <xsl:if test="(string-length($does_any_have_description) > 0)">
+	        <th>Description</th>
+	    </xsl:if>
+	</xsl:template>
+	
+	<xsl:template name="descriptionValues">
+	    <xsl:if test="(string-length($does_any_have_description) > 0)">
+	        <td><xsl:value-of select="description"/></td>
+	    </xsl:if>
 	</xsl:template>
 	
 	<!-- END OF Carleton contact templates -->
@@ -1036,6 +1056,15 @@
 			Carleton University Library
 			</td>
 		</tr>
+	</xsl:template>
+	
+	<!-- Access Services signature WITHOUT TABLES -->
+	<xsl:template name="accessSignatureWT">
+	    <p>
+    	    Access Services Department
+    	    <br/>
+    	    Carleton University Library
+	    </p>
 	</xsl:template>
 	
     <!-- Course Reserves signature and footer -->

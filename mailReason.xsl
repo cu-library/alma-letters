@@ -11,6 +11,13 @@
 			</tr>
 		</table>
 	</xsl:template>
+		<xsl:template name="toWhomIsConcerned2">
+					<xsl:for-each select="notification_data">
+						<p>
+						    Hi,
+						</p>
+					</xsl:for-each>
+	</xsl:template>
 	<xsl:template name="toWhomIsPartners">
 	    <table>
 			<tr>

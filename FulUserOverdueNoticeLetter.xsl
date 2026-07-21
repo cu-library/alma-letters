@@ -42,7 +42,11 @@
 									<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
 										<!-- AFN VERSION 1.8 -->
 										<p>
-											<b>Le(s) document(s) suivant(s) de <xsl:value-of select="notification_data/organization_unit/name"/> est (sont) à rendre aujourd'hui. Veuillez retourner le(s) document(s) à votre bibliothèque, ou pour un renouvellement:</b>
+											<strong>Le(s) document(s) suivant(s) de 
+											<xsl:value-of select="notification_data/organization_unit/name"/> 
+											est (sont) à rendre aujourd'hui. 
+											Veuillez retourner le(s) document(s) à votre bibliothèque,
+											ou pour un renouvellement:</strong>
 										</p>
 										<ol class="afn_steps_list">
 											<li>
@@ -53,7 +57,7 @@
 												Cliquez sur <xsl:call-template name="AFNOrgName"/> à la gauche et renouvelez le(s) document(s)
 											</li>
 										</ol>
-										<table cellpadding="5" class="listing">
+										<table class="listing">
 											<xsl:attribute name="style">
 												<xsl:call-template name="mainTableStyleCss"/>
 												<!-- style.xsl -->
@@ -93,7 +97,10 @@
 										<!-- handle AFN default language en -->
 										<!-- AFN VERSION 1.8 -->
 										<p>
-											<b>The following item(s) from <xsl:value-of select="notification_data/organization_unit/name"/> are due today. Please return the item(s) to your library, or, to renew them:</b>
+											<strong>The following item(s) from 
+											<xsl:value-of select="notification_data/organization_unit/name"/> 
+											are due today. 
+											Please return the item(s) to your library, or, to renew them:</strong>
 										</p>
 										<ol class="afn_steps_list">
 											<li>
@@ -104,7 +111,7 @@
 												Click the <xsl:call-template name="AFNOrgName"/> option along the left and renew items                                        
 											</li>
 										</ol>
-										<table cellpadding="5" class="listing">
+										<table class="listing">
 											<xsl:attribute name="style">
 												<xsl:call-template name="mainTableStyleCss"/>
 												<!-- style.xsl -->
@@ -137,66 +144,43 @@
 								</xsl:choose>
 							</xsl:when>
 							<xsl:otherwise>
+							    <div class="down-with-unnecessary-tables">
 								<!-- Carleton letter -->
-								<xsl:call-template name="toWhomIsConcerned"/>
-								<!-- mailReason.xsl -->
-								<table role="presentation" cellspacing="0" cellpadding="5" border="0">
-									<tr>
-										<td>
-											The following library items are due today.
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<table cellpadding="5" class="listing">
-												<xsl:attribute name="style">
-													<xsl:call-template name="mainTableStyleCss"/>
-													<!-- style.xsl -->
-												</xsl:attribute>
-												<tr>
-													<th>@@title@@</th>
-													<th>@@description@@</th>
-													<th>@@due_date@@</th>
-												</tr>
-												<xsl:for-each select="notification_data/item_loans/item_loan">
-													<tr>
-														<td>
-															<xsl:value-of select="title"/>
-														</td>
-														<td>
-															<xsl:value-of select="description"/>
-														</td>
-														<td>
-															<xsl:value-of select="due_date"/>
-														</td>
-													</tr>
-												</xsl:for-each>
-											</table>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											If you still need them, please <xsl:call-template name="accountLogin"/> to renew them, or reach out to us and we'll see what we can do.
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<xsl:call-template name="ILLreturnLibrary"/>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											@@sincerely@@
-										</td>
-									</tr>
-									<tr>
-										<td>
-											@@department@@
-											<br/>
-											Carleton University Library
-										</td>
-									</tr>
-								</table>
+								    <xsl:call-template name="toWhomIsConcerned2"/>
+									<p>The following library items are due today.</p>
+									<table class="listing">
+										<xsl:attribute name="style">
+											<xsl:call-template name="mainTableStyleCss"/>
+											<!-- style.xsl -->
+										</xsl:attribute>
+										<tr>
+											<th>Title</th>
+											<xsl:call-template name="descriptionTH"/>
+											<th>Due date</th>
+										</tr>
+										<xsl:for-each select="notification_data/item_loans/item_loan">
+											<tr>
+												<td>
+													<xsl:value-of select="title"/>
+												</td>
+												<xsl:call-template name="descriptionValues"/>
+												<td>
+													<xsl:value-of select="due_date"/>
+												</td>
+											</tr>
+										</xsl:for-each>
+									</table>
+									<p>
+									    If you still need them, 
+									    please <xsl:call-template name="accountLogin"/> to renew them, 
+									    or reach out to us and we'll see what we can do.
+									</p>
+									    <xsl:call-template name="ILLreturnLibrary"/>
+									<p>
+									    Sincerely,
+									</p>
+									<xsl:call-template name="accessSignatureWT"/>
+								</div>
 							</xsl:otherwise>
 						</xsl:choose>
 						<!-- END OF AFN CODE -->
