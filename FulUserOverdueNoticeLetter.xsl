@@ -156,6 +156,10 @@
 										<tr>
 											<th>Title</th>
 											<xsl:call-template name="descriptionTH"/>
+											<!-- 
+											Generates a "Description" table header if any of the items have 
+											description info attached.
+										    -->
 											<th>Due date</th>
 										</tr>
 										<xsl:for-each select="notification_data/item_loans/item_loan">
@@ -164,6 +168,10 @@
 													<xsl:value-of select="title"/>
 												</td>
 												<xsl:call-template name="descriptionValues"/>
+												<!-- 
+											    Generates a "Description" cell if any of the items have 
+											    description info attached.
+										        -->
 												<td>
 													<xsl:value-of select="due_date"/>
 												</td>
@@ -175,10 +183,13 @@
 									    please <xsl:call-template name="accountLogin"/> to renew them, 
 									    or reach out to us and we'll see what we can do.
 									</p>
-									    <xsl:call-template name="ILLreturnLibrary"/>
-									<p>
-									    Sincerely,
-									</p>
+									<!-- 
+									If none of the items are ILL, tell patrons they can return them at any ON university. 
+									If any of them are ILL, tell them they have to return to Carleton, but also to not
+									freak out if they've already requested a renewal. 
+									-->
+									<xsl:call-template name="ILLreturnLibrary"/>
+									<!-- Access Services signature -->
 									<xsl:call-template name="accessSignatureWT"/>
 								</div>
 							</xsl:otherwise>

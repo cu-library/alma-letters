@@ -8,7 +8,7 @@
 		</xsl:if>
 		</xsl:variable>
 		<!-- END OF AFN CODE -->
-		<table cellspacing="0" cellpadding="5" border="0">
+		<table role="presentation">
 			<xsl:attribute name="style">
 				<xsl:call-template name="headerTableStyleCss"/>
 				<!-- style.xsl -->
@@ -63,7 +63,7 @@
 		</xsl:if>
 		</xsl:variable>
 		<!-- END OF AFN CODE -->
-		<table>
+		<table role="presentation">
 			<xsl:attribute name="style">
 				<xsl:call-template name="headerTableStyleCss"/>
 				<!-- style.xsl -->
