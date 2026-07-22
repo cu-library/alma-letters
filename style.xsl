@@ -26,6 +26,7 @@
 			 <!-- Carleton styles -->
 			 caption {
 				font-weight: bold;
+				background-color: #f5f5f5;
 			 }
 			 
 			 <!-- class selector used for transitioning from table formatting to div/p elements -->

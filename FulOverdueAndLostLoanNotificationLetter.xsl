@@ -37,14 +37,14 @@
 								<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
 									<!-- handle AFN French fr -->
 									<br/>
-									<table>
+									<table role="presentation">
 										<tr>
 											<td>
 												<h>Pour éviter les frais indiqués, veuillez retourner le document (ou les documents) suivant(s) à votre bibliothèque. Une fois le(s) document(s) retourné(s), les frais correspondants seront supprimés de votre compte.</h>
 											</td>
 										</tr>
 									</table>
-									<table class="listing">
+									<table class="listing" role="presentation">
 										<xsl:attribute name="style">
 											<xsl:call-template name="mainTableStyleCss"/>
 											<!-- style.xsl -->
@@ -104,16 +104,16 @@
 																		<!-- AFN VERSION 1.6 changed some french text -->
 																		<xsl:choose>
 																			<xsl:when test="fine_fee_type_display = 'Lost item process fee' ">
-																				<b>Frais de traitement - document perdu: </b>
+																				<strong>Frais de traitement - document perdu: </strong>
 																				<xsl:value-of select="fine_fee_ammount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
 																			</xsl:when>
 																			<xsl:when test="fine_fee_type_display = 'Lost item replacement fee' ">
-																				<b>Frais de remplacements - document perdu: </b>
+																				<strong>Frais de remplacements - document perdu: </strong>
 																				<xsl:value-of select="fine_fee_ammount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
 																			</xsl:when>
 																			<xsl:otherwise>
-																				<b>
-																					<xsl:value-of select="fine_fee_type_display"/>: </b>
+																				<strong>
+																					<xsl:value-of select="fine_fee_type_display"/>: </strong>
 																				<xsl:value-of select="fine_fee_ammount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
 																			</xsl:otherwise>
 																		</xsl:choose>
@@ -134,7 +134,7 @@
 												<td>
 													<!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
 													<!-- Overdue Notification Fee: -->
-													<b>Frais d'avis de retard:</b>
+													<strong>Frais d'avis de retard:</strong>
 													<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
 												</td>
 											</tr>
@@ -145,14 +145,14 @@
 								<xsl:otherwise>
 									<!-- handle AFN default language en -->
 									<br/>
-									<table>
+									<table role="presentation">
 										<tr>
 											<td>
 												<h>To avoid incurring the indicated fees, please return the following item(s) to your library. When an item is returned, associated fees will be removed from your account.</h>
 											</td>
 										</tr>
 									</table>
-									<table class="listing">
+									<table class="listing" role="presentation">
 										<xsl:attribute name="style">
 											<xsl:call-template name="mainTableStyleCss"/>
 											<!-- style.xsl -->
@@ -198,8 +198,8 @@
 																</td>
 																<td>
 																	<xsl:for-each select="fines_fees_list/user_fines_fees">
-																		<b>
-																			<xsl:value-of select="fine_fee_type_display"/>: </b>
+																		<strong>
+																			<xsl:value-of select="fine_fee_type_display"/>: </strong>
 																		<xsl:value-of select="fine_fee_ammount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
 																		<br/>
 																	</xsl:for-each>
@@ -215,7 +215,7 @@
 										<xsl:if test="notification_data/overdue_notification_fee_amount/sum !=''">
 											<tr>
 												<td>
-													<b>Overdue Notification Fee:</b>
+													<strong>Overdue Notification Fee:</strong>
 													<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
 												</td>
 											</tr>
@@ -225,99 +225,69 @@
 								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:when>
+						<!-- Carleton letter -->
 						<xsl:otherwise>
-							<!-- Carleton letter -->
-							<xsl:call-template name="toWhomIsConcerned"/>
-							<!-- mailReason.xsl -->
-							<table>
-								<tr>
-									<td>
-									    <p>Some of the materials you have checked out are now overdue.</p>
-									    <p>
-										If you still need them, please <xsl:call-template name="accountLogin"/> to renew them, 
-										or reach out to us and we'll see what we can do. We will not be able to renew the item if 
-										another library user has requested it.</p>
-										<xsl:call-template name="ILLreturnLibrary"/>
-									</td>
-								</tr>
-							</table>
-							<table class="listing">
-								<xsl:attribute name="style">
-									<xsl:call-template name="mainTableStyleCss"/>
-									<!-- style.xsl -->
-								</xsl:attribute>
-								<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
-									<tr>
-										<td>
-											<table class="listing">
-												<xsl:attribute name="style">
-													<xsl:call-template name="mainTableStyleCss"/>
-												</xsl:attribute>
-												<tr align="center" bgcolor="#f5f5f5">
-													<td colspan="5">
-														<h3>
-															<xsl:value-of select="organization_unit/name"/>
-														</h3>
-													</td>
-												</tr>
-												<tr>
-													<th>Title</th>
-													<th><!--Description column--></th>
-													<th>Due date</th>
-													<th>Barcode</th>
-													<th>Call number</th>
-												</tr>
-												<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display">
-													<tr>
-														<td>
-															<xsl:value-of select="item_loan/title"/>
-														</td>
-														<td>
-															<xsl:value-of select="item_loan/description"/>
-														</td>
-														<td>
-															<xsl:value-of select="item_loan/due_date"/>
-														</td>
-														<td>
-															<xsl:value-of select="item_loan/barcode"/>
-														</td>
-														<td>
-															<xsl:value-of select="physical_item_display_for_printing/call_number"/>
-														</td>
-													</tr>
-												</xsl:for-each>
-											</table>
-										</td>
-									</tr>
-									<hr/>
-									<br/>
-								</xsl:for-each>
+						    <div class="down-with-unnecessary-tables">
+    							<xsl:call-template name="toWhomIsConcerned2"/>
+    							<!-- mailReason.xsl -->
+							    <p>
+							        Some of the materials you have checked out are now overdue.
+							    </p>
+    							<table class="listing">
+    								<xsl:attribute name="style">
+    									<xsl:call-template name="mainTableStyleCss"/>
+    									<!-- style.xsl -->
+    								</xsl:attribute>
+								    <xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
+								        <!-- 
+								        This caption lists the library name, but it's always going to be either MacOdrum Library or Carleton Resource Sharing Library,
+								        and the latter seems like it might be confusing. Commenting out for now.
+								        <caption>
+								            <h2>
+								                <xsl:value-of select="organization_unit/name"/>
+								            </h2>
+								        </caption>
+								        -->
+    								    <tr>
+    										<th>Title</th>
+    										<th>Due date</th>
+    										<th>Barcode</th>
+    										<th>Call number</th>
+    									</tr>
+    									<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display">
+    										<tr>
+    											<td>
+    												<xsl:value-of select="item_loan/title"/>
+    											</td>
+    											<td>
+    												<xsl:value-of select="item_loan/due_date"/>
+    											</td>
+    											<td>
+    												<xsl:value-of select="item_loan/barcode"/>
+    											</td>
+    											<td>
+    												<xsl:value-of select="physical_item_display_for_printing/call_number"/>&#160;
+    												<xsl:value-of select="item_loan/description"/>
+    											</td>
+    										</tr>
+    									</xsl:for-each>
+    								</xsl:for-each>
+                                </table>
+                                <!-- I guess I'll leave this in, in case we ever turn on overdue notification fees, but right now those are firmly off. -->
 								<xsl:if test="notification_data/overdue_notification_fee_amount/sum !=''">
-									<tr>
-										<td>
 											<strong>Overdue notification fee:</strong>
 											<xsl:value-of select="notification_data/overdue_notification_fee_amount/normalized_sum"/>
 											<xsl:value-of select="notification_data/overdue_notification_fee_amount/currency"/>
 											<xsl:value-of select="ff"/>
-										</td>
-									</tr>
 								</xsl:if>
-							</table>
-							<br/>
-							<table>
-								<tr>
-									<td>
-									Sincerely,
-								    </td>
-								</tr>
-								<tr>
-									<td>
-    									Access Services Department
-    									<br/>
-    									Carleton University Library
-    								</td>
-								</tr>
-							</table>
+								<p>
+    								If you still need them, please <xsl:call-template name="accountLogin"/> to renew them, 
+    								or reach out to us and we'll see what we can do. 
+    								We will not be able to renew the item if another library user has requested it.
+    						    </p>
+    							<xsl:call-template name="ILLreturnLibrary"/>
+							    <xsl:call-template name="accessSignatureWT"/>
+							</div>
 						</xsl:otherwise>
 					</xsl:choose>
 					<!-- END OF AFN CODE -->
