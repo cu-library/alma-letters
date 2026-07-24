@@ -25,16 +25,11 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
-						<table role="presentation" cellspacing="0" cellpadding="5" border="0">
-							<tr>
-								<td>
-									@@letterText@@&#160;
-									<b>
-										<xsl:value-of select="/notification_data/report_name" />
-									</b>
-								</td>
-							</tr>
-						</table>
+					    <div class="down-with-unnecessary-tables">
+					        <p>The following Analytics report is attached:
+					        <strong><xsl:value-of select="/notification_data/report_name" />.</strong></p>
+					        <p>Please note: Alma sends a report file even if  the report returns no results.</p>
+					    </div>
 					</div>
 				</div>
 			</body>
