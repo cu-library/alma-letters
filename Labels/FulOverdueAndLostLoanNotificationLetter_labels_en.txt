@@ -2,7 +2,6 @@ code: addressFrom, description: libraryservices@cunet.carleton.ca
 code: subject, description:  Library Item(s) Are Overdue
 code: letterName, description: Library Item(s) Are Overdue
 code: sincerely, description: Sincerely,
-code: department, description: Access Services Department
 code: inform_you_item_below_type2, description: The following item(s) are overdue on your library account. 
 code: inform_you_item_below_type3, description: The following item(s) are long overdue on your library account. 
 code: inform_you_item_below_type4, description: FINAL NOTICE: The following item(s) are long overdue on your library account. 
@@ -11,6 +10,7 @@ code: borrowed_by_you, description: borrowed by you
 code: decalred_as_lost, description: Please return or renew these item(s) as soon as possible.
 code: decalred_as_lost_type1, description: Please return or renew these item(s) as soon as possible.
 code: decalred_as_lost_type4, description: Please return or renew these item(s) as soon as possible.
+code: department, description: Access Services Department
 code: description, description: Description
 code: additional_info_1_type2, description: If not returned or renewed, these items will be declared lost and you will be billed for the cost of replacement. 
 code: additional_info_1_type4, description: These items will soon be declared lost and result in replacement fees and a blocked account.

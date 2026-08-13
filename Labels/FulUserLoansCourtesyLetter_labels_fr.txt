@@ -1,13 +1,13 @@
+code: message, description: Nous aimerions vous rappeler que les exemplaires suivants à votre disposition doivent être retournés sous peu :
 code: letterName, description: Un rappel de votre bibliothèque
+code: description, description: Description
+code: loans, description: Prêts
 code: short_loans_message, description: Nous aimerions vous rappeler que les exemplaires suivants à votre disposition doivent être retournés sous peu :
 code: author, description: Auteur
 code: sincerely, description: Cordialement
 code: subject, description: Un rappel de votre bibliothèque
 code: addressFrom, description: libraryservices@cunet.carleton.ca
 code: department, description: Service au public
-code: message, description: Nous aimerions vous rappeler que les exemplaires suivants à votre disposition doivent être retournés sous peu :
-code: description, description: Description
-code: loans, description: Prêts
 code: Bcc, description: Aucun
 code: Cc, description: Aucun
 code: additional_info_1, description: EMPTY_STRING

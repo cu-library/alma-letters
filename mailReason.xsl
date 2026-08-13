@@ -29,4 +29,7 @@
 			</tr>
 		</table>
 	</xsl:template>
+	<xsl:template name="toWhomIsPartners2">
+	    <span>Hello,</span>
+	</xsl:template>
 </xsl:stylesheet>

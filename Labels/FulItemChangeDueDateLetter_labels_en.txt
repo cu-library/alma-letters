@@ -5,13 +5,13 @@ code: recall_and_date_change, description: The library has recalled the followin
 code: recall_and_no_date_change, description: Your borrowed item has been recalled. There is no change in its due date.
 code: message, description: The library has changed the due date for the following item(s).
 code: department, description: Access Services Department
+code: description, description: Description
 code: letterName, description: Due date change for library item(s)
 code: subject, description: Due date change for library item(s)
 code: new_due_date, description: New Due Date
+code: old_due_date, description: Original Due Date
 code: sincerely, description: Sincerely,
 code: addressFrom, description: libraryservices@cunet.carleton.ca
-code: description, description: Description
-code: old_due_date, description: Original Due Date
 code: Bcc, description: None
 code: Cc, description: None
 code: author, description: Author

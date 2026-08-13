@@ -1,3 +1,4 @@
+code: description, description: Description
 code: please_pay_message, description: Please come to the Library Services Desk to pay your balance.
 code: sincerely, description: Thanks,
 code: debt_message, description: We would like to remind you that you have an outstanding fine of
@@ -7,7 +8,6 @@ code: subject, description: Summary of your library borrowing activity
 code: subject_with_overdue, description: Summary of your library borrowing activity - overdue items exist
 code: letterName, description: Summary of your library borrowing activity
 code: department, description: Access Services
-code: description, description: Description
 code: Bcc, description: None
 code: Cc, description: None
 code: author, description: Author

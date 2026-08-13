@@ -28,6 +28,9 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
+						<div class="down-with-unnecessary-tables">
+						    
+						</div>
 						<table>
 						    <tr>
 						        <td>Hello,</td>
