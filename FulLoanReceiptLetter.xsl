@@ -31,80 +31,99 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
-						<xsl:call-template name="toWhomIsConcerned"/>
-						<table>
-							<tr>
-								<td>
-									You have borrowed the following items from MacOdrum Library at Carleton University.
-								</td>
-							</tr>
-							<!-- OFFICE DELIVERY VARIATION: Checks for "Office Delivery" in address string, and implements different text if so. -->
-							<xsl:choose>
-								<xsl:when test="contains(/notification_data/items/item_loan/delivery_address, 'Office Delivery')">
+						<div class="down-with-unnecessary-tables">
+							<xsl:call-template name="toWhomIsConcerned2"/>
+							<!-- Variable to flag if the items in the letter are new loans. -->
+							<xsl:variable name="new_loans">
+								<xsl:for-each select="/notification_data/items/item_loan">
+									<xsl:if test="old_due_date=''">a</xsl:if>
+								</xsl:for-each>
+							</xsl:variable>
+							<!-- Variable to count how many items are in the letter. -->
+							<xsl:variable name="num_loans">
+								<xsl:value-of select="count(/notification_data/items/item_loan/item_id)"/>
+							</xsl:variable>
+							<!-- Are there any new loans? If so, list them. -->
+							<xsl:if test="string-length($new_loans) > 0">
+								<p>You have borrowed the following item(s):</p>
+								<table>
+									<xsl:attribute name="style">
+										<xsl:call-template name="mainTableStyleCss"/>
+									</xsl:attribute>
 									<tr>
-										<td>
-											<!-- Tells user what department item will be delivered to, strips out unnecessary address bits -->
-    										They will be delivered to your campus office at the 
-    										<strong>
-												<xsl:value-of select="substring-after(substring-before(/notification_data/items/item_loan/delivery_address,'Carleton University'), 'Office Delivery:')"/>
-											</strong> 
-    										department.
-										</td>
+										<th>Title</th>
+										<!-- Optional column. Only shows if any of he items have descriptions. -->
+										<xsl:call-template name="descriptionTH"/>
+										<th>Due date</th>
 									</tr>
-								</xsl:when>
-								<xsl:otherwise>
-									<tr>
-										<td>
-									        If you selected "Mail Delivery", 
-									        your items have been processed and are en route to you!
-								        </td>
-									</tr>
-								</xsl:otherwise>
-							</xsl:choose>
-							<xsl:for-each select="notification_data/loans_by_library/library_loans_for_display">
-								<tr>
-									<td>
-										<table>
-											<xsl:attribute name="style">
-												<xsl:call-template name="mainTableStyleCss"/>
-											</xsl:attribute>
+									<xsl:for-each select="/notification_data/loans_by_library/library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/item_loan">
+										<xsl:if test="old_due_date = ''">
 											<tr>
-												<th>Title</th>
-												<th>Author</th>
-												<th>Loan date</th>
-												<th>Due date</th>
-												<th>Description</th>
+												<td>
+													<xsl:value-of select="title"/>
+												</td>
+												<!-- Optional cell. Only shows if any of the items have descriptions. -->
+												<xsl:call-template name="descriptionValues"/>
+												<td>
+													<xsl:value-of select="new_due_date_str"/>
+												</td>
 											</tr>
-											<xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display/item_loan">
-												<tr>
-													<td>
-														<xsl:value-of select="title"/>
-													</td>
-													<td>
-														<xsl:value-of select="author"/>
-													</td>
-													<td>
-														<xsl:value-of select="loan_date"/>
-													</td>
-													<td>
-														<xsl:value-of select="new_due_date_str"/>
-													</td>
-													<td>
-														<xsl:value-of select="description"/>
-													</td>
-												</tr>
-											</xsl:for-each>
-										</table>
-									</td>
-								</tr>
-							</xsl:for-each>
-							<tr>
-								<td>
-									Sincerely,
-								</td>
-							</tr>
-							<xsl:call-template name="accessSignature"/>
-						</table>
+										</xsl:if>
+									</xsl:for-each>
+								</table>
+								<!-- 
+								OFFICE DELIVERY VARIATION: 
+								Checks for "Office Delivery" in address string, and implements different text if so.
+								-->
+								<xsl:if test="contains(/notification_data/items/item_loan/delivery_address, 'Office Delivery')">
+									<p>
+										<!-- Tells user what department item will be delivered to, strips out unnecessary address bits -->
+        								They will be delivered to your campus office at the 
+        								<strong>
+											<xsl:value-of select="substring-after(substring-before(/notification_data/items/item_loan/delivery_address,'Carleton University'), 'Office Delivery:')"/>
+										</strong> 
+        								department.
+    						        </p>
+								</xsl:if>
+							</xsl:if>
+							<!-- 
+							Are there any loans that changed, but aren't new loans? 
+							If yes, list them and tell the patron they have new due dates. 
+							-->
+							<xsl:if test="$num_loans > string-length($new_loans)">
+								<p>The following items have a new due date: </p>
+								<table>
+									<xsl:attribute name="style">
+										<xsl:call-template name="mainTableStyleCss"/>
+									</xsl:attribute>
+									<tr>
+										<th>Title</th>
+										<!-- Optional column. Only shows if any of he items have descriptions. -->
+										<xsl:call-template name="descriptionTH"/>
+										<th>Old due date</th>
+										<th>New due date</th>
+									</tr>
+									<xsl:for-each select="/notification_data/loans_by_library/library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/item_loan">
+										<xsl:if test="old_due_date != ''">
+											<tr>
+												<td>
+													<xsl:value-of select="title"/>
+												</td>
+												<!-- Optional cell. Only shows if any of the items have descriptions. -->
+												<xsl:call-template name="descriptionValues"/>
+												<td>
+													<xsl:value-of select="old_due_date_str"/>
+												</td>
+												<td>
+													<xsl:value-of select="new_due_date_str"/>
+												</td>
+											</tr>
+										</xsl:if>
+									</xsl:for-each>
+								</table>
+							</xsl:if>
+							<xsl:call-template name="accessSignatureWT"/>
+						</div>
 					</div>
 				</div>
 				<!-- AFN footer template options from footer.xsl -->

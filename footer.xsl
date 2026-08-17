@@ -127,7 +127,10 @@
 	<!-- optional description column in table -->
 	<xsl:variable name="does_any_have_description">
 	    <xsl:for-each select="notification_data/item_loans/item_loan">
-	        <xsl:if test="description!=''">TRUE</xsl:if>
+	        <xsl:if test="(string-length(description) > 0)">TRUE</xsl:if>
+	    </xsl:for-each>
+	    <xsl:for-each select="/notification_data/loans_by_library/library_loans_for_display/item_loans/overdue_and_lost_loan_notification_display/item_loan">
+	        <xsl:if test="(string-length(description) > 0)">TRUE</xsl:if>
 	    </xsl:for-each>
 	</xsl:variable>
 	
