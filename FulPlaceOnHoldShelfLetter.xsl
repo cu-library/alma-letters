@@ -6,7 +6,10 @@
 	<xsl:include href="footer.xsl"/>
 	<xsl:include href="style.xsl"/>
 	<xsl:include href="recordTitle.xsl"/>
-	<!-- INTERNAL NAME: FulPlaceOnHoldShelfLetter; Letter Editor calls it "On Hold Shelf Letter" -->
+	<!-- 
+        INTERNAL CODE: FulPlaceOnHoldShelfLetter
+        LETTER EDITOR NAME: On Hold Shelf Letter
+    -->
 	<!-- START AFN-VERSION 1.8 START Test if it's an EMAIL partner, if so terminate letter -->
 	<xsl:variable name="is_email_partner">
 		<xsl:if test="(notification_data/user_for_printing/user_group = 'NZILLUSER') or (notification_data/user/user_group = 'NZILLUSER') or (notification_data/request/user_group = 'NZILLUSER')">	
@@ -37,209 +40,189 @@
 				<!-- header.xsl -->
 				<div class="messageArea">
 					<div class="messageBody">
-						<!-- AFN CODE -->
-						<xsl:choose>
-							<!-- START AFN-VERSION 1.8 Test if it's an EMAIL partner, if so terminate letter -->
-							<xsl:when test="(string-length($is_email_partner) > 0)">
-								<xsl:message terminate="yes">user group is an EMAIL ILL PARTNER - TERMINATE </xsl:message>
-							</xsl:when>
-							<!-- END AFN-VERSION 1.8 Test if it's an EMAIL partner, if so terminate letter -->
-							<!-- AFN test (is_afn_patron) defined in footer.xsl -->
-							<xsl:when test="(string-length($is_afn_patron) > 0)">
-								<!-- handle AFN supported languages (is_preferred_lang_fr) defined in footer.xsl-->
-								<xsl:choose>
-									<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
-										<!-- handle AFN language fr -->
-										<table>
-											<tr>
-												<td>
-													<!-- AFN VERSION 1.6 changed some french text -->
-													<!-- START AFN-VERSION 1.10 -->
-													Le document suivant de [<xsl:call-template name="AFNOrgName"/>] - <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, que vous avez demandé le <xsl:value-of select="notification_data/request/create_date"/> peut être récupéré à <b>
-														<xsl:value-of select="notification_data/request/assigned_unit_name"/>
-													</b>
-													<!-- END AFN-VERSION 1.10 -->
-												</td>
-											</tr>
-											<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
-												<tr>
-													<td>
-														<br/>
-														<!-- AFN VERSION 1.6 changed some french text -->
-														Le document sera conservé pour vous jusqu'au <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
-													</td>
-												</tr>
-											</xsl:if>
-											<tr>
-												<td>
-													<br/>
-													<xsl:call-template name="recordTitle"/>
-													<!-- recordTitle.xsl -->
-												</td>
-											</tr>
-											<!-- If notes exist, then we'll display the notes lable and the note -->
-											<xsl:if test="notification_data/request/system_notes !='' ">
-												<tr>
-													<td>
-														<br/>
-														<b>NOTES qui peuvent affecter le prêt:</b>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<xsl:value-of select="notification_data/request/system_notes"/>
-													</td>
-												</tr>
-												<!-- AFN-VERSION 1.2 moved /xsl:if closing tag below system_notes tr -->
-											</xsl:if>
-											<tr>
-												<td>
-													<br/>
-													<!-- AFN-VERSION 1.1 -->
-													<!-- AFN VERSION 1.6 changed some french text -->
-													Pour connaitre les heures de service et des informations liées à la récupération de documents veuillez consulter ci-dessus la page web de la bibliothèque.
-                                                <br/>
-												</td>
-											</tr>
-										</table>
-									</xsl:when>
-									<xsl:otherwise>
-										<!-- handle AFN language default english 'en' -->
-										<table>
-											<tr>
-												<td>
-													<!-- START AFN-VERSION 1.10 -->
-													The following item from [<xsl:call-template name="AFNOrgName"/>] - <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at <b>
-														<xsl:value-of select="notification_data/request/assigned_unit_name"/>
-													</b>
-													<!-- END AFN-VERSION 1.10 -->
-												</td>
-											</tr>
-											<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
-												<tr>
-													<td>
-														<br/>
-														The item will be held for you until <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
-													</td>
-												</tr>
-											</xsl:if>
-											<tr>
-												<td>
-													<br/>
-													<xsl:call-template name="recordTitle"/>
-													<!-- recordTitle.xsl -->
-												</td>
-											</tr>
-											<!-- If notes exist, then we'll display the notes lable and the note -->
-											<xsl:if test="notification_data/request/system_notes !='' ">
-												<tr>
-													<td>
-														<br/>
-														<b>NOTES that may affect loan:</b>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<xsl:value-of select="notification_data/request/system_notes"/>
-													</td>
-												</tr>
-											</xsl:if>
-											<tr>
-												<td>
-													<br/>                                                
-													Please check the website at the pickup library indicated above for service hours and pickup information.
-                                                <br/>
-												</td>
-											</tr>
-										</table>
-									</xsl:otherwise>
-								</xsl:choose>
-							</xsl:when>
-							<xsl:otherwise>
-								<!-- Carleton letter -->
-								<xsl:call-template name="toWhomIsConcerned"/>
-								<!-- mailReason.xsl -->
-								<table>
-									<!-- 	Mail Delivery Decision Tree
-											Different letter displays depending on whether the pickup location is Mail Delivery or something else (MacOdrum Library.) 
+					    <div class="down-with-unnecessary-tables">
+    						<!-- AFN CODE -->
+    						<xsl:choose>
+    							<!-- START AFN-VERSION 1.8 Test if it's an EMAIL partner, if so terminate letter -->
+    							<xsl:when test="(string-length($is_email_partner) > 0)">
+    								<xsl:message terminate="yes">user group is an EMAIL ILL PARTNER - TERMINATE </xsl:message>
+    							</xsl:when>
+    							<!-- END AFN-VERSION 1.8 Test if it's an EMAIL partner, if so terminate letter -->
+    							<!-- AFN test (is_afn_patron) defined in footer.xsl -->
+    							<xsl:when test="(string-length($is_afn_patron) > 0)">
+    								<!-- handle AFN supported languages (is_preferred_lang_fr) defined in footer.xsl-->
+    								<xsl:choose>
+    									<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
+    										<!-- handle AFN language fr -->
+    										<table role="presentation">
+    											<tr>
+    												<td>
+    													<!-- AFN VERSION 1.6 changed some french text -->
+    													<!-- START AFN-VERSION 1.10 -->
+    													Le document suivant de [<xsl:call-template name="AFNOrgName"/>] - <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, que vous avez demandé le <xsl:value-of select="notification_data/request/create_date"/> peut être récupéré à <strong>
+    														<xsl:value-of select="notification_data/request/assigned_unit_name"/>
+    													</strong>
+    													<!-- END AFN-VERSION 1.10 -->
+    												</td>
+    											</tr>
+    											<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
+    												<tr>
+    													<td>
+    														<br/>
+    														<!-- AFN VERSION 1.6 changed some french text -->
+    														Le document sera conservé pour vous jusqu'au <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
+    													</td>
+    												</tr>
+    											</xsl:if>
+    											<tr>
+    												<td>
+    													<br/>
+    													<xsl:call-template name="recordTitle"/>
+    													<!-- recordTitle.xsl -->
+    												</td>
+    											</tr>
+    											<!-- If notes exist, then we'll display the notes lable and the note -->
+    											<xsl:if test="notification_data/request/system_notes !='' ">
+    												<tr>
+    													<td>
+    														<br/>
+    														<strong>NOTES qui peuvent affecter le prêt:</strong>
+    													</td>
+    												</tr>
+    												<tr>
+    													<td>
+    														<xsl:value-of select="notification_data/request/system_notes"/>
+    													</td>
+    												</tr>
+    												<!-- AFN-VERSION 1.2 moved /xsl:if closing tag below system_notes tr -->
+    											</xsl:if>
+    											<tr>
+    												<td>
+    													<br/>
+    													<!-- AFN-VERSION 1.1 -->
+    													<!-- AFN VERSION 1.6 changed some french text -->
+    													Pour connaitre les heures de service et des informations liées à la récupération de documents veuillez consulter ci-dessus la page web de la bibliothèque.
+                                                    <br/>
+    												</td>
+    											</tr>
+    										</table>
+    									</xsl:when>
+    									<xsl:otherwise>
+    										<!-- handle AFN language default english 'en' -->
+    										<table role="presentation">
+    											<tr>
+    												<td>
+    													<!-- START AFN-VERSION 1.10 -->
+    													The following item from [<xsl:call-template name="AFNOrgName"/>] - <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at <strong>
+    														<xsl:value-of select="notification_data/request/assigned_unit_name"/>
+    													</strong>
+    													<!-- END AFN-VERSION 1.10 -->
+    												</td>
+    											</tr>
+    											<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
+    												<tr>
+    													<td>
+    														<br/>
+    														The item will be held for you until <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
+    													</td>
+    												</tr>
+    											</xsl:if>
+    											<tr>
+    												<td>
+    													<br/>
+    													<xsl:call-template name="recordTitle"/>
+    													<!-- recordTitle.xsl -->
+    												</td>
+    											</tr>
+    											<!-- If notes exist, then we'll display the notes lable and the note -->
+    											<xsl:if test="notification_data/request/system_notes !='' ">
+    												<tr>
+    													<td>
+    														<br/>
+    														<strong>NOTES that may affect loan:</strong>
+    													</td>
+    												</tr>
+    												<tr>
+    													<td>
+    														<xsl:value-of select="notification_data/request/system_notes"/>
+    													</td>
+    												</tr>
+    											</xsl:if>
+    											<tr>
+    												<td>
+    													<br/>                                                
+    													Please check the website at the pickup library indicated above for service hours and pickup information.
+                                                    <br/>
+    												</td>
+    											</tr>
+    										</table>
+    									</xsl:otherwise>
+    								</xsl:choose>
+    							</xsl:when>
+    							<xsl:otherwise>
+							    <!-- Carleton letter -->
+							        <xsl:call-template name="toWhomIsConcerned2"/>
+							        <!-- 	Mail Delivery Decision Tree
+											Different letter displays depending on whether the pickup location is 
+											Mail Delivery or something else (MacOdrum Library.) 
+											EDIT: Mail delivery is being wound down. 
+											Will remove this code completely once we remove Mail Delivery library, etc.
 									-->
 									<xsl:choose>
-										<!-- If the item is headed for the Mail Delivery Hold Shelf -->
-										<xsl:when test="/notification_data/request/calculated_destination_name= 'Mail Delivery (Carleton students, staff, faculty only) - Mail Delivery Hold Shelf'">
-											<tr>
-												<td>
-													We are processing the following item for mail delivery. It will be on its way to you shortly.
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<strong>
-														<xsl:call-template name="recordTitle"/>
-													</strong>
-													<!-- recordTitle.xsl -->
-												</td>
-											</tr>
+									    <!-- If the item is headed for the Mail Delivery Hold Shelf -->
+										<xsl:when 
+										test="/notification_data/request/calculated_destination_name= 'Mail Delivery (Carleton students, staff, faculty only) - Mail Delivery Hold Shelf'">
+										    <p>
+										        We are processing the following item for mail delivery. 
+										        It will be on its way to you shortly.
+										    </p>
+											<strong>
+												<xsl:call-template name="recordTitle2"/>
+											</strong>
 											<xsl:if test="notification_data/request/system_notes !='' ">
-												<tr>
-													<td>
-														<b>@@notes_affect_loan@@:</b>
-													</td>
-												</tr>
-												<tr>
-													<td>
+														<strong>@@notes_affect_loan@@:</strong> 
 														<xsl:value-of select="notification_data/request/system_notes"/>
-													</td>
-												</tr>
 											</xsl:if>
 										</xsl:when>
-										<!-- If the destination location is anyting OTHER than the Mail Delivery hold shelf -->
+										<!-- If the destination location is anything OTHER than the Mail Delivery hold shelf -->
 										<xsl:otherwise>
-											<tr>
-												<td>
-													<p>
-													    The following item is ready for pickup:
-												    </p>
-													<p>
-													    <strong><xsl:call-template name="recordTitle"/></strong>
-												    </p>
-													<p>
-													    You can pick it up at the <strong>Library Services Desk</strong> 
-													    or through our <xsl:call-template name="curbsideLink"/>. 
-													    Please visit the library website for <xsl:call-template name="openingHours"/>.
-													    <!-- 
-											                HOLIDAY CLOSURE TEMPLATE: used when we close for the holidays, but left in letter 
-											                for convenience.
-											                You can edit the template in footer.xsl 
-											            -->
-											            <strong><xsl:call-template name="holidayClosure"/></strong>
-												    </p>
-												    <xsl:if test="notification_data/request/work_flow_entity/expiration_date">
-    												    <p>
-    												        We will hold the item until 
-    												        <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>.
-    												    </p>
-												    </xsl:if>
-												    <xsl:if test="notification_data/request/system_notes !='' ">
-												        <p>
-												            <strong>Loan note:</strong> <xsl:value-of select="notification_data/request/system_notes"/>
-												        </p>
-												    </xsl:if>
-												
-												</td>
-											</tr>
+											<p>
+											    The following item is ready for pickup:
+										    </p>
+											<p>
+											    <strong><xsl:call-template name="recordTitle2"/></strong>
+										    </p>
+											<p>
+											    You can pick it up at the <strong>Library Services Desk</strong> 
+											    or through our <xsl:call-template name="curbsideLink"/>. 
+											    Please visit the library website for 
+											    <xsl:call-template name="openingHours"/>.
+											    <!-- 
+									                HOLIDAY CLOSURE TEMPLATE: used when we close for the holidays, 
+									                but left in letter for convenience.
+									                You can edit the template in footer.xsl 
+									            -->
+									            <strong><xsl:call-template name="holidayClosure"/></strong>
+										    </p>
+										    <xsl:if test="notification_data/request/work_flow_entity/expiration_date">
+											    <p>
+											        We will hold the item until 
+											        <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>.
+											    </p>
+										    </xsl:if>
+										    <xsl:if test="notification_data/request/system_notes !='' ">
+										        <p>
+										            <strong>@@notes_affect_loan@@:</strong> <xsl:value-of select="notification_data/request/system_notes"/>
+										        </p>
+										    </xsl:if>
 										</xsl:otherwise>
 									</xsl:choose>
 									<!-- END OF the Mail Delivery decision tree-->
-									<tr>
-										<td>
-											Sincerely,
-										</td>
-									</tr>
-									<xsl:call-template name="accessSignature"/>
-								</table>
-							</xsl:otherwise>
-						</xsl:choose>
-						<!-- END OF AFN CODE -->
+									<xsl:call-template name="accessSignatureWT"/>
+    							</xsl:otherwise>
+    						</xsl:choose>
+    						<!-- END OF AFN CODE -->
+    						</div>
 					</div>
 				</div>
 				<!-- AFN footer template options from footer.xsl -->
